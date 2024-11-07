@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>伪元素使用场景</title>
+    <style>
+        .tudou {
+            position: relative;
+            width: 444px;
+            height: 320px;
+            background-color: pink;
+            margin: 30px auto;
+            /* 
+             * 通过 position: relative; 将 .tudou 元素设为相对定位。
+             * 这样在其内部使用的绝对定位伪元素 (::before) 会相对于 .tudou 进行定位。
+             */
+        }
+
+        .tudou::before {
+            content: '';
+            /* 
+             * 伪元素是一个虚拟的子元素，使用 content: ''; 来创建。
+             * 这里的 ::before 伪元素相当于在 .tudou 内部添加了一个行内元素，
+             * 但这个元素不会在实际的 DOM 结构中显示。
+             */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* 
+             * 伪元素被设为绝对定位 (absolute)，并覆盖整个 .tudou 元素。
+             * 它的背景设为半透明的黑色，并在中心添加了一个图片 (arr.png)。
+             */
+            background: rgba(0, 0, 0, .4) url(images/arr.png) no-repeat center;
+            display: none;
+            /* 
+             * 初始状态下，伪元素被隐藏 (display: none;)，
+             * 只有在鼠标悬停时 (hover) 才会显示出来。
+             */
+        }
+
+        .tudou img {
+            width: 444px;
+            height: 320px;
+            /* 
+             * 设置图片的宽度和高度与 .tudou 容器保持一致，
+             * 以确保图片完全填充容器，不留空隙。
+             */
+        }
+
+        /* 
+         * 当鼠标悬停在 .tudou 盒子上时，
+         * 通过 CSS 伪类 :hover 触发 ::before 伪元素的显示 (display: block;)。
+         * 这使得伪元素作为遮罩层显示出来，覆盖在 .tudou 元素的内容上方。
+         */
+        .tudou:hover::before {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tudou">
+        <img src="images/tudou.jpg" alt="">
+    </div>
+</body>
+
+</html>

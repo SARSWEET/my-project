@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table {
+            width: 500px;
+            /* 设置表格的宽度为500px */
+            margin: 100px auto;
+            /* 表格距离顶部100px，水平居中 */
+            border-collapse: collapse;
+            /* 合并表格边框，去除单元格之间的间隙 */
+            text-align: center;
+            /* 表格内容居中对齐 */
+        }
+
+        td,
+        th {
+            border: 1px solid #333;
+            /* 表格单元格和表头添加边框，颜色为深灰色 */
+        }
+
+        thead tr {
+            height: 40px;
+            /* 表头行的高度设置为40px */
+            background-color: #ccc;
+            /* 表头背景色设置为浅灰色 */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 表格的 cellspacing="0" 去除单元格之间的空隙 -->
+    <table cellspacing="0">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>科目</th>
+                <th>成绩</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- 表格主体部分，数据会通过 JavaScript 动态填充 -->
+        </tbody>
+    </table>
+
+    <script>
+        // 1. 准备学生的数据，数据为一个对象数组，每个对象包含学生姓名、科目和成绩
+        var dates = [
+            {
+                name: '魏璎珞', // 学生姓名
+                subject: 'JavaScript', // 科目
+                score: 100 // 成绩
+            },
+            {
+                name: '弘历',
+                subject: 'JavaScript',
+                score: 98
+            },
+            {
+                name: '傅恒',
+                subject: 'JavaScript',
+                score: 99
+            },
+            {
+                name: '明玉',
+                subject: 'JavaScript',
+                score: 88
+            },
+        ];
+
+        // 2. 获取tbody元素，将用于在其中动态生成表格行
+        var tbody = document.querySelector('tbody'); // 获取表格主体部分的tbody元素
+        // 根据dates数组的长度，循环生成与数据对应的表格行
+        for (let i = 0; i < dates.length; i++) {
+            var tr = document.createElement('tr'); // 创建一个新的表格行<tr>
+            tbody.appendChild(tr); // 将新创建的表格行添加到tbody中
+
+            // 3. 遍历当前学生的对象属性，为每个属性创建一个单元格<td>
+            for (k in dates[i]) {
+                var td = document.createElement('td'); // 创建新的单元格<td>
+                tr.appendChild(td); // 将单元格添加到当前行<tr>
+                td.innerHTML = dates[i][k]; // 将属性值插入单元格
+            }
+
+            // 4. 为每一行末尾添加一个"删除"操作的单元格
+            var td = document.createElement('td'); // 创建删除按钮所在的单元格
+            tr.appendChild(td); // 将该单元格添加到当前行
+            // 在单元格中插入一个<a>标签，点击后执行删除操作
+            td.innerHTML = '<a href="javaScript:;">删除</a>';
+        }
+
+        // 5. 为所有 "删除" 链接绑定点击事件
+        var as = document.querySelectorAll('a'); // 获取所有<a>元素（即删除按钮）
+        for (let i = 0; i < as.length; i++) {
+            as[i].onclick = function () {
+                // 点击删除按钮时，删除该行 (tr) 元素
+                // this 指的是当前点击的<a>元素，通过 this.parentNode.parentNode 获取到对应的<tr>元素
+                tbody.removeChild(this.parentNode.parentNode); // 从tbody中移除对应的<tr>元素
+            }
+        }
+
+        /* for-in 循环解释:
+           for (const k in obj) {
+               console.log(k); // 打印对象的属性名
+               console.log(obj[k]); // 打印对象的属性值
+           }
+        */
+    </script>
+</body>
+
+</html>

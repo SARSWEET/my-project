@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3盒子模型 box-sizing</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            /* 
+             * 全局样式：将所有元素的外边距和内边距清零。
+             * 这有助于消除浏览器默认的边距和填充，确保页面布局的一致性。
+             */
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            border: 20px solid red;
+            padding: 15px;
+            /* 
+             * 默认的盒子模型 (box-sizing: content-box;) 
+             * 在这种模式下，width 和 height 只包含内容区的尺寸，不包括内边距和边框。
+             * 实际渲染时，元素的总宽度为：width + padding + border
+             * 实际渲染时，元素的总高度为：height + padding + border
+             */
+            box-sizing: content-box;
+            /* 默认 */
+
+            /* 
+             * 改为使用 box-sizing: border-box;
+             * 在这种模式下，width 和 height 包括内容区、内边距和边框的总宽高。
+             * 实际渲染时，元素的总宽度和总高度分别固定为 200px，
+             * 内容区的尺寸会根据内边距和边框的尺寸进行自动调整。
+             */
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div>小猪佩奇</div>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用双伪元素清除浮动</title>
+    <style>
+        /* 双伪元素清除浮动的通用类 */
+        .clearfix:before,
+        .clearfix:after {
+            content: "";
+            /* 创建一个内容为空的伪元素 */
+            display: table;
+            /* 使用 table 来创建匿名的表格单元 */
+        }
+
+        .clearfix:after {
+            clear: both;
+            /* 清除两侧浮动 */
+        }
+
+        /* 为了兼容 IE6 和 IE7 */
+
+        .box {
+            width: 800px;
+            border: 1px solid blue;
+            margin: 0 auto;
+        }
+
+        .damao {
+            float: left;
+            width: 300px;
+            height: 200px;
+            background-color: purple;
+        }
+
+        .ermao {
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        .footer {
+            height: 200px;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box clearfix">
+        <div class="damao">大毛</div>
+        <div class="ermao">二毛</div>
+    </div>
+    <div class="footer"></div>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>显示模式之行内元素</title>
+    <style>
+        /* 行内元素（<span>）的 CSS 样式 */
+        span {
+            /* 注意：这些设置对行内元素实际上不起作用 */
+            width: 100px;
+            /* 行内元素不能设置宽度 */
+            height: 100px;
+            /* 行内元素不能设置高度 */
+            background-color: hotpink;
+            /* 背景颜色会显示，但不会占据设定的宽高 */
+
+            /* 行内元素的特点：
+               1. 不独占一行，多个行内元素会在同一行显示
+               2. 宽度和高度由内容决定，无法通过 CSS 直接设置
+               3. 只能设置水平方向的 margin 和 padding
+               4. 不能包含块级元素 */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 行内元素示例 -->
+    <span>pink老师你怎么穿着品如的衣服</span><strong>品如的衣服</strong>
+    <span>pink老师</span><strong>品如的衣服</strong>
+
+    <!-- 注意：这是一个不规范的嵌套 -->
+    <a href="#">
+        <a href=""></a>
+    </a>
+    <!-- 警告：<a> 标签不应该嵌套另一个 <a> 标签，这是不符合 HTML 规范的 -->
+</body>
+
+</html>

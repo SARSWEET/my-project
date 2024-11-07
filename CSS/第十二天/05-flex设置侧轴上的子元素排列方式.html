@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Alignment Example</title>
+    <style>
+        div {
+            display: flex;
+            /* 将父元素设置为弹性布局容器 */
+            width: 800px;
+            /* 设置容器的宽度为800像素 */
+            height: 400px;
+            /* 设置容器的高度为400像素 */
+            background-color: pink;
+            /* 设置容器的背景颜色为粉红色 */
+
+            /* 沿主轴（水平）居中对齐子元素，默认主轴是X轴（row） */
+            justify-content: center;
+
+            /* 沿侧轴（垂直）居中对齐子元素，默认侧轴是Y轴（column） */
+            align-items: center;
+
+            /* 沿侧轴拉伸子元素，使其高度或宽度填满容器（与主轴垂直的方向） */
+            /* 注意：此属性会覆盖 `align-items: center;` 的效果 */
+            align-items: stretch;
+
+            /* 设置主轴方向为垂直方向（从上到下排列子元素） */
+            flex-direction: column;
+            /* 如果调整主轴方向，排列方式会发生变化 */
+        }
+
+        span {
+            /* width: 150px; */
+            /* 如果设置了宽度，stretch 效果不会生效 */
+            height: 100px;
+            /* 设置子元素的高度为100像素 */
+            background-color: purple;
+            /* 设置子元素的背景颜色为紫色 */
+            color: #fff;
+            /* 设置子元素内文本的颜色为白色 */
+            margin: 10px;
+            /* 设置子元素的外边距为10像素，增加间距 */
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span>1</span> <!-- 第一个子元素 -->
+        <span>2</span> <!-- 第二个子元素 -->
+        <span>3</span> <!-- 第三个子元素 -->
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新浪导航</title>
+    <style>
+        /* 导航栏容器样式 */
+        .nav {
+            height: 41px;
+            border-top: 3px solid #ff8500;
+            /* 顶部橙色边框 */
+            border-bottom: 1px solid #edeef0;
+            /* 底部浅灰色边框 */
+            line-height: 41px;
+            /* 文字垂直居中 */
+            background-color: #fcfcfc;
+            /* 背景色 */
+        }
+
+        /* 导航链接样式 */
+        .nav a {
+            /* 将行内元素转换为行内块元素，以便设置高度 */
+            display: inline-block;
+            height: 41px;
+            /* 与 .nav 高度一致 */
+            font-size: 12px;
+            /* 字体大小 */
+            color: #4c4c4c;
+            /* 文字颜色 */
+            padding: 0 20px;
+            /* 水平内边距，增加可点击区域 */
+            text-decoration: none;
+            /* 移除下划线 */
+
+            /* 注意：
+               1. 使用 inline-block 而不是 block 以保持水平排列
+               2. 高度设置确保链接填满导航栏高度
+               3. padding 提供了更大的点击区域，提高用户体验
+               4. 没有设置固定宽度，允许根据内容自动调整宽度
+               5. 这种方法使导航项能够灵活适应不同长度的文本
+               6. 有利于多语言支持和响应式设计
+               7. 避免了固定宽度可能带来的文本溢出或空白问题 */
+        }
+
+        /* 鼠标悬停效果 */
+        .nav a:hover {
+            color: #eee;
+            /* 悬停时的文字颜色 */
+            background-color: #ff8500;
+            /* 悬停时的背景颜色 */
+
+            /* 这个效果创造了明显的视觉反馈，提高了用户交互体验 */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 导航栏结构 -->
+    <div class="nav">
+        <a href="#">新浪导航</a>
+        <a href="#">手机新浪网</a>
+        <a href="#">移动客户端</a>
+        <a href="#">微博</a>
+        <a href="#">三个字</a>
+    </div>
+</body>
+
+</html>

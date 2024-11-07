@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>行高的继承示例</title>
+    <style>
+        body {
+            color: pink;
+            /* 使用简写属性设置字体大小、行高和字体族 */
+            /* font: 12px/24px 'Microsoft YaHei'; */
+            font: 12px/1.5 'Microsoft YaHei';
+            /* 1.5 是一个无单位的行高值，表示行高为字体大小的 1.5 倍 */
+        }
+
+        div {
+            /* 继承了 body 的行高 1.5，但有自己的字体大小 */
+            font-size: 14px;
+            /* 实际行高 = 14px * 1.5 = 21px */
+        }
+
+        p {
+            font-size: 16px;
+            /* 继承行高 1.5，实际行高 = 16px * 1.5 = 24px */
+        }
+
+        /* li 元素：
+           - 继承 body 的字体大小 12px
+           - 继承行高 1.5
+           - 实际行高 = 12px * 1.5 = 18px */
+    </style>
+</head>
+
+<body>
+    <div>粉红的回忆</div>
+    <p>粉红的回忆</p>
+    <ul>
+        <li>我没有指定文字大小</li>
+    </ul>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+\

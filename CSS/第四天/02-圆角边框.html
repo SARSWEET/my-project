@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>圆角边框</title>
+    <style>
+        div {
+            /* 设置div的宽度 */
+            width: 300px;
+            /* 设置div的高度 */
+            height: 150px;
+            /* 设置背景颜色为粉色，以便更好地可视化效果 */
+            background-color: pink;
+            /* 应用圆角边框 
+               10px 表示圆角的半径
+               这会使div的所有四个角都变成半径为10px的圆角 */
+            border-radius: 10px;
+
+            /* border-radius 的工作原理：
+               1. 它定义了边框圆角的半径
+               2. 可以为四个角分别设置不同的值
+               3. 值可以是像素(px)、百分比(%)或其他CSS长度单位
+               4. 如果只指定一个值，它会应用到所有四个角
+
+               其他可能的用法：
+               border-radius: 10px 20px 30px 40px; (分别设置左上、右上、右下、左下角的半径)
+               border-radius: 50%; (创建一个完全圆形的元素，当宽高相等时) */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 这个div将显示为一个带有圆角的粉色矩形 -->
+    <div></div>
+</body>
+
+</html>

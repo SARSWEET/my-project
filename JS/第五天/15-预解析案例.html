@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 预解析案例：展示JavaScript中的变量提升和作用域特性
+
+        // 案例1：函数作用域内的变量提升
+        // var num = 10;
+        // fun();
+
+        // function fun() {
+        //     console.log(num);
+        //     var num = 20;
+        // }
+        // // 相当于执行了以下操作
+        // /*         var num;
+        //         function fun() {
+        //             var num;
+        //             console.log(num);
+        //             num = 20;
+        //         }
+        //         num = 10;
+        //         fun(); */
+        // 解析：
+        // 1. 全局变量 num 和函数 fun 被提升
+        // 2. 全局 num 被赋值为 10
+        // 3. fun 函数被调用
+        // 4. 在 fun 函数内，局部 num 被提升但未赋值
+        // 5. console.log(num) 输出 undefined，因为它引用的是函数作用域内的局部 num
+        // 6. 局部 num 随后被赋值为 20
+        // 预期输出：undefined
+
+        // 案例2：函数作用域和变量提升的综合演示
+        // var num = 10;
+        // function fn() {
+        //     console.log(num);
+        //     var num = 20;
+        //     console.log(num);
+        // }
+        // fn();
+        // // 相当于以下代码
+        // /*         var num;
+        //         function fn() {
+        //             var num
+        //             console.log(num);
+        //             num = 20;
+        //             console.log(num);
+        //         }
+        //         num = 10;
+        //         fn(); */
+        // 解析：
+        // 1. 全局变量 num 和函数 fn 被提升
+        // 2. 全局 num 被赋值为 10
+        // 3. fn 函数被调用
+        // 4. 在 fn 函数内，局部 num 被提升
+        // 5. 第一个 console.log(num) 输出 undefined（引用局部的未赋值 num）
+        // 6. 局部 num 被赋值为 20
+        // 7. 第二个 console.log(num) 输出 20
+        // 预期输出：undefined, 20
+
+        // 案例3：变量提升和函数作用域的复杂交互
+        // var a = 18;
+        // f1();
+        // function f1() {
+        //     var b = 9;
+        //     console.log(a);
+        //     console.log(b);
+        //     var a = '123'
+        // }
+        // // 相当于以下代码
+        // /*         var a;
+        //         function f1() {
+        //             var b
+        //             var a
+        //             b = 9;
+        //             console.log(a);
+        //             console.log(b);
+        //             a = '123'
+        //         }
+        //         a = 18;
+        //         f1(); */
+        // 解析：
+        // 1. 全局变量 a 和函数 f1 被提升
+        // 2. 全局 a 被赋值为 18
+        // 3. f1 函数被调用
+        // 4. 在 f1 函数内，局部变量 b 和 a 被提升
+        // 5. b 被赋值为 9
+        // 6. console.log(a) 输出 undefined（引用局部的未赋值 a，而非全局的 a）
+        // 7. console.log(b) 输出 9
+        // 8. 局部 a 被赋值为 '123'，但这发生在 console.log 之后
+        // 预期输出：undefined, 9
+
+        // 案例4：全局变量和局部变量的交互
+        f1();
+        console.log(c);
+        console.log(b);
+        console.log(a);
+
+        function f1() {
+            var a = b = c = 9;
+            console.log(a);
+            console.log(b);
+            console.log(c);
+        }
+        // 相当于以下代码
+        function f1() {
+            var a;
+            a = b = c = 9;
+            // 相当于 var a = 9; b = 9; c = 9; b 和 c 直接赋值 没有var声明 当全局变量看
+            // 如果想要集体声明 var a = 9 , b = 9, c = 9; 
+            console.log(a);
+            console.log(b);
+            console.log(c);
+        }
+        f1();
+        console.log(c);
+        console.log(b);
+        console.log(a);
+
+        // 案例4解析：
+        // 1. 函数 f1 被提升（函数声明提升）
+        // 2. f1 函数被调用
+        // 3. 在 f1 函数内：
+        //    - c 被赋值为 9（成为全局变量，因为没有使用 var 声明）
+        //    - b 被赋值为 c 的值，即 9（也成为全局变量）
+        //    - a 被声明为局部变量并赋值为 b 的值，即 9
+        // 4. f1 函数内的三个 console.log 都输出 9
+        // 5. 函数执行完毕后，全局的 console.log(c) 和 console.log(b) 输出 9
+        // 6. console.log(a) 抛出 ReferenceError，因为 a 是 f1 的局部变量，在全局作用域不可访问
+        // 预期输出：
+        // 9 (在f1内)
+        // 9 (在f1内)
+        // 9 (在f1内)
+        // 9 (全局 c)
+        // 9 (全局 b)
+        // ReferenceError: a is not defined
+
+        // 关键概念总结：
+        // 1. 变量提升：声明被移到其作用域的顶部，但赋值不会被提升
+        // 2. 函数作用域：每个函数创建自己的作用域，内部变量对外部不可见
+        // 3. 全局变量 vs 局部变量：不使用 var 声明的变量会成为全局变量
+        // 4. 变量遮蔽（Shadowing）：内部作用域的变量会"遮蔽"外部同名变量
+
+        // 最佳实践：
+        // - 使用 let 或 const 声明变量，避免使用 var
+        // - 避免在一行中进行多个变量的赋值，可能导致意外创建全局变量
+        // - 使用严格模式（'use strict'）来防止意外创建全局变量
+        // - 在函数开始处声明所有变量，提高代码可读性
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

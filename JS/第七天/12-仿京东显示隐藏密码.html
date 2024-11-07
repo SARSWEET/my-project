@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 定义.box类，该类是容器的样式 */
+        .box {
+            position: relative;
+            /* 使子元素的绝对定位基于这个容器 */
+            width: 400px;
+            /* 设置容器宽度 */
+            border-bottom: 1px solid #ccc;
+            /* 添加底部边框 */
+            margin: 100px auto;
+            /* 使容器水平居中并设置顶部间距 */
+        }
+
+        /* 为.box内部的input元素定义样式 */
+        .box input {
+            width: 370px;
+            /* 输入框宽度比容器稍小，留出图片显示的空间 */
+            height: 30px;
+            /* 设置输入框的高度 */
+            border: 0;
+            /* 去除输入框的默认边框 */
+            outline: none;
+            /* 去除点击时的默认边框样式 */
+        }
+
+        /* 为.box内部的img元素定义样式 */
+        .box img {
+            position: absolute;
+            /* 使用绝对定位，使图片相对于.box定位 */
+            right: 2px;
+            /* 图片右侧距离.box的边缘2px */
+            top: 2px;
+            /* 图片顶部距离.box的边缘2px */
+            width: 24px;
+            /* 设置图片的宽度 */
+        }
+
+        /* 隐藏IE浏览器中的密码显示按钮 */
+        input[type='password']::-ms-reveal {
+            display: none;
+            /* 针对IE浏览器的伪元素，隐藏密码显示图标 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <!-- 图标按钮用于控制密码的显示与隐藏 -->
+        <label for="">
+            <img src="images/close.png" alt="" id="eye"> <!-- 默认闭眼图标 -->
+        </label>
+        <!-- 密码输入框 -->
+        <input type="password" id="pwd">
+    </div>
+
+    <script>
+        // 1.获取元素
+        var eye = document.getElementById('eye'); // 获取控制显示密码的图标
+        var pwd = document.getElementById('pwd'); // 获取密码输入框
+        // 2.事件类型和事件处理程序
+        var flag = 0; // 用于切换密码显示状态的标志位，0表示隐藏，1表示显示
+        eye.onclick = function () {
+            // 点击事件处理程序，控制密码的显示和隐藏
+            if (flag == 0) {
+                // 当flag为0时，密码隐藏，将其改为明文显示
+                pwd.type = 'text'; // 将输入框的类型改为"text"，即显示密码
+                this.src = 'images/open.png'; // 改变图标为睁眼图标
+                flag = 1; // 更新标志位为1，表示当前密码是可见状态
+            } else {
+                // 当flag为1时，密码可见，将其改为隐藏
+                pwd.type = 'password'; // 将输入框的类型改为"password"，即隐藏密码
+                this.src = 'images/close.png'; // 改变图标为闭眼图标
+                flag = 0; // 更新标志位为0，表示当前密码是隐藏状态
+            }
+        }
+    </script>
+</body>
+
+</html>

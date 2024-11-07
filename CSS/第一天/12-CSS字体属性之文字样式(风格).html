@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* CSS 字体样式（倾斜）设置 */
+
+        /* 为所有段落设置字体样式 */
+        p {
+            /* 将段落文本设置为斜体 */
+            font-style: italic;
+        }
+
+        /* 为 <em> 标签设置字体样式 */
+        em {
+            /* 将 <em> 标签的文本设置为正常样式（非斜体）
+               这会覆盖 <em> 标签的默认斜体样式 */
+            font-style: normal;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 这个段落会显示为斜体 -->
+    <p>上课时候的你</p>
+
+    <!-- 尽管 <em> 标签通常表示强调并默认为斜体，
+         但由于我们的 CSS 设置，这里会显示为正常样式（非斜体） -->
+    <em>下课时候的你</em>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>利用精灵图拼名字</title>
+    <style>
+        span {
+            display: inline-block;
+            /* 
+             * 将 span 元素设为 inline-block 使其既具有内联元素的排列特性，
+             * 又可以设置宽度和高度。这是因为精灵图中的每个字母需要单独控制其尺寸。
+             */
+            background: url(images/abcd.jpg) no-repeat;
+            /* 
+             * 使用精灵图作为背景图像，no-repeat 表示不重复显示背景图。
+             * 具体字母的显示位置通过子类选择器中的 background-position 来控制。
+             */
+        }
+
+        .p {
+            width: 100px;
+            height: 112px;
+            background-position: -493px -276px;
+            /* 
+             * 通过 background-position 精确定位精灵图中的 "P" 字母部分，
+             * 显示位置为精灵图的 (-493px, -276px) 处。
+             */
+        }
+
+        .i {
+            width: 60px;
+            height: 108px;
+            background-position: -327px -142px;
+            /* 
+             * 通过 background-position 精确定位精灵图中的 "I" 字母部分，
+             * 显示位置为精灵图的 (-327px, -142px) 处。
+             */
+        }
+
+        .n {
+            width: 100px;
+            height: 112px;
+            background-position: -200px -276px;
+            /* 
+             * 假设存在的 "N" 字母部分的位置，
+             * 可以在这里添加相应的背景位置和尺寸进行显示。
+             */
+        }
+
+        .k {
+            width: 100px;
+            height: 112px;
+            background-position: -100px -276px;
+            /* 
+             * 假设存在的 "K" 字母部分的位置，
+             * 可以在这里添加相应的背景位置和尺寸进行显示。
+             */
+        }
+    </style>
+</head>
+
+<body>
+    <span class="p">p</span>
+    <span class="i">i</span>
+    <span class="n">n</span>
+    <span class="k">k</span>
+</body>
+
+</html>

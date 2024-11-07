@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>点击停止定时器</button> <!-- 按钮，用于停止定时器 -->
+    <script>
+        // 获取按钮元素
+        var btn = document.querySelector('button');
+
+        // 设置定时器，5秒后执行函数
+        var timer = setTimeout(function () {
+            console.log('爆炸了'); // 定时器到期后输出“爆炸了”
+        }, 5000); // 延时时间为5000毫秒（5秒）
+
+        // clearTimeout() 函数用于停止定时器
+        // window.clearTimeout 可以省略，作用是停止指定的定时器
+        btn.addEventListener('click', function () {
+            clearTimeout(timer); // 点击按钮时停止定时器
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 示例1：检查对象是否有某个属性
+        // 创建一个有 age 属性的对象
+        var o = {
+            age: 18
+        };
+        // 检查对象 o 是否有 'age' 这个属性
+        if (o['age']) {
+            console.log('里面有该属性');
+        } else {
+            console.log('没有该属性');
+        }
+        // 注意：这种方法可能会把值为 0 或空字符串的属性误认为是不存在的
+
+        // 示例2：找出字符串中出现最多的字符
+        // 我们要分析的字符串
+        var str = 'abcoefoxyozzopp';
+        // 用来记录每个字符出现次数的对象
+        var o = {};
+
+        // 第一步：数一数每个字符出现了多少次
+        for (let i = 0; i < str.length; i++) {
+            var chars = str.charAt(i); // 拿到当前位置的字符
+            if (o[chars]) { // 如果这个字符之前出现过
+                o[chars]++; // 出现次数加一
+            } else { // 如果这是字符第一次出现
+                o[chars] = 1; // 设置出现次数为1
+            }
+        }
+        console.log(o); // 看看每个字符出现了多少次
+
+        // 第二步：找出出现次数最多的字符
+        var max = 0; // 用来记录最大的出现次数
+        var ch = ''; // 用来记录出现最多的字符
+        for (var k in o) {//遍历对象 o
+            // k 是字符，o[k] 是这个字符出现的次数
+            if (o[k] > max) { // 如果发现比当前最大值更大的
+                max = o[k]; // 更新最大出现次数
+                ch = k; // 更新出现最多的字符
+            }
+        }
+        console.log(max); // 打印最大出现次数
+        console.log('最多的字符是：' + ch); // 打印出现最多的字符
+
+        // 一些补充说明：
+        // 1. 这个方法区分大小写，比如 'A' 和 'a' 会被当作不同的字符
+        // 2. 如果有多个字符出现次数一样多，这里只会返回一个
+        // 3. 空格也会被算进去
+        // 4. 这个方法对于短字符串很有效，但对于很长的字符串可能会比较慢
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

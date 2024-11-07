@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>相对定位</title>
+    <style>
+        /* 定义类 .box1 的样式 */
+        .box1 {
+            /* 设置元素的定位方式为相对定位（relative） */
+            position: relative;
+
+            /* 将元素相对于其正常位置向下移动 100 像素 */
+            top: 100px;
+
+            /* 将元素相对于其正常位置向右移动 100 像素 */
+            left: 100px;
+
+            /* 设置元素的宽度为 200 像素 */
+            width: 200px;
+
+            /* 设置元素的高度为 200 像素 */
+            height: 200px;
+
+            /* 设置元素的背景颜色为粉色（pink） */
+            background-color: pink;
+        }
+
+        /* 定义类 .box2 的样式 */
+        .box2 {
+            /* 设置元素的宽度为 200 像素 */
+            width: 200px;
+
+            /* 设置元素的高度为 200 像素 */
+            height: 200px;
+
+            /* 设置元素的背景颜色为深粉色（deeppink） */
+            background-color: deeppink;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 使用 class="box1" 定义一个 div 元素，并应用类 .box1 的样式 -->
+    <div class="box1">
+        <!-- box1 是一个空的方块，由于相对定位，它会从其正常位置向下和向右移动 100 像素 -->
+    </div>
+
+    <!-- 使用 class="box2" 定义另一个 div 元素，并应用类 .box2 的样式 -->
+    <div class="box2">
+        <!-- box2 是一个空的方块，由于没有设置定位，它会显示在其默认的正常位置 -->
+    </div>
+</body>
+
+</html>

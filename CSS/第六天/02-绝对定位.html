@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>绝对定位</title>
+    <style>
+        .father {
+            /* 定义父元素的宽度为 500 像素 */
+            /* 定义父元素的高度为 500 像素 */
+            /* 设置父元素的背景颜色为天蓝色（skyblue） */
+            /* 由于没有设置父元素的定位方式，子元素的绝对定位将相对于浏览器窗口 */
+            width: 500px;
+            height: 500px;
+            background-color: skyblue;
+        }
+
+        .son {
+            /* 设置子元素的定位方式为绝对定位（absolute） */
+            position: absolute;
+
+            /* 将子元素固定在父元素的底部 */
+            bottom: 0;
+
+            /* 将子元素固定在父元素的左侧 */
+            left: 0;
+
+            /* 设置子元素的宽度为 200 像素 */
+            width: 200px;
+
+            /* 设置子元素的高度为 200 像素 */
+            height: 200px;
+
+            /* 设置子元素的背景颜色为粉色（pink） */
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 定义一个父 div 元素，并应用类 .father 的样式 -->
+    <div class="father">
+        <!-- 在父元素内部定义一个子 div 元素，并应用类 .son 的样式 -->
+        <!-- 由于父元素没有设置定位，子元素将以浏览器窗口为基准进行绝对定位 -->
+        <div class="son"></div>
+    </div>
+</body>
+
+</html>

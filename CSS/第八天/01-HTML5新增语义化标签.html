@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5新增语义化标签</title>
+    <style>
+        header,
+        nav {
+            height: 120px;
+            background-color: pink;
+            border-radius: 15px;
+            width: 800px;
+            margin: 15px auto;
+            /* 
+             * 设置 header 和 nav 元素的高度、背景颜色、圆角和宽度，
+             * 并通过 margin: 15px auto; 使其水平居中显示。
+             */
+        }
+
+        section {
+            width: 500px;
+            height: 300px;
+            background-color: skyblue;
+            /* 设置 section 元素的宽度、高度和背景颜色。 */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 它们都是块级元素 可多次使用 -->
+    <header>头部标签</header>
+    <!-- 
+         * <header> 元素用于定义页面或部分内容的头部区域，
+         * 通常包含导航、Logo 或其他重要信息。
+         * HTML5 允许同一个页面中有多个 <header> 元素，例如在不同的 <article> 中。
+         -->
+
+    <nav>导航栏标签</nav>
+    <!-- 
+         * <nav> 元素用于定义页面中的导航区域，
+         * 通常包含链接到不同页面或页面内部部分的导航链接。
+         * 在复杂页面中，可以有多个 <nav> 元素，用于不同的导航目的。
+         -->
+
+    <aside>侧边栏</aside>
+    <!-- 
+         * <aside> 元素用于定义与页面主要内容相关的附加信息或侧边栏，
+         * 这些内容通常是次要的，与主要内容相关但不直接关联。
+         -->
+
+    <article>内容标签
+        
+        <!-- 
+             * <article> 元素用于表示独立的内容块，通常包含标题、段落、图片等，
+             * 可以独立分发或复用。适用于博客文章、新闻文章、评论等。
+             -->
+        <section>区域</section>
+        <!-- 
+             * <section> 元素用于定义页面中的一个独立区域，
+             * 通常用于按主题或功能划分内容块。可以包含标题、文章、表单等。
+             -->
+    </article>
+
+    <footer>尾部标签</footer>
+    <!-- 
+         * <footer> 元素用于定义页面或部分内容的底部区域，
+         * 通常包含版权声明、社交媒体链接、联系信息等。
+         * HTML5 允许在同一页面中使用多个 <footer> 元素，例如在不同的 <article> 中。
+         -->
+</body>
+
+</html>

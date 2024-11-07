@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>块级盒子水平居中对齐</title>
+    <style>
+        .header {
+            width: 900px;
+            /* 设置盒子的宽度 */
+            height: 200px;
+            /* 设置盒子的高度 */
+            background-color: pink;
+            /* 设置背景色以可视化盒子 */
+
+            /* 实现水平居中的关键代码 */
+            margin: 100px auto;
+
+            /* margin: 100px auto; 的详细解释：
+               - 100px：上下外边距各为100px
+               - auto：左右外边距自动计算，实现水平居中
+
+               这种方法的工作原理：
+               1. 设置左右外边距为auto
+               2. 浏览器会自动计算左右外边距，使其相等
+               3. 结果是元素在其父容器（这里是<body>）中水平居中
+
+               注意：
+               - 这种方法只适用于已经设置了宽度的块级元素
+               - 对于行内元素或没有设置宽度的块级元素不起作用 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header"></div>
+</body>
+
+</html>

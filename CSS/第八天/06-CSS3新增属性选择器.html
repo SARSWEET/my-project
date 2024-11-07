@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3新增属性选择器</title>
+    <style>
+        /* 
+         * 选择 input 元素，并且 type 属性的值为 "text" 的元素。
+         * 这种选择器通常用于表单样式的自定义。
+         */
+        input[type=text] {
+            color: pink;
+        }
+
+        /* 
+         * 选择具有 class 属性的 div 元素，并且 class 属性的值以 "icon" 开头的元素。
+         * 这种选择器非常适合根据命名约定来选择元素。
+         */
+        div[class^=icon] {
+            color: red;
+        }
+
+        /* 
+         * 选择具有 class 属性的 section 元素，并且 class 属性的值以 "data" 结尾的元素。
+         * 这种选择器适用于对特定后缀的类名进行样式定义。
+         */
+        section[class$=data] {
+            color: blue;
+        }
+
+        /* 
+         * div .icon1 是交集选择器
+         * 交集选择器 (div .icon1) 会选择所有属于 .icon1 类且位于 div 内的元素。
+         * 由于权重问题，如果其他选择器权重更高，此样式可能不会生效。
+         */
+        .icon1 {
+            color: skyblue;
+            /* 这里由于权重问题可能不会生效 */
+        }
+
+        /* 
+         * *= 是包含选择器
+         * 属性选择器 [attribute*="value"] 会选择所有属性值中包含 "value" 字符串的元素。
+         * 例如，选择器 [class*="icon"] 将选择所有 class 属性中包含 "icon" 字符串的元素，
+         * 不论 "icon" 在属性值中的位置（开头、中间或结尾）。
+         * 这种选择器非常适合进行模糊匹配，用于筛选包含特定子字符串的属性值。
+         */
+        /* [attribute*="value"] {
+            // 样式定义
+        } */
+    </style>
+</head>
+
+<body>
+    <!-- 1.利用属性选择器可以不依赖类或 ID 选择器来选择元素 -->
+    <!-- <input type="text" value="请输入用户名">
+    <input type="text"> -->
+
+    <!-- 2.属性选择器可以用于选择特定属性等于某个值的元素 -->
+    <input type="text" name="" id="">
+    <input type="password">
+
+    <!-- 3.属性选择器可以选择属性值以某个字符串开头的元素 -->
+    <div class="icon1">小图标1</div>
+    <div class="icon2">小图标2</div>
+    <div class="icon3">小图标3</div>
+    <div class="icon4">小图标4</div>
+    <div>我是打酱油的</div>
+
+    <!-- 4.属性选择器可以选择属性值以某个字符串结尾的元素 -->
+    <section class="icon1-data">我是安其拉</section>
+    <section class="icon2-data">我是哥斯拉</section>
+    <section class="icon3-ico">那我是谁</section>
+</body>
+
+</html>

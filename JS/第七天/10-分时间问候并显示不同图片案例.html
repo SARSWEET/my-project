@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 300px;
+            /* 设置图片的宽度为 300 像素 */
+        }
+    </style>
+</head>
+
+<body>
+    <img src="images/s.gif" alt=""> <!-- 初始图片，显示上午的问候图片 -->
+    <div>上午好</div> <!-- 初始文字，显示上午的问候语 -->
+
+    <script>
+        // 根据系统的当前时间来判断显示不同的图片和问候语，使用 JavaScript 的日期对象。
+        // 使用 if-else 语句（多分支判断）设置不同的图片和文字内容。
+        // 通过操作 img 元素的 src 属性来切换图片，通过操作 div 元素的 innerHTML 属性来切换问候语。
+
+        // 1. 获取元素
+        var img = document.querySelector('img'); // 获取 img 元素，用于更换图片
+        var div = document.querySelector('div'); // 获取 div 元素，用于更换文字问候语
+
+        // 2. 获取当前系统时间的小时数
+        var date = new Date(); // 创建一个新的 Date 对象，表示当前时间
+        var h = date.getHours(); // 获取当前时间的小时部分（0-23）
+
+        // 3. 判断当前小时数，修改图片和文字内容
+        if (h < 12) {
+            // 如果小时数小于 12，表示是上午
+            img.src = 'images/s.gif'; // 设置图片为上午的图片
+            div.innerHTML = '上午好 好好敲代码'; // 设置问候语为"上午好"
+        } else if (h < 18) {
+            // 如果小时数在 12 到 18 之间，表示是下午
+            img.src = 'images/x.gif'; // 设置图片为下午的图片
+            div.innerHTML = '下午好 好好敲代码'; // 设置问候语为"下午好"
+        } else {
+            // 如果小时数大于等于 18，表示是晚上
+            img.src = 'images/w.gif'; // 设置图片为晚上的图片
+            div.innerHTML = '晚上好 好好敲代码'; // 设置问候语为"晚上好"
+        }
+    </script>
+</body>
+
+</html>

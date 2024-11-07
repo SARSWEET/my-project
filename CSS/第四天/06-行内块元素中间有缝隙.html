@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用浮动排列元素</title>
+    <style>
+        div {
+            /* 使用浮动使元素左对齐排列 */
+            float: left;
+
+            /* 设置每个 div 的宽度和高度 */
+            width: 150px;
+            height: 200px;
+
+            /* 设置背景色以便于观察 */
+            background-color: pink;
+
+            /* 注释掉的 display: inline-block; 
+               使用该方法会导致盒子中间有空隙
+               但使用 float 后就不需要这个属性了 */
+            /* display: inline-block; */
+
+            /* 浮动（float）的特点：
+               1. 元素会脱离普通文档流
+               2. 元素会尽可能靠左（float: left;）或靠右（float: right;）
+               3. 浮动元素会紧挨着前一个浮动元素（如果有的话）
+               4. 浮动元素不会影响未浮动元素的文本内容，文字会环绕浮动元素
+               5. 浮动元素会造成父元素高度塌陷，需要清除浮动（clearfix）来解决 */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 这三个 div 会水平排列，没有间隙 -->
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+
+    <!-- 注意：使用浮动后，需要注意清除浮动，以防止影响后续元素的布局 -->
+</body>
+
+</html>

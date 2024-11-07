@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .slider-bar {
+            position: absolute;
+            left: 50%;
+            top: 300px;
+            margin-left: 600px;
+            width: 45px;
+            height: 130px;
+            background-color: pink;
+        }
+
+        .w {
+            width: 1200px;
+            margin: 10px auto;
+        }
+
+        .header {
+            height: 150px;
+            background-color: purple;
+        }
+
+        .banner {
+            height: 250px;
+            background-color: skyblue;
+        }
+
+        .main {
+            height: 1000px;
+            background-color: yellowgreen;
+        }
+
+        span {
+            display: none;
+            position: absolute;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider-bar">
+        <span class="goBack">返回顶部</span>
+    </div>
+    <div class="header w">头部区域</div>
+    <div class="banner w">banner区域</div>
+    <div class="main w">主体部分</div>
+    <script>
+        // 1. 获取页面中的重要元素
+        var sliderbar = document.querySelector('.slider-bar'); // 侧边栏元素
+        var banner = document.querySelector('.banner'); // banner 区域元素
+
+        // 获取 banner 元素距离页面顶部的距离（固定的初始位置）
+        var bannerTop = banner.offsetTop;
+
+        // 计算侧边栏在 banner 顶部被卷去后的偏移量，方便固定定位时使用
+        var sliderbarTop = sliderbar.offsetTop - bannerTop;
+
+        // 获取 main 主体内容的元素
+        var main = document.querySelector('.main');
+        var goBack = document.querySelector('.goBack'); // 返回顶部的按钮元素
+        var mainTop = main.offsetTop; // main 区域距离页面顶部的距离
+
+        // 2. 为页面添加滚动事件 scroll，用于处理页面滚动时侧边栏和返回按钮的显示逻辑
+        document.addEventListener('scroll', function () {
+            // 3. 当页面被卷去的高度超过 banner 的位置时，侧边栏变为固定定位，否则为绝对定位
+            if (window.pageYOffset >= bannerTop) {
+                sliderbar.style.position = 'fixed';
+                sliderbar.style.top = sliderbarTop + 'px'; // 设置固定定位后的顶部位置
+            } else {
+                sliderbar.style.position = 'absolute';
+                sliderbar.style.top = '300px'; // 保持绝对定位的初始位置
+            }
+
+            // 4. 当页面被卷去的高度超过 main 区域时，显示返回顶部按钮，否则隐藏
+            if (window.pageYOffset >= mainTop) {
+                goBack.style.display = 'block'; // 显示返回顶部按钮
+            } else {
+                goBack.style.display = 'none'; // 隐藏返回顶部按钮
+            }
+        });
+
+        // 3. 点击返回顶部按钮时，窗口滚动到页面最上方
+        goBack.addEventListener('click', function () {
+            // 使用自定义的缓动动画函数使返回顶部更平滑
+            animate(window, 0);
+        });
+
+        // 缓动动画函数，用于实现平滑滚动效果
+        function animate(obj, target, callback) {
+            // 先清除之前的计时器，防止多次触发导致动画冲突
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function () {
+                // 计算缓动步长，每次减少总距离的 1/10
+                var step = (target - window.pageYOffset) / 10;
+                // 向上取整或向下取整，确保缓动步长不会有小数
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+
+                // 如果已经到达目标位置，则清除计时器，并执行回调函数（如果有）
+                if (window.pageYOffset == target) {
+                    clearInterval(obj.timer);
+                    if (callback) {
+                        callback();
+                    }
+                }
+                // 滚动页面，向目标位置前进一个步长
+                scroll(0, window.pageYOffset + step);
+            }, 15); // 每 15 毫秒执行一次，创建平滑的动画效果
+        }
+    </script>
+</body>
+
+</html>

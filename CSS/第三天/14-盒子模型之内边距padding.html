@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒子模型之内边距</title>
+    <style>
+        div {
+            /* 设置盒子的基本尺寸 */
+            width: 200px;
+            height: 200px;
+
+            /* 设置背景颜色以可视化盒子区域 */
+            background-color: pink;
+
+            /* 设置内边距 */
+            padding-left: 20px;
+            /* 左内边距 */
+            padding-top: 30px;
+            /* 上内边距 */
+
+            /* 内边距（Padding）说明：
+               1. 内边距是内容区域与边框之间的空间
+               2. 内边距会增加元素的实际尺寸
+               3. 内边距区域会显示背景颜色
+               
+               当前盒子的实际尺寸：
+               宽度 = 200px(内容) + 20px(左内边距) = 220px
+               高度 = 200px(内容) + 30px(上内边距) = 230px */
+
+            /* 其他内边距设置方法：
+               padding-right: 10px;
+               padding-bottom: 15px;
+               
+               简写形式：
+               padding: 30px 20px 15px 20px; (上 右 下 左)
+               padding: 30px 20px; (上下 左右)
+               padding: 30px; (所有方向) */
+
+            /* 注意：
+               - 内边距会影响元素的实际大小
+               - 内边距通常用于增加内容与边界的间距
+               - 内边距区域会应用背景色和背景图像 */
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        盒子内容是content盒子内容是content盒子内容是content盒子内容是content盒子内容是content
+    </div>
+</body>
+
+</html>

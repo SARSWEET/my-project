@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Flex Property Example</title>
+    <style>
+        section {
+            display: flex;
+            /* 将父元素设置为弹性布局容器 */
+            width: 60%;
+            /* 设置容器的宽度为父元素宽度的60% */
+            height: 150px;
+            /* 设置容器的高度为150像素 */
+            background-color: pink;
+            /* 设置容器的背景颜色为粉红色 */
+            margin: 0 auto;
+            /* 使容器在页面中水平居中 */
+        }
+
+        div:nth-child(1) {
+            width: 100px;
+            /* 设置第一个子元素的宽度为100像素 */
+            height: 120px;
+            /* 设置第一个子元素的高度为120像素 */
+            background-color: red;
+            /* 设置第一个子元素的背景颜色为红色 */
+        }
+
+        div:nth-child(3) {
+            width: 100px;
+            /* 设置第三个子元素的宽度为100像素 */
+            height: 120px;
+            /* 设置第三个子元素的高度为120像素 */
+            background-color: blue;
+            /* 设置第三个子元素的背景颜色为蓝色 */
+        }
+
+        div:nth-child(2) {
+            flex: 1;
+            /* 第二个子元素占用父容器剩余空间的1份 */
+            /* 当第二个盒子设置了flex: 1时，它将占据除第一个和第三个子元素之外的所有可用空间 */
+            /* 因此，第三个盒子被挤到了最左边，因为第二个盒子扩展了它的宽度，直到占据了父容器的所有剩余空间 */
+            background-color: green;
+            /* 设置第二个子元素的背景颜色为绿色 */
+        }
+
+        p {
+            display: flex;
+            /* 将父元素设置为弹性布局容器 */
+            width: 60%;
+            /* 设置容器的宽度为父元素宽度的60% */
+            height: 150px;
+            /* 设置容器的高度为150像素 */
+            background-color: pink;
+            /* 设置容器的背景颜色为粉红色 */
+            margin: 100px auto;
+            /* 使容器在页面中水平居中，并添加顶部外边距 */
+        }
+
+        span {
+            flex: 1;
+            /* 每个 span 元素平均分配剩余空间 */
+            /* 由于 span 元素未设置宽度和高度，flex 将它们扩展到可用空间 */
+        }
+
+        span:nth-child(2) {
+            flex: 2;
+            /* 第二个 span 元素占用剩余空间的两份 */
+            background-color: purple;
+            /* 设置第二个 span 元素的背景颜色为紫色 */
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div></div> <!-- 第一个子元素 -->
+        <div></div> <!-- 第二个子元素，设置了 flex: 1 -->
+        <div></div> <!-- 第三个子元素 -->
+    </section>
+    <p>
+        <span>1</span> <!-- 第一个 span 元素，设置了 flex: 1 -->
+        <span>2</span> <!-- 第二个 span 元素，设置了 flex: 2 -->
+        <span>3</span> <!-- 第三个 span 元素，设置了 flex: 1 -->
+    </p>
+</body>
+
+</html>

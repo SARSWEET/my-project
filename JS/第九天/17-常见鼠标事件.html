@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    我是一段不愿意分享的文字
+
+    <script>
+        // 1. 禁用右键菜单：通过监听 'contextmenu' 事件，调用 preventDefault() 方法来阻止默认右键菜单的显示
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });
+
+        // 2. 禁止选中文字：通过监听 'selectstart' 事件，调用 preventDefault() 方法来阻止用户选中页面中的文字
+        document.addEventListener('selectstart', function (e) {
+            e.preventDefault();
+        });
+    </script>
+</body>
+
+</html>

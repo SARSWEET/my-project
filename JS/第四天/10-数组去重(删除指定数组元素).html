@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 将数组 [2, 0, 6, 1, 77, 0, 52, 0, 25, 7] 中的 0 去掉后，形成一个不包含 0 的新数组
+        // 1. 需要一个新数组用于存放筛选后的数据
+        var arr = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7]; // 定义一个包含多个元素的数组
+        var newArr = []; // 初始化一个空数组，用于存放筛选后的数据
+
+        // 2. 遍历原来的数组，把不是 0 的数据添加到新数组里面
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] != 0) {
+                // 3. 新数组的索引通过 length 的不断增加来代替
+                newArr[newArr.length] = arr[i]; // 将非 0 元素存入新数组
+            }
+        }
+
+        // 输出新数组
+        console.log(newArr); // 输出不包含 0 的新数组
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
+

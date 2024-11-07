@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!-- 指定文档类型为HTML5，确保浏览器按照HTML5标准解析文档 -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 设置文档的字符编码为UTF-8，支持国际化字符集 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 视口设置，确保网页在移动设备上的可视性和可用性 -->
+    <title>Switch语句注意事项</title>
+    <!-- 网页标题，反映了页面内容或功能 -->
+    <script>
+        // JavaScript代码区域开始
+        // 本脚本演示了switch语句的使用及其注意事项
+
+        // switch语句是一种多分支选择结构，用于基于不同的条件执行不同的代码块
+        var num = 1; // 定义变量num并赋值为1
+
+        switch (num) {
+            case 1:
+                console.log(1); // 如果num等于1，输出1
+            // 注意：这里没有break语句，所以会继续执行下一个case
+            case 2:
+                console.log(2); // 如果num等于1或2，输出2
+                break; // break语句用于退出switch结构
+            case 3:
+                console.log(3); // 如果num等于3，输出3
+                break; // break语句用于退出switch结构
+            default:
+                // 如果num不等于1、2或3，不执行任何操作
+                break; // 默认情况下也应该有break语句，即使它不执行任何操作
+        }
+
+        // 注意事项：
+        // 1.在switch语句中，表达式的值通常是变量或者可以计算出结果的表达式
+        // 2.每个case的值必须是全等于switch表达式的值，即值和类型都必须匹配（===）
+        // 3.如果case语句中缺少break，控制流将会继续执行下一个case，直到遇到break或者switch结构结束
+    </script>
+</head>
+
+<body>
+    <!-- 网页主体内容 -->
+</body>
+
+</html>

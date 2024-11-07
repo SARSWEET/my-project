@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!-- 文档类型声明，指定了文档是HTML5 -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- meta标签定义文档的字符编码为UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 视口设置，确保网页在不同设备上正确显示，且初始缩放比例为1 -->
+    <title>成绩评定系统</title>
+    <!-- 网页标题 -->
+    <script>
+        // JavaScript代码区域开始
+        // 该脚本用于根据用户输入的分数，弹出不同的评价信息
+
+        // 提示用户输入分数，并将输入值赋给变量score
+        var score = prompt('请输入您的分数:');
+
+        // 使用条件语句根据分数范围判断并弹出相应的评价
+        if (score >= 90) {
+            // 如果分数大于等于90，弹出优秀的评价
+            alert('宝贝,你是我的骄傲');
+        } else if (score >= 80) {
+            // 如果分数大于等于80且小于90，弹出良好的评价
+            alert('宝贝,你已经很出色了');
+        } else if (score >= 70) {
+            // 如果分数大于等于70且小于80，弹出中等的评价
+            alert('你要继续加油咯');
+        } else if (score >= 60) {
+            // 如果分数大于等于60且小于70，弹出及格的评价
+            alert('孩子你很危险');
+        } else {
+            // 如果分数小于60，弹出不及格的评价
+            alert('熊孩子,我不想和你说话,我只想用鞭子和你说话');
+        }
+    </script>
+</head>
+
+<body>
+    <!-- 网页主体内容 -->
+</body>
+
+</html>

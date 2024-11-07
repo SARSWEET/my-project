@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* CSS 类选择器
+           语法: .类名 { 属性: 值; }
+           
+           特点:
+           1. 以点(.)开头定义
+           2. 可以被多个HTML元素复用
+           3. 一个HTML元素可以使用多个类
+           4. 类选择器是前端开发中最常用的选择器之一 */
+
+        /* 定义一个名为'red'的类，设置文本颜色为红色 */
+        .red {
+            color: red;
+        }
+
+        /* 定义一个名为'star-sing'的类，设置文本颜色为绿色 */
+        .star-sing {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 无序列表 -->
+    <ul>
+        <!-- 应用'red'类的列表项，文本将显示为红色 -->
+        <li class="red">冰雨</li>
+        <li class="red">来生缘</li>
+
+        <!-- 未应用类的列表项，将使用默认样式 -->
+        <li>李香兰</li>
+        <li>生僻字</li>
+
+        <!-- 应用'star-sing'类的列表项，文本将显示为绿色 -->
+        <li class="star-sing">江南style</li>
+    </ul>
+</body>
+
+</html>

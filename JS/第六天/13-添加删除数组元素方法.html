@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /**
+         * 数组元素的添加和删除方法
+         * 
+         * 本示例演示了四种常用的数组操作方法：
+         * 1. push()    - 在数组末尾添加元素
+         * 2. unshift() - 在数组开头添加元素
+         * 3. pop()     - 删除数组最后一个元素
+         * 4. shift()   - 删除数组第一个元素
+         */
+
+        var arr = [1, 2, 3];
+
+        // 1. push() 方法：在数组末尾添加一个或多个元素
+        console.log(arr.push(4, 'pink')); // 输出新数组的长度
+        console.log(arr);
+        /**
+         * push() 方法特点：
+         * - 可以添加一个或多个元素
+         * - 参数是要添加的元素
+         * - 返回新数组的长度
+         * - 会改变原数组
+         */
+
+        console.log('----------------------------------------');
+
+        // 2. unshift() 方法：在数组开头添加一个或多个元素
+        console.log(arr.unshift('red', 'purple')); // 输出新数组的长度
+        console.log(arr);
+        /**
+         * unshift() 方法特点：
+         * - 可以添加一个或多个元素
+         * - 参数是要添加的元素
+         * - 返回新数组的长度
+         * - 会改变原数组
+         */
+
+        // 3. pop() 方法：删除数组的最后一个元素
+        console.log(arr.pop()); // 输出被删除的元素
+        console.log(arr);
+        /**
+         * pop() 方法特点：
+         * - 不需要参数
+         * - 返回被删除的元素
+         * - 会改变原数组
+         */
+
+        // 4. shift() 方法：删除数组的第一个元素
+        console.log(arr.shift()); // 输出被删除的元素
+        console.log(arr);
+        /**
+         * shift() 方法特点：
+         * - 不需要参数
+         * - 返回被删除的元素
+         * - 会改变原数组
+         */
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

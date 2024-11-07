@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"> <!-- 设置字符编码为UTF-8，以支持多种语言 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 确保在移动设备上显示正确 -->
+    <title>Document</title> <!-- 网页标题 -->
+</head>
+
+<body>
+    <!-- 按钮用于开始和停止定时器 -->
+    <button class="begin">开启定时器</button> <!-- 开始定时器的按钮 -->
+    <button class="stop">停止定时器</button> <!-- 停止定时器的按钮 -->
+
+    <script>
+        var begin = document.querySelector('.begin'); // 选择“开启定时器”按钮
+        var stop = document.querySelector('.stop'); // 选择“停止定时器”按钮
+        var timer = null; // 声明一个全局变量timer，用于存储定时器的ID，初始值为null
+
+        begin.addEventListener('click', function () {
+            // 使用setInterval每秒执行一次指定的函数
+            // 因为timer是在函数外声明的，可以在这里直接赋值，确保可以在其他地方访问
+            timer = setInterval(function () {
+                console.log('你好吗'); // 每秒输出“你好吗”到控制台
+            }, 1000); // 1000毫秒（1秒）的间隔
+        });
+
+        stop.addEventListener('click', function () {
+            clearInterval(timer); // 清除定时器，停止输出
+            // clearInterval需要传入定时器的ID，以停止特定的定时任务
+        });
+    </script>
+</body>
+
+</html>

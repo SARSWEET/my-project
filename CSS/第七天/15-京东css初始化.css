@@ -1,0 +1,125 @@
+/* 
+ * 把我们所有标签的内外边距清零 
+ * 这是一个常见的重置样式，确保不同浏览器之间的默认样式一致性。
+ */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* 
+ * em 和 i 斜体的文字不倾斜 
+ * 将 <em> 和 <i> 元素的字体样式从默认的斜体 (italic) 变为正常 (normal)，
+ * 通常用于重置样式，避免斜体影响设计效果。
+ */
+em,
+i {
+    font-style: normal;
+}
+
+/* 
+ * 去掉 li 元素的小圆点 
+ * 移除列表项 (<li>) 的默认列表样式（通常是小圆点），
+ * 使得列表项变为无序列表的样式。
+ */
+li {
+    list-style: none;
+}
+
+img {
+    /* 
+     * border: 0 照顾低版本浏览器
+     * 早期浏览器在 <img> 元素外面包裹链接时，会为图片添加边框。
+     * 通过设置 border: 0; 来移除这个默认边框。
+     */
+    border: 0;
+
+    /* 
+     * 取消图片底侧有空白缝隙的问题 
+     * 设置 vertical-align: middle; 使图片的底部对齐文本中线，
+     * 解决图片底部出现空白缝隙的问题，这是由于图片默认是 inline 元素。
+     */
+    vertical-align: middle;
+}
+
+button {
+    /* 
+     * 当鼠标经过 button 按钮时，鼠标指针变为小手 (pointer) 
+     * 表示该元素是可点击的，增强用户交互体验。
+     */
+    cursor: pointer;
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+    /* 
+     * 移除链接文本的默认下划线，并将文本颜色设置为灰色 (#666)，
+     * 以符合设计风格。
+     */
+}
+
+a:hover {
+    color: #c81623;
+    /* 
+     * 当鼠标悬停在链接上时，将文本颜色变为红色 (#c81623)，
+     * 以突出显示用户当前交互的链接。
+     */
+}
+
+button,
+input {
+    /* 
+     * 设置按钮和输入框的字体家族，以确保在不同操作系统和浏览器中的兼容性。
+     * "\5B8B\4F53" 是 "宋体" 的 Unicode 表示法，确保中文字体的兼容性。
+     */
+    font-family: Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif;
+}
+
+body {
+    /* 
+     * CSS3 抗锯齿性 
+     * 使用 -webkit-font-smoothing: antialiased; 让文字显示更加清晰，
+     * 尤其在 MacOS 系统上。
+     */
+    -webkit-font-smoothing: antialiased;
+
+    background-color: #fff;
+    /* 
+     * 设置背景颜色为白色，并定义字体和行高 (1.5)。
+     * 使用 Microsoft YaHei 等字体，确保中文显示效果良好。
+     */
+    font: 12px/1.5 Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif;
+    color: #666;
+    /* 设置文本颜色为灰色 (#666)，以保持一致的视觉风格。 */
+}
+
+.hide,
+.none {
+    display: none;
+    /* 
+     * 为元素添加类名 .hide 和 .none 时，使用 display: none; 隐藏元素，
+     * 使其不占据页面上的空间。
+     */
+}
+
+/* 清除浮动 
+ * 使用 clearfix 技术，通过在浮动容器的末尾插入一个伪元素，
+ * 来清除浮动元素对容器的影响，确保容器能包裹住浮动元素。
+ */
+.clearfix:after {
+    visibility: hidden;
+    clear: both;
+    display: block;
+    content: ".";
+    height: 0;
+}
+
+/* 
+ * 清除浮动的另一种方法是为 .clearfix 设置 *zoom: 1;
+ * 这是针对 IE6/IE7 浏览器的 hack 技术，可以触发 hasLayout，
+ * 但由于这些浏览器已经过时，此部分代码被注释掉。
+ */
+/* .clearfix {
+    *zoom: 1;
+} */

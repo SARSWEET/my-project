@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>背景位置-混合单位示例</title>
+    <style>
+        div {
+            /* 设置元素尺寸 */
+            width: 300px;
+            height: 300px;
+
+            /* 设置背景颜色 */
+            background-color: pink;
+
+            /* 设置背景图片 */
+            background-image: url(images/logo.png);
+
+            /* 禁止背景图片平铺 */
+            background-repeat: no-repeat;
+
+            /* 混合单位背景定位示例 */
+
+            /* 示例1: x轴使用像素，y轴使用关键词 */
+            background-position: 20px center;
+
+            /* 示例2: x轴使用关键词，y轴使用像素 */
+            background-position: center 20px;
+
+            /* 注意：
+               - 可以混合使用像素值和关键词（left, center, right, top, bottom）
+               - 顺序很重要：第一个值总是表示水平位置，第二个值表示垂直位置
+               - 如果只指定一个值，另一个值会默认为 center */
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

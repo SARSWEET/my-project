@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 为 img 元素设置初始样式 */
+        img {
+            width: 150px;
+            /* 设置图片宽度为150像素 */
+
+            /* 在这里，transform: rotate(45deg); 可以顺时针旋转图片45度， 
+               但已被注释掉以展示其他效果 */
+            /* border-radius: 50%; 将图片裁剪为圆形 */
+            border-radius: 50%;
+
+            /* 为图片添加5像素宽的粉色实线边框 */
+            border: 5px solid pink;
+
+            /* 为所有样式变化设置过渡效果，使效果更为平滑，持续时间为0.3秒 */
+            transition: all 0.3s;
+        }
+
+        /* 当鼠标悬停在图片上时，应用以下样式 */
+        img:hover {
+            /* 使图片在悬停时顺时针旋转360度，创建旋转动画效果 */
+            transform: rotate(360deg);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 显示一个图片，图片路径为 "media/pic.jpg"，没有指定的替代文本 -->
+    <img src="media/pic.jpg" alt="">
+</body>
+
+</html>

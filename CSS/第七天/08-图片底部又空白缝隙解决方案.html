@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片底部有空白缝隙解决方案</title>
+    <style>
+        div {
+            border: 1px solid red;
+            /* 给 div 容器添加红色边框，方便查看布局效果 */
+        }
+
+        img {
+            /* 
+             * 图片底部通常会出现空白缝隙，这是因为 img 默认是行内块元素 (inline-block)，
+             * 它的底部会与父元素的基线对齐，而基线以下通常会有一些空间，造成视觉上的缝隙。
+             */
+
+            /* vertical-align: middle; */
+            /* 
+             * 通过设置 vertical-align 为 middle 或其他值，可以减少或消除缝隙，
+             * 但这不是最直接的解决方案。
+             */
+
+            display: block;
+            /* 
+             * 更直接的解决方案是将 img 的 display 属性设置为 block，
+             * 使其变为块级元素，不再作为行内元素处理，直接消除缝隙。
+             * 这样 img 会占据父元素的整个宽度，并且底部不会再有多余的空白空间。
+             */
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="images/ldh.jpg" alt="">
+    </div>
+</body>
+
+</html>

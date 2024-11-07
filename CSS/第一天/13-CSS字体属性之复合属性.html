@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* CSS 字体属性的复合写法 */
+
+        div {
+            /* 以下是分别设置各个字体属性的方式 */
+            /*
+            font-style: italic;    // 斜体
+            font-weight: 700;      // 粗体（等同于bold）
+            font-size: 16px;       // 字体大小
+            font-family: 'Microsoft yahei'; // 字体族
+            */
+
+            /* 复合属性写法（简写方式）
+               语法: font: font-style font-weight font-size font-family
+               注意: 
+               1. font-size 和 font-family 是必须的，其他可以省略
+               2. 如果使用复合写法，属性的顺序不能改变 */
+
+            /* 完整的复合写法示例 */
+            /* font: italic 700 16px 'Microsoft yahei'; */
+
+            /* 当前使用的简化复合写法
+               这里只指定了字体大小和字体族
+               省略了 font-style 和 font-weight，它们将使用默认值（normal） */
+            font: 50px '黑体';
+        }
+    </style>
+</head>
+
+<body>
+    <div>三生三世十里桃花,一心一意百行代码</div>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 冒泡排序算法
+        // 冒泡排序是一种简单的排序算法，通过重复地遍历要排序的列表，
+        // 依次比较相邻的元素并交换它们的位置来排序列表。
+        // 该算法的名称来源于较大的元素会逐渐“冒泡”到列表的顶端。
+
+        // 定义一个包含五个整数的数组
+        var arr = [4, 1, 2, 3, 5];
+
+        // 外层循环控制排序的趟数
+        // 每次外层循环都会将一个最大值“冒泡”到数组的末尾
+        for (let i = 0; i < arr.length; i++) {
+            // 内层循环控制每一趟的比较和交换次数
+            // 每次内层循环都会比较相邻的两个元素，并将较大的元素交换到后面
+            // arr.length - 1 - i 确保每次内层循环的比较次数逐渐减少，
+            // 因为每次外层循环都会将一个最大值固定在数组的末尾
+            for (let j = 0; j < arr.length - 1 - i; j++) {
+                // 比较相邻的两个元素，如果前一个元素小于后一个元素，则交换它们
+                if (arr[j] < arr[j + 1]) {
+                    // 使用临时变量 temp 交换 arr[j] 和 arr[j + 1] 的值
+                    var temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+
+        // 输出排序后的数组
+        console.log(arr); // 输出结果为 [5, 4, 3, 2, 1]
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

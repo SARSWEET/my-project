@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>块级元素</title>
+    <style>
+        /* 块级元素（<div>）的 CSS 样式 */
+        div {
+            /* 块级元素的特点：
+               1. 独占一行
+               2. 可以设置宽度（width）和高度（height）
+               3. 可以设置内边距（padding）和外边距（margin）
+               4. 默认宽度是父容器的100% */
+
+            /* 设置高度为 200px */
+            height: 200px;
+            /* 设置背景颜色为粉色 */
+            background-color: pink;
+
+            /* 注释掉的宽度设置 */
+            /* width: 200px; */
+
+            /* 其他可能的属性：
+               margin: 10px;  设置外边距
+               padding: 20px; 设置内边距 */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 块级元素示例 -->
+    <div>比较霸道,自己独占一行</div>瑟瑟发抖
+
+    <!-- 注意：这是一个不规范的嵌套 -->
+    <p>
+    <div>这里有问题</div>
+    </p>
+    <!-- 警告：<div> 不应该放在 <p> 内部，这是不符合 HTML 规范的 -->
+</body>
+
+</html>

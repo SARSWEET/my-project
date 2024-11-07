@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 重置所有元素的内边距和外边距，确保不同浏览器下的默认样式一致 */
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        /* 设置body背景图片，背景图像不平铺，垂直顶部对齐，水平居中 */
+        body {
+            background: url(images/1.jpg) no-repeat center top;
+        }
+
+        /* 去除列表项的默认样式（小圆点） */
+        li {
+            list-style: none;
+        }
+
+        /* 
+        .baidu类容器的样式：
+        - 用于包裹图片，设置了居中对齐、宽度、背景颜色和上内边距。
+        - 通过 overflow: hidden 清除子元素浮动，防止父元素高度塌陷。
+        - 宽度410px，背景色白色，确保图片不会超出容器边界。 
+        */
+        .baidu {
+            overflow: hidden;
+            /* 清除子元素浮动 */
+            margin: 100px auto;
+            /* 上外边距100px，水平居中 */
+            background-color: #fff;
+            /* 背景色为白色 */
+            width: 410px;
+            /* 宽度设为410px，确保显示4张图片 */
+            padding-top: 3px;
+            /* 上内边距3px，防止图片贴顶 */
+        }
+
+        /* 
+        设置 .baidu类中的li元素的样式：
+        - 每个 li 元素水平排列（float: left），之间有 1px 间距，鼠标悬停时显示为手型。
+        - 用户通过点击每个图片，改变页面背景。
+        */
+        .baidu li {
+            float: left;
+            /* 使li元素水平排列 */
+            margin: 0 1px;
+            /* 每个li元素水平间隔1px */
+            cursor: pointer;
+            /* 鼠标悬停时显示为手型，提示可点击 */
+        }
+
+        /* 设置 .baidu类中的 img 元素：图片宽度固定为100px，高度自动调整，保持宽高比 */
+        .baidu img {
+            width: 100px;
+            /* 图片宽度设为100px，高度根据宽度自动适应 */
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="baidu">
+        <!-- 每个li内嵌一个图片，用户点击图片可以切换页面的背景图 -->
+        <li><img src="images/1.jpg" alt=""></li>
+        <li><img src="images/2.jpg" alt=""></li>
+        <li><img src="images/3.jpg" alt=""></li>
+        <li><img src="images/4.jpg" alt=""></li>
+    </ul>
+
+    <script>
+        // 1. 获取 .baidu 容器内所有 img 标签，使用 querySelectorAll 获取所有图片元素
+        var imgs = document.querySelector('.baidu').querySelectorAll('img');
+
+        // 2. 遍历所有图片，给每一张图片添加点击事件
+        for (let i = 0; i < imgs.length; i++) {
+            /*
+             每当用户点击某一张图片时：
+             - this 代表当前点击的图片元素。
+             - this.src 获取当前图片的地址路径，例如 'images/2.jpg'。
+             - 将该图片的路径设置为 body 的背景图片，从而实现点击图片时，页面背景图片跟随变化。
+            */
+            imgs[i].onclick = function () {
+                // 修改 body 的背景图片为当前点击图片的路径
+                document.body.style.backgroundImage = 'url(' + this.src + ')';
+            };
+        }
+    </script>
+</body>
+
+</html>

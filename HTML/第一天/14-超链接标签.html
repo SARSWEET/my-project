@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h4>1.外部链接</h4>
+    <!-- 外部链接：指向其他网站的链接 -->
+
+    target打开窗口的方式默认是_self 当前窗口打开
+    <a href="http://www.qq.com" target="_self">腾讯</a>
+    <!-- target="_self" 在当前窗口打开链接（默认行为） -->
+
+    _blank 新窗口打开
+    <a href="http://www.baidu.com" target="_blank">百度</a>
+    <!-- target="_blank" 在新窗口或新标签页中打开链接 -->
+
+    <h4>2.内部链接</h4>
+    <a href="gongsijianjie.html">公司简介</a>
+    <!-- 内部链接：指向同一网站内的其他页面 
+         这里假设 gongsijianjie.html 在同一目录下 -->
+
+    <h4>3.空连接: #</h4>
+    <a href="#">公司地址</a>
+    <!-- 空链接：href="#" 通常用于临时链接或JavaScript触发的动作 -->
+
+    <h4>4.下载链接 地址链接的是文件 .exe .zip等形式</h4>
+    <a href="img.zip">下载文件</a>
+    <!-- 下载链接：链接指向可下载的文件 
+         浏览器通常会下载而不是打开这类文件 -->
+
+    <h4>5.网页元素的链接 如音频视频图片可成为链接</h4>
+    <a href="http://www.baidu.com"><img src="img.jpg" alt=""></a>
+    <!-- 图片链接：将图片包裹在 <a> 标签中使其可点击 
+         点击图片会跳转到指定的URL（这里是百度） -->
+</body>
+
+</html>

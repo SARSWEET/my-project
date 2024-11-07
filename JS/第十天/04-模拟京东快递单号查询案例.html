@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            /* 清除所有元素的默认边距 */
+            padding: 0;
+            /* 清除所有元素的默认内边距 */
+        }
+
+        .search {
+            position: relative;
+            /* 使子元素的绝对定位相对于此元素 */
+            width: 178px;
+            /* 设置搜索框的宽度 */
+            margin: 100px;
+            /* 设置上外边距，距离页面顶部100px */
+        }
+
+        .con {
+            display: none;
+            /* 默认隐藏大号盒子 */
+            position: absolute;
+            /* 绝对定位，以便在输入框上方显示 */
+            top: -40px;
+            /* 控制盒子与输入框的垂直距离 */
+            width: 171px;
+            /* 设置盒子的宽度 */
+            border: 1px solid rgba(0, 0, 0, .2);
+            /* 设置盒子的边框样式 */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+            /* 添加阴影效果，提升视觉层次感 */
+            padding: 5px 0;
+            /* 设置上下内边距，以增加内容的可读性 */
+            font-size: 18px;
+            /* 设置字体大小 */
+            line-height: 20px;
+            /* 设置行高，确保文本垂直居中 */
+            color: #333;
+            /* 设置文本颜色 */
+        }
+
+        .con::before {
+            content: '';
+            /* 创建一个空内容以实现箭头效果 */
+            width: 0;
+            /* 不设置宽度 */
+            height: 0;
+            /* 不设置高度 */
+            position: absolute;
+            /* 绝对定位以控制箭头位置 */
+            top: 28px;
+            /* 箭头距离盒子顶部的距离 */
+            left: 18px;
+            /* 箭头距离盒子左侧的距离 */
+            border: 8px solid #000;
+            /* 箭头的边框颜色 */
+            border-style: solid dashed dashed;
+            /* 设置箭头的边框样式 */
+            border-color: #fff transparent transparent;
+            /* 设置箭头的颜色，形成箭头形状 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="search">
+        <div class="con"></div> <!-- 显示快递单号的盒子 -->
+        <input type="text" placeholder="请输入您的快递单号" class="jd"> <!-- 输入框，用于输入快递单号 -->
+    </div>
+    <script>
+        // 获取大号盒子和输入框元素
+        var con = document.querySelector('.con'); // 大号盒子元素
+        var jd_input = document.querySelector('.jd'); // 输入框元素
+
+        // 监听输入框的键盘事件，检测输入变化
+        jd_input.addEventListener('keyup', function (e) {
+            // 'keyup' 事件确保输入框中显示的内容已更新
+            if (this.value == '') {
+                con.style.display = 'none'; // 如果输入框为空，则隐藏盒子
+            } else {
+                con.style.display = 'block'; // 否则，显示盒子
+                con.innerHTML = this.value; // 更新盒子内容为输入框中的值
+            }
+        });
+
+        // 失去焦点时隐藏盒子
+        jd_input.addEventListener('blur', function () {
+            con.style.display = 'none'; // 隐藏盒子
+        });
+
+        // 获得焦点时显示盒子
+        jd_input.addEventListener('focus', function () {
+            if (this.value !== '') {
+                con.style.display = 'block'; // 如果输入框有值，显示盒子
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Scope Example</title>
+    <script>
+        // JavaScript作用域示例
+
+        // 1. 传统JavaScript作用域
+        // JavaScript在ES6之前只有两种作用域:
+        // a) 全局作用域: 在任何函数外部声明的变量
+        // b) 局部作用域(函数作用域): 在函数内部声明的变量
+
+        // 2. 块级作用域
+        // ES6引入了块级作用域,使用let和const关键字
+        // 块级作用域包括: if块, for循环, while循环等大括号{}包围的区域
+
+        // 3. var关键字的作用域
+        // var声明的变量没有块级作用域,只有函数作用域
+        if (3 < 5) {
+            var num = 10; // 尽管在if块内声明,num仍然是函数作用域(这里是全局作用域)
+        }
+        console.log(num); // 输出: 10
+
+        // 4. let和const的块级作用域(ES6+)
+        // 如果使用let或const,变量将被限制在块级作用域内
+        /* 
+        if (3 < 5) {
+            let blockScopedNum = 20;
+        }
+        console.log(blockScopedNum); // 将抛出ReferenceError,因为blockScopedNum只在if块内可访问
+        */
+
+        // 5. 对比其他语言
+        // 很多其他编程语言(如Java, C++)默认支持块级作用域
+        /* 
+        // Java示例:
+        if (condition) {
+            int javaNum = 30;
+        }
+        // System.out.println(javaNum); // 在Java中,这行代码会导致编译错误,因为javaNum只在if块内可见
+        */
+    </script>
+</head>
+<body>
+    <!-- 页面内容可以在这里添加 -->
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>背景简写属性示例</title>
+    <style>
+        body {
+            /* 使用单独的属性设置背景（已注释掉）
+            background-image: url(images/bg.jpg);
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-attachment: fixed;
+            */
+
+            /* 使用 background 简写属性 */
+            background: black url(images/bg.jpg) no-repeat fixed center top;
+
+            /* background 简写属性的顺序：
+               1. background-color: black
+               2. background-image: url(images/bg.jpg)
+               3. background-repeat: no-repeat
+               4. background-attachment: fixed
+               5. background-position: center top
+
+               注意：
+               - 顺序不是严格固定的，但建议遵循一致的顺序以提高可读性
+               - 可以省略某些值，未指定的值会使用默认值
+               - 颜色通常放在最前面，作为备用（如果图片加载失败）
+            */
+
+            /* 其他可能有用的样式：
+            color: white;  确保文本在深色背景上可见
+            font-family: Arial, sans-serif;  设置字体
+            line-height: 1.6;  增加行高，提高可读性
+            padding: 20px;  添加内边距 */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 重复的段落用于创建足够的内容，以便页面可以滚动 -->
+    <p>天王盖地虎</p>
+    <!-- ... 重复多次 ... -->
+</body>
+
+</html>

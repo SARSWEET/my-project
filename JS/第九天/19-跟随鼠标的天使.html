@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        img {
+            position: absolute;
+            /* 一定记得设置绝对定位，以便能够自由移动 */
+            top: 2px;
+            /* 初始设置图片距离顶部2像素 */
+        }
+    </style>
+</head>
+
+<body>
+    <img src="images/angel.gif" alt="">
+    <script>
+        // 1. 鼠标移动事件：只要鼠标移动，就会触发这个事件
+        var pic = document.querySelector('img'); // 获取 img 元素
+        document.addEventListener('mousemove', function (e) { // 监听文档的鼠标移动事件
+            // 核心原理：每次鼠标移动都会获取鼠标的坐标，将 x 和 y 坐标作为图片的 top 和 left 值，移动图片
+            var x = e.pageX; // 鼠标相对于页面文档的 x 坐标
+            var y = e.pageY; // 鼠标相对于页面文档的 y 坐标
+            console.log('x坐标是' + x, 'y坐标是' + y); // 打印鼠标坐标
+            pic.style.left = x + 'px'; // 设置图片的左边距，注意加单位
+            pic.style.top = y + 'px'; // 设置图片的上边距
+        });
+    </script>
+</body>
+
+</html>
+ 

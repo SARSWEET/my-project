@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>按钮</button> <!-- 点击后会修改输入框内容并禁用按钮 -->
+    <input type="text" value="输入内容"> <!-- 输入框，初始值为 "输入内容" -->
+
+    <script>
+        // 1. 获取元素
+        var btn = document.querySelector('button'); // 获取按钮元素
+        var input = document.querySelector('input'); // 获取输入框元素
+
+        // 2. 绑定事件，编写事件处理程序
+        btn.onclick = function () {
+            // 修改表单元素的值是通过操作 input 的 value 属性来实现的
+            // 不能使用 innerHTML，因为这是适用于普通的 HTML 元素（如 div），而不是表单元素
+            input.value = '被点击了'; // 修改输入框的值为 "被点击了"
+
+            // 禁用按钮：使用 this.disabled = true;
+            // 这里的 this 指向调用此函数的元素，即 btn
+            this.disabled = true; // 禁用按钮，防止再次点击
+        }
+    </script>
+</body>
+
+</html>

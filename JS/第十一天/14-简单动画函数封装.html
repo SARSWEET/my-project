@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 设置div元素的样式 */
+        div {
+            position: absolute;
+            /* 绝对定位，确保元素可以通过left属性移动 */
+            left: 0;
+            /* 初始位置设为0 */
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            /* 设置背景颜色 */
+        }
+
+        /* 设置span元素的样式 */
+        span {
+            display: block;
+            /* 使span作为块级元素，便于调整大小和位置 */
+            position: absolute;
+            /* 绝对定位 */
+            top: 150px;
+            /* 距离顶部150px */
+            left: 0;
+            /* 初始位置设为0 */
+            width: 150px;
+            height: 150px;
+            background-color: purple;
+            /* 设置背景颜色 */
+        }
+    </style>
+</head>
+
+<body>
+    <div></div> <!-- 用于动画的div元素 -->
+    <span></span> <!-- 用于动画的span元素 -->
+
+    <script>
+        // 将动画逻辑封装成函数，便于复用
+        var div = document.querySelector('div'); // 获取页面中的div元素
+        var span = document.querySelector('span'); // 获取页面中的span元素
+
+        // 动画函数
+        // 参数1: obj - 要移动的元素
+        // 参数2: target - 元素移动的目标位置(距离左边的像素值)
+        function animate(obj, target) {
+            var timer = setInterval(function () {
+                // 判断元素当前位置是否达到目标位置
+                if (obj.offsetLeft >= target) {
+                    clearInterval(timer); // 达到目标，停止动画
+                }
+                obj.style.left = obj.offsetLeft + 1 + 'px'; // 向右移动1px
+            }, 1); // 设置定时器为每1毫秒执行一次，形成平滑动画效果
+        }
+
+        // 调用动画函数
+        animate(div, 400); // 将div元素移动到400px的位置
+        animate(span, 500); // 将span元素移动到500px的位置
+    </script>
+</body>
+
+</html>

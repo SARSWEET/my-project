@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 设置 li 元素的初始样式 */
+        li {
+            float: left;
+            /* 使 li 元素左浮动排列，允许多个 li 并排显示 */
+            width: 30px;
+            /* 设置 li 的宽度为 30 像素 */
+            height: 30px;
+            /* 设置 li 的高度为 30 像素 */
+            margin: 10px;
+            /* 设置 li 元素之间的外边距为 10 像素 */
+            border: 1px solid pink;
+            /* 为 li 添加 1 像素的粉色边框 */
+            border-radius: 50%;
+            /* 将 li 元素的边角设为圆形 */
+            text-align: center;
+            /* 设置文本水平居中 */
+            line-height: 30px;
+            /* 设置行高为 30 像素，使文本在垂直方向上居中 */
+            list-style: none;
+            /* 去除 li 的默认项目符号 */
+            cursor: pointer;
+            /* 将鼠标指针变为手形，提示元素可点击 */
+            transition: all 0.4s;
+            /* 为所有样式变化设置过渡效果，持续时间为 0.4 秒 */
+        }
+
+        /* 当鼠标悬停在 li 上时，应用缩放效果 */
+        li:hover {
+            transform: scale(1.2);
+            /* 将 li 元素放大 1.2 倍 */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 无序列表，每个 li 元素通过悬停可触发缩放效果 -->
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5新增input表单</title>
+</head>
+
+<body>
+    <!-- 
+         * 验证的时候必须添加 form 表单域 
+         * 在表单验证过程中，浏览器会自动根据 input 的类型进行基本的格式验证。
+         * 例如，email 类型会验证输入的内容是否符合电子邮件地址的格式。
+         * 这些验证需要在 form 表单中进行。
+         -->
+    <form action="">
+        <ul>
+            <li>邮箱: <input type="email"></li>
+            <!-- 
+                 * type="email"：
+                 * 用于输入电子邮件地址。浏览器会在用户提交表单时验证输入内容是否为有效的电子邮件格式。
+                 * 例如，是否包含 "@" 和 "."。
+                 -->
+
+            <li>网址: <input type="url"></li>
+            <!-- 
+                 * type="url"：
+                 * 用于输入网址。浏览器会验证输入内容是否符合 URL 格式。
+                 * 例如，确保以 "http://" 或 "https://" 开头。
+                 -->
+
+            <li>日期: <input type="date"></li>
+            <!-- 
+                 * type="date"：
+                 * 用于选择日期。大多数现代浏览器会提供一个日期选择器，允许用户从日历中选择日期。
+                 * 输入格式通常为 "YYYY-MM-DD"。
+                 -->
+
+            <li>时间: <input type="time"></li>
+            <!-- 
+                 * type="time"：
+                 * 用于选择时间。大多数现代浏览器会提供一个时间选择器，允许用户选择小时和分钟。
+                 * 输入格式通常为 "HH:MM"。
+                 -->
+
+            <li>数量: <input type="number"></li>
+            <!-- 
+                 * type="number"：
+                 * 用于输入数字。浏览器会显示数字输入控件（如上下箭头），允许用户递增或递减输入值。
+                 * 还可以通过设置 min 和 max 属性来限制输入范围。
+                 -->
+
+            <li>手机号码: <input type="tel"></li>
+            <!-- 
+                 * type="tel"：
+                 * 用于输入电话号码。尽管浏览器不会对格式进行严格验证，但它提示输入的内容应符合电话号码格式。
+                 * 在移动设备上，通常会弹出适合输入电话号码的数字键盘。
+                 -->
+
+            <li>搜索: <input type="search"></li>
+            <!-- 
+                 * type="search"：
+                 * 用于搜索输入。与普通文本输入类似，但在某些浏览器中会显示一个清除按钮。
+                 * 适合用于站内搜索框。
+                 -->
+
+            <li>颜色: <input type="color"></li>
+            <!-- 
+                 * type="color"：
+                 * 用于选择颜色。浏览器会显示一个颜色选择器，允许用户从调色板中选择颜色。
+                 * 返回的值通常为十六进制颜色码（如 "#ff0000"）。
+                 -->
+
+            <!-- 点击提交按钮就可验证 -->
+            <li>提交: <input type="submit"></li>
+            <!-- 
+                 * type="submit"：
+                 * 用于提交表单。点击按钮后，表单中的所有内容将根据 action 属性指定的 URL 提交。
+                 * 如果 input 类型包含如 email、url、number 等，浏览器会在提交前自动进行验证。
+                 -->
+        </ul>
+    </form>
+</body>
+
+</html>

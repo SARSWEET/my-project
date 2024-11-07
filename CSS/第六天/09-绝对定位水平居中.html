@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>绝对定位水平垂直居中</title>
+    <style>
+        .box {
+            position: absolute;/* 简单来说 当盒子绝对定位 margin auto不再生效 浏览器无法自动计算左右的宽度 但是具体的margin值还是生效的*/
+            /* 1.left走50% 父元素宽度的一半 */
+            left: 50%;
+            /* 2.margin 负值 往左走自己宽度的一半 */
+            margin-left: -100px;
+            top: 50%;
+            margin-top: -100px;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            /* margin: auto; */
+            /* 注意：虽然设置了 margin: auto，但在绝对定位下不会实现居中 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>

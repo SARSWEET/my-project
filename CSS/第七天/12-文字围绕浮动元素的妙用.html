@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文字围绕浮动元素的妙用</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            /* 重置所有元素的默认边距和填充，确保布局的一致性。 */
+        }
+
+        .box {
+            width: 300px;
+            height: 70px;
+            background-color: pink;
+            margin: 0 auto;
+            /* 
+             * 设置盒子的宽度为300px，并通过 `margin: 0 auto;` 使其水平居中显示。
+             */
+            padding: 5px;
+            /* 给盒子内部添加一些填充，使内容不紧贴边框。 */
+        }
+
+        .pic {
+            float: left;
+            width: 120px;
+            height: 60px;
+            margin-right: 5px;
+            /* 
+             * 将图片容器 `.pic` 设置为浮动，使其在左侧浮动。
+             * 宽度设置为120px，高度为60px，右侧留出5px的间距，避免文字紧贴图片。
+             */
+        }
+
+        .pic img {
+            width: 100%;
+            /* 
+             * 设置图片的宽度为容器的100%，确保图片自适应容器的宽度。
+             * 这样图片无论大小如何，都会按比例缩放以适应容器。
+             */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="pic">
+            <img src="images/img.png" alt="">
+        </div>
+        <p>[集锦]热身赛-巴西0-1秘鲁 内马尔替补两人血染赛场</p>
+        <!-- 
+             * 由于 `.pic` 容器浮动，文本会围绕浮动元素排列。
+             * 这种布局方式使图片和文本紧密结合，适合新闻标题或简短描述的展示。
+             -->
+    </div>
+</body>
+
+</html>

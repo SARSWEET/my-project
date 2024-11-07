@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 800px;
+            /* 表格宽度设置为800像素 */
+            margin: 100px auto;
+            /* 设置表格上下外边距为100像素，左右居中 */
+            text-align: center;
+            /* 单元格中的文本居中对齐 */
+            border-collapse: collapse;
+            /* 将表格的边框合并成一条线 */
+            font-size: 14px;
+            /* 设置表格字体大小为14像素 */
+        }
+
+        thead tr {
+            height: 30px;
+            /* 设置表头行的高度 */
+            background-color: skyblue;
+            /* 设置表头行的背景颜色为天蓝色 */
+        }
+
+        tbody tr {
+            height: 30px;
+            /* 设置表体行的高度 */
+        }
+
+        tbody td {
+            border-bottom: 1px solid #d7d7d7;
+            /* 给表体单元格添加底部边框，颜色为灰色 */
+            font-size: 12px;
+            /* 设置表体单元格的字体大小为12像素 */
+            color: blue;
+            /* 设置表体单元格文本颜色为蓝色 */
+        }
+
+        .bg {
+            background-color: pink;
+            /* 鼠标经过时添加的背景颜色为粉色 */
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>代码</th>
+                <th>名称</th>
+                <th>最新公布净值</th>
+                <th>累计净值</th>
+                <th>前单位净值</th>
+                <th>净值增长率</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- 表格的内容部分 -->
+            <tr>
+                <td>003526</td>
+                <td>农银金穗3个月定期开放债券</td>
+                <td>1.075</td>
+                <td>1.079</td>
+                <td>1.074</td>
+                <td>+0.047%</td>
+            </tr>
+            <!-- 这里可以继续添加更多行，已省略 -->
+        </tbody>
+    </table>
+
+    <script>
+        // 1. 获取 tbody 内部所有的 tr 元素（即表格的每一行）
+        var trs = document.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+        // 注意：这里我们使用了 [0] 来获取 tbody 的第一个元素，因为 document.getElementsByTagName('tbody') 返回的是一个数组（即使页面上只有一个 tbody）。
+        // 如果不加 [0]，会报错，因为无法直接对整个数组调用 getElementsByTagName('tr') 方法。
+
+        // 2. 使用 for 循环遍历每一行，为每一行绑定鼠标事件
+        for (let i = 0; i < trs.length; i++) {
+            // 3. 鼠标经过时触发的事件 onmouseover
+            trs[i].onmouseover = function () {
+                this.className = 'bg'; // 当鼠标经过当前行时，为其添加 'bg' 类，背景颜色会变成粉色
+            }
+
+            // 4. 鼠标移开时触发的事件 onmouseout
+            trs[i].onmouseout = function () {
+                this.className = ''; // 当鼠标离开当前行时，移除 'bg' 类，恢复原来的样式
+            }
+        }
+    </script>
+</body>
+
+</html>

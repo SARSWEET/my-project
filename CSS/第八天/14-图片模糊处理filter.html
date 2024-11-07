@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片模糊处理 filter</title>
+    <style>
+        /*
+         * img {
+         *     filter: blur(0);
+         * }
+         * 
+         * 这段代码被注释掉了，表示默认情况下图片不模糊 (blur 值为 0)。
+         * 如果不注释掉这段代码，图片在正常状态下会显示为清晰的。
+         */
+
+        /* 
+         * 当鼠标悬停在图片上时，图片将变得模糊。
+         * filter: blur(15px); 应用模糊滤镜，值越大，图片越模糊。
+         * 这里使用了 15px 的模糊效果，表示较强的模糊程度。
+         */
+        img:hover {
+            filter: blur(15px);
+        }
+    </style>
+</head>
+
+<body>
+    <img src="images/pink.jpg" alt="">
+</body>
+
+</html>

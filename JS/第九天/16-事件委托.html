@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>知否知否,点我应有弹框在手</li>
+        <li>知否知否,点我应有弹框在手</li>
+        <li>知否知否,点我应有弹框在手</li>
+        <li>知否知否,点我应有弹框在手</li>
+        <li>知否知否,点我应有弹框在手</li>
+    </ul>
+
+    <script>
+        // 事件委托的核心原理: 给父节点添加事件监听器，利用事件冒泡机制影响每一个子节点
+        var ul = document.querySelector('ul'); // 选择页面中的<ul>元素
+        ul.addEventListener('click', function (e) { // 监听<ul>的点击事件
+            alert('冒泡了'); // 点击子元素时，事件冒泡到父元素，执行该事件处理函数
+            e.target.style.backgroundColor = 'pink'; // 将被点击的子元素背景颜色更改为粉色
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div getTime="20" data-index="2" data-list-name="andy"></div>
+    <script>
+        // 获取页面中的第一个 div 元素
+            var div = document.querySelector('div');
+
+            // 尝试直接获取自定义属性 'getTime'，但由于 'getTime' 不是标准的 DOM 属性，
+            // 不能通过这种方式直接获取，结果为 undefined
+            console.log(div.getTime);
+
+            // 使用 getAttribute() 方法可以正确获取自定义属性 'getTime' 的值
+            console.log(div.getAttribute('getTime')); // 输出 20
+
+            // 为了区分自定义属性和 HTML 元素自带属性，HTML5 规范规定自定义属性必须以 'data-' 开头。
+            // 使用 setAttribute() 方法设置一个自定义属性 'data-time'，并赋值为 20
+            div.setAttribute('data-time', 20); // 设置一个自定义属性，名为 'data-time'，值为 20
+
+            // 使用 getAttribute() 获取 'data-index' 和 'data-list-name' 属性的值
+            console.log(div.getAttribute('data-index')); // 输出 2
+            console.log(div.getAttribute('data-list-name')); // 输出 'andy'
+
+            // HTML5 提供了 dataset 属性来方便操作所有 'data-' 开头的自定义属性。
+            // 使用 div.dataset 获取所有 'data-' 开头的自定义属性，这会返回一个包含这些属性的集合
+            console.log(div.dataset); // 输出 {index: "2", listName: "andy", time: "20"}
+
+            // 通过 dataset 访问具体的自定义属性 'data-index'，属性名去掉 'data-'，直接使用后面的部分
+            console.log(div.dataset.index); // 输出 2
+            console.log(div.dataset['index']); // 使用数组形式访问属性，效果与上面相同
+
+            // 如果自定义属性包含多个单词（如 'data-list-name'），dataset 会自动转换为驼峰命名法。
+            // 使用 dataset 访问 'data-list-name'，结果是 listName
+            console.log(div.dataset.listName); // 输出 'andy'
+            console.log(div.dataset['listName']); // 同样可以使用数组形式访问
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS权重与继承练习</title>
+    <style>
+        /* 类选择器 .nav */
+        .nav {
+            color: red;
+            /* 权重: 0,0,1,0 */
+            /* 这个样式会应用到 <ul> 元素，但不会直接应用到 <li> 元素 */
+        }
+
+        /* 元素选择器 li */
+        li {
+            color: pink;
+            /* 权重: 0,0,0,1 */
+            /* 这个样式会直接应用到所有的 <li> 元素 */
+        }
+
+        /* CSS 权重和继承要点：
+           1. 继承的样式权重为 0，比任何直接应用的样式权重都低
+           2. 直接应用到元素的样式总是优先于继承的样式
+           3. 即使父元素使用了权重更高的选择器，子元素的直接样式仍然会覆盖继承的样式
+        */
+    </style>
+</head>
+
+<body>
+    <ul class="nav">
+        <li>人生四大悲</li>
+        <li>家里没宽带</li>
+        <li>网速不够快</li>
+        <li>手机没流量</li>
+        <li>学校没wifi</li>
+        <!-- 所有的 <li> 元素最终会显示为粉色（pink）
+             因为 li {} 选择器直接作用于这些元素，覆盖了从 .nav 继承的红色 -->
+    </ul>
+</body>
+
+</html>

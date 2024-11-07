@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"> <!-- 设置文档字符编码为UTF-8，以支持多种语言字符 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 设定视口以适应不同设备，确保响应式设计 -->
+    <title>Document</title> <!-- 网页标题，将显示在浏览器标签上 -->
+</head>
+
+<body>
+    <script>
+        // 监听键盘的松开事件
+        document.addEventListener('keyup', function (e) {
+            // 打印出按键的 ASCII 码值
+            console.log(e.keyCode); // keyCode 属性返回被按下的键的 ASCII 码值（已被弃用，推荐使用 e.key）
+
+            // 打印出被按下的键的名称（例如 "a"、"Enter"）
+            console.log(e.key); // key 属性返回被按下的实际键的值
+
+            // 打印出被按下的键的代码（例如 "KeyA"、"Enter"）
+            console.log(e.code); // code 属性返回键盘的物理按键位置（例如 "KeyA" 对应字母 "A" 键）
+        });
+    </script>
+</body>
+
+</html>

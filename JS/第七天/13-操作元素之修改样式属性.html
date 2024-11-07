@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 设置 div 元素的初始样式 */
+        div {
+            width: 200px;
+            /* 设置 div 的宽度为 200px */
+            height: 200px;
+            /* 设置 div 的高度为 200px */
+            background-color: pink;
+            /* 将 div 的背景颜色设为粉色 */
+        }
+    </style>
+</head>
+
+<body>
+    <div></div> <!-- 一个没有内容的 div 元素，用于演示点击事件 -->
+
+    <script>
+        // 1.获取 div 元素
+        var div = document.querySelector('div'); // 使用 querySelector 选择第一个 div 元素
+
+        // 2.绑定点击事件，设置事件处理程序
+        div.onclick = function () {
+            /* 点击 div 时，执行以下操作 */
+
+            // 采用驼峰命名法来设置样式属性
+            // background-color 在 JavaScript 中使用驼峰命名法，即 backgroundColor
+
+            // JavaScript 修改的样式会被直接添加到行内样式中，具有较高的优先级
+            div.style.backgroundColor = 'purple'; // 修改背景颜色为紫色
+            div.style.width = '300px'; // 修改宽度为 300px
+        }
+    </script>
+</body>
+
+</html>

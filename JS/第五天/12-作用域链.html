@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 作用域链：JavaScript中的变量访问机制
+        // 定义：作用域链是JavaScript引擎在查找变量时遵循的路径。它决定了代码中的变量访问权限和优先级。
+
+        // 特点：
+        // 1. 链式查找：从当前作用域开始，逐级向上查找，直到找到变量或到达全局作用域。
+        // 2. 就近原则：优先使用最近的作用域中定义的变量。
+        // 3. 内部函数可以访问外部函数的变量，反之则不行。
+
+        // 示例：通过嵌套函数演示作用域链
+        var num = 10;  // 全局作用域变量
+
+        function fn() {  // 外部函数
+            var num = 20;  // 函数作用域变量，遮蔽了全局变量
+
+            function fun() {  // 内部函数
+                console.log(num);  // 将输出20，因为最近的作用域中num的值是20
+            }
+
+            fun();  // 调用内部函数
+        }
+
+        fn();  // 调用外部函数，触发整个作用域链
+
+        // 注意：
+        // - ES6引入的let和const关键字提供了块级作用域，可以更精确地控制变量的可见性。
+        // - 过深的嵌套可能导致性能问题，因为变量查找需要遍历更长的作用域链。
+        // - 理解作用域链对于避免变量冲突和优化代码结构至关重要。
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

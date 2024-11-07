@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单轮廓和防止拖拽文本域</title>
+    <style>
+        input,
+        textarea {
+            outline: none;
+            /* 
+             * 取消表单元素的默认轮廓（outline），
+             * 当表单元素获得焦点时，不会出现默认的轮廓边框。
+             * 这种设置通常用于自定义表单样式，但要确保用户仍然能识别出获得焦点的元素。
+             */
+        }
+
+        textarea {
+            resize: none;
+            /* 
+             * 禁止用户拖动调整文本域的大小，
+             * 通常用于设计需要固定大小的文本域，确保布局的一致性。
+             * 这种设置在需要固定文本域尺寸的情况下非常有用，但也要考虑用户体验。
+             */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 1.取消表单轮廓 -->
+    <input type="text">
+    <!-- 2.防止拖拽文本域 -->
+    <textarea name="" id="" rows="10"></textarea>
+</body>
+
+</html>

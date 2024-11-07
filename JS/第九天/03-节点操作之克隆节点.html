@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+    <script>
+        // 1. 获取父元素 <ul>
+        // 使用 `document.querySelector('ul')` 来选择页面中的第一个 <ul> 元素
+        var ul = document.querySelector('ul');
+        console.log(ul); // 将获取到的 <ul> 元素输出到控制台
+
+        // 2. 克隆第一个 <li> 元素
+        // `ul.children[0]` 代表获取 <ul> 内的第一个子元素，即第一个 <li>
+        // `cloneNode()` 方法用于克隆这个 <li> 元素
+        // 当 `cloneNode(false)` 或括号为空时，表示浅拷贝，只复制元素本身，不复制其中的内容
+        // 当 `cloneNode(true)` 时，表示深拷贝，会复制元素及其所有子内容
+        var lili = ul.children[0].cloneNode();
+
+        // 3. 将克隆的 <li> 元素追加到 <ul> 中
+        // 使用 `appendChild()` 方法将克隆的元素插入到父元素 <ul> 的最后
+        ul.appendChild(lili);
+
+        // 注释代码：这段代码展示了另一种获取 <li> 元素的方法
+        // 通过 `document.querySelectorAll('li')` 获取所有 <li> 元素，并选择第一个
+        // 然后通过 `cloneNode()` 克隆该元素
+        // var lis = document.querySelectorAll('li');
+        // var lili = lis[0].cloneNode();
+    </script>
+</body>
+
+</html>

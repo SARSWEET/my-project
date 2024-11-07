@@ -1,0 +1,423 @@
+/* 全局样式重置，移除所有元素的默认内外边距 */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* 通用容器类，设置页面主体内容宽度并水平居中 */
+.w {
+    width: 1200px;
+    margin: auto;
+}
+
+/* 设置页面整体背景色 */
+body {
+    background-color: #f3f5f7;
+}
+
+/* 移除所有列表项的默认样式 */
+li {
+    list-style: none;
+}
+
+/* 重置所有链接的默认样式 */
+a {
+    text-decoration: none;
+    color: #050505;
+}
+
+/* 页面头部区域样式 */
+.header {
+    height: 42px;
+    /* background-color: pink; */
+    margin: 30px auto;
+    /* 此处会层叠w里面的margin，确保头部与页面顶部有足够间距 */
+}
+
+/* Logo样式设置 */
+.logo {
+    float: left;
+    width: 198px;
+    height: 42px;
+    /* background-color: purple; */
+}
+
+/* 导航栏整体样式 */
+.nav {
+    float: left;
+    margin-left: 60px;
+    /* background-color: yellow; */
+}
+
+/* 导航栏列表项样式 */
+.nav ul li {
+    float: left;
+    /* 这里给li加浮动而不是给a加浮动，因为是块级元素li导致了a不在一行  */
+    margin: 0 15px;
+    /* 这里通过给li左右外边距来推开盒子，如果给a内边距会导致下面的下划线延长 */
+}
+
+/* 导航栏链接样式 */
+.nav ul li a {
+    display: inline-block;
+    /* 由于a是行内元素不可以直接设置高度,因此需要转换为行内块元素 */
+    height: 42px;
+    /* 这里设置行高是为了扩大可点击区域 */
+    padding: 0 10px;
+    /* 通过padding来自动适应不同长度的导航文本，而不是固定宽度 */
+    line-height: 42px;
+    font-size: 18px;
+    /* background-color: skyblue; */
+}
+
+/* 导航栏链接悬停效果 */
+.nav ul li a:hover {
+    border-bottom: 2px solid #00a4ff;
+    color: #00a4ff;
+}
+
+/* search搜索模块样式 */
+.search {
+    float: left;
+    /* 一浮全浮，保持布局一致性 */
+    width: 412px;
+    height: 42px;
+    /* background-color: skyblue; */
+    margin-left: 70px;
+}
+
+/* 搜索输入框样式 */
+.search input {
+    /* input属于行内块元素可以直接设置宽高 */
+    float: left;
+    width: 345px;
+    height: 40px;
+    border: 1px solid #00a4ff;
+    border-right: 0;
+    font-size: 14px;
+    padding-left: 15px;
+    /* 这里由于input已经设置了宽度，增加左内边距会撑大盒子，因此需要将原来的宽度减去左内边距 */
+}
+
+/* 搜索按钮样式 */
+.search button {
+    float: left;
+    /* 由于文本框和按钮都属于行内块元素，中间默认会有缝隙，都添加浮动后可解决 */
+    width: 50px;
+    height: 42px;
+    background-color: blue;
+    border: 0;
+    /* 清除按钮默认的边框 */
+    background-image: url(images/btn.png);
+}
+
+/* 用户信息模块样式 */
+.user {
+    float: right;
+    line-height: 42px;
+    margin-right: 30px;
+    font-size: 14px;
+    color: #666;
+}
+.user img {
+    vertical-align: middle;
+}
+
+/* banner区域整体样式 */
+.banner {
+    height: 421px;
+    background-color: #1c036c;
+}
+
+/* banner内容区域样式 */
+.banner .w {
+    height: 421px;
+    background: url(images/banner2_20190819_210028.png) no-repeat top center
+}
+
+/* banner左侧导航样式 */
+.subnav {
+    float: left;
+    width: 190px;
+    /* 块级元素默认会占据父元素全部可用宽度，但这不属于继承 */
+    height: 421px;
+    /* 子元素会继承父亲的行高而不是高度  */
+    background: rgba(0, 0, 0, 0.3);
+}
+
+/* 左侧导航列表项样式 */
+.subnav ul li {
+    height: 45px;
+    /* 这里li设置了固定的行高，不会影响li的高度而是会垂直对齐 */
+    line-height: 45px;
+    /* 这里给li设置的line-height会被a继承，通常设置给li*/
+    padding: 0 20px;
+    /* li总宽不变：因为li没有设置宽度,默认占满父宽(190px)。padding压缩内容区，不增加总宽 */
+}
+
+/* 左侧导航链接样式 */
+.subnav ul li a {
+    font-size: 14px;
+    color: #fff;
+}
+
+/* 左侧导航链接中的span元素（用于显示 > 符号）*/
+.subnav ul li a span {
+    float: right;
+}
+
+/* 左侧导航链接悬停效果 */
+.subnav ul li a:hover {
+    color: #00a4ff;
+}
+
+/* 课程信息模块样式 */
+.course {
+    float: right;
+    width: 230px;
+    height: 300px;
+    background-color: #fff;
+    /* 在标准流里如果给子盒子添加上外边距会出现塌陷的问题，但是浮动的盒子不会出现外边距合并 */
+    margin-top: 50px;
+}
+
+/* 课程信息标题样式 */
+.course h2 {
+    height: 48px;
+    background-color: #9bceea;
+    text-align: center;
+    line-height: 48px;
+    font-size: 18px;
+    color: #fff;
+}
+
+/* 课程信息内容区域样式 */
+.bd {
+    padding: 0 20px;
+}
+
+/* 课程列表项样式 */
+.bd ul li {
+    padding: 14px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+/* 课程标题样式 */
+.bd ul li h4 {
+    font-size: 16px;
+    color: #4e4e4e;
+}
+
+/* 课程描述样式 */
+.bd ul li p {
+    font-size: 12px;
+    color: #a5a5a5;
+}
+
+/* "全部课程"链接样式 */
+.bd .more {
+    display: block;
+    /* 因为a是行内元素，这里需要转换为块级元素才能设置高度 */
+    height: 38px;
+    border: 1px solid #00a4ff;
+    margin-top: 5px;
+    text-align: center;
+    line-height: 38px;
+    color: #00a4ff;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* goods精品推荐模块样式 */
+.goods {
+    /* padding-left: 50px; */
+    /* 
+   由于.goods添加了.w类, .goods会继承.w的宽度,相当于.goods也设置了固定宽度。
+   在默认的content-box盒模型下,直接加padding会使.goods的总宽度超出预期。
+   这里最好的方式是给内部元素h3和.mod添加margin-left和margin-right来调整位置,
+   这样可以保持.goods的原有宽度不变。
+*/
+    height: 60px;
+    background-color: #fff;
+    margin-top: 10px;
+    box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.1);
+    line-height: 60px;
+    /* 由于行高是可以继承的，这里给父元素设置了行高里面的子元素也会继承行高从而垂直居中 */
+}
+
+/* 精品推荐标题样式 */
+.goods h3 {
+    float: left;
+    margin-left: 30px;
+    font-size: 16px;
+    color: #00a4ff;
+}
+
+/* 精品推荐列表样式 */
+.goods ul {
+    float: left;
+    /* background-color: yellow; */
+    margin-left: 30px;
+    /* 通过给ul添加外边距来推开ul盒子且不影响ul实际的大小 */
+}
+
+/* 精品推荐列表项样式 */
+.goods ul li {
+    float: left;
+}
+
+/* 精品推荐链接样式 */
+.goods ul li a {
+    padding: 0 30px;
+    /* a属于行内元素，padding会直接影响行内元素的宽和高，不论它有没有设置宽高。行内元素的宽高取决于内容的多少，而增加padding相当于增加了内容 */
+    font-size: 16px;
+    color: #050505;
+    border-left: 1px solid #ccc;
+}
+
+/* "修改兴趣"链接样式 */
+.mod {
+    float: right;
+    margin-right: 30px;
+    font-size: 14px;
+    color: #00a4ff;
+}
+
+/* box核心内容区域样式 */
+.box {
+    margin-top: 30px;
+}
+
+/* box头部样式 */
+.box-hd {
+    height: 45px;
+    line-height: 45px;
+    /* background-color: yellow; */
+}
+
+/* box标题样式 */
+.box-hd h3 {
+    float: left;
+    font-size: 20px;
+    color: #494949;
+}
+
+/* "查看全部"链接样式 */
+.box-hd a {
+    float: right;
+    font-size: 12px;
+    color: #a5a5a5;
+    margin-right: 30px;
+}
+
+/* box内容区域样式 */
+.box-bd ul {
+    overflow: hidden;
+    /* 这里由于子元素浮动，ul的高度塌陷，因此即使这里设置了紫色背景也没有显示颜色 */
+    width: 1215px;
+    /* 这里通过把ul的宽度设置为一行足够装下5个包含15px margin值的盒子来使盒子不掉落，不需要再把每一行的最后一个盒子的margin-right消除了 */
+    /* background-color: purple; */
+}
+
+/* box内容列表项样式 */
+.box-bd ul li {
+    float: left;
+    width: 228px;
+    /* 这里由于li盒子已经设置了固定的宽度，所以即使img的原始宽度比li大也并没有撑大li盒子 */
+    height: 270px;
+    background-color: #fff;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    /* 这里由于没有设置ul的高度，当给ul清除浮动后，里面的li会撑大父盒子ul */
+}
+
+/* box内容图片样式 */
+.box-bd ul li img {
+    width: 100%;
+    /* 由于宽度和li盒子不一致，通过调整图片宽度，自动等比例适配li盒子 */
+}
+
+/* box内容标题样式 */
+.box-bd ul li h4 {
+    margin: 20px 20px 20px 25px;
+    /* 上右下左 */
+    /* background-color: yellow; */
+    font-size: 14px;
+    color: #050505;
+    font-weight: 400;
+}
+
+/* box内容信息样式 */
+.box-bd .info {
+    margin: 0 20px 0 25px;
+    font-size: 12px;
+    color: #999;
+}
+
+/* box内容价格样式 */
+.box-bd .info span {
+    color: #ff7c2d;
+}
+
+/* footer模块样式 */
+.footer {
+    height: 415px;
+    background-color: #fff;
+}
+
+/* footer内容区域样式 */
+.footer .w {
+    padding-top: 35px;
+    /* margin-top: 35px; */
+    /* 这里直接给margin-top会导致外边距合并，所以要给left一个浮动 */
+}
+
+/* 版权信息样式 */
+.copyright {
+    float: left;
+}
+
+/* 版权文本样式 */
+.copyright p {
+    font-size: 12px;
+    color: #666;
+    margin: 20px 0 15px 0;
+}
+
+/* 友情链接样式 */
+.links {
+    float: right;
+}
+
+/* 下载APP链接样式 */
+.copyright .app {
+    display: block;
+    /* 这里如果后面有其他元素，如果使用inline-block会导致其他行内元素或者行内块元素上移动至同一行，所以这里使用块元素 */
+    width: 118px;
+    height: 33px;
+    border: 1px solid #00a4ff;
+    text-align: center;
+    line-height: 33px;
+    color: #00a4ff;
+    font-size: 16px;
+}
+
+/* 友情链接列表样式 */
+.links dl {
+    float: left;
+    margin-left: 100px;
+}
+
+/* 友情链接标题样式 */
+.links dl dt {
+    /* dl dt dd是块级元素 */
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #333;
+}
+
+/* 友情链接项目样式 */
+.links dl dd a {
+    color: #333;
+    font-size: 12px;
+}

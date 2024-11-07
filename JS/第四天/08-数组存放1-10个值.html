@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 新建一个数组，里面存放 1 到 100 的整数
+        // 核心原理：使用循环来追加数组元素
+        // 1. 声明一个空数组 arr
+        var arr = [];
+        // 2. 循环中的计数器 i 可以用作数组元素存入
+        // 3. 由于数组的索引号是从 0 开始的，因此计数器从 0 开始更合适，而存入的数组元素则需要 i + 1
+        for (let i = 0; i < 100; i++) {
+            // 不要直接给数组赋值，否则之前的元素都没了
+            arr[i] = i + 1; // 将 i + 1 存入数组的第 i 个位置
+        }
+        // 输出数组
+        console.log(arr); // 输出包含 1 到 100 的数组
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

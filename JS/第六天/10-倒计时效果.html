@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /**
+         * 倒计时功能
+         * 
+         * 核心算法:
+         * 1. 计算目标时间与当前时间的差值（毫秒）
+         * 2. 将差值转换为天、时、分、秒
+         * 
+         * 注意事项:
+         * - 使用时间戳（毫秒）进行计算，避免日期计算的复杂性
+         * - 需要处理时间已过的情况（差值为负）
+         */
+
+        /**
+         * 计算并返回到指定时间的倒计时字符串
+         * @param {string} time - 目标时间，格式为 "YYYY-MM-DD HH:mm:ss"
+         * @returns {string} 格式化的倒计时字符串
+         */
+        function countDown(time) {
+            var nowTime = +new Date(); // 当前时间的时间戳
+            var inputTime = +new Date(time); // 目标时间的时间戳
+            var times = (inputTime - nowTime) / 1000; // 剩余时间（秒）
+
+            // 时间已过的处理
+            if (times < 0) {
+                return "时间已过";
+            }
+
+            // 计算天数并补零
+            var d = parseInt(times / 86400); // 86400 = 24 * 60 * 60
+            d = d < 10 ? '0' + d : d;
+
+            // 计算小时并补零
+            var h = parseInt(times / 3600 % 24);
+            h = h < 10 ? '0' + h : h;
+
+            // 计算分钟并补零
+            var m = parseInt(times / 60 % 60);
+            m = m < 10 ? '0' + m : m;
+
+            // 计算秒数并补零
+            var s = parseInt(times % 60);
+            s = s < 10 ? '0' + s : s;
+
+            return d + '天' + h + '时' + m + '分' + s + '秒';
+        }
+
+        // 示例：计算到2024年8月6日的倒计时
+        console.log(countDown('2024-8-6 0:0:0'));
+
+        // 输出当前时间，用于参考
+        var date = new Date();
+        console.log(date);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

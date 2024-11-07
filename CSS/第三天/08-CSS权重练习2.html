@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS权重与选择器特异性练习</title>
+    <style>
+        /* 后代选择器: .nav li */
+        .nav li {
+            color: red;
+            /* 权重: 0,0,1,1 (0,0,1,0 来自类选择器 .nav，0,0,0,1 来自元素选择器 li) */
+        }
+
+        /* 需求: 把第一个 li 颜色改为粉色加粗 */
+
+        /* 方法1: 子选择器 (注释掉) */
+        /* .nav > li {
+            color: pink;
+            font-weight: 700;
+            }
+            /* 权重: 0,0,1,1 (与 .nav li 相同，但由于层叠性，这个规则会覆盖上面的) */
+            
+        /* 方法2: 单独的类选择器 (注释掉) */
+        /* .pink {
+            color: pink;
+            font-weight: 700;
+            }
+            /* 权重: 0,0,1,0 (低于 .nav li 的 0,0,1,1，所以不会生效) */
+
+        /* 方法3: 组合类选择器 (当前使用的方法) */
+        .nav .pink {
+            color: pink;
+            font-weight: 700;
+            /* 权重: 0,0,2,0 (高于 .nav li 的 0,0,1,1，所以会生效) */
+        }
+
+        /* CSS 权重计算要点：
+           1. 类选择器 (如 .nav, .pink) 的权重是 0,0,1,0
+           2. 元素选择器 (如 li) 的权重是 0,0,0,1
+           3. 组合选择器的权重是其组成部分的总和
+           4. 权重相同时，后定义的规则会覆盖先定义的规则（层叠性）
+           5. 更具体的选择器通常会有更高的权重 */
+    </style>
+</head>
+
+<body>
+    <ul class="nav">
+        <li class="pink">人生四大悲</li>
+        <!-- 这个 li 元素会应用 .nav .pink 的样式：粉色且加粗 -->
+        <li>家里没宽带</li>
+        <li>网速不够快</li>
+        <li>手机没流量</li>
+        <li>学校没wifi</li>
+        <!-- 其他 li 元素会应用 .nav li 的样式：红色 -->
+    </ul>
+</body>
+
+</html>

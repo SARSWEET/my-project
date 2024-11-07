@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 递增运算符的使用
+
+        // 使用递增运算符简化变量自增
+        // 直接使用 num++ 或 ++num 替代 num = num + 1
+        var num = 1;
+        num++; // 等同于 num = num + 1
+        num++; // 再次自增
+        console.log(num); // 输出 3
+
+        // 前置递增运算符（++变量）
+        // 前置递增会先将变量增加 1，然后返回新值
+        var age = 10;
+        ++age; // age 现在是 11
+        console.log(age); // 输出 11
+
+        // 前置递增运算符在表达式中的使用
+        // 前置递增会先增加变量的值，然后进行其他运算
+        var p = 10;
+        console.log(++p + 10); // 输出 21 (先将 p 增加到 11，然后加上 10)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

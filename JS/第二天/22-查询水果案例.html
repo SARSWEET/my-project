@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!-- 指定文档类型为HTML5，确保浏览器按照HTML5标准解析文档 -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 设置文档的字符编码为UTF-8，支持国际化字符集 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 视口设置，确保网页在移动设备上的可视性和可用性 -->
+    <title>水果价格查询工具</title>
+    <!-- 网页标题，反映了页面内容或功能 -->
+    <script>
+        // JavaScript代码区域开始
+        // 本脚本提供一个简单的水果价格查询工具
+
+        // 提示用户输入水果名称，并将输入值保存到变量fruit中
+        var fruit = prompt('请输入需要查询的水果名称:');
+        // 使用switch语句根据输入的水果名称显示不同的价格信息
+        switch (fruit) {
+            case '苹果':
+                // 如果输入的是'苹果'，则显示苹果的价格
+                alert('苹果的价格是3.5/斤');
+                break; // break语句用于退出switch结构
+            case '榴莲':
+                // 如果输入的是'榴莲'，则显示榴莲的价格
+                alert('榴莲的价格是35/斤');
+                break; // break语句用于退出switch结构
+            default:
+                // 如果输入的水果名称不是上述任何一种，则显示没有此水果
+                alert('没有此水果');
+                break; // 默认情况下也应该有break语句，即使它不执行任何操作
+        }
+    </script>
+</head>
+
+<body>
+    <!-- 网页主体内容 -->
+</body>
+
+</html>

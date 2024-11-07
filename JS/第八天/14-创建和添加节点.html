@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 定义一个ul元素，里面有一个li子元素 -->
+    <ul>
+        <li>123</li>
+    </ul>
+
+    <script>
+        // 1. 创建一个新的 li 元素节点
+        var lii = document.createElement('li');
+
+        /* 
+        2. 将新创建的 li 元素追加到 ul 的子元素最后
+        这里使用的是 appendChild 方法，它会将指定的子元素追加到父级元素的最后一个子元素之后。
+        node.appendChild(child): 
+          - node 是父级元素
+          - child 是要追加的子元素
+        */
+        var ul = document.querySelector('ul'); // 通过 querySelector 获取第一个 ul 元素
+        ul.appendChild(lii); // 将 lii 添加到 ul 内部的最后
+        /* 
+        关于带引号和不带引号的区别：
+          - 在 JavaScript 中，`lii` 是一个变量，存储的是通过 `document.createElement('li')` 创建的元素对象，因此不带引号。
+          - 如果使用字符串（例如 `'li'`），表示字符串本身，而不是变量或对象。
+          例如：`ul.querySelector('li')` 是通过标签名 'li' 获取元素，而 `lii` 是变量，不需要加引号。
+        */
+
+        /* 
+        3. 在指定的元素之前插入新元素
+        使用 insertBefore 方法，可以在指定的子元素之前插入新元素。
+        node.insertBefore(newChild, existingChild): 
+          - newChild 是要插入的新子元素
+          - existingChild 是现有的子元素，新元素将插入到这个子元素之前
+        */
+        var lili = document.createElement('li'); // 创建另一个新的 li 元素
+        ul.insertBefore(lili, ul.children[0]); // 将 lili 插入到 ul 的第一个子元素（即第一个 li 元素）之前
+
+        /*
+        总结：
+        - 使用 appendChild 时，我们在最后追加一个新元素。
+        - 使用 insertBefore 时，我们可以在指定的子元素之前插入一个新元素。
+        - 当引用 JavaScript 变量时（如 `lii` 和 `lili`），不需要加引号。如果是标签名或选择器字符串（如 'li', '.class'），需要加引号。
+        */
+
+        // 我们想要在页面中添加元素，步骤是：首先创建该元素，然后将其插入到页面中的指定位置
+    </script>
+</body>
+
+</html>

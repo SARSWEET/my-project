@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 设置背景颜色为黑色的样式类，用于页面切换效果 */
+        .bg {
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="one two"></div>
+    <button>开关</button>
+    <script>
+        // 选择页面中的第一个 <div> 元素
+        // 注意：这里选择的是 <div> 标签，而不是特定类（如 .one），
+        // 因为后续代码需要操作类名的添加与移除，而不仅仅是选择元素
+        var div = document.querySelector('div');
+
+        // 输出该 <div> 的所有类名，classList 是一个包含所有类名的数组形式的集合
+        console.log(div.classList);
+
+        // 输出 classList 中的第一个类名
+        console.log(div.classList[0]); // 输出第一个类名，方便查看
+
+        // 1. 添加类名 - 使用 classList.add('类名') 方法来添加新的类名
+        // 注意：这里不是 ".three"，不要带点，因为 .three 是类选择器的写法，
+        // 而 classList.add() 是直接添加类名的值
+        div.classList.add('three');
+
+        // 2. 删除类名 - 使用 classList.remove('类名') 方法来删除指定的类名
+        // 不会像直接赋值 className 那样覆盖所有类，而是只移除指定类
+        div.classList.remove('one');
+
+        // 3. 切换类名 - 使用 classList.toggle('类名') 实现开关效果
+        // toggle() 方法：如果元素已有该类名则移除，否则添加，实现类似开关的效果
+        // 实例：点击“开关”按钮来切换页面背景色，实现黑白模式切换
+        var btn = document.querySelector('button');
+
+        // 点击按钮时切换 body 的 .bg 类
+        // 注意：此处直接使用 document.body 代替了单独选择 body 标签，
+        // 因为 document.body 是页面 body 的直接引用，可以直接操作
+        btn.addEventListener('click', function () {
+            document.body.classList.toggle('bg');
+        });
+    </script>
+</body>
+
+</html>

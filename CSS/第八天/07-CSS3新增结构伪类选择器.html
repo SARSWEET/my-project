@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3新增结构伪类选择器</title>
+    <style>
+        /* 1.选择 ul 里面的第一个 li 元素 */
+        ul li:first-child {
+            background-color: pink;
+            /* 
+             * :first-child 伪类选择器用于选择父元素的第一个子元素。
+             * 在这里，它选择 ul 内第一个 li 元素，并将其背景颜色设置为粉红色。
+             */
+        }
+
+        /* 2.选择 ul 里面的最后一个 li 元素 */
+        ul li:last-child {
+            background-color: pink;
+            /* 
+             * :last-child 伪类选择器用于选择父元素的最后一个子元素。
+             * 在这里，它选择 ul 内最后一个 li 元素，并将其背景颜色设置为粉红色。
+             */
+        }
+
+        /* 3.选择 ul 里面的第二个 li 元素 */
+        ul li:nth-child(2) {
+            background-color: skyblue;
+            /* 
+             * :nth-child(n) 伪类选择器用于选择父元素的第 n 个子元素，
+             * 这里选择的是 ul 内的第二个 li 元素，并将其背景颜色设置为天蓝色。
+             */
+        }
+
+        /* 选择 ul 里面的第六个 li 元素 */
+        ul li:nth-child(6) {
+            background-color: skyblue;
+            /* 
+             * 同样的 :nth-child(6) 选择器用于选择 ul 内的第六个 li 元素，
+             * 并将其背景颜色设置为天蓝色。
+             */
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <p>我是谁</p> <!-- 这个 p 元素虽然也是 ul 的子元素，但由于选择器限定了 li，因此不会影响 nth-child 的选择 -->
+
+        <li>我是第1个孩子</li>
+        <li>我是第2个孩子</li>
+        <li>我是第3个孩子</li>
+        <li>我是第4个孩子</li>
+        <li>我是第5个孩子</li>
+        <li>我是第6个孩子</li>
+        <li>我是第7个孩子</li>
+        <li>我是第8个孩子</li>
+    </ul>
+</body>
+
+</html>

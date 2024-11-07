@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>今日小说排行榜案例优化</title>
+    <style>
+        /* 表格整体样式 */
+        table {
+            width: 500px;
+            height: 250px;
+        }
+
+        /* 表格边框和单元格样式 */
+        table,
+        td,
+        th {
+            /* 包括表头单元格 */
+            border: 1px solid black;
+            /* 设置边框 */
+            font-size: 14px;
+            /* 设置字体大小 */
+            text-align: center;
+            /* 文本居中对齐 */
+            border-collapse: collapse;
+            /* 合并相邻边框 */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 表格结构 -->
+    <table align="center" cellspacing="0">
+        <!-- 表头部分 -->
+        <thead>
+            <tr>
+                <th>排名</th>
+                <th>关键词</th>
+                <th>趋势</th>
+                <th>今日搜索</th>
+                <th>最近七日</th>
+                <th>相关链接</th>
+            </tr>
+        </thead>
+
+        <!-- 表格主体部分 -->
+        <tbody>
+            <!-- 每一行代表一个排名项目 -->
+            <tr>
+                <td>1</td>
+                <td>鬼吹灯</td>
+                <td><img src="down.jpg" alt="下降趋势"></td>
+                <td>345</td>
+                <td>123</td>
+                <td>
+                    <a href="#" title="鬼吹灯贴吧">贴吧</a>
+                    <a href="#" title="鬼吹灯图片">图片</a>
+                    <a href="#" title="鬼吹灯百科">百科</a>
+                </td>
+            </tr>
+            <!-- 重复的行结构，省略其他5行... -->
+        </tbody>
+    </table>
+</body>
+
+</html>

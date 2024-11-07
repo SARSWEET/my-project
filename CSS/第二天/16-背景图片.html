@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>背景图片示例</title>
+    <style>
+        div {
+            /* 设置元素宽度 */
+            width: 300px;
+            /* 设置元素高度 */
+            height: 300px;
+
+            /* 设置背景颜色
+               这将作为背景图片的底色，如果图片不是完全不透明的或未完全覆盖元素 */
+            background-color: pink;
+
+            /* 设置背景图片 */
+            background-image: url(images/logo.png);
+
+            /* 背景图片相关的其他属性（默认值）：
+               background-repeat: repeat;  图片平铺填满整个元素
+               background-position: 0% 0%;  图片位置，默认左上角
+               background-size: auto;  图片大小，默认为图片原始大小 */
+
+            /* 可以使用以下属性来调整背景图片的显示：
+               background-repeat: no-repeat;  防止图片平铺
+               background-position: center;  将图片居中显示
+               background-size: cover;  调整图片大小以覆盖整个元素 */
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

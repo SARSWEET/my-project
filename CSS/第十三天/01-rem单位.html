@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+            font-size: 12px;
+            /* 设置根元素(html)的字体大小为12px，后续使用rem单位的元素将基于这个大小进行计算 */
+        }
+
+        div {
+            font-size: 12px;
+            /* 设置div元素的字体大小为12px */
+            width: 15rem;
+            /* 宽度设置为15rem，1rem等于html元素的字体大小，这里即15 * 12px = 180px */
+            height: 15rem;
+            /* 高度设置为15rem，同上，即180px */
+            background-color: purple;
+            /* 背景颜色设置为紫色 */
+        }
+
+        p {
+            /* 1. em是相对于父元素的字体大小来计算的 */
+            /* width: 10em; 1em在此处等于div元素的字体大小12px，所以10em即120px */
+            /* height: 10em; 高度同样为120px */
+            /* 2. rem是相对于html元素的字体大小来计算的 */
+            width: 10rem;
+            /* 宽度设置为10rem，即10 * 12px = 120px */
+            height: 10rem;
+            /* 高度设置为10rem，即120px */
+            background-color: pink;
+            /* 背景颜色设置为粉红色 */
+            /* 3. rem的优点在于：我们只需调整html元素的字体大小，就可以通过rem单位实现全局的比例调整。 */
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p></p>
+    </div>
+</body>
+
+</html>

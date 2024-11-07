@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 运算符优先级从高到低：
+        // 1. 括号 ()
+        // 2. 一元运算符 ++ -- !
+        // 3. 算术运算符 * / %
+        // 4. 算术运算符 + -
+        // 5. 关系运算符 < > <= >=
+        // 6. 相等运算符 == != === !==
+        // 7. 逻辑与 &&
+        // 8. 逻辑或 ||
+        // 9. 赋值运算符 = += -= *= /=
+
+        // 一元运算符 (++num, !num) 优先级很高，二元运算符 (1 + 2) 优先级较低
+        console.log(4 >= 6 || '人' != '阿凡达' && !(12 * 2 == 144) && true); // true
+        var num = 10;
+
+        // 逻辑与 (&&) 优先于逻辑或 (||)
+        console.log(5 == num / 2 && (2 + 2 * num).toString() === '22'); // true
+
+        // 逻辑与 (&&) 连续使用，从左到右计算
+        var a = 3 > 5 && 2 < 7 && 3 == 4; // false
+        console.log(a);  
+        
+        // 逻辑或 (||) 连续使用，从左到右计算
+        var b = 3 <= 4 || 3 > 1 || 3 != 2; // true
+        console.log(b);
+
+        // 全等运算符 (===) 检查值和类型是否完全相同
+        var c = 2 === '2'; // false
+        console.log(c);
+
+        // 逻辑非 (!) 优先于逻辑与 (&&) 和逻辑或 (||)
+        var d = !c || b && a; // true
+        console.log(d);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 为div设置基础样式 */
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 创建一个用于触摸事件测试的div元素 -->
+    <div></div>
+    <script>
+        // 1. 获取div元素的引用，方便后续操作
+        var div = document.querySelector('div');
+
+        // 2. 监听手指触摸div元素的事件
+        div.addEventListener('touchstart', function () {
+            console.log('我摸了你');
+            // console.log(e); // 输出事件对象，调试用，默认注释掉
+
+            // touches: 一个包含所有当前正触摸屏幕的手指信息的列表
+            // targetTouches: 包含当前正触摸该特定DOM元素的手指信息的列表
+            // 注意：如果该事件侦听器是绑定在某个DOM元素上，那么touches和targetTouches将会一致
+            // changedTouches: 包含状态发生变化的手指信息的列表（例如，从未触摸到触摸，或从触摸到未触摸）
+        });
+
+        // 3. 监听手指在div元素上移动的事件
+        div.addEventListener('touchmove', function () {
+            console.log('我继续摸');
+        });
+
+        // 4. 监听手指离开div元素的事件
+        div.addEventListener('touchend', function (e) {
+            console.log('我离开了');
+            console.log(e); // 输出事件对象，显示触摸结束时的详细信息
+
+            // 当手指离开屏幕时，touches和targetTouches列表将为空
+            // 但changedTouches列表中仍然包含已离开屏幕的手指信息
+        });
+    </script>
+</body>
+
+</html>

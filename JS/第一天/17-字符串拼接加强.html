@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 输出字符串与数字的拼接结果
+        console.log('pink老师' + 18); // 结果: "pink老师18"
+        // 输出字符串、数字和字符串的拼接结果
+        console.log('pink老师' + 18 + '岁'); // 结果: "pink老师18岁"
+        var age = 19;
+        // 这行代码不会如预期输出，因为 'age' 被当作字符串处理
+        console.log('pink老师age岁'); // 输出: "pink老师age岁"
+        // 正确的变量拼接方式，使用变量 'age'
+        console.log('pink老师' + age + '岁'); // 结果: "pink老师19岁"
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

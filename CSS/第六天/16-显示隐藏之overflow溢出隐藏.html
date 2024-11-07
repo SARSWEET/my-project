@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>显示隐藏之overflow</title>
+    <style>
+        .peppa {
+            overflow: visible;
+            /* 
+             * overflow: visible;
+             * 这是默认值，内容即使溢出容器，也会完全显示出来，不会被裁剪。
+             */
+
+            overflow: hidden;
+            /* 
+             * overflow: hidden;
+             * 如果内容溢出容器的范围，溢出的部分会被隐藏，用户无法看到被裁剪的内容。
+             * 这在处理固定大小的容器时很有用，但需要注意，它会隐藏超出容器范围的部分。
+             * 有定位的盒子慎用 overflow: hidden，因为它可能会隐藏重要的内容。
+             */
+
+            overflow: scroll;
+            /* 
+             * overflow: scroll;
+             * 如果内容溢出，容器会显示滚动条，即使内容没有溢出，滚动条也会显示。
+             * 这适用于需要强制显示滚动条的场景，但会影响美观。
+             */
+
+            overflow: auto;
+            /* 
+             * overflow: auto;
+             * 根据内容的溢出情况，自动决定是否显示滚动条。只有在内容溢出时才会出现滚动条，
+             * 这是一个更加灵活的选择，通常在设计中更为常用。
+             */
+
+            width: 200px;
+            height: 200px;
+            border: 3px solid pink;
+            margin: 100px auto;
+            /* 
+             * 盒子有定位属性时，慎用 overflow: hidden，因为它会隐藏溢出的部分，
+             * 可能导致内容不可见，尤其是在需要显示超出边界的内容时。
+             */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="peppa">
+        《小猪佩奇》，又名《粉红猪小妹》（台湾名为粉红猪），英文名为《Peppa Pig》，是由英国人阿斯特利（Astley）、贝克（Baker）创作的儿童动画片。
+        其内容讲述了一只名叫佩奇的小猪及其家庭成员的日常生活。
+    </div>
+</body>
+
+</html>

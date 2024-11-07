@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>focus伪类选择器</title>
+    <style>
+        /* CSS :focus 伪类选择器示例 */
+
+        /* 选择获得焦点的 input 元素 */
+        input:focus {
+            background-color: pink;
+            /* 设置背景颜色为粉色 */
+            color: red;
+            /* 设置文字颜色为红色 */
+        }
+
+        /* :focus 伪类选择器的特点：
+           1. 用于选择获得焦点的元素
+           2. 常用于表单元素，如 input, textarea 等
+           3. 提高表单的可用性和用户体验
+           4. 可以与其他选择器组合使用
+           5. 对键盘导航用户特别有帮助 */
+    </style>
+</head>
+
+<body>
+    <!-- 这些 input 元素在获得焦点时会应用上面定义的样式 -->
+    <input type="text">
+    <input type="text">
+    <input type="text">
+
+    <!-- 注意：
+         - 用户可以通过点击或使用 Tab 键来使这些输入框获得焦点
+         - 获得焦点的输入框将会有粉色背景和红色文字 -->
+</body>
+
+</html>

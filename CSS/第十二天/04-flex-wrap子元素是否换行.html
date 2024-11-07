@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Wrap Example</title>
+    <style>
+        div {
+            display: flex;
+            /* 将父元素设置为弹性布局容器 */
+            width: 600px;
+            /* 设置容器的宽度为600像素 */
+            height: 400px;
+            /* 设置容器的高度为400像素 */
+            background-color: pink;
+            /* 设置容器的背景颜色为粉红色 */
+
+            /* 在 flex 布局中，默认情况下子元素会在同一行内排列，容器空间不足时会压缩子元素的宽度 */
+            flex-wrap: nowrap;
+            /* 默认值，不换行，子元素压缩至一行内 */
+
+            /* 如果容器宽度不足以容纳所有子元素，可以设置换行 */
+            flex-wrap: wrap;
+            /* 子元素在装不下时换行显示 */
+        }
+
+        span {
+            width: 150px;
+            /* 设置子元素的宽度为150像素 */
+            height: 100px;
+            /* 设置子元素的高度为100像素 */
+            background-color: purple;
+            /* 设置子元素的背景颜色为紫色 */
+            color: #fff;
+            /* 设置子元素内文本的颜色为白色 */
+            margin: 10px;
+            /* 设置子元素的外边距为10像素，增加间距 */
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span>1</span> <!-- 第一个子元素 -->
+        <span>2</span> <!-- 第二个子元素 -->
+        <span>3</span> <!-- 第三个子元素 -->
+        <span>4</span> <!-- 第四个子元素 -->
+        <span>5</span> <!-- 第五个子元素 -->
+    </div>
+</body>
+
+</html>

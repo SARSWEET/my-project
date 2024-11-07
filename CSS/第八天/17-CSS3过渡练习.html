@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 过渡练习 - 进度条</title>
+    <style>
+        .bar {
+            width: 150px;
+            height: 10px;
+            border: 1px solid red;
+            border-radius: 9px;
+            /* 
+             * 父容器 .bar 的宽度固定为 150px，高度为 10px，
+             * 设置边框为 1px 的红色，并且四周圆角半径为 9px。
+             * 这是一个包裹进度条的容器，用于显示进度条的边框和背景。
+             */
+        }
+
+        .bar_in {
+            width: 50%;
+            height: 100%;
+            background-color: red;
+            border-radius: 7px;
+            /* 
+             * 子元素 .bar_in 代表进度条本身，初始宽度设置为 50%，
+             * 即进度条显示为 50% 完成。
+             * 高度设置为父容器的 100%，并设置背景颜色为红色，圆角半径为 7px。
+             */
+            transition: all 1s;
+            /* 
+             * 通过 transition 属性为 .bar_in 添加过渡效果。
+             * 这里的 all 关键字表示所有发生变化的属性都会在 1 秒内平滑过渡。
+             */
+        }
+
+        .bar:hover .bar_in {
+            /* 
+             * 当鼠标悬停在父容器 .bar 上时，子元素 .bar_in 的宽度变化为 100%。
+             * 由于设置了 transition，进度条会在 1 秒内从 50% 平滑扩展到 100%。
+             */
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bar">
+        <div class="bar_in"></div>
+    </div>
+</body>
+
+</html>

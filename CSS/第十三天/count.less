@@ -1,0 +1,30 @@
+@baseFont: 50px;
+/* 定义一个变量 @baseFont，值为 50px，用于指定基础的字体大小 */
+@border: 5px + 5;
+/* 定义一个变量 @border，值为 5px + 5，通过加法运算得到 10px 的边框宽度 */
+
+html {
+    font-size: @baseFont;
+    /* 设置 html 元素的字体大小为 50px，使用变量 @baseFont */
+}
+
+div {
+    width: 200px - 50;
+    /* 设置 div 元素的宽度为 150px，通过减法运算 (200px - 50) 得到 */
+    height: 200px * 2;
+    /* 设置 div 元素的高度为 400px，通过乘法运算 (200px * 2) 得到 */
+    border: @border solid red;
+    /* 设置 div 元素的边框为 10px 实线红色，使用变量 @border */
+}
+
+img {
+    width: (82rem / @baseFont);
+    /* 计算 img 元素的宽度为 1.64rem，82rem 除以 @baseFont（50px） */
+    height: (82rem / @baseFont);
+    /* 计算 img 元素的高度为 1.64rem，82rem 除以 @baseFont（50px） */
+}
+
+// 1.两个数参与运算 如果只有一个数有单位就以这个单位为准
+//    例如: 200px - 50，结果是 150px，保留了有单位的 200px 的单位 px。
+// 2.两个数参与运算 如果两个数都有单位 且单位不一样 则以第一个数的单位为准
+//    例如: 82rem / 50px，结果是 1.64rem，结果的单位与第一个数 82rem 的单位一致。

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 设置父元素的样式 */
+        .father {
+            overflow: hidden;
+            /* 超出内容隐藏 */
+            width: 300px;
+            /* 宽度 300px */
+            height: 300px;
+            /* 高度 300px */
+            margin: 100px auto;
+            /* 垂直居中 */
+            background-color: pink;
+            /* 背景颜色为粉色 */
+            text-align: center;
+            /* 文本居中 */
+        }
+
+        /* 设置子元素的样式 */
+        .son {
+            width: 200px;
+            /* 宽度 200px */
+            height: 200px;
+            /* 高度 200px */
+            margin: 50px;
+            /* 外边距 50px */
+            background-color: purple;
+            /* 背景颜色为紫色 */
+            line-height: 200px;
+            /* 行高设置为与高度相同，使文本垂直居中 */
+            color: #fff;
+            /* 字体颜色为白色 */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 创建一个父容器和一个子容器 -->
+    <div class="father">
+        <div class="son">son盒子</div> <!-- 子容器显示文本 "son盒子" -->
+    </div>
+
+    <script>
+        // DOM 事件流分为三个阶段：捕获、目标、冒泡
+
+        // 1. JavaScript 代码只能执行捕获或冒泡中的一个阶段
+        // 2. onclick 和 attachEvent 只能处理冒泡阶段
+        // 3. 捕获阶段：当 addEventListener 的第三个参数为 true 时，事件在捕获阶段触发
+        // 捕获阶段顺序为：document -> html -> body -> father -> son
+        /* var son = document.querySelector('.son');
+        son.addEventListener('click', function () {
+            alert('son'); // 点击子元素时触发
+        }, true);
+        var father = document.querySelector('.father');
+        father.addEventListener('click', function () {
+            alert('father'); // 点击父元素时触发
+        }, true); // 捕获阶段，从外到内执行，先执行 father，再执行 son
+        */
+
+        // 4. 冒泡阶段：当 addEventListener 的第三个参数为 false 或省略时，事件在冒泡阶段触发
+        // 冒泡阶段顺序为：son -> father -> body -> html -> document
+        var son = document.querySelector('.son');
+        son.addEventListener('click', function () {
+            alert('son'); // 点击子元素时触发
+        }, false); // 冒泡阶段
+
+        var father = document.querySelector('.father');
+        father.addEventListener('click', function () {
+            alert('father'); // 点击父元素时触发
+        }, false); // 冒泡阶段，先执行 son，再执行 father
+
+        document.addEventListener('click', function () {
+            alert('document'); // 点击文档时触发
+        }, false); // 冒泡阶段
+    </script>
+</body>
+
+</html>

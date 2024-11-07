@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>为什么需要清除浮动</title>
+    <style>
+        .box {
+            /* 使用 overflow: hidden 清除浮动 */
+            overflow: hidden;
+            width: 800px;
+            border: 1px solid blue;
+            margin: 0 auto;
+            /* overflow: hidden 创建了一个新的块格式化上下文（BFC），
+               这会使得 .box 包含其内部的浮动元素 */
+        }
+
+        .damao {
+            float: left;
+            width: 300px;
+            height: 200px;
+            background-color: purple;
+        }
+
+        .ermao {
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        .footer {
+            height: 200px;
+            background-color: black;
+        }
+
+        .clear {
+            clear: both;
+            /* 注意：由于使用了 overflow: hidden，这个 clear 类实际上不再需要 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="damao">大毛</div>
+        <div class="ermao">二毛</div>
+        <span class="clear"></span>
+        <!-- 注意：使用 overflow: hidden 后，这个清除浮动的 span 元素变得多余 -->
+    </div>
+    <div class="footer"></div>
+</body>
+
+</html>

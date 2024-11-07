@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            /* 绝对定位，将 div 元素放置在距离顶部 40px，左边界 0 的位置 */
+            position: absolute;
+            top: 40px;
+            left: 0;
+
+            /* 设置 div 元素的宽度和高度 */
+            width: 100px;
+            height: 100px;
+
+            /* 背景颜色为粉色 */
+            background-color: pink;
+        }
+
+        span {
+            /* 绝对定位，将 span 元素放置在距离顶部 150px，左边界 0 的位置 */
+            display: block;
+            position: absolute;
+            top: 150px;
+            left: 0;
+
+            /* 设置 span 元素的宽度和高度 */
+            width: 150px;
+            height: 150px;
+
+            /* 背景颜色为紫色 */
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 一个空的 div 元素，用于动画演示 -->
+    <div></div>
+
+    <!-- 一个空的 span 元素，用于动画演示 -->
+    <span></span>
+
+    <!-- 两个按钮，用于触发动画效果 -->
+    <button class="btn500">点我到500</button>
+    <button class="btn800">点我到800</button>
+
+    <script>
+        // 获取页面中的 div、span 和按钮元素
+        var div = document.querySelector('div');
+        var span = document.querySelector('span');
+        var btn500 = document.querySelector('.btn500');
+        var btn800 = document.querySelector('.btn800');
+
+        // 封装缓动动画函数
+        // 参数：obj - 目标元素，target - 目标位置
+        function animate(obj, target) {
+            // 清除之前的定时器，防止多次点击导致速度叠加
+            clearInterval(obj.timer);
+
+            // 设置新的定时器，创建缓动效果
+            obj.timer = setInterval(function () {
+                // 计算每次移动的步长，逐渐减小以实现缓动效果
+                var step = (target - obj.offsetLeft) / 10;
+
+                // 根据方向调整步长，确保为整数
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+
+                // 判断当前位置与目标位置的差值
+                if (Math.abs(target - obj.offsetLeft) <= Math.abs(step)) {
+                    // 最后一次直接移动到目标位置，避免越界
+                    obj.style.left = target + 'px';
+                    // 清除定时器，停止动画
+                    clearInterval(obj.timer);
+                } else {
+                    // 未到达目标位置时，继续移动
+                    obj.style.left = obj.offsetLeft + step + 'px';
+                }
+            }, 15); // 定时器每 15 毫秒执行一次
+        }
+
+        // 初始化动画，将 div 元素移动到 1000px 位置
+        animate(div, 1000);
+
+        // 为 btn500 按钮添加点击事件，将 span 移动到 500px 位置
+        btn500.addEventListener('click', function () {
+            animate(span, 500);
+        });
+
+        // 为 btn800 按钮添加点击事件，将 span 移动到 800px 位置
+        btn800.addEventListener('click', function () {
+            animate(span, 800);
+        });
+    </script>
+</body>
+
+</html>

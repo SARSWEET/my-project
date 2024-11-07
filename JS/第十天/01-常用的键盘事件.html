@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 监听常用的键盘事件，便于处理用户输入
+
+        // 1. keyup 事件：当按键被释放时触发
+        // 示例：按键弹起后在控制台输出 '按键弹起'
+        /* 
+        document.onkeyup = function () {
+            console.log('按键弹起');
+        } 
+        */
+        document.addEventListener('keyup', function () {
+            console.log('按键弹起');
+        });
+
+        // 2. keydown 事件：当按键被按下时触发
+        // 注意：如果按住按键不放，事件会持续触发
+        document.addEventListener('keydown', function () {
+            console.log('按键按下'); // 一直按着就会一直触发                 
+        });
+
+        // 3. keypress 事件：按键被按下时触发，但不识别功能键（如 Ctrl、Shift）和方向键（如 左右箭头）
+        document.addEventListener('keypress', function () {
+            console.log('按键按下keypress');
+        });
+
+        // 4. 事件触发顺序：
+        // keydown -> keypress -> keyup
+        // 这个顺序很重要，可以根据需要选择使用的事件类型
+    </script>
+</body>
+
+</html>

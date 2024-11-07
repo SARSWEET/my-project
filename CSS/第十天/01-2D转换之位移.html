@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 为 div 元素设置宽高和背景色，并演示不同的移动方式：通过 CSS 的 transform 属性进行 2D 平移（translate） */
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+
+            /* 以下是一些可能的平移动作示例 */
+            /* transform: translate(x,y); 用于在 X 轴和 Y 轴上同时移动盒子 */
+            /* transform: translate(100px, 100px); 将盒子在 X 轴和 Y 轴上分别移动 100px */
+
+            /* 1.只移动 x 坐标 */
+            /* transform: translate(100px, 0); 在 X 轴上移动 100px，Y 轴保持不变 */
+            /* transform: translateX(100px); 等价于 translate(100px, 0) */
+
+            /* 2.只移动 y 坐标 */
+            /* transform: translate(0, 100px); 在 Y 轴上移动 100px，X 轴保持不变 */
+            /* transform: translateY(100px); 等价于 translate(0, 100px) */
+        }
+
+        /* 3. 为第一个 div 元素应用 2D 平移，将其在 X 轴和 Y 轴上分别移动 30px 
+              这不会影响其他盒子的位置，因为 transform 操作不改变文档流 */
+        div:first-child {
+            transform: translate(30px, 30px);
+        }
+
+        /* 将最后一个 div 元素的背景色更改为紫色 */
+        div:last-child {
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+</body>
+
+</html>

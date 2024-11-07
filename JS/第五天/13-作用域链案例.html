@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Scope Chain Examples</title>
+    <script>
+        // 案例1: 演示简单的作用域链查找
+        function f1() {
+            var num = 123;
+            function f2() {
+                // var num = 0;  // 注意：此行被注释掉了
+                console.log(num);  // 输出：123
+                // 解释：JavaScript引擎首先在f2函数作用域中查找num
+                // 未找到，然后在外层函数f1的作用域中找到num，值为123
+            }
+            f2();
+        }
+        var num = 456;  // 全局作用域的num
+        f1();  // 调用f1，触发作用域链查找过程
+
+        // 案例2: 复杂嵌套函数的作用域链示例
+        var a = 1;  // 全局作用域的a
+        function fn1() {
+            var a = 2;  // fn1作用域的a
+            var b = '22';  // fn1作用域的b
+            fn2();
+            function fn2() {
+                var a = 3;  // fn2作用域的a
+                fn3();
+                function fn3() {
+                    var a = 4;  // fn3作用域的a
+                    console.log(a);  // 输出：4
+                    // 解释：最近的作用域（fn3）中找到a，值为4
+                    console.log(b);  // 输出：'22'
+                    // 解释：fn3作用域中没有b，向上找到fn1作用域中的b
+                }
+            }
+        }
+        fn1();
+
+        // 关键点总结：
+        // 1. 作用域链查找遵循"就近原则"，从当前作用域开始，逐级向外查找
+        // 2. 内部函数可以访问外部函数的变量，但外部函数不能访问内部函数的变量
+        // 3. 如果所有函数作用域中都没找到变量，最后会查找全局作用域
+        // 4. 变量声明位置决定了其在作用域链中的位置，进而影响其可访问性
+    </script>
+</head>
+
+<body>
+    <!-- 页面内容可以在这里添加 -->
+</body>
+
+</html>

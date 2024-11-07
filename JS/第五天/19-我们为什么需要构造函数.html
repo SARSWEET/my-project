@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Constructor Functions: Necessity and Concept</title>
+    <script>
+        // 构造函数的必要性
+
+        // 1. 对象字面量方法的局限性
+        // 使用对象字面量创建多个相似对象时的问题演示
+
+        var ldh = {
+            uname: '刘德华',
+            age: 55,
+            sing: function() {
+                console.log('冰雨');
+            }
+        };
+
+        var zxy = {
+            uname: '张学友',
+            age: 58,
+            sing: function() {
+                console.log('李香兰');
+            }
+        };
+
+        // 问题分析：
+        // 1. 代码重复：每个对象都有相似的结构，导致代码冗余
+        // 2. 维护困难：如需修改共同的属性或方法，需要在每个对象中都进行修改
+        // 3. 内存效率：每个对象的方法都是独立的函数实例，占用额外内存
+
+        // 2. 构造函数的优势
+        // 构造函数是一种特殊的函数，用于创建和初始化对象实例
+        // 优点：
+        // - 代码复用：将共同的属性和方法封装在一个地方
+        // - 易于维护：修改构造函数即可影响所有实例
+        // - 内存效率：方法可以共享，节省内存
+
+        // 构造函数的基本概念：
+        // - 封装对象的共同属性和方法
+        // - 使用 new 关键字调用，创建新的对象实例
+        // - 通常首字母大写，以区别于普通函数
+        // - 内部使用 this 关键字引用新创建的对象
+
+        // 示例构造函数（未实现，仅作概念说明）：
+        /*
+        function Singer(name, age, song) {
+            this.uname = name;
+            this.age = age;
+            this.sing = function() {
+                console.log(song);
+            };
+        }
+        
+        var ldh = new Singer('刘德华', 55, '冰雨');
+        var zxy = new Singer('张学友', 58, '李香兰');
+        */
+
+        // 注意：
+        // 1. 构造函数是面向对象编程的基础
+        // 2. ES6引入的类（class）语法提供了更现代的对象创建方式
+        // 3. 原型（prototype）和构造函数配合使用可以进一步优化内存使用
+    </script>
+</head>
+<body>
+    <!-- 页面内容可以在这里添加 -->
+</body>
+</html>

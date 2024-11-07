@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 后置自增运算符的使用
+
+        // 后置自增运算符 (num++) 用于将变量的值增加 1
+        var num = 10;
+        num++; // 等同于 num = num + 1，现在 num 的值是 11
+        console.log(num); // 输出 11
+
+        // 前置自增和后置自增的区别
+        // 1. 当单独使用时，前置自增(++num)和后置自增(num++)的效果相同
+        // 2. 后置自增的特点：先返回变量的原始值，然后变量的值增加 1
+        var age = 10;
+        console.log(age++ + 10); // 输出 20，因为先返回 age 的原始值 10，然后 age 增加到 11
+        console.log(age); // 输出 11，因为 age 已经自增了
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

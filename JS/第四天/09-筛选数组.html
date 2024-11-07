@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 将数组 [2, 0, 6, 1, 77, 0, 52, 0, 25, 7] 中大于等于 10 的元素选出来，放入新数组
+
+        // 方法一
+        // 1. 声明一个新的数组用于存放新数据：newArr
+        var arr = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7]; // 定义一个包含多个元素的数组
+        var newArr = []; // 初始化一个空数组，用于存放新数据
+        var j = 0; // 初始化计数器变量 j，值为 0
+
+        // 2. 遍历旧数组，找出大于等于 10 的元素
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] >= 10) {
+                // 3. 依次将符合条件的元素追加到新数组 newArr
+                newArr[j] = arr[i]; // 将元素存入新数组
+                j++; // 递增计数器 j
+            }
+        }
+
+        // 输出新数组
+        console.log(newArr); // 输出包含大于等于 10 的元素的新数组
+
+        // 方法二
+        var arr = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7]; // 定义一个包含多个元素的数组
+        var newArr = []; // 初始化一个空数组，用于存放新数据
+        // 刚开始 newArr.length 就是 0，而且 length 会自动检测数组长度，所以可以依靠这个特性来追加元素
+
+        // 2. 遍历旧数组，找出大于等于 10 的元素
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] >= 10) {
+                // 3. 依次将符合条件的元素追加到新数组 newArr
+                newArr[newArr.length] = arr[i]; // 将元素存入新数组
+            }
+        }
+
+        // 输出新数组
+        console.log(newArr); // 输出包含大于等于 10 的元素的新数组
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

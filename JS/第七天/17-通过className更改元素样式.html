@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            /* 初始背景颜色为粉色 */
+        }
+
+        .change {
+            background-color: purple;
+            /* 点击后背景颜色变为紫色 */
+            color: #fff;
+            /* 文本颜色变为白色 */
+            font-size: 25px;
+            /* 文本字体大小设为25px */
+            margin-top: 100px;
+            /* 添加一个100px的上边距，将元素向下推移 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="first">文本</div> <!-- 初始div元素，类名为first，显示内容为"文本" -->
+
+    <script>
+        // 1. 使用 element.style 修改单个元素样式
+        // 当样式较少或只需要简单的样式更改时，推荐使用 element.style
+        var test = document.querySelector('div'); // 获取页面中第一个 <div> 元素
+        test.onclick = function () {
+            // 以前的方式：直接通过修改style属性来改变样式
+            /* 
+            this.style.backgroundColor = 'purple'; // 背景变为紫色
+            this.style.color = '#fff'; // 字体颜色变为白色
+            this.style.fontSize = '25px'; // 字体大小设为25px
+            this.style.marginTop = '100px'; // 上边距设为100px
+            */
+
+            // 更好的方式：通过更改元素的 class 来控制样式
+            // 适用于需要改变多种样式或功能更复杂的情况
+            this.className = 'change'; // 直接替换元素的类名为 'change'
+
+            // 如果元素已经有其他类名，通过修改 className 会直接覆盖原有类名
+            // 如果希望保留原有的类名，可以通过添加多个类名来解决
+            // 例如：this.className = 'first change'; // 添加 'change' 的同时保留 'first'
+
+            this.className += ' change'; // 通过 += 操作符添加 'change' 类名，不覆盖之前的类名
+        }
+    </script>
+</body>
+
+</html>

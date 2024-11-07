@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 设置 div 样式 */
+        div {
+            position: absolute;
+            /* 绝对定位使元素可以自由移动 */
+            left: 0;
+            /* 初始水平位置为 0 */
+            width: 100px;
+            /* 设置宽度为 100px */
+            height: 100px;
+            /* 设置高度为 100px */
+            background-color: pink;
+            /* 设置背景颜色为粉色 */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 创建一个空的 div 元素 -->
+    <div></div>
+    <script>
+        /*
+         * 功能说明:
+         * (1) 触摸元素时（touchstart）获取手指初始坐标，同时获取盒子原来的位置。
+         * (2) 移动手指时（touchmove）计算手指滑动的距离并移动盒子。
+         * (3) 手指离开屏幕时（touchend）处理完成。
+         */
+
+        // 获取页面上的 div 元素
+        var div = document.querySelector('div');
+
+        // 声明手指起始坐标变量和盒子位置变量，用于保存初始坐标
+        var startX = 0; // 手指起始的 X 坐标
+        var startY = 0; // 手指起始的 Y 坐标
+        var x = 0; // 盒子的初始水平位置
+        var y = 0; // 盒子的初始垂直位置
+
+        // 1. 手指点击时获取手指的初始位置和盒子原来的位置
+        div.addEventListener('touchstart', function (e) {
+            // 获取手指在页面上的初始 X 坐标
+            startX = e.targetTouches[0].pageX;
+            // 获取手指在页面上的初始 Y 坐标
+            startY = e.targetTouches[0].pageY;
+
+            // 获取盒子当前的水平和垂直位置
+            x = this.offsetLeft;
+            y = this.offsetTop;
+        });
+
+        // 2. 手指移动时计算移动的距离，并更新盒子的位置
+        div.addEventListener('touchmove', function (e) {
+            // 计算手指移动的水平距离：当前 X 坐标 - 初始 X 坐标
+            var moveX = e.targetTouches[0].pageX - startX;
+            // 计算手指移动的垂直距离：当前 Y 坐标 - 初始 Y 坐标
+            var moveY = e.targetTouches[0].pageY - startY;
+
+            // 更新盒子的位置，原始位置加上移动的距离
+            this.style.left = x + moveX + 'px'; // 更新水平位置，记得加 'px' 单位
+            this.style.top = y + moveY + 'px'; // 更新垂直位置，记得加 'px' 单位
+
+            // 阻止默认行为（例如屏幕滚动）
+            e.preventDefault();
+        });
+    </script>
+</body>
+
+</html>

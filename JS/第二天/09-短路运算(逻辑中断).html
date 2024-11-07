@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 逻辑与 (&&) 和逻辑或 (||) 运算符的短路行为
+
+        // 逻辑与 (&&) 短路行为：
+        // 如果第一个表达式为真（truthy），则返回第二个表达式的值
+        // 如果第一个表达式为假（falsy），则直接返回该表达式的值
+        console.log(123 && 456); // 返回 456，因为 123 是 truthy
+        console.log(0 && 456); // 返回 0，因为 0 是 falsy
+        console.log(0 && 1 + 2 && 456 * 56789); // 返回 0，因为 0 是 falsy
+        console.log('' && 1 + 2 && 456 * 56789); // 返回 ''，因为空字符串 '' 是 falsy
+
+        // 逻辑或 (||) 短路行为：
+        // 如果第一个表达式为真（truthy），则直接返回该表达式的值
+        // 如果第一个表达式为假（falsy），则返回第二个表达式的值
+        console.log(123 || 456); // 返回 123，因为 123 是 truthy
+        console.log(123 || 456 || 456 + 123); // 返回 123，因为 123 是 truthy
+        console.log(0 || 456 || 456 + 123); // 返回 456，因为 0 是 falsy，但 456 是 truthy
+
+        // 逻辑中断的示例：
+        // 逻辑或运算符会在遇到第一个 truthy 值时停止评估并返回它
+        var num = 0;
+        console.log(123 || num++); // 返回 123，num 不会增加，因为 123 是 truthy
+        console.log(num); // 返回 0，因为前面的逻辑或运算没有改变 num 的值
+
+        // 常见的 falsy 值包括：0, '', null, undefined, NaN
+        // 其他所有值都被视为 truthy
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

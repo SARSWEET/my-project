@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 错误示范：媒体查询不完整，没有具体样式 */
+        /* 当屏幕尺寸大于640px 让div一行显示两个 */
+        /* @media screen and (min-width:640px) {
+            div {
+                width: 50%;
+            }
+        } */
+        /* 当屏幕尺寸小于640px 让div一行显示一个 */
+    </style>
+    <!-- 正确使用媒体查询属性语法 -->
+     <!-- 注意引入不能写在style样式里 min-width 后面要跟: -->
+    <link rel="stylesheet" href="style320.css" media="screen and (min-width: 320px)">
+    <link rel="stylesheet" href="style640.css" media="screen and (min-width: 640px)">
+</head>
+
+<body>
+    <div>1</div>
+    <div>2</div>
+</body>
+
+</html>

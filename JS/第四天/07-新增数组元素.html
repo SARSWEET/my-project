@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1. 新增数组元素并修改数组长度
+        var arr = ['red', 'green', 'blue']; // 定义一个包含三个元素的数组
+        console.log(arr.length); // 输出数组的初始长度，结果为 3
+        arr.length = 5; // 将数组的长度修改为 5，数组中应有 5 个元素
+        console.log(arr); // 输出修改后的数组，其中有两个空元素
+        console.log(arr[3]); // 输出索引为 3 的元素，结果为 undefined
+        console.log(arr[4]); // 输出索引为 4 的元素，结果为 undefined
+
+        // 2. 新增数组元素并修改索引号
+        var arr1 = ['red', 'green', 'blue']; // 定义一个包含三个元素的数组
+        arr1[3] = 'pink'; // 在索引为 3 的位置新增元素 'pink'
+        console.log(arr1); // 输出修改后的数组
+        arr1[4] = 'hotpink'; // 在索引为 4 的位置新增元素 'hotpink'
+        console.log(arr1); // 输出修改后的数组
+        arr1[0] = 'yellow'; // 替换索引为 0 的元素为 'yellow'
+        console.log(arr1); // 输出修改后的数组
+        arr1 = '有点意思'; // 直接给数组名赋值，覆盖原数组
+        console.log(arr1); // 输出新的值，结果为 '有点意思'，原数组元素都没有了
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

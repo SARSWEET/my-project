@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+< lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            /* 设置元素内容区域的宽度 */
+            height: 200px;
+            /* 设置元素内容区域的高度 */
+            background-color: pink;
+            /* 背景颜色为粉红色 */
+            border: 10px solid red;
+            /* 边框为10px宽的红色实线 */
+            padding: 10px;
+            /* 内边距（padding）为10px */
+        }
+    </style>
+</head>
+
+<body>
+    <div></div> <!-- 页面中的一个div元素 -->
+    <script>
+        // 获取页面中的div元素
+        var div = document.querySelector('div');
+
+        // clientWidth：元素的内容宽度 + padding，不包含边框和滚动条
+        console.log(div.clientWidth); // 输出：200px内容宽度 + 20px padding（左右各10px） = 220
+
+        // offsetWidth：元素的内容宽度 + padding + 边框，包含滚动条
+        console.log(div.offsetWidth); // 输出：200px内容宽度 + 20px padding + 20px边框（左右各10px） = 240
+    </script>
+</body>
+

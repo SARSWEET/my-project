@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #333;
+            /* 设置页面背景颜色为深灰色 */
+        }
+
+        div {
+            position: absolute;
+            /* 由于元素要移动，这里需要绝对定位，以便实现移动动画 */
+            width: 200px;
+            /* 设置元素的宽度为200像素 */
+            height: 100px;
+            /* 设置元素的高度为100像素 */
+            border: 1px solid #fff;
+            /* 设置元素的白色边框 */
+            background: url(media/bear.png) no-repeat;
+            /* 设置背景图片并不重复显示 */
+            animation: bear 1s steps(8) infinite, move 3s forwards;
+            /* 元素可以添加多个动画，用逗号隔开 
+               - bear 动画：1秒内完成一次，分成8步，无限循环
+               - move 动画：3秒内完成，结束后停留在最后位置
+            */
+        }
+
+        @keyframes bear {
+            0% {
+                background-position: 0 0;
+                /* 动画开始时，背景图片在初始位置 */
+            }
+
+            100% {
+                background-position: -1600px 0;
+                /* 注意这里图片是往左移动，因此 background-position 应该是负值 */
+            }
+        }
+
+        @keyframes move {
+            from {
+                left: 0;
+                /* 动画开始时，元素从页面左侧开始 */
+            }
+
+            to {
+                left: 50%;
+                /* 动画结束时，元素移动到页面的水平中点 */
+                /* margin-left: -100px; 这里用 transform 更为简洁 */
+                transform: translateX(-50%);
+                /* 使用 transform 使元素的中心对齐页面中点 */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

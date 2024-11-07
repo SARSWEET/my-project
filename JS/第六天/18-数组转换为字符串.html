@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /**
+         * 数组转换为字符串的方法示例
+         * 
+         * 本示例演示了两种将数组转换为字符串的方法：
+         * 1. toString() - 默认使用逗号作为分隔符
+         * 2. join()     - 可自定义分隔符
+         */
+
+        // 1. toString() 方法
+        // 将数组转换为字符串，元素间用逗号分隔
+        var arr = [1, 2, 3];
+        console.log(arr.toString()); // 预期输出: "1,2,3"
+
+        /**
+         * toString() 方法特点：
+         * - 不接受任何参数
+         * - 总是使用逗号作为分隔符
+         * - 返回一个包含数组中所有元素的字符串，每个元素转换为字符串
+         */
+
+        // 2. join() 方法
+        // 将数组转换为字符串，可以指定分隔符
+        var arr1 = ['red', 'green', 'pink'];
+        console.log(arr1.join());     // 预期输出: "red,green,pink" (默认使用逗号分隔)
+        console.log(arr1.join('-'));  // 预期输出: "red-green-pink"
+        console.log(arr1.join('&'));  // 预期输出: "red&green&pink"
+
+        /**
+         * join() 方法特点：
+         * - 可以指定自定义的分隔符（如果不指定，默认使用逗号）
+         * - 分隔符需要用引号（单引号或双引号）包围
+         * - 返回一个包含数组中所有元素的字符串，每个元素转换为字符串
+         * - 如果数组只有一个元素，则不使用分隔符
+         * - 如果数组元素是 undefined 或 null，会被转换为空字符串
+         */
+
+        // 注意：
+        // 1. 这两种方法都不会改变原数组
+        // 2. 对于嵌套数组，这些方法会将内部数组也转换为字符串
+        // 3. 在处理大型数组时，join() 方法通常比 + 运算符连接字符串更高效
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

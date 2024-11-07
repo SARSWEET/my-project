@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 错误示范：
+           直接将html的字体大小设置为固定100px，这样的写法会导致rem单位的大小固定死，
+           不能根据屏幕尺寸的变化进行自适应。 */
+        /* html {
+            font-size: 100px;
+        } */
+
+        /* 当屏幕(视口)的宽度大于等于640px时，html的字体大小设置为50px。
+           这样可以根据屏幕大小动态调整rem的大小，实现响应式设计。 */
+        @media screen and (min-width: 640px) {
+            html {
+                font-size: 50px;
+            }
+        }
+
+        /* 当屏幕(视口)的宽度大于等于1280px时，html的字体大小设置为100px。
+           这种做法可以让页面在大屏幕设备上展示更清晰的文字和布局。 */
+        @media screen and (min-width: 1280px) {
+            html {
+                font-size: 100px;
+            }
+        }
+
+        .top {
+            height: 1rem;
+            /* 高度设置为1rem，根据html的字体大小进行缩放 */
+            font-size: 0.5rem;
+            /* 字体大小设置为0.5rem */
+            background-color: green;
+            /* 背景颜色设置为绿色 */
+            color: #fff;
+            /* 字体颜色设置为白色 */
+            line-height: 1rem;
+            /* 行高设置为1rem，使文字垂直居中 */
+            text-align: center;
+            /* 文字居中对齐 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top">购物车</div>
+</body>
+
+</html>

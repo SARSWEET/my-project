@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /**
+         * 字符串的不可变性示例
+         * 
+         * 本示例演示了JavaScript中字符串的不可变特性，
+         * 以及这种特性对性能的潜在影响。
+         */
+
+        // 字符串赋值和修改的示例
+        var str = 'andy';
+        console.log(str); // 输出: andy
+
+        str = 'red';
+        console.log(str); // 输出: red
+
+        /**
+         * 注意：
+         * 当我们将 str 的值从 'andy' 改为 'red' 时，
+         * JavaScript 并没有修改原来的 'andy' 字符串，
+         * 而是创建了一个新的 'red' 字符串，并让 str 指向这个新字符串。
+         * 原来的 'andy' 字符串仍然存在于内存中，直到被垃圾回收。
+         */
+
+        // 字符串拼接的性能问题示例
+        var str = '';
+        console.time('字符串拼接');
+        for (let i = 0; i < 100000; i++) {
+            str += i;
+        }
+        console.timeEnd('字符串拼接');
+        // console.log(str); // 注释掉以避免控制台输出大量文本
+
+        /**
+         * 性能注意事项：
+         * 1. 由于字符串的不可变性，每次拼接都会创建一个新的字符串。
+         * 2. 在循环中大量拼接字符串可能会导致性能问题，特别是在处理大量数据时。
+         * 3. 对于需要大量拼接的场景，考虑使用数组的 join() 方法或 Array.prototype.reduce()。
+         * 4. 在现代浏览器中，JavaScript 引擎通常会优化简单的字符串拼接操作。
+         */
+
+        // 更高效的字符串拼接方法示例
+        var arr = [];
+        console.time('数组join方法');
+        for (let i = 0; i < 100000; i++) {
+            arr.push(i);
+        }
+        var result = arr.join('');
+        console.timeEnd('数组join方法');
+        // console.log(result); // 注释掉以避免控制台输出大量文本
+
+        /**
+         * 建议：
+         * 1. 对于小规模的字符串操作，直接使用 '+' 或 '+=' 通常是可以的。
+         * 2. 对于大规模的字符串拼接，考虑使用 Array.join() 或 StringBuilder 类的等效实现。
+         * 3. 在进行性能优化时，始终进行实际的性能测试，因为不同环境下的表现可能有所不同。
+         */
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

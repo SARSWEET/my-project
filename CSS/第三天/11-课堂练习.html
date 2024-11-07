@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>边框的练习 - 上红其余蓝</title>
+    <style>
+        /* 目标：给200x200的盒子设置上边框为红色，其余为蓝色 */
+        div {
+            width: 200px;
+            height: 200px;
+
+            /* 方法1：单独设置每个边（注释掉） */
+            /* border-top: 1px solid red;
+               border-right: 1px solid blue;
+               border-bottom: 1px solid blue;
+               border-left: 1px solid blue; */
+
+            /* 方法2：利用CSS的层叠性（当前使用的方法） */
+
+            /* 首先，设置所有边框为蓝色 */
+            border: 1px solid blue;
+
+            /* 然后，覆盖上边框为红色 */
+            border-top: 1px solid red;
+
+            /* 这种方法的优点：
+               1. 代码更简洁
+               2. 如果需要修改边框宽度或样式，只需修改一处
+               3. 利用了CSS的层叠性，后面的规则会覆盖前面的规则 */
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

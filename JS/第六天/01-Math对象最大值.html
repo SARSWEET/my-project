@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Math Object Usage</title>
+    <script>
+        // Math 对象：JavaScript 内置的数学函数库
+
+        // 特点：
+        // 1. Math 是一个内置对象，不是构造函数
+        // 2. 直接使用 Math.property 或 Math.method() 来访问其属性和方法
+        // 3. 提供了各种数学计算的常量和函数
+
+        // 使用 Math 对象的属性
+        console.log(Math.PI); // 输出: 3.141592653589793 (圆周率 π)
+
+        // 使用 Math 对象的方法
+
+        // Math.max(): 返回参数中的最大值
+        console.log(Math.max(1, 99, 3));  // 输出: 99
+        console.log(Math.max(-1, -10));   // 输出: -1
+
+        // Math.max() 的特殊情况
+        console.log(Math.max(1, 99, 'pink老师')); // 输出: NaN
+        // 解释: 当参数中包含非数字值时，结果为 NaN (Not a Number)
+
+        console.log(Math.max()); // 输出: -Infinity
+        // 解释: 不传参数时，返回 -Infinity
+
+        // 注意事项：
+        // 1. Math.max() 可以接受任意数量的参数
+        // 2. 如果任何参数不能被转换为数字，结果就是 NaN
+        // 3. Math.max() 不能直接用于数组，需要使用展开运算符 (...) 或 apply 方法
+
+        // 其他常用 Math 方法示例：
+        // console.log(Math.min(5, 10, -3));  // 输出最小值: -3
+        // console.log(Math.round(4.7));      // 四舍五入: 5
+        // console.log(Math.abs(-5));         // 绝对值: 5
+        // console.log(Math.random());        // 0 到 1 之间的随机数
+
+        // 最佳实践：
+        // - 使用 Math 对象进行复杂的数学计算，提高代码的可读性和效率
+        // - 在处理金融计算时，注意 JavaScript 的浮点数精度问题
+        // - 对于大型或复杂的数学运算，考虑使用专门的数学库
+    </script>
+</head>
+
+<body>
+    <!-- 页面内容可以在这里添加 -->
+</body>
+
+</html>

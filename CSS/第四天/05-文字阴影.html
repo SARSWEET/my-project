@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文字阴影</title>
+    <style>
+        div {
+            /* 字体样式简写方式：
+               font: [font-style] [font-variant] [font-weight] font-size[/line-height] font-family;
+               
+               例如：
+               font: italic bold 50px/1.5 Arial, sans-serif;
+               
+               在您的例子中，可以这样简写： */
+            font: 700 50px 'Your Preferred Font', sans-serif;
+
+            /* 设置文字颜色 */
+            color: orange;
+
+            /* 文字阴影
+               语法：text-shadow: x-offset y-offset blur-radius color;
+               
+               5px：水平偏移（正值向右）
+               5px：垂直偏移（正值向下）
+               5px：模糊半径（值越大阴影越模糊）
+               rgba(0, 0, 0, .3)：阴影颜色（半透明黑色） */
+            text-shadow: 5px 5px 5px rgba(0, 0, 0, .3);
+
+            /* 注意：
+               1. text-shadow 不支持扩展半径和 inset 关键字（这是 box-shadow 的特性）
+               2. 可以通过逗号分隔添加多个阴影效果
+               3. 文字阴影不会影响布局，只是视觉效果 */
+        }
+    </style>
+</head>
+
+<body>
+    <div>你是阴影,我是火影</div>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /**
+         * 复杂数据类型（引用类型）传参示例
+         * 
+         * 本例演示了在JavaScript中，将复杂数据类型作为参数传递给函数时的行为。
+         * 这种传递方式被称为"按引用传递"。
+         */
+
+        // 定义一个构造函数 Person
+        function Person(name) {
+            this.name = name;
+        }
+
+        // 定义一个函数，接收一个对象作为参数并修改它的属性
+        function f1(x) { // x 接收的是 p 对象的引用（地址）
+            console.log(x.name); // 输出：刘德华
+            x.name = '张学友';    // 修改对象的 name 属性
+            console.log(x.name); // 输出：张学友
+        }
+
+        // 创建 Person 实例
+        var p = new Person('刘德华');
+
+        console.log(p.name); // 1. 输出：刘德华
+
+        f1(p); // 将 p 对象传递给函数 f1
+
+        
+<body>
+</body>

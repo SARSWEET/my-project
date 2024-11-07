@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 设置 div 元素的宽度和高度为 100px，背景色为粉色 */
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div>123</div>
+
+    <script>
+        // 选择页面中的 div 元素
+        var div = document.querySelector('div');
+
+        /* 
+        // 事件监听的另一种写法，使用 onclick 属性，但建议使用 addEventListener 方式 
+        div.onclick = function (event) {
+            console.log(event); // 输出事件对象
+        } 
+        */
+
+        // 使用 addEventListener 方法添加点击事件监听器
+        div.addEventListener('click', function (event) {
+            console.log(event); // 输出事件对象
+        });
+
+        // 1. event 是事件对象，作为回调函数的参数传入
+        // 2. 事件对象在事件发生时由系统自动创建，无需手动传递
+        // 3. 事件对象包含事件相关的所有信息，如鼠标坐标或按键信息
+        // 4. 事件对象的参数名可以自定义，如 event、evt 或 e
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /**
+         * 数组翻转函数
+         * @param {Array} arr - 要翻转的数组
+         * @returns {Array|string} 翻转后的新数组，或错误信息
+         */
+        function reverse(arr) {
+            // 使用 Array.isArray() 方法检查参数是否为数组
+            // if (arr instanceof Array) {  // 这是另一种检查数组的方法
+            if (Array.isArray(arr)) {
+                var newArr = [];
+                // 从原数组的末尾开始遍历，将元素添加到新数组
+                for (let i = arr.length - 1; i >= 0; i--) {
+                    newArr[newArr.length] = arr[i];
+                }
+                return newArr;
+            } else {
+                return 'error 这个参数要求必须是数组';
+            }
+        }
+        console.log(reverse([1, 2, 3]));  // 预期输出: [3, 2, 1]
+        console.log(reverse(1, 2, 3));    // 预期输出: error 消息
+
+        // 检测是否为数组的两种方法
+        var arr = [];
+        var obj = {};
+
+        // (1) instanceof 运算符：用来检测是否为数组
+        console.log(arr instanceof Array);  // 预期输出: true
+        console.log(obj instanceof Array);  // 预期输出: false
+
+        // (2) Array.isArray(参数)：H5新增的方法，IE9以上版本支持
+        console.log(Array.isArray(arr));    // 预期输出: true
+        console.log(Array.isArray(obj));    // 预期输出: false
+
+        /**
+         * 注意：
+         * 1. instanceof 和 Array.isArray() 都可用于检测数组
+         * 2. Array.isArray() 更可靠，特别是在跨窗口或跨框架场景
+         * 3. 对于需要支持老版本浏览器的情况，可能需要使用 instanceof 或自定义方法
+         */
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

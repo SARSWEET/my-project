@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>外边距合并-相邻块级元素垂直外边距合并</title>
+    <style>
+        /* 共同样式 */
+        .damao,
+        .ermao {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        .damao {
+            margin-bottom: 100px;
+        }
+
+        .ermao {
+            margin-top: 200px;
+
+            /* 外边距合并现象：
+               两个相邻的块级元素，它们之间的实际距离不是两个外边距的和，
+               而是取两者之中的较大值（在这个例子中是200px） */
+
+            /* 解决方法：尽量只给一个盒子加外边距 
+               例如，可以移除 .damao 的 margin-bottom，
+               或者移除 .ermao 的 margin-top，只保留一个 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="damao">大毛</div>
+    <div class="ermao">二毛</div>
+</body>
+
+</html>

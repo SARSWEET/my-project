@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Flex-flow Example</title>
+    <style>
+        div {
+            display: flex;
+            /* 将父元素设置为弹性布局容器 */
+            width: 600px;
+            /* 设置容器的宽度为600像素 */
+            height: 300px;
+            /* 设置容器的高度为300像素 */
+            background-color: pink;
+            /* 设置容器的背景颜色为粉红色 */
+
+            /* 使用 flex-wrap 和 flex-direction 的简写属性 flex-flow */
+            /* flex-wrap 控制是否换行（换列），flex-direction 控制主轴方向 */
+            /* 以下两行的效果等同于分别设置 flex-wrap 和 flex-direction */
+
+            /* flex-wrap: wrap; 允许子元素换行（或换列） */
+            /* flex-direction: column; 将主轴方向设置为列方向（从上到下） */
+
+            /* 简写形式如下： */
+            flex-flow: column wrap;
+            /* 设置主轴方向为列方向，同时允许换行（换列） */
+        }
+
+        span {
+            width: 150px;
+            /* 设置子元素的宽度为150像素 */
+            height: 100px;
+            /* 设置子元素的高度为100像素 */
+            background-color: purple;
+            /* 设置子元素的背景颜色为紫色 */
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span>1</span> <!-- 第一个子元素 -->
+        <span>2</span> <!-- 第二个子元素 -->
+        <span>3</span> <!-- 第三个子元素 -->
+        <span>4</span> <!-- 第四个子元素 -->
+        <span>5</span> <!-- 第五个子元素 -->
+    </div>
+</body>
+
+</html>

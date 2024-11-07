@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>背景位置-方位名词示例</title>
+    <style>
+        div {
+            /* 设置元素尺寸 */
+            width: 300px;
+            height: 300px;
+
+            /* 设置背景颜色 */
+            background-color: pink;
+
+            /* 设置背景图片 */
+            background-image: url(images/logo.png);
+
+            /* 禁止背景图片平铺 */
+            background-repeat: no-repeat;
+
+            /* 背景位置设置 - 使用方位名词 */
+
+            /* 居中顶部对齐 */
+            background-position: center top;
+
+            /* 右侧居中对齐 - 两种等效写法 */
+            background-position: right center;
+            background-position: center right;
+            /* 效果同上 */
+
+            /* 右侧对齐，垂直方向居中（省略第二个参数时默认为center） */
+            background-position: right;
+
+            /* 顶部对齐，水平方向居中（省略第一个参数时默认为center） */
+            background-position: top;
+
+            /* 方位名词可用值：
+               水平方向：left, center, right
+               垂直方向：top, center, bottom */
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

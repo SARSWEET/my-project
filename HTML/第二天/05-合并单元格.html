@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table border="1" width="500" height="250" cellspacing="0" cellpadding="1">
+        <!-- 表格属性：
+             border="1": 设置1像素的边框
+             width="500": 表格宽度为500像素
+             height="250": 表格高度为250像素
+             cellspacing="0": 单元格之间无间距
+             cellpadding="1": 单元格内边距为1像素 -->
+
+        <tr>
+            <td></td>
+            <td colspan="2"></td>
+            <!-- colspan="2" 使这个单元格横跨两列 -->
+            <!-- <td></td> 这个单元格被上面的 colspan="2" 合并了，所以被注释掉 -->
+        </tr>
+
+        <tr>
+            <td rowspan="2"></td>
+            <!-- rowspan="2" 使这个单元格纵跨两行 -->
+            <td></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <!-- <td></td> 这个单元格被上面的 rowspan="2" 合并了，所以被注释掉 -->
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+
+</html>

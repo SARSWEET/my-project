@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>边框对盒子实际大小的影响</title>
+    <style>
+        /* 目标：创建一个总大小为 200x200 像素的盒子，包括 10 像素的红色边框 */
+        div {
+            /* 内容区域的宽度和高度 */
+            width: 180px;
+            height: 180px;
+
+            /* 添加边框 */
+            border: 10px solid red;
+
+            /* 背景颜色，用于可视化内容区域 */
+            background-color: pink;
+
+            /* 盒子模型说明：
+               1. 内容区域（Content）: 180x180 像素
+               2. 边框（Border）: 每边 10 像素
+               3. 总尺寸: 200x200 像素 (180 + 10 + 10 = 200) */
+
+            /* 注意：
+               - 边框会增加元素的总尺寸
+               - 默认情况下，width 和 height 只设置内容区域的大小
+               - 实际占用空间 = 内容 + 内边距 + 边框 + 外边距 */
+
+            /* 替代方法：使用 box-sizing: border-box;
+               这样 width 和 height 将包括内容、内边距和边框 */
+            /* box-sizing: border-box;
+               width: 200px;
+               height: 200px; */
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

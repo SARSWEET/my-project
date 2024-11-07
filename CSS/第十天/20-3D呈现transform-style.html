@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perspective Test</title>
+    <style>
+        body {
+            /* 设置透视效果，使3D变换更具深度感 */
+            perspective: 500px;
+            /* 透视距离越小，3D效果越明显 */
+        }
+
+        .box {
+            position: relative;
+            /* 让子元素相对于父元素进行定位 */
+            width: 200px;
+            /* 设置盒子的宽度为200像素 */
+            height: 200px;
+            /* 设置盒子的高度为200像素 */
+            margin: 100px auto;
+            /* 盒子上下外边距为100像素，水平居中 */
+            transition: all 2s;
+            /* 设置所有属性的过渡效果，持续时间为2秒 */
+            /* 让子元素保持3D空间环境 */
+            transform-style: preserve-3d;
+        }
+
+        .box:hover {
+            /* 鼠标悬停时，盒子绕Y轴旋转60度，产生3D效果 */
+            transform: rotateY(60deg);
+        }
+
+        .box div {
+            position: absolute;
+            /* 子元素绝对定位，使其填充整个父元素 */
+            top: 0;
+            /* 子元素相对于父元素顶部对齐 */
+            left: 0;
+            /* 子元素相对于父元素左侧对齐 */
+            width: 100%;
+            /* 子元素宽度占据父元素的100% */
+            height: 100%;
+            /* 子元素高度占据父元素的100% */
+            background-color: pink;
+            /* 子元素的背景颜色为粉红色 */
+        }
+
+        .box div:last-child {
+            background-color: purple;
+            /* 设置最后一个子元素的背景颜色为紫色 */
+            /* 使最后一个子元素绕X轴旋转60度，创造3D层次效果 */
+            transform: rotateX(60deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div></div> <!-- 第一个子元素，粉红色背景 -->
+        <div></div> <!-- 第二个子元素，紫色背景，并旋转60度 -->
+    </div>
+</body>
+
+</html>

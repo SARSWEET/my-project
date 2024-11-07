@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>元素显示模式转换</title>
+    <style>
+        /* 将行内元素 <a> 转换为块级元素 */
+        a {
+            width: 150px;
+            height: 50px;
+            background-color: pink;
+            display: block;
+            /* display: block; 的效果：
+               1. 元素会独占一行
+               2. 可以设置宽度和高度
+               3. 若未设置宽度，则宽度默认为父容器的100% */
+        }
+
+        /* 将块级元素 <div> 转换为行内元素 */
+        div {
+            width: 300px;
+            /* 注意：这个设置在行内元素中不会生效 */
+            height: 100px;
+            /* 注意：这个设置在行内元素中不会生效 */
+            background-color: purple;
+            display: inline;
+            /* display: inline; 的效果：
+               1. 元素不会独占一行，而是和其他行内元素在同一行
+               2. 宽度和高度设置失效，大小由内容决定
+               3. 只能设置水平方向的 margin 和 padding */
+        }
+
+        /* 将行内元素 <span> 转换为行内块元素 */
+        span {
+            width: 200px;
+            height: 30px;
+            background-color: skyblue;
+            display: inline-block;
+            /* display: inline-block; 的效果：
+               1. 元素不会独占一行，可以和其他元素在同一行
+               2. 可以设置宽度和高度
+               3. 可以设置所有方向的 margin 和 padding */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 转换为块级的 <a> 元素 -->
+    <a href="">金星阿姨</a>
+    <a href="">金星阿姨</a>
+    <!-- 这些链接会垂直排列，每个占一行 -->
+
+    <!-- 转换为行内的 <div> 元素 -->
+    <div>我是块级元素</div>
+    <div>我是块级元素</div>
+    <!-- 这些 div 会在同一行显示，宽高设置无效 -->
+
+    <!-- 转换为行内块的 <span> 元素 -->
+    <span>行内元素转换为行内块元素</span>
+    <span>行内元素转换为行内块元素</span>
+    <!-- 这些 span 会在同一行显示，但可以设置宽高 -->
+</body>
+
+</html>

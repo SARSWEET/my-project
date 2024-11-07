@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 利用函数翻转任意数组
+
+        // 定义一个函数 reverse，用于翻转数组
+        function reverse(arr) {
+            // 初始化一个空数组，用于存储翻转后的结果
+            var newArr = [];
+            // 使用 for 循环从数组的最后一个元素开始遍历
+            for (let i = arr.length - 1; i >= 0; i--) {
+                // 将当前元素添加到新数组的末尾
+                newArr[newArr.length] = arr[i];
+            }
+            // 返回翻转后的新数组
+            return newArr;
+        }
+
+        // 调用 reverse 函数，并翻转数组 [1, 3, 4, 6, 9]
+        var arr1 = reverse([1, 3, 4, 6, 9]);
+        // 输出翻转后的数组
+        console.log(arr1); // 输出：[9, 6, 4, 3, 1]
+
+        // 调用 reverse 函数，并翻转数组 ['red', 'pink', 'blue']
+        var arr2 = reverse(['red', 'pink', 'blue']);
+        // 输出翻转后的数组
+        console.log(arr2); // 输出：['blue', 'pink', 'red']
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

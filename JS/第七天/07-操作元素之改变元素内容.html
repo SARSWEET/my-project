@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 设置 div 和 p 元素的样式 */
+        div,
+        p {
+            width: 300px;
+            /* 设置宽度为 300 像素 */
+            height: 30px;
+            /* 设置高度为 30 像素 */
+            line-height: 30px;
+            /* 设置行高与高度相等，使文字垂直居中 */
+            color: #fff;
+            /* 设置文字颜色为白色 */
+            background-color: pink;
+            /* 设置背景颜色为粉色 */
+        }
+    </style>
+</head>
+
+<body>
+    <button>显示当前系统时间</button> <!-- 按钮，点击后显示当前时间 -->
+    <div>某个时间</div> <!-- 显示时间的 div 元素 -->
+    <p>123</p> <!-- 用于显示系统时间的 p 元素 -->
+
+    <script>
+        // 当点击按钮时，div 里面的文字会发生变化，显示当前系统时间
+
+        // 1. 获取元素，获取事件源
+        var btn = document.querySelector('button'); // 获取按钮元素
+        var div = document.querySelector('div'); // 获取 div 元素，用于显示时间
+
+        // 2. 绑定事件：为按钮添加点击事件
+        // 3. 事件处理程序：当按钮被点击时，执行以下函数，更新 div 中的文字为当前时间
+        btn.onclick = function () {
+            // div.innerText = '2019-6-6'; // 这是一个示例，可以用固定日期替代
+            div.innerText = getDate(); // 调用 getDate 函数，获取当前日期并显示在 div 中
+        }
+
+        // 定义 getDate 函数，返回当前系统时间的字符串
+        function getDate() {
+            var date = new Date(); // 获取当前日期和时间
+            var year = date.getFullYear(); // 获取当前年份
+            var month = date.getMonth() + 1; // 获取当前月份，月份从 0 开始，所以加 1
+            var dates = date.getDate(); // 获取当前日期（几号），注意不能命名为 date 因为上面已使用
+            var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']; // 数组，表示星期
+            var day = date.getDay(); // 获取当前星期，返回 0-6，表示星期天到星期六
+            return '今天是: ' + year + '年' + month + '月' + dates + '日 ' + arr[day]; // 拼接日期字符串并返回
+        }
+
+        // 元素可以不添加事件，也可以直接通过代码修改内容
+        var p = document.querySelector('p'); // 获取 p 元素
+        p.innerText = getDate(); // 直接调用 getDate 函数，显示当前系统时间到 p 元素中（没有绑定事件）
+    </script>
+</body>
+
+</html>

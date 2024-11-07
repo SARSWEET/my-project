@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            /* 设置透视效果，影响3D变换的深度感 */
+            perspective: 1000px;
+        }
+
+        section {
+            position: relative;
+            /* 设置父容器为相对定位，子元素以此为参考进行绝对定位 */
+            width: 300px;
+            /* 设置 section 的宽度为300像素 */
+            height: 200px;
+            /* 设置 section 的高度为200像素 */
+            margin: 150px auto;
+            /* 将 section 元素上下外边距设为150像素，并水平居中 */
+            transform-style: preserve-3d;
+            /* 保持子元素的3D变换效果 */
+            /* 新版本浏览器中，为了确保3D效果的显示，必须设置 transform-style: preserve-3d; */
+            animation: rotate 10s linear infinite;
+            /* 使 section 元素绕 Y 轴进行无限次平滑旋转 */
+            background: url(media/pig.jpg) no-repeat;
+            /* 设置背景图片，随着 section 旋转 */
+        }
+
+        section:hover {
+            animation-play-state: paused;
+            /* 当鼠标悬停时，暂停动画 */
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotateY(0);
+                /* 动画开始时，section 初始位置不旋转 */
+            }
+
+            100% {
+                transform: rotateY(360deg);
+                /* 动画结束时，section 绕 Y 轴旋转360度 */
+            }
+        }
+
+        section div {
+            position: absolute;
+            /* 子元素绝对定位，使其完全覆盖父容器 */
+            top: 0;
+            /* 子元素顶部与父容器顶部对齐 */
+            left: 0;
+            /* 子元素左侧与父容器左侧对齐 */
+            width: 100%;
+            /* 子元素宽度占满父容器 */
+            height: 100%;
+            /* 子元素高度占满父容器 */
+            background: url(media/dog.jpg) no-repeat;
+            /* 设置每个子元素的背景图片 */
+        }
+
+        /* 以下是每个子元素的变换 */
+        section div:nth-child(1) {
+            transform: translateZ(300px);
+            /* 将第一个子元素沿 Z 轴向前移动300像素 */
+        }
+
+        section div:nth-child(2) {
+            transform: rotateY(60deg) translateZ(300px);
+            /* 旋转60度并沿 Z 轴向前移动 */
+        }
+
+        section div:nth-child(3) {
+            transform: rotateY(120deg) translateZ(300px);
+            /* 旋转120度并沿 Z 轴向前移动 */
+        }
+
+        section div:nth-child(4) {
+            transform: rotateY(180deg) translateZ(300px);
+            /* 旋转180度并沿 Z 轴向前移动 */
+        }
+
+        section div:nth-child(5) {
+            transform: rotateY(240deg) translateZ(300px);
+            /* 旋转240度并沿 Z 轴向前移动 */
+        }
+
+        section div:nth-child(6) {
+            transform: rotateY(300deg) translateZ(300px);
+            /* 旋转300度并沿 Z 轴向前移动 */
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div></div> <!-- 第一个子元素 -->
+        <div></div> <!-- 第二个子元素 -->
+        <div></div> <!-- 第三个子元素 -->
+        <div></div> <!-- 第四个子元素 -->
+        <div></div> <!-- 第五个子元素 -->
+        <div></div> <!-- 第六个子元素 -->
+    </section>
+</body>
+
+</html>

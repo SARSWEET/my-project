@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rem适配方案</title>
+    <style>
+        /* 1. 设置媒体查询，针对不同的屏幕宽度 */
+        @media screen and (min-width:320px) {
+            html {
+                font-size: 21.33px;
+                /* 当屏幕宽度大于等于 320px 时，html 的字体大小为 21.33px */
+            }
+        }
+
+        @media screen and (min-width:750px) {
+            html {
+                font-size: 50px;
+                /* 当屏幕宽度大于等于 750px 时，html 的字体大小为 50px */
+            }
+        }
+
+        /* 2. 定义 div 元素的宽度和高度，使用 rem 单位 */
+        div {
+            width: 2rem;
+            /* div 的宽度为 2rem，rem 是相对于 html 的字体大小计算的 */
+            height: 2rem;
+            /* div 的高度为 2rem，保持与宽度相同的比例 */
+            background-color: pink;
+            /* 设置 div 的背景颜色为粉红色 */
+        }
+
+        
+        /* 注释解释：
+           1. 首先选择一个标准屏幕尺寸作为参考基准，这里以 750px 的屏幕为标准。
+           2. 将屏幕尺寸划分为固定的份数，例如将 div 的宽度和高度设置为固定的 rem 值。rem 是相对于 html 的字体大小的单位。
+           3. 通过屏幕尺寸除以 rem 值，可以计算出 html 的字体大小，以确保 div 等元素在不同屏幕尺寸下保持等比例缩放。
+           4. 页面元素的 rem 值计算公式为：页面元素在 750 像素下的 px 值 / html 里的字体大小。
+        */
+    </style>
+</head>
+
+<body>
+    <div></div> <!-- 页面上包含一个使用 rem 单位设置大小的 div 元素 -->
+</body>
+
+</html>

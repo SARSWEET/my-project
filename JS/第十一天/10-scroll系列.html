@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            /* 设置盒子的宽度为200像素 */
+            height: 200px;
+            /* 设置盒子的高度为200像素 */
+            background-color: pink;
+            /* 设置盒子的背景颜色为粉红色 */
+            border: 10px solid red;
+            /* 设置盒子边框为10像素的红色实线 */
+            padding: 10px;
+            /* 设置盒子内部内容与边框的距离为10像素 */
+            overflow: auto;
+            /* 当内容超出盒子的大小时，自动添加滚动条 */
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        我是内容
+        <!-- 多次重复内容，用于演示滚动效果 -->
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+    </div>
+
+    <script>
+        // 获取页面中的第一个<div>元素
+        var div = document.querySelector('div');
+
+        // 打印<div>的实际内容高度，包括不可见的溢出内容
+        console.log(div.scrollHeight);
+        // scrollHeight：获取元素内容的总高度，包括溢出在可视区域之外的内容
+
+        // 打印<div>的可见区域高度（不包括边框和滚动条）
+        console.log(div.clientHeight);
+        // clientHeight：获取元素的可见高度，只包括padding，不包括border、滚动条等
+
+        // 监听<div>的滚动事件
+        div.addEventListener('scroll', function () {
+            // 打印被卷去的内容高度，即距离顶部的滚动距离
+            console.log(div.scrollTop);
+            // scrollTop：获取或设置元素内容垂直滚动的像素数，每次滚动都会触发
+        });
+    </script>
+</body>
+
+</html>

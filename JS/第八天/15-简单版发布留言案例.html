@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 重置所有元素的外边距和内边距 */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 给 body 元素添加100px的内边距 */
+        body {
+            padding: 100px;
+        }
+
+        /* 设置 textarea 文本框的样式：宽度、高度、边框样式等 */
+        textarea {
+            width: 200px;
+            height: 100px;
+            border: 1px solid pink;
+            /* 粉红色边框 */
+            outline: none;
+            /* 取消聚焦时的默认边框 */
+            resize: none;
+            /* 禁止用户调整 textarea 的大小 */
+        }
+
+        /* 给 ul 列表添加上边距 */
+        ul {
+            margin-top: 50px;
+        }
+
+        /* 设置每个 li 项的样式：宽度、背景颜色、字体颜色等 */
+        li {
+            width: 300px;
+            padding: 5px;
+            background-color: rgb(245, 209, 243);
+            /* 背景颜色为淡紫色 */
+            color: red;
+            /* 字体颜色为红色 */
+            font-size: 14px;
+            /* 字体大小 */
+            margin: 15px 0;
+            /* 每个 li 与上下元素的间距 */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 定义一个文本输入框和一个发布按钮，下面是一个空的 ul 列表 -->
+    <textarea name="" id=""></textarea>
+    <button>发布</button>
+    <ul>
+    </ul>
+
+    <script>
+        // 1. 获取所需的元素
+        var text = document.querySelector('textarea'); // 获取 textarea 元素
+        var btn = document.querySelector('button'); // 获取 button 元素
+        var ul = document.querySelector('ul'); // 获取 ul 列表
+
+        // 2. 给按钮注册点击事件
+        btn.onclick = function () {
+            // 如果 textarea 中没有输入内容
+            if (text.value == '') {
+                alert('请输入内容'); // 弹出警告框，提示用户输入内容
+                /* 
+                return false 的作用：
+                - `return false` 是为了阻止后续代码的执行，防止程序继续往下执行
+                - 和 `break` 不同，`break` 主要用于退出循环或 switch 语句块，而 `return false` 是用于提前结束当前函数。
+                */
+                return false; // 终止函数，防止添加空白内容
+            } else {
+                // (1) 创建一个新的 li 元素
+                var li = document.createElement('li');
+
+                /* 
+                li.innerHTML = text.value 的含义：
+                - `li.innerHTML` 是用来设置 li 元素的内容。
+                - `text.value` 是获取 textarea 中用户输入的文本内容。
+                - 所以 `li.innerHTML = text.value;` 的作用是将 textarea 中的文本内容放入新创建的 li 元素中。
+                */
+                li.innerHTML = text.value; // 将 textarea 的内容赋值给新创建的 li 元素
+
+                // (2) 添加元素到 ul 列表
+                // 使用 insertBefore 方法将新创建的 li 元素插入到 ul 的第一个子元素之前
+                ul.insertBefore(li, ul.children[0]); // 将新元素插入到列表的第一个位置
+            }
+        }
+    </script>
+</body>
+
+</html>

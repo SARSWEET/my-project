@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 我们需要一个50*50像素(CSS像素)的图片
+           直接放到手机里会被放大二倍，实际显示为100*100像素，导致模糊 */
+        /* 为了解决这个问题，我们使用了一个100*100像素的图片 */
+        /* 然后通过 CSS 将其缩小为 50*50 像素 (CSS像素) */
+        /* 这种方式被称为 "二倍图"，即准备的图片是所需显示大小的二倍 */
+
+        img:nth-child(2) {
+            width: 50px;
+            /* 将图片的宽度设置为 50 像素 (CSS像素) */
+            height: 50px;
+            /* 将图片的高度设置为 50 像素 (CSS像素) */
+            /* 由于图像文件的分辨率为 100x100 像素 (物理像素)，
+               在高DPI设备上显示时，它会以更高的清晰度呈现，不会模糊 */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 模糊的图片，图片实际大小为50x50像素(CSS像素)，
+         在高DPI设备上显示时会被放大，导致模糊 -->
+    <img src="images/apple50(1).jpg" alt="">
+
+    <!-- 二倍图，实际大小为100x100像素，但在CSS中设置为50x50像素，
+         在高DPI设备上显示时将以更高的清晰度呈现 -->
+    <img src="images/apple100.jpg" alt="">
+</body>
+
+</html>

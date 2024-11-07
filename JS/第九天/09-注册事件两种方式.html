@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>传统注册事件</button>
+    <button>方法监听注册事件</button>
+
+    <script>
+        var btns = document.querySelectorAll('button'); // 获取所有按钮元素
+
+        // 1. 传统方式注册事件
+        // 通过设置 onclick 属性，注册第一个按钮的点击事件
+        btns[0].onclick = function () {
+            alert('hi'); // 点击按钮时弹出提示框
+        }
+
+        // 注意：后续对同一属性的赋值会覆盖之前的事件处理程序
+        btns[0].onclick = function () {
+            alert('how are you'); // 只有这个弹框会被触发
+        }
+
+        // 2. 使用 addEventListener 注册事件
+        // (1) 事件类型必须为字符串，且不带 "on"
+        // (2) 同一元素上可以添加多个同类型的事件监听器
+        btns[1].addEventListener('click', function () {
+            alert('22'); // 第一个事件处理程序
+        })
+
+        btns[1].addEventListener('click', function () {
+            alert('33'); // 第二个事件处理程序
+        })
+    </script>
+</body>
+
+</html>

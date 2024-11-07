@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS三角形强化的巧妙运用</title>
+    <style>
+        .box1 {
+            width: 0;
+            height: 0;
+            /* 
+             * 通过设置 width 和 height 为 0，确保元素没有实际尺寸。
+             * 接下来通过边框来创建三角形。
+             */
+
+            /* 把上边框调大 */
+            /* border-top: 100px solid transparent;
+            border-right: 50px solid skyblue; */
+
+            /* 1.先把左边和下边的边框改为 0，使其不显示 */
+            /* border-bottom: 0 solid blue;
+            border-left: 0 solid green; */
+
+            /* 1.只保留右边边框有颜色 */
+            border-color: transparent red transparent transparent;
+            /* 
+             * 设置各边的边框颜色，上、下、左边框为透明色，右边框为红色。
+             * 这样只会显示右边框的颜色，其他边框由于透明而不可见。
+             */
+
+            /* 2.样式都是 solid */
+            border-style: solid;
+            /* 
+             * 为所有边框设置为 solid 样式，使边框为实线。
+             */
+
+            /* 3.上边框要大 右边框 宽度稍小 其余边框为 0 */
+            border-width: 100px 50px 0 0;
+            /* 
+             * 设置边框宽度：上边框 100px，右边框 50px，下边框和左边框为 0。
+             * 这样将形成一个朝向右下方的三角形。
+             */
+        }
+
+        .price {
+            width: 160px;
+            height: 24px;
+            border: 1px solid red;
+            margin: 0 auto;
+            line-height: 24px;
+            /* 
+             * 通过设置行高与高度相等，使文本在垂直方向上居中显示。
+             * 由于 line-height 是可以继承的，子元素也会继承该行高设置，确保内容居中。
+             */
+            text-align: center;
+            /* 文本水平居中。 */
+        }
+
+        .miaosha {
+            position: relative;
+            float: left;
+            width: 90px;
+            height: 100%;
+            background-color: red;
+            color: #fff;
+            font-weight: 700;
+            /* 设置秒杀标识部分的样式，使用浮动让其在左侧显示。 */
+        }
+
+        .miaosha i {
+            position: absolute;
+            right: 0;
+            width: 0;
+            height: 0;
+            border-color: transparent #fff transparent transparent;
+            border-style: solid;
+            border-width: 24px 10px 0 0;
+            /* 
+             * 创建一个小三角形，通过绝对定位将其定位到右侧，用于创建秒杀标识的装饰效果。
+             * 右侧边框的颜色为白色，使其与红色背景形成对比，形成一个小三角形指示符。
+             */
+        }
+
+        .origin {
+            font-size: 12px;
+            color: gray;
+            text-decoration: line-through;
+            /* 
+             * 设置原价的样式：字体大小缩小，颜色变为灰色，并添加删除线。
+             * 删除线 (line-through) 表示该价格为原价，已被折扣。
+             */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+    <div class="price">
+        <span class="miaosha">
+            $1650
+            <i></i>
+        </span>
+        <span class="origin">$5650</span>
+        <!-- 
+             * "origin" 表示原价，这里使用小字体和删除线来表示已打折的价格。
+             * 新价格通过 "miaosha" 标识显示，通常会放在更显眼的位置。
+             -->
+    </div>
+</body>
+
+</html>

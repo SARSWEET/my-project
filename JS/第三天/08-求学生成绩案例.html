@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!-- 指定文档类型为HTML5，确保浏览器按照HTML5标准解析文档 -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 设置文档的字符编码为UTF-8，支持国际化字符集 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 视口设置，确保网页在移动设备上的可视性和可用性 -->
+    <title>班级成绩计算器</title>
+    <!-- 网页标题，反映了页面内容或功能 -->
+    <script>
+        // JavaScript代码区域开始
+        // 本脚本用于计算班级总成绩和平均成绩
+
+        // 弹出输入框，提示用户输入班级总人数，并将输入值保存到变量num中
+        var num = prompt('请输入班级总人数');
+        // 定义变量sum用于存储总成绩，初始值为0
+        var sum = 0;
+        // 定义变量average用于存储平均成绩
+        var average = 0;
+
+        // 使用for循环依次输入每个学生的成绩
+        // 初始化：let i = 1，设置循环变量i的初始值为1
+        // 条件：i <= num，检查i是否小于或等于班级总人数
+        // 迭代：i++，每次循环结束后将i的值加1
+        for (let i = 1; i <= num; i++) {
+            // 提示用户输入第i个学生的成绩，并将输入值保存到变量score中
+            var score = prompt('请输入第' + i + '个学生的成绩');
+            // 将输入的成绩转换为浮点数并累加到sum中
+            sum += parseFloat(score);
+        }
+
+        // 计算平均成绩
+        average = sum / num;
+        // 弹出总成绩结果
+        alert('班级总成绩是' + sum);
+        // 弹出平均成绩结果
+        alert('班级平均成绩是' + average);
+    </script>
+</head>
+
+<body>
+    <!-- 网页主体内容 -->
+</body>
+
+</html>

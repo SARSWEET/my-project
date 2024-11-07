@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* CSS 文本装饰设置 */
+
+        div {
+            /* text-decoration 属性用于设置文本的装饰线
+               可以用来添加或删除文本上的线 */
+
+            /* 默认值：无装饰线 */
+            /* text-decoration: none; */
+
+            /* 上划线 */
+            /* text-decoration: overline; */
+
+            /* 删除线 */
+            /* text-decoration: line-through; */
+
+            /* 下划线 */
+            text-decoration: underline;
+
+            /* 注意：可以同时应用多个值，例如：
+               text-decoration: underline overline; */
+        }
+
+        a {
+            /* 移除链接的默认下划线 */
+            text-decoration: none;
+
+            /* 设置链接颜色
+               #333 是一种深灰色，近似黑色 */
+            color: #333;
+
+            /* 这种样式常用于导航菜单，使链接看起来更像普通文本 */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 这个 div 元素内的文本将有下划线 -->
+    <div>粉红色的回忆</div>
+
+    <!-- 这个链接将没有下划线，文本颜色为深灰色 -->
+    <a href="#">粉红色的回忆</a>
+</body>
+
+</html>

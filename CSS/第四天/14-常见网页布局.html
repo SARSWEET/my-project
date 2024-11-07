@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>常见网页布局</title>
+    <style>
+        /* 重置默认样式，确保一致的布局基础 */
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        /* 顶部栏样式 */
+        .top {
+            height: 50px;
+            background-color: gray;
+            /* 通常用于导航栏或页面顶部信息 */
+        }
+
+        /* 横幅区域样式 */
+        .banner {
+            width: 980px;
+            height: 150px;
+            background-color: gray;
+            margin: 10px auto;
+            /* 上下间距10px，左右自动居中 */
+            /* 常用于展示主要广告或重要信息 */
+        }
+
+        /* 移除列表默认样式 */
+        li {
+            list-style: none;
+        }
+
+        /* 主要内容区域样式 */
+        .box {
+            width: 980px;
+            height: 300px;
+            margin: 0 auto;
+            /* 水平居中 */
+            background-color: pink;
+        }
+
+        /* 内容区域中的列表项样式 */
+        .box li {
+            float: left;
+            /* 使用浮动实现水平排列 */
+            width: 237px;
+            /* (980 - 30) / 4 = 237.5，向下取整 */
+            height: 300px;
+            background-color: gray;
+            margin-right: 10px;
+            /* 列表项之间的间距 */
+        }
+
+        /* 最后一个列表项特殊样式 */
+        .box .last {
+            margin-right: 0;
+            /* 移除最后一项的右侧间距 */
+        }
+
+        /* 页脚样式 */
+        .footer {
+            margin-top: 10px;
+            /* 与上方内容的间距 */
+            height: 200px;
+            background-color: gray;
+            /* 通常包含版权信息、联系方式等 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top">top</div>
+    <div class="banner">banner</div>
+    <div class="box">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li class="last">4</li>
+        </ul>
+    </div>
+    <div class="footer">footer</div>
+</body>
+
+</html>

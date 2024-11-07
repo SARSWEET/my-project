@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            /* 设置透视距离，影响3D效果的深度 */
+            perspective: 500px;
+            /* 透视距离越小，3D效果越明显，元素在视觉上看起来越大 */
+        }
+
+        div {
+            width: 200px;
+            /* 设置每个 div 的宽度为200像素 */
+            height: 200px;
+            /* 设置每个 div 的高度为200像素 */
+            background-color: pink;
+            /* 设置背景颜色为粉红色 */
+            margin: 100px auto;
+            /* 设置每个 div 的外边距为100像素，并水平居中 */
+
+            /* 使用3D变换，在Z轴上移动元素 */
+            transform: translateZ(0);
+            /* translateZ(0) 表示元素不沿Z轴移动，
+               但由于设置了透视效果，可以为元素添加3D的视觉深度 */
+        }
+    </style>
+</head>
+
+<body>
+    <div></div> <!-- 第一个粉红色方块 -->
+    <div></div> <!-- 第二个粉红色方块 -->
+    <div></div> <!-- 第三个粉红色方块 -->
+</body>
+
+</html>

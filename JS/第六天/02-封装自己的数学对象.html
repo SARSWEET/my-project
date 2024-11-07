@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Custom Math Object Implementation</title>
+    <script>
+        // 自定义数学对象实现
+        // 目的：创建一个包含 PI 常量、最大值和最小值方法的对象
+
+        var myMath = {
+            // PI 常量
+            PI: 3.141592653,
+
+            // 最大值方法
+            max: function () {
+                // 初始化 max 为第一个参数
+                var max = arguments[0];
+                // 遍历所有参数，找出最大值
+                for (let i = 1; i < arguments.length; i++) {
+                    if (arguments[i] > max) {
+                        max = arguments[i];
+                    }
+                }
+                return max;
+            },
+
+            // 最小值方法
+            min: function () {
+                // 初始化 min 为第一个参数
+                var min = arguments[0];
+                // 遍历所有参数，找出最小值
+                for (let i = 1; i < arguments.length; i++) {
+                    if (arguments[i] < min) {
+                        min = arguments[i];
+                    }
+                }
+                return min;
+            }
+        };
+
+        // 测试自定义数学对象
+        console.log(myMath.PI);            // 输出 PI 值
+        console.log(myMath.max(1, 5, 9));  // 输出最大值
+        console.log(myMath.min(1, 5, 9));  // 输出最小值
+
+        // 注意事项：
+        // 1. 使用对象字面量语法创建 myMath 对象
+        // 2. max 和 min 方法使用 arguments 对象获取所有传入的参数
+        // 3. 这个实现假设至少传入一个参数，没有进行空参数检查
+
+        // 改进建议：
+        // - 添加参数验证，处理无参数或非数字参数的情况
+        // - 考虑使用 ES6 的剩余参数语法（...args）替代 arguments
+        // - 可以添加更多数学方法，如平方根、幂运算等
+
+        // 性能考虑：
+        // - 对于大量数据，考虑使用更高效的算法，如分治法
+        // - 在实际应用中，内置的 Math.max() 和 Math.min() 通常更优化
+
+        // 教育目的：
+        // 这个例子展示了如何创建自定义对象和方法，适合理解基本概念
+        // 在实际开发中，推荐使用内置的 Math 对象，除非有特殊需求
+    </script>
+</head>
+
+<body>
+    <!-- 页面内容可以在这里添加 -->
+</body>
+
+</html>

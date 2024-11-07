@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>行内块元素</title>
+    <style>
+        /* 行内块元素（<input>）的 CSS 样式 */
+        input {
+            /* 设置宽度为 250 像素 */
+            width: 250px;
+            /* 设置高度为 35 像素 */
+            height: 35px;
+
+            /* 行内块元素的特点：
+               1. 既具有行内元素的特征，也具有块级元素的特征
+               2. 可以设置宽度（width）和高度（height）
+               3. 默认宽度由内容决定
+               4. 可以和其他元素排列在同一行
+               5. 可以设置 margin 和 padding 的所有方向值 */
+
+            /* 其他可能的样式：
+               display: inline-block;  默认就是 inline-block，通常不需要显式设置
+               margin: 5px;  设置外边距
+               padding: 10px;  设置内边距
+               vertical-align: middle;  控制与文本的垂直对齐 */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 行内块元素示例 -->
+    <input type="text">
+    <input type="text">
+    <!-- 这两个输入框会在同一行显示，但可以设置宽度和高度 -->
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1. 获取 body 元素
+        // 使用 document.body 可以直接访问当前 HTML 文档的 body 元素。
+        // body 元素包含页面的主要内容。
+        var bodyEle = document.body;
+        console.log(bodyEle);  // 将 body 元素对象输出到控制台
+        console.dir(bodyEle);  // 以对象属性的形式输出 body 元素，便于查看其属性和方法
+
+        // 2. 获取 html 元素
+        // var htmlEle = document.html; 这是错误的方式
+        // 注意：document.html 是错误的，因为 HTML 文档根元素是通过 document.documentElement 来访问的。
+        var htmlEle = document.documentElement;
+        console.log(htmlEle);  // 将 html 元素对象输出到控制台
+    </script>
+</body>
+
+</html>

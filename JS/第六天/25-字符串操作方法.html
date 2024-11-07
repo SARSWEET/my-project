@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /**
+         * 字符串操作方法示例
+         * 
+         * 本示例展示了两种常用的字符串操作方法：
+         * 1. concat() - 用于连接字符串
+         * 2. substr() - 用于截取字符串的一部分
+         */
+
+        // 1. concat() 方法
+        // 作用：连接两个或多个字符串，返回新的字符串
+        var str = 'andy';
+        console.log(str.concat('red')); // 输出: "andyred"
+        // 注意：concat() 方法不会改变原字符串，而是返回一个新的字符串
+        // 在实际开发中，通常使用 '+' 运算符来连接字符串，因为它更简洁
+
+        // 2. substr() 方法
+        // 作用：从指定位置开始截取指定数量的字符
+        var str1 = '改革春风吹满地';
+        console.log(str1.substr(2, 2)); // 输出: "春风"
+        // 参数说明：
+        // - 第一个参数（2）：起始位置的索引（从0开始计数）
+        // - 第二个参数（2）：要截取的字符数量
+        // 注意：如果省略第二个参数，将截取从起始位置到字符串末尾的所有字符
+
+        /**
+         * 补充说明：
+         * 1. 这些方法都不会修改原字符串，而是返回新的字符串。
+         * 2. substr() 方法在某些JavaScript版本中可能被废弃，
+         *    可以考虑使用 slice() 或 substring() 作为替代。
+         * 3. 在处理大量字符串操作时，注意性能影响，可能需要考虑使用其他数据结构。
+         */
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

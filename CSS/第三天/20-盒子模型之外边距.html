@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒子模型之外边距</title>
+    <style>
+        /* 基本盒子样式 */
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        /* 第一个盒子的样式 */
+        /* .one {
+            margin-bottom: 20px;  // 设置下外边距为20像素
+        } */
+
+        /* 第二个盒子的样式 */
+        .two {
+            /* margin-top: 20px;  // 设置上外边距为20像素 */
+
+            /* margin: 30px;  // 所有四个方向的外边距都设为30像素 */
+
+            /* 复合写法：上下外边距30px，左右外边距50px */
+            margin: 30px 50px;
+
+            /* margin 复合写法的顺序：
+               - 一个值：上下左右都相同
+               - 两个值：第一个是上下，第二个是左右
+               - 三个值：上、左右、下
+               - 四个值：上、右、下、左（顺时针顺序）
+            */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="one">1</div>
+    <div class="two">2</div>
+</body>
+
+</html>

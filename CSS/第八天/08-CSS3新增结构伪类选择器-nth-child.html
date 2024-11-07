@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3新增结构伪类选择器</title>
+    <style>
+        /* 1.把 ul 里面偶数 (even) 的 li 元素选出来 */
+        /* even 表示偶数，从第 2 个元素开始，每隔一个元素选中一次 */
+        ul li:nth-child(even) {
+            background-color: #ccc;
+        }
+
+        /* 2.把 ul 里面奇数 (odd) 的 li 元素选出来 */
+        /* odd 表示奇数，从第 1 个元素开始，每隔一个元素选中一次 */
+        ul li:nth-child(odd) {
+            background-color: gray;
+        }
+
+        /* 
+         * 3. nth-child(n) 选择器可以使用公式或数字来选择子元素 
+         * n 是从 1 开始递增的变量
+         * 在这个例子中，所有 ol 里面的 li 元素都会被选中并应用样式，因为 n 代表任意数字
+         */
+        /* ol li:nth-child(n) {
+            background-color: pink;
+        } */
+
+        /* 
+         * 4. nth-child(2n) 选择了所有的偶数子元素 
+         * 这个选择器等价于 :nth-child(even)
+         */
+        /* ol li:nth-child(2n) {
+            background-color: pink;
+        }
+        ol li:nth-child(2n+1) {
+            background-color: skyblue;
+        } */
+
+        /* 
+         * 5. nth-child(n+3) 选择从第 3 个元素开始及其之后的所有元素
+         * n 代表从第 3 个元素开始递增
+         */
+        /* ol li:nth-child(n+3) {
+            background-color: pink;
+        } */
+
+        /* 
+         * 6. nth-child(-n+3) 选择从第 1 到第 3 个元素
+         * 公式 -n+3 会选择前 3 个元素，其中 n 是从 1 开始递增的变量
+         */
+        ol li:nth-child(-n+3) {
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>我是第1个孩子</li>
+        <li>我是第2个孩子</li>
+        <li>我是第3个孩子</li>
+        <li>我是第4个孩子</li>
+        <li>我是第5个孩子</li>
+        <li>我是第6个孩子</li>
+        <li>我是第7个孩子</li>
+        <li>我是第8个孩子</li>
+    </ul>
+
+    <ol>
+        <li>我是第1个孩子</li>
+        <li>我是第2个孩子</li>
+        <li>我是第3个孩子</li>
+        <li>我是第4个孩子</li>
+        <li>我是第5个孩子</li>
+        <li>我是第6个孩子</li>
+        <li>我是第7个孩子</li>
+        <li>我是第8个孩子</li>
+    </ol>
+</body>
+
+</html>

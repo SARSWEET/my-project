@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 定义一个删除按钮和一个包含多个li元素的ul列表 -->
+    <button>删除</button>
+    <ul>
+        <li>熊大</li>
+        <li>熊二</li>
+        <li>光头强</li>
+    </ul>
+
+    <script>
+        // 1. 获取按钮元素
+        var btn = document.querySelector('button'); // 获取按钮元素
+        // 通过 nextElementSibling 获取按钮的下一个兄弟元素，即 ul 列表
+        var ul = btn.nextElementSibling;
+
+        // 2. 删除 ul 的子元素节点
+        // ul.removeChild('li'); // 这里会报错，因为 'li' 不是一个具体的元素节点。需要提供的是要删除的具体 li 元素
+
+        // 正确的做法：使用 ul.children 获取 ul 的第一个子元素，并将其删除
+        // ul.removeChild(ul.children[0]); // 这行代码会删除 ul 的第一个 li 元素
+
+        // 3. 点击删除按钮依次删除 ul 列表里的子元素
+        btn.onclick = function () {
+            // 检查 ul 列表是否还有子元素
+            if (ul.children.length == 0) {
+                this.disabled = true; // 如果 ul 中没有子元素了，禁用删除按钮
+            } else {
+                ul.removeChild(ul.children[0]); // 删除 ul 的第一个子元素
+            }
+        }
+    </script>
+</body>
+
+</html>

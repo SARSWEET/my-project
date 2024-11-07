@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>背景位置-像素值定位示例</title>
+    <style>
+        div {
+            /* 设置元素尺寸 */
+            width: 300px;
+            height: 300px;
+
+            /* 设置背景颜色 */
+            background-color: pink;
+
+            /* 设置背景图片 */
+            background-image: url(images/logo.png);
+
+            /* 禁止背景图片平铺 */
+            background-repeat: no-repeat;
+
+            /* 使用像素值精确定位背景图片 */
+
+            /* 方法1：同时指定 x 和 y 坐标 */
+            /* x轴偏移20px，y轴偏移50px */
+            background-position: 20px 50px;
+
+            /* 方法2：只指定 x 坐标，y 坐标默认垂直居中 */
+            /* x轴偏移20px，y轴居中 */
+            background-position: 20px;
+
+            /* 注意：
+               - 正值表示向右/向下偏移
+               - 负值表示向左/向上偏移
+               - 可以使用其他CSS长度单位，如em, rem等 */
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

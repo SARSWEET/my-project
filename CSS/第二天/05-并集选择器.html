@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* CSS 并集选择器示例 */
+
+        /* 要求1: 把熊大熊二改为粉色 */
+        /* 
+        div,
+        p {
+            color: pink;
+        }
+        */
+
+        /* 要求2: 把熊大熊二还有小猪佩奇一家改为粉色 */
+        div,
+        p,
+        .pig li {
+            color: pink;
+        }
+
+        /* 并集选择器的特点：
+           1. 使用逗号(,)分隔多个选择器
+           2. 可以同时选择多个不同的元素并应用相同的样式
+           3. 提高了样式表的复用性和效率
+           4. 可以组合任何有效的选择器 */
+
+        /* 注意：
+           - 并集选择器通常竖着写，每个选择器占一行，提高可读性
+           - 最后一个选择器后面不需要加逗号
+           - 这种写法便于维护和阅读，特别是在选择器较多时 */
+    </style>
+</head>
+
+<body>
+    <!-- 这个 div 元素会变为粉色 -->
+    <div>熊大</div>
+
+    <!-- 这个 p 元素会变为粉色 -->
+    <p>熊二</p>
+
+    <!-- 这个 span 元素不受样式影响，保持默认颜色 -->
+    <span>光头强</span>
+
+    <ul class="pig">
+        <!-- 以下所有 li 元素都会变为粉色，因为它们匹配 .pig li 选择器 -->
+        <li>小猪佩奇</li>
+        <li>猪爸爸</li>
+        <li>猪妈妈</li>
+    </ul>
+</body>
+
+</html>

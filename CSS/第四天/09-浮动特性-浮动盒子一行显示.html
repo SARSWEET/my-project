@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浮动盒子一行显示</title>
+    <style>
+        /* 所有 div 的基本样式 */
+        div {
+            float: left;
+            /* 使所有 div 左浮动 */
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+
+            /* 浮动特性：
+               1. 元素会尽可能靠左排列
+               2. 如果一行放不下，会自动换行
+               3. 浮动元素会紧贴着前一个浮动元素 */
+        }
+
+        /* 第二个 div 的特殊样式 */
+        .two {
+            background-color: purple;
+            height: 250px;
+            /* 高度大于其他 div */
+        }
+
+        /* 第四个 div 的特殊样式 */
+        .four {
+            background-color: skyblue;
+        }
+
+        /* 第一个 div 的特殊样式 */
+        .one {
+            width: 300px;
+            /* 宽度大于其他 div */
+        }
+        .three {
+            width: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 四个浮动的 div，它们会尝试在一行内排列 -->
+    <div class="one">1</div>
+    <div class="two">2</div>
+    <div class="three">3</div>
+    <div class="four">4</div>
+
+    <!-- 浮动元素的行为：
+         1. 所有 div 会从左到右排列
+         2. 如果一行放不下，后面的 div 会换到下一行
+         3. 高度不同的 div 会影响下一行元素的位置
+         4. 宽度较大的 div 会占据更多空间，可能导致后面的元素换行 -->
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 定义 input 元素的默认文字颜色为浅灰色 */
+        input {
+            color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 创建一个文本输入框，默认值为“手机” -->
+    <input type="text" value="手机">
+
+    <script>
+        // 1. 获取 input 元素的引用，方便后续操作
+        var input = document.querySelector('input');
+
+        // 2. 绑定获取焦点事件的处理程序
+        // 当用户点击输入框时（获得焦点），如果输入框的值是默认的“手机”，则清空输入框
+        // 如果值不是“手机”，则保持现有内容。获取焦点时，文本颜色变为深灰色
+        input.onfocus = function () { //注意：这里使用的是 .onfocus 事件处理，而不是 focus 方法
+            if (this.value === '手机') {
+                this.value = ''; // 清空输入框内容
+            }
+            input.style.color = '#333'; // 记得使用 .style 修改元素样式，这里设置文本颜色为深灰色
+        }
+
+        // 绑定失去焦点事件的处理程序
+        // 当用户从输入框移开（失去焦点）时，如果输入框内容为空，则将默认值“手机”重新填充
+        // 无论输入框内容是否改变，失去焦点时文本颜色变为浅灰色
+        input.onblur = function () {
+            if (this.value === '') {
+                this.value = '手机'; // 如果输入框为空，填充默认值“手机”
+            }
+            input.style.color = '#999'; // 失去焦点时将文本颜色设置为浅灰色
+        }
+    </script>
+</body>
+
+</html>

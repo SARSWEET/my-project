@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>清除内外边距</title>
+    <style>
+        /* CSS 重置（Reset） */
+        * {
+            margin: 0;
+            padding: 0;
+            /* 这是一个常见的 CSS 重置技巧
+               目的是移除所有元素的默认内外边距
+               通常作为样式表的第一条规则
+               这有助于在不同浏览器中获得一致的基础样式 */
+        }
+
+        span {
+            background-color: pink;
+            margin: 20px;
+            /* 对于行内元素（如 span）：
+               - 左右外边距会生效
+               - 上下外边距不会影响布局，但可能会影响背景色的范围
+               - 这是因为行内元素不会影响文档流的垂直布局 */
+        }
+
+        /* 最佳实践：
+           对于行内元素，推荐只设置左右内外边距
+           如果需要垂直间距，考虑使用 line-height 或将元素转换为 inline-block */
+    </style>
+</head>
+
+<body>
+    123
+    <ul>
+        <li>abcd</li>
+    </ul>
+    <span>行内元素尽量只设置左右的内外边距</span>
+    <!-- 注意 span 元素周围的空间：
+         左右会有 20px 的间距，但上下不会 -->
+</body>
+
+</html>

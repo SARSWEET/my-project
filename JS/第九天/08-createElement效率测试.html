@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>效率测试</title>
+</head>
+
+<body>
+</body>
+
+<script>
+    // 定义一个函数用于测试 DOM 操作的效率
+    function fn() {
+        var d1 = +new Date(); // 记录开始时间
+
+        // 循环创建并添加 1000 个 <div> 元素
+        for (var i = 0; i < 1000; i++) {
+            var div = document.createElement('div'); // 创建一个新的 <div> 元素
+            div.style.width = '100px'; // 设置 <div> 的宽度
+            div.style.height = '2px'; // 设置 <div> 的高度
+            div.style.border = '1px solid red'; // 设置 <div> 的边框样式
+            document.body.appendChild(div); // 将新创建的 <div> 添加到页面的 <body> 中
+        }
+        var d2 = +new Date(); // 记录结束时间
+        console.log(d2 - d1); // 输出添加 1000 个 <div> 元素所耗费的时间（毫秒）
+    }
+    fn(); // 调用函数执行测试
+</script>
+
+</html>

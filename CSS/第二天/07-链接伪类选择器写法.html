@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width='device-width', initial-scale=1.0">
+    <title>连接伪类选择器写法</title>
+    <style>
+        /* CSS 链接伪类选择器示例 */
+
+        /* 链接伪类选择器的顺序：LVHA
+           L: :link
+           V: :visited
+           H: :hover
+           A: :active */
+
+        body {
+            color: red;
+            /* 注意：这里设置 body 的颜色不会影响 <a> 标签的颜色
+               因为 <a> 标签有自己的默认样式 */
+        }
+
+        /* 常用的链接样式设置 */
+        a {
+            color: #333;
+            /* 设置链接的默认颜色为深灰色 */
+            text-decoration: none;
+            /* 移除链接的下划线 */
+        }
+
+        /* :hover 伪类 - 鼠标悬停时的样式 */
+        a:hover {
+            color: #369;
+            /* 鼠标悬停时改变颜色为蓝灰色 */
+            text-decoration: underline;
+            /* 添加下划线 */
+        }
+
+        /* 链接伪类选择器的特点：
+           1. 用于定义链接在不同状态下的样式
+           2. 常用的有 :link, :visited, :hover, :active
+           3. 顺序很重要，一般遵循 LVHA 顺序
+           4. :hover 和 :active 也可用于其他元素 */
+    </style>
+</head>
+
+<body>
+    <!-- 这个链接会使用上面定义的样式 -->
+    <a href="#">小猪佩奇</a>
+
+    <!-- 这个链接也会使用相同的样式 -->
+    <a href="www.sjd.com">位置网站</a>
+</body>
+
+</html>

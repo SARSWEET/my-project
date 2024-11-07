@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1. 计算1到100的累加和，并输出结果
+        // 初始化累加和变量
+        var sum = 0;
+        // 使用for循环遍历1到100的所有整数
+        for (let i = 0; i <= 100; i++) {
+            // 将当前整数累加到sum变量中
+            sum += i;
+        }
+        // 输出累加和结果
+        console.log(sum);
+
+        // 2. 计算10到50的累加和，并输出结果
+        // 重新初始化累加和变量
+        var sum = 0;
+        // 使用for循环遍历10到50的所有整数
+        for (let i = 10; i <= 50; i++) {
+            // 将当前整数累加到sum变量中
+            sum += i;
+        }
+        // 输出累加和结果
+        console.log(sum);
+
+        // 3. 定义一个函数，用于计算任意两个整数之间的累加和
+        // 函数参数：num1 - 起始整数，num2 - 结束整数
+        function getSum(num1, num2) {
+            // 初始化累加和变量
+            var sum = 0;
+            // 使用for循环遍历num1到num2的所有整数
+            for (let i = num1; i <= num2; i++) {
+                // 将当前整数累加到sum变量中
+                sum += i;
+            }
+            // 输出累加和结果
+            console.log(sum);
+        }
+        // 调用getSum函数，计算并输出1到100的累加和
+        getSum(1, 100);
+        // 调用getSum函数，计算并输出10到50的累加和
+        getSum(10, 50);
+        // 调用getSum函数，计算并输出1到1000的累加和
+        getSum(1, 1000);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 父容器样式 */
+        .father {
+            overflow: hidden;
+            /* 隐藏超出部分 */
+            width: 300px;
+            /* 宽度 300px */
+            height: 300px;
+            /* 高度 300px */
+            margin: 100px auto;
+            /* 上下居中，左右自动 */
+            background-color: pink;
+            /* 背景色为粉色 */
+            text-align: center;
+            /* 文本居中 */
+        }
+
+        /* 子容器样式 */
+        .son {
+            width: 200px;
+            /* 宽度 200px */
+            height: 200px;
+            /* 高度 200px */
+            margin: 50px;
+            /* 外边距 50px */
+            background-color: purple;
+            /* 背景色为紫色 */
+            line-height: 200px;
+            /* 行高与高度相等，实现垂直居中 */
+            color: #fff;
+            /* 文字颜色为白色 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son">son盒子</div> <!-- 子盒子 -->
+    </div>
+    <script>
+        // 常见事件对象的属性和方法
+        // 阻止事件冒泡，标准方法是 stopPropagation
+        var son = document.querySelector('.son');
+        son.addEventListener('click', function (e) {
+            alert('son'); // 点击子盒子时弹出提示
+            e.stopPropagation(); // 阻止事件向父元素传播
+        }, false);
+
+        var father = document.querySelector('.father');
+        father.addEventListener('click', function () {
+            alert('father'); // 点击父盒子时弹出提示
+        }, false);
+
+        document.addEventListener('click', function () {
+            alert('document'); // 点击文档区域时弹出提示
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定位堆叠顺序</title>
+    <style>
+        .box {
+            /* 
+             * 绝对定位 (position: absolute):
+             * - 元素相对于最近的定位祖先（如果没有，则相对于初始包含块）进行定位。
+             * - 元素会脱离文档流，因此不会影响其他元素的布局。
+             */
+            position: absolute;
+
+            /* 设置元素距离包含块顶部和左侧的距离为 0 像素 */
+            top: 0;
+            left: 0;
+
+            /* 设置元素的宽度和高度为 200 像素 */
+            width: 200px;
+            height: 200px;
+        }
+
+        .xiongda {
+            /* 
+             * z-index 属性：
+             * - 控制元素的堆叠顺序，z-index 越大，元素在堆叠上下文中的层级越高。
+             * - 此处设置为 1，意味着 .xiongda 元素会覆盖其他没有 z-index 或 z-index 值更小的元素。
+             */
+            z-index: 1;
+
+            /* 设置元素的背景颜色为红色 */
+            background-color: red;
+        }
+
+        .xionger {
+            /* 没有 z-index 定义，因此会被具有更高 z-index 的元素覆盖 */
+            background-color: green;
+        }
+
+        .qiangge {
+            /* 没有 z-index 定义，因此会被具有更高 z-index 的元素覆盖 */
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 熊大 (红色) 将在堆叠顺序中位于最上层 -->
+    <div class="box xiongda">熊大</div>
+
+    <!-- 熊二 (绿色) 没有 z-index，默认在中间层 -->
+    <div class="box xionger">熊二</div>
+
+    <!-- 光头强 (蓝色) 没有 z-index，默认在最底层 -->
+    <div class="box qiangge">光头强</div>
+</body>
+
+</html>

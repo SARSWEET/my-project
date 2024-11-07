@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 获取时间戳（自 1970 年 1 月 1 日 00:00:00 UTC 以来的毫秒数）
+
+        // 1. 使用 Date 对象的方法
+        var date = new Date();
+        console.log(date.valueOf()); // 返回 Date 对象的原始值
+        console.log(date.getTime()); // 获取时间戳，等同于 valueOf()
+
+        // 2. 使用一元加操作符（最简洁的写法）
+        var date1 = +new Date(); // 一元加操作符会隐式调用 valueOf() 方法
+        console.log(date1);
+
+        // 3. 使用 ES5 引入的静态方法 Date.now()
+        console.log(Date.now()); // 不需要先创建 Date 实例
+
+        // 注意：
+        // 1. 所有这些方法都返回相同的值：当前时间的时间戳
+        // 2. 时间戳是与时区无关的，总是表示 UTC 时间
+        // 3. Date.now() 是最推荐的方法，因为它更直观且不需要创建 Date 实例
+        // 4. 在不支持 Date.now() 的旧浏览器中，可以使用 +new Date() 作为替代
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

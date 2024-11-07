@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">唐伯虎</button> <!-- 创建一个按钮，显示文本为"唐伯虎" -->
+
+    <script>
+        // 点击按钮时，弹出一个对话框
+        // 1. 事件是由三部分组成的，分别是事件源、事件类型和事件处理程序。我们称为"事件三要素"。
+
+        // (1) 事件源：事件被触发的对象，即是谁触发的事件。这里的事件源是按钮。
+        var btn = document.getElementById('btn'); // 获取按钮元素，赋值给变量 btn
+
+        // (2) 事件类型：指触发事件的方式。常见的事件类型包括鼠标点击、鼠标经过、键盘按下、滚轮滑动等。
+        // 在此处，使用的是鼠标点击事件 'onclick'。
+
+        // (3) 事件处理程序：当事件触发时，执行的代码或函数。通过给事件处理程序赋值一个函数来定义处理逻辑。
+        // 在这里，点击按钮后会弹出一个对话框。
+        btn.onclick = function () {
+            alert('点秋香'); // 点击按钮后，弹出对话框，显示"点秋香"。
+        }
+    </script>
+</body>
+
+</html>

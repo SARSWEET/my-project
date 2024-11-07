@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // Date对象: JavaScript内置的日期时间对象
+        // 注意: 必须使用new关键字来创建Date实例
+
+        // 创建一个空数组
+        var arr = new Array();
+
+        // 创建一个空对象
+        var obj = new Object();
+
+        // 1. 创建表示当前时间的Date对象
+        // 如果不传入参数,Date()构造函数将返回表示当前系统时间的对象
+        var date = new Date();
+        console.log(date);
+
+        // 2. Date对象的常用初始化方法
+        // 2.1 使用数字参数: new Date(year, month[, day[, hour[, minutes[, seconds[, milliseconds]]]]]) 
+        // 注意: 月份是从0开始计数的,即0表示一月,11表示十二月
+        var date1 = new Date(2019, 10, 1);
+        console.log(date1); // 输出的是11月1日,而不是10月1日
+
+        // 2.2 使用字符串参数: new Date(dateString)
+        // 字符串格式应该是可以被Date.parse()方法解析的格式
+        var date2 = new Date('2019-10-1 8:8:8');
+        console.log(date2);
+
+        // 注: Date对象还提供了多种获取和设置日期时间各个部分的方法,如getFullYear(), getMonth(), getDate()等
+        // 在实际应用中,可以根据需求选择适当的方法来操作日期时间
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Object Creation using new Object()</title>
+    <script>
+        // 使用 new Object() 构造函数创建对象
+        var obj = new Object(); // 创建一个空对象
+
+        // 动态添加属性和方法
+        obj.uname = '张三丰';  // 添加字符串属性
+        obj.age = 18;         // 添加数值属性
+        obj.sex = '男';       // 添加字符串属性
+        obj.sayHi = function () {  // 添加方法
+            console.log('hi~');
+        };
+
+        // 注意事项：
+        // 1. 使用 new Object() 创建的是一个空对象，需要后续添加属性和方法
+        // 2. 属性和方法的添加使用点符号（.）赋值的方式
+        // 3. 每个属性和方法的赋值语句需要用分号（;）结束
+        // 4. 这种方式允许动态地添加或修改对象的属性和方法
+
+        // 访问对象的属性和方法
+        console.log(obj.uname);   // 使用点符号访问属性，输出：张三丰
+        console.log(obj['age']);  // 使用方括号符号访问属性，输出：18
+        obj.sayHi();              // 调用对象方法，输出：hi~
+
+        // 补充说明：
+        // 1. new Object() 是 JavaScript 的内置构造函数
+        // 2. 这种方式相比对象字面量（{}）更灵活，但代码较冗长
+        // 3. 在现代 JavaScript 中，通常推荐使用对象字面量语法，除非需要动态创建对象
+        // 4. 使用 Object.create(null) 可以创建一个没有原型的空对象
+
+        // 性能考虑：
+        // 当创建大量类似结构的对象时，考虑使用自定义构造函数或类来提高效率和可维护性
+    </script>
+</head>
+
+<body>
+    <!-- 页面内容可以在这里添加 -->
+</body>
+
+</html>

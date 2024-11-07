@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简单小米侧边栏</title>
+    <style>
+        /* 基础链接样式 */
+        a {
+            /* 将行内元素 <a> 转换为块级元素，使其独占一行并可设置宽高 */
+            display: block;
+            /* 设置背景颜色为深灰色 */
+            background-color: #55585a;
+            /* 设置宽度，控制侧边栏的宽度 */
+            width: 230px;
+            /* 设置高度，控制每个菜单项的高度 */
+            height: 40px;
+            /* 移除链接的默认下划线 */
+            text-decoration: none;
+            /* 设置文字颜色为白色，确保在深色背景上可见 */
+            color: #fff;
+            /* 设置首行缩进，使文本稍微往右移动 */
+            text-indent: 2em;
+            /* 设置行高等于元素高度，实现文字垂直居中 */
+            line-height: 40px;
+            /* 设置字体大小 */
+            font-size: 14px;
+        }
+
+        /* 鼠标悬停效果 */
+        a:hover {
+            /* 当鼠标悬停在链接上时，改变背景颜色为小米橙 */
+            background-color: #ff6700;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 侧边栏菜单项 -->
+    <a href="#">手机 电话卡</a>
+    <a href="#">电视 盒子</a>
+    <a href="#">笔记本 平板</a>
+    <a href="#">出行 穿戴</a>
+    <a href="#">智能 路由器</a>
+    <a href="#">健康 儿童</a>
+    <a href="#">耳机 音响</a>
+</body>
+
+</html>

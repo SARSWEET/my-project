@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>粘性定位</title>
+    <style>
+        body {
+            /* 设置页面的高度为 3000 像素，以便展示滚动效果 */
+            height: 3000px;
+        }
+
+        .nav {
+            /* 
+             * 粘性定位 (position: sticky):
+             * - 粘性定位是介于相对定位和固定定位之间的一种定位方式。
+             * - 当元素在页面上滚动到达指定的偏移位置时（此处为 top: 0），元素会固定在该位置。
+             * - 在达到指定位置之前，元素会像相对定位一样正常滚动。
+             */
+            position: sticky;
+
+            /* 
+             * 设置元素的顶部偏移为 0：
+             * - 当用户滚动页面时，元素在达到浏览器窗口顶部时将固定在顶部。
+             */
+            top: 0;
+
+            /* 设置导航栏的宽度为 800 像素 */
+            width: 800px;
+
+            /* 设置导航栏的高度为 50 像素 */
+            height: 50px;
+
+            /* 设置导航栏的背景颜色为粉红色 */
+            background-color: pink;
+
+            /* 
+             * 设置导航栏的外边距：
+             * - 上下外边距为 100 像素，将导航栏推离页面顶部和其他内容。
+             * - 左右外边距为 auto，使导航栏水平居中对齐。
+             */
+            margin: 100px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 粘性定位的导航栏，当页面滚动时，它会在接近浏览器顶部时固定住 -->
+    <div class="nav">我是导航栏</div>
+</body>
+
+</html>

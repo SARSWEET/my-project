@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* CSS 后代选择器示例 */
+
+        /* 选择所有在 <ol> 元素内的 <li> 元素 */
+        ol li {
+            color: pink;
+        }
+
+        /* 选择所有在 <ol> 元素内的 <li> 元素中的 <a> 元素 */
+        ol li a {
+            color: red;
+        }
+
+        /* 选择类名为 "nav" 的元素内的所有 <li> 元素中的 <a> 元素 */
+        .nav li a {
+            color: yellow;
+        }
+
+        /* 后代选择器的特点：
+           1. 使用空格分隔
+           2. 选择所有后代元素，不限于直接子元素
+           3. 可以链接多个选择器，精确定位目标元素
+           4. 从左到右读取，逐级缩小选择范围 */
+    </style>
+</head>
+
+<body>
+    <!-- 有序列表 -->
+    <ol>
+        变态写法
+        <li>我是ol 的孩子</li>
+        <li>我是ol 的孩子</li>
+        <li>我是ol 的孩子</li>
+        <li><a href="#">我是孙子</a></li>
+        <!-- 这个 <a> 标签会受到 ol li 和 ol li a 两个规则的影响 -->
+    </ol>
+
+    <!-- 无序列表 -->
+    <ul>
+        <li>我是ul 的孩子</li>
+        <li>我是ul 的孩子</li>
+        <li>我是ul 的孩子</li>
+        <li><a href="">不会变化</a></li>
+        <!-- 这个 <a> 标签不受上述CSS规则影响 -->
+    </ul>
+
+    <!-- 带有类名的无序列表 -->
+    <ul class="nav">
+        <li>我是ul 的孩子</li>
+        <li>我是ul 的孩子</li>
+        <li>我是ul 的孩子</li>
+        <li><a href="">不会变化</a></li>
+        <li><a href="">不会变化</a></li>
+        <li><a href="">不会变化</a></li>
+        <li><a href="">不会变化</a></li>
+        <!-- 这些 <a> 标签会受到 .nav li a 规则的影响，显示为黄色 -->
+    </ul>
+</body>
+
+</html>

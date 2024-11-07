@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 1. 我们有一个 50x50 像素的盒子需要设置背景图片 */
+        /*    但为了在高分辨率设备上保持清晰度，我们使用了二倍图，即 100x100 像素的图片 */
+
+        /* 2. 为了适应盒子的大小，我们需要将背景图片缩放到 50x50 像素 */
+        /*    这样图片在显示时就不会模糊，同时保持高分辨率的效果 */
+
+        div {
+            width: 50px;
+            /* 设置盒子的宽度为 50 像素 */
+            height: 50px;
+            /* 设置盒子的高度为 50 像素 */
+            border: 1px solid red;
+            /* 为盒子设置红色的 1 像素边框 */
+            background: url(images/apple100.jpg) no-repeat;
+            /* 使用 100x100 像素的二倍图作为背景图片，并不重复显示 */
+            background-size: 50px 50px;
+            /* 将背景图片缩放到 50x50 像素，正好适应盒子的大小 */
+        }
+    </style>
+</head>
+
+<body>
+    <div></div> <!-- 这是一个带有缩放背景图片的 50x50 像素的盒子 -->
+</body>
+
+</html>

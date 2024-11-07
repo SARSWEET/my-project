@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文本垂直居中示例</title>
+    <style>
+        div {
+            /* 设置元素宽度 */
+            width: 200px;
+            /* 设置元素高度 */
+            height: 40px;
+            /* 设置背景颜色为粉色，便于可视化元素范围 */
+            background-color: pink;
+            /* 关键属性：设置行高等于元素高度，实现文本垂直居中 */
+            line-height: 40px;
+
+            /* 垂直居中原理：
+               1. line-height 决定了行框的高度
+               2. 当 line-height 等于容器高度时，文本会垂直居中
+               3. 这种方法只适用于单行文本 */
+
+            /* 可选：添加水平居中 */
+            /* text-align: center; */
+
+            /* 其他可能的样式增强 */
+            /* font-family: Arial, sans-serif; */
+            /* font-size: 16px; */
+            /* color: #333; */
+        }
+    </style>
+</head>
+
+<body>
+    <div>我要居中</div>
+</body>
+
+</html>

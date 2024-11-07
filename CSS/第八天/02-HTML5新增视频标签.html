@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5新增视频标签</title>
+    <style>
+        video {
+            width: 100%;
+            /* 
+             * 将视频的宽度设置为 100%，使其根据父容器的宽度自适应。
+             * 这样可以确保视频在不同屏幕尺寸和设备上具有良好的响应式效果。
+             */
+        }
+    </style>
+</head>
+
+<body>
+    <video src="media/mi.mp4" autoplay muted controls loop poster="media/mi9.jpg"></video>
+    <!-- 
+         * HTML5 <video> 标签用于嵌入视频内容。
+         * 该标签允许直接在网页中播放视频，无需插件或第三方软件。
+         * 
+         * src="media/mi.mp4"：
+         * 指定视频文件的路径，此处为 "media/mi.mp4"。
+         * 
+         * autoplay：
+         * 自动播放视频。当页面加载完成后，视频会自动开始播放。
+         * 需要注意的是，某些浏览器可能会限制自动播放，尤其是在视频没有静音 (muted) 的情况下。
+         * 
+         * muted：
+         * 静音播放视频。与 autoplay 一起使用时，特别是在移动设备上，有助于确保视频能够自动播放。
+         * 
+         * controls：
+         * 为视频提供播放控制界面，包括播放/暂停按钮、音量控制、进度条等。
+         * 
+         * loop：
+         * 循环播放视频。视频播放结束后会自动重新开始播放。
+         * 
+         * poster="media/mi9.jpg"：
+         * 设置视频加载之前显示的封面图片。当视频还未播放或正在加载时，显示指定的图片。
+         */
+</body>
+</html>

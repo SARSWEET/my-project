@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>显示隐藏之display</title>
+    <style>
+        .peppa {
+            display: none;
+            /* 
+             * display: none;
+             * 该属性将盒子完全隐藏，并且不再占有原来的空间。
+             * 隐藏的盒子在页面中不存在，因此不会影响其他元素的布局。
+             */
+
+            display: block;
+            /* 
+             * display: block;
+             * 该属性使盒子再次显示，并恢复其占据的空间。
+             * 可以通过切换 display 属性来实现盒子的显示和隐藏效果。
+             */
+
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            /* 设置盒子的背景颜色为粉红色 */
+        }
+
+        .george {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            /* 设置盒子的背景颜色为天蓝色 */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 盒子 .peppa 的初始状态为显示 (由于 display: block; 是最后定义的) -->
+    <div class="peppa">佩奇</div>
+    <!-- 盒子 .george 的显示状态正常，不受 display 属性影响 -->
+    <div class="george">乔治</div>
+</body>
+
+</html>

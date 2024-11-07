@@ -1,0 +1,26 @@
+.header {
+    width: 200px;
+    height: 200px;
+    background-color: pink;
+
+    // 1. Less嵌套规则：子元素选择器可以直接嵌套在父元素选择器内部，减少代码冗余。
+    a {
+        color: red;
+
+        // 2. 使用 & 符号：在嵌套结构中，如果需要选择伪类、伪元素或交集选择器，使用 & 引用父级选择器。
+        &:hover {
+            color: blue; // 当鼠标悬停在链接上时，颜色变为蓝色
+        }
+    }
+}
+
+.nav {
+    .logo {
+        color: green; // 设置 .nav 内部的 .logo 元素颜色为绿色
+    }
+
+    // 使用 & 符号与伪元素选择器：::before 伪元素会在 .nav 元素之前插入内容
+    &::before {
+        content: ''; // 插入一个空内容，通常用于装饰或布局目的
+    }
+}

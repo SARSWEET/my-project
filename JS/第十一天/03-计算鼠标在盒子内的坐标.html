@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+            margin: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+
+    <script>
+        // 在盒子内移动鼠标时，计算鼠标相对于盒子左上角的坐标
+        // 1. 首先获取鼠标在页面中的坐标 (e.pageX, e.pageY)
+        // 2. 获取盒子在页面中的位置 (box.offsetLeft, box.offsetTop)
+        // 3. 用鼠标在页面中的坐标减去盒子在页面中的位置，得到鼠标相对于盒子左上角的坐标
+        var box = document.querySelector('.box');
+        box.addEventListener('mousemove', function (e) {
+            /* 
+            // 以下为调试信息，用于查看鼠标和盒子位置的坐标
+            console.log(e.pageX); // 鼠标在页面中的X坐标
+            console.log(e.pageY); // 鼠标在页面中的Y坐标
+            console.log(box.offsetLeft); // 盒子在页面中的左边距
+            console.log(box.offsetTop);  // 盒子在页面中的上边距
+            */
+
+            // 计算鼠标相对于盒子左上角的X坐标
+            var X = e.pageX - this.offsetLeft;
+            // console.log(X); // 调试：输出X坐标
+
+            // 计算鼠标相对于盒子左上角的Y坐标
+            var Y = e.pageY - this.offsetTop;
+            // console.log(Y); // 调试：输出Y坐标
+
+            // 将计算出的坐标显示在盒子内
+            this.innerHTML = 'x的坐标是' + X + ' y坐标是' + Y;
+        });
+    </script>
+</body>
+
+</html> 

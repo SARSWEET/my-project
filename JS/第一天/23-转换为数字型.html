@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 字符串转换为数字的多种方法
+
+        // 使用 parseInt() 函数
+        // parseInt() 将字符串转换为整数，如果字符串以数字开头
+        console.log(parseInt('3.14')); // 输出 3，因为它取整数部分
+        console.log(parseInt('3.94')); // 输出 3，同样取整数部分
+        console.log(parseInt('120px')); // 输出 120，忽略非数字字符
+        console.log(parseInt('rem120px')); // 输出 NaN，因为字符串不以数字开头
+
+        // 使用 parseFloat() 函数
+        // parseFloat() 将字符串转换为浮点数，如果字符串以数字开头
+        console.log(parseFloat('3.14')); // 输出 3.14，保留小数部分
+        console.log(parseFloat('120px')); // 输出 120，忽略非数字字符
+        console.log(parseFloat('rem120px')); // 输出 NaN，因为字符串不以数字开头
+
+        // 使用 Number() 构造函数
+        // Number() 可以将字符串转换为整数或浮点数
+        var str = '123';
+        console.log(Number(str)); // 输出 123
+        console.log(Number('12')); // 输出 12
+
+        // 使用算术运算符进行隐式类型转换
+        // 算术运算符 - * / 可以将字符串隐式转换为数字
+        console.log('12' - 0); // 输出 12
+        console.log('123' * 1); // 输出 123
+        console.log('123' / 1); // 输出 123
+
+        // 提示: 可以取消注释下面的代码来测试用户输入的情况
+        // var age = prompt('请输入您的年龄');
+        // console.log(parseInt(age)); // 将用户输入的年龄转换为整数
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

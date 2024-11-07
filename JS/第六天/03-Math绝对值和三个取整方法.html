@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Math Object Methods Explanation</title>
+    <script>
+        // Math 对象常用方法详解
+
+        // 1. Math.abs() - 绝对值方法
+        console.log(Math.abs(1));         // 输出: 1
+        console.log(Math.abs(-1));        // 输出: 1
+        console.log(Math.abs('-1'));      // 输出: 1 (字符串转换为数字)
+        console.log(Math.abs('pink老师')); // 输出: NaN (无法转换为数字)
+        // 注意: Math.abs() 会尝试将参数转换为数字，非数字值返回 NaN
+
+        // 2. 取整方法
+        // 2.1 Math.floor() - 向下取整（向负无穷方向舍入）
+        console.log(Math.floor(1.1));  // 输出: 1
+        console.log(Math.floor(1.9));  // 输出: 1
+        console.log(Math.floor(-1.9)); // 输出: -2
+        console.log(Math.floor(-1.1)); // 输出: -2
+        // 特点: 总是将数值向下舍入到最接近的整数
+
+        // 2.2 Math.ceil() - 向上取整（向正无穷方向舍入）
+        console.log(Math.ceil(1.1));   // 输出: 2
+        console.log(Math.ceil(1.9));   // 输出: 2
+        console.log(Math.ceil(-1.9));  // 输出: -1
+        console.log(Math.ceil(-1.1));  // 输出: -1
+        // 特点: 总是将数值向上舍入到最接近的整数
+
+        // 2.3 Math.round() - 四舍五入取整
+        console.log(Math.round(1.1));  // 输出: 1
+        console.log(Math.round(1.5));  // 输出: 2
+        console.log(Math.round(-1.1)); // 输出: -1
+        console.log(Math.round(-1.9)); // 输出: -2
+        console.log(Math.round(-1.5)); // 输出: -1
+        // 特点: 
+        // - 对于正数，.5 及以上向上取整，小于 .5 向下取整
+        // - 对于负数，-.5 向上取整（-1），小于 -.5 向下取整
+        // - 注意 -1.5 舍入到 -1，这是因为 Math.round() 遵循 "四舍五入到最接近的整数" 规则
+
+        // 注意事项：
+        // 1. 这些方法都会先将参数转换为数字
+        // 2. 对于 NaN，Infinity，或空参数，这些方法都返回 NaN
+        // 3. 在处理金融计算时，要注意 JavaScript 的浮点数精度问题
+
+        // 最佳实践：
+        // - 根据具体需求选择合适的取整方法
+        // - 对于需要精确计算的场景，考虑使用专门的数学库
+    </script>
+</head>
+
+<body>
+    <!-- 页面内容可以在这里添加 -->
+</body>
+
+</html>

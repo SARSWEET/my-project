@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>知否知否,硬是等你好久1</li>
+        <li>知否知否,硬是等你好久2</li>
+        <li>知否知否,硬是等你好久3</li>
+        <li>知否知否,硬是等你好久4</li>
+        <li>知否知否,硬是等你好久5</li>
+    </ul>
+
+    <ol id="wuxv">
+        <li>生僻字</li>
+        <li>生僻字</li>
+        <li>生僻字</li>
+        <li>生僻字</li>
+    </ol>
+
+    <script>
+        // 1. 使用 getElementsByTagName 方法通过标签名获取元素集合。
+        // 返回的是一个类数组对象（HTMLCollection），包含所有匹配的元素。
+        var lis = document.getElementsByTagName('li');
+        console.log(lis); // 输出整个li元素的集合
+        console.log(lis[0]); // 输出集合中的第一个li元素
+
+        // 2. 想要逐个访问元素时，可以通过遍历的方式进行处理
+        for (var i = 0; i < lis.length; i++) {
+            console.log(lis[i]); // 输出每一个li元素
+        }
+
+        // 3. 即使页面中只有一个li元素，返回的仍然是类数组（伪数组）。
+        // 4. 如果页面中没有li元素，返回的是空的类数组。
+
+        // 5. 可以通过指定父元素，再使用 getElementsByTagName 从其内部获取子元素。
+        // 注意：父元素必须是单个DOM元素，而不是元素集合。
+        /* var ooll = document.getElementsByTagName('ol'); */
+        // 这里ooll是类数组，所以需要选择具体的父元素，例如 ooll[0] 代表第一个 ol 元素。
+        // console.log(ooll[0].getElementsByTagName('li')); 
+        // 在实际开发中，通常会先给父元素设置一个ID，通过 getElementById 精确选取该元素。
+
+        // 6. 通过 getElementById 选出 ol 元素
+        // 由于 getElementById 返回的是一个单独的元素对象（不是集合），可以直接使用它来获取子元素。
+        var ooll = document.getElementById('wuxv');
+        console.log(ooll.getElementsByTagName('li')); // 获取 ol 内部的所有 li 元素
+    </script>
+</body>
+
+</html>

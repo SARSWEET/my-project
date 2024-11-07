@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 用户年龄计算器
+
+        // 1. 弹出输入框(prompt)，让用户输入出生年份
+        // 2. 将用户输入的出生年份存储在变量 year 中
+        // 3. 计算年龄：当前年份减去出生年份
+        // 4. 弹出警示框(alert)，显示计算结果
+
+        // 提示：'year' 变量虽然是字符串类型，但减法运算符会触发隐式类型转换
+
+        var year = prompt('请输入您的出生年份');
+        var age = 2024 - year; // 隐式转换字符串为数字，并计算年龄
+        alert('您今年 ' + age + ' 岁了。');
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

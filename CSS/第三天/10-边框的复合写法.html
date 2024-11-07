@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>边框的复合写法和单边设置</title>
+    <style>
+        div {
+            width: 300px;
+            height: 200px;
+
+            /* 边框属性的分开写法（已注释） */
+            /* border-width: 5px;
+               border-style: solid;
+               border-color: pink; */
+
+            /* 边框的复合写法（简写形式）
+               顺序：宽度 样式 颜色（顺序可以变化，但建议保持一致） */
+            /* border: 5px solid pink; */
+
+            /* 单边边框设置 */
+            /* 上边框 */
+            border-top: 5px solid pink;
+
+            /* 下边框 */
+            border-bottom: 10px dashed purple;
+
+            /* 注意：
+               1. 可以单独设置任意一边的边框
+               2. 每个边可以有不同的宽度、样式和颜色
+               3. 未设置的边默认没有边框 */
+
+            /* 其他单边设置示例（已注释）：
+               border-left: 3px dotted blue;
+               border-right: 2px double green; */
+
+            /* 单边属性也可以单独设置宽度、样式或颜色：
+               border-top-width: 5px;
+               border-top-style: solid;
+               border-top-color: pink; */
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>按钮1</button>
+    <button>按钮2</button>
+    <button>按钮3</button>
+    <button>按钮4</button>
+    <button>按钮5</button>
+
+    <script>
+        // 1. 获取所有按钮元素
+        // 使用getElementsByTagName方法获取所有<button>元素，返回的是一个伪数组HTMLCollection
+        var btns = document.getElementsByTagName('button');
+
+        // 遍历每一个按钮，给它们绑定点击事件
+        for (let i = 0; i < btns.length; i++) {
+            // btns是伪数组，btns[i]是每一个具体的按钮元素
+            btns[i].onclick = function () {
+                // 1. 先清除所有按钮的背景颜色
+                for (let i = 0; i < btns.length; i++) {
+                    // 将所有按钮的背景颜色清除，恢复为默认状态
+                    // 注意：这里不能使用当前的i值，因为i指的是循环的索引
+                    // 而this指向当前点击的按钮，不影响其他按钮
+                    btns[i].style.backgroundColor = '';
+                }
+
+                // 2. 再设置当前点击按钮的背景颜色为粉色
+                // this指的是当前触发点击事件的按钮元素
+                this.style.backgroundColor = 'pink';
+            }
+        }
+
+        // 3. 排除其他按钮并设置自己的样式
+        // 这种思想称为"排他思想"：先将其他所有按钮的状态清除，再处理当前按钮的状态
+        // "排他思想"在很多场景中使用，例如表单验证或菜单选项的切换，这种方式确保只有当前选择的元素生效
+    </script>
+</body>
+
+</html>

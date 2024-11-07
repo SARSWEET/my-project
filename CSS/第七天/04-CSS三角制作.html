@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS三角制作</title>
+    <style>
+        .box1 {
+            width: 0;
+            height: 0;
+            /* 
+             * 通过将宽度和高度设置为 0，确保元素没有实际的尺寸。
+             * 三角形的形状完全由边框来创建。
+             */
+            border-top: 10px solid
+                /* red */
+                transparent;
+            border-right: 10px solid
+                /* green */
+                transparent;
+            border-bottom: 10px solid
+                /* blue */
+                transparent;
+            border-left: 10px solid pink;
+            /* 
+             * 通过设置不同的边框颜色和透明度，可以形成三角形。
+             * 这里只显示了左侧的粉红色边框，其余边框为透明，使得看起来像一个左箭头形状的三角形。
+             */
+        }
+
+        .box2 {
+            width: 0;
+            height: 0;
+            /* 
+             * 同样将宽度和高度设置为 0，通过边框创建三角形。
+             */
+            border: 10px solid transparent;
+            /* 
+             * 所有边框初始设为透明，接下来单独设置一个边框的颜色以形成三角形。
+             */
+            border-top-color: red;
+            /* 
+             * 将上边框的颜色设置为红色，其余边框保持透明，
+             * 这会形成一个朝上的红色三角形。
+             */
+            margin: 50px;
+            /* 设置三角形周围的外边距，以便在页面中间显示 */
+        }
+
+        .jd {
+            position: relative;
+            width: 120px;
+            height: 249px;
+            background-color: pink;
+        }
+
+        .jd span {
+            position: absolute;
+            right: 15px;
+            line-height: 0;
+            font-size: 0;
+            top: -10px;
+            border: 5px solid transparent;
+            border-bottom-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="jd">
+        <span></span>
+    </div>
+</body>
+
+</html>

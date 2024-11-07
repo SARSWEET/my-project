@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>块级盒子和内部元素的水平居中</title>
+    <style>
+        .header {
+            width: 900px;
+            height: 200px;
+            background-color: pink;
+            margin: 100px auto;
+            /* 使 .header div 本身水平居中 */
+            text-align: center;
+            /* 使内部的行内元素和行内块元素水平居中 */
+        }
+
+        .header .son {
+            width: 200px;
+            height: 200px;
+            background-color: purple;
+            /* 要使这个块级元素居中，需要设置 margin: 0 auto; */
+            /* margin: 0 auto; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <span>里面的文字</span>
+        <div class="son"></div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        // 利用substring截取URL查询参数，substring(1)去掉开头的“？”符号，默认截取到字符串末尾
+        var params = location.search.substring(1);
+        console.log(params);
+
+        // 使用split将查询参数字符串按照“=”分割成数组，数组的第一个元素是参数名，第二个元素是参数值
+        var arr = params.split('=');
+        console.log(arr);
+
+        // 将欢迎信息和参数值写入div中，注意要确保arr[1]存在以避免错误
+        var div = document.querySelector('div');
+        div.innerHTML = '欢迎您' + (arr[1] || '访客'); // 如果arr[1]不存在，显示“访客”
+    </script>
+</body>
+
+</html>

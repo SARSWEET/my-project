@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /**
+         * 基本包装类型示例
+         * 
+         * 
+         * 本示例演示了 JavaScript 中基本包装类型的概念，
+         * 解释了为什么简单数据类型（如字符串）也能够拥有属性和方法。
+         */
+
+        // 创建一个字符串
+        var str = 'andy';
+        console.log(str.length); // 输出: 4
+
+        /**
+         * 基本包装类型的工作原理：
+         * 
+         * 当我们试图对一个基本类型值调用方法时，JavaScript 会临时将其转换为对象。
+         * 这个过程是自动且瞬时的，通常包括以下步骤：
+         */
+
+        // 1. 创建该基本类型的包装对象
+        var temp = new String('andy');
+
+        // 2. 在临时对象上调用特定方法
+        // str.length 相当于 temp.length
+
+        // 3. 销毁临时对象
+        // temp = null; // 这步在实际代码中是自动完成的，不需要显式写出
+
+        /**
+         * 注意事项：
+         * - 这个过程是由 JavaScript 引擎自动完成的，我们通常不需要手动执行这些步骤
+         * - 基本包装类型包括 String、Number 和 Boolean
+         * - 尽管可以使用 new String()、new Number() 或 new Boolean() 创建包装对象，
+         *   但通常不推荐这样做，因为它可能导致意外的行为
+         * - 在实际开发中，我们仍然将 str 视为基本类型，而不是对象
+         */
+
+        // 示例：展示基本类型和包装对象的区别
+        var primitiveStr = 'hello';
+        var objectStr = new String('hello');
+
+        console.log(typeof primitiveStr); // 输出: "string"
+        console.log(typeof objectStr);    // 输出: "object"
+
+        // 虽然它们的行为很相似，但它们不是完全相同的
+        console.log(primitiveStr === objectStr); // 输出: false
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

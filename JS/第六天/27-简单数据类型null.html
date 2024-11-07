@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /**
+         * JavaScript 数据类型和内存存储示例
+         * 
+         * 本示例探讨了 null 值的特殊性质，以及简单数据类型和复杂数据类型在内存中的存储方式。
+         */
+
+        // null 值的特殊性
+        var timer = null;
+        console.log(typeof timer); // 输出: "object"
+        // 注意：虽然 null 是基本数据类型，但 typeof null 返回 "object"
+        // 这是 JavaScript 中一个历史遗留的 bug
+
+        // null 的常见用途
+        // 当我们计划后续将变量赋值为对象，但目前还未确定具体内容时，可以先将其设置为 null
+        // 例如：var futureObject = null;
+
+        /**
+         * JavaScript 数据类型的内存存储方式：
+         * 
+         * 1. 简单数据类型（也称为基本数据类型或原始类型）：
+         *    - 包括 Number, String, Boolean, Undefined, Null, Symbol (ES6新增)
+         *    - 直接存储在栈（Stack）中
+         *    - 存储的是值本身
+         * 
+         * 2. 复杂数据类型（也称为引用类型）：
+         *    - 包括 Object, Array, Function 等
+         *    - 在栈中存储的是数据的引用（地址），通常是十六进制表示
+         *    - 实际数据存储在堆（Heap）中
+         *    - 通过栈中的引用访问堆中的数据
+         * 
+         * 这种存储方式影响了变量的复制行为和函数参数传递方式。
+         */
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

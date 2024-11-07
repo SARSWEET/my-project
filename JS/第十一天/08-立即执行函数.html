@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1. 立即执行函数（Immediately Invoked Function Expression, IIFE）：不需要显式调用，定义后会立即执行
+        // 普通函数的定义和调用方式
+        function fn() {
+            console.log(1); // 输出数字 1
+        }
+        fn(); // 直接调用函数 fn()
+
+        // 2. 两种立即执行函数的写法（IIFE 语法）：可以传递参数，也可以为函数命名
+        // 写法 1: (function() {})() —— 外层括号包裹函数定义，紧跟一个括号表示立即执行
+        // 写法 2: (function() {} ()) —— 函数内部括号表示立即执行
+        (function sum(a, b) {
+            console.log(a + b); // 输出两个参数的和
+        }(1, 2)); // 传递参数 1 和 2，立即执行
+
+        // 如果页面中有多个立即执行函数，注意要用分号 (;) 隔开以避免语法错误
+        (function sum(a, b) {
+            console.log(a + b); // 输出两个参数的和
+        })(2, 4); // 传递参数 2 和 4，立即执行
+
+        // 3. 立即执行函数的最大作用是独立创建一个作用域，里面所有的变量都是局部变量
+        //    这样可以避免与其他函数产生命名冲突的问题，从而保护全局命名空间
+    </script>
+</body>
+
+</html>

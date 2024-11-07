@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Survey Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        #survey-form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+
+        h1 {
+            text-align: center;
+            color: pink;
+            font-size: 25px;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #description {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input[type='text'],
+        input[type='email'],
+        input[type='number'],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type='radio'],
+        input[type='checkbox'] {
+            margin-right: 10px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        div {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        textarea {
+            height: 100px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .checkbox-group,
+        .radio-group {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id='title'>
+        freeCodeCamp Survey Form
+    </h1>
+    <p id='description'>
+        Thank you for taking the time to help us improve the platform
+    </p>
+
+    <form id='survey-form' action='#' method='post' onsubmit="console.log('Form submitted');">
+        <div class='form-group'>
+            <label id='name-label' for='name'>Name</label>
+            <input id='name' type='text' placeholder='Enter your name' required
+                oninput="console.log('Name input: ' + this.value);">
+        </div>
+
+        <div class='form-group'>
+            <label id='email-label' for='email'>Email</label>
+            <input id='email' type='email' placeholder='Enter your Email' required
+                oninput="console.log('Email input: ' + this.value);">
+        </div>
+
+        <div class='form-group'>
+            <label id='number-label' for='number'>Age (optional)</label>
+            <input id='number' type='number' placeholder='10' min='10' max='99'
+                oninput="console.log('Age input: ' + this.value);">
+        </div>
+
+        <div class='form-group'>
+            <div>Which option best describes your current role?</div>
+            <select id='dropdown' name='role' onchange="console.log('Role selected: ' + this.value);">
+                <option value=''>Select current role</option>
+                <option value='Student'>Student</option>
+                <option value='Full Time Job'>Full Time Job</option>
+                <option value='Full Time Learner'>Full Time Learner</option>
+                <option value='Prefer not to say'>Prefer not to say</option>
+                <option value='Other'>Other</option>
+            </select>
+        </div>
+
+        <div class='form-group radio-group'>
+            <div>Would you recommend freeCodeCamp to a friend?</div>
+            <input type='radio' id='Definitely' name='possibility' value='Definitely' checked
+                onclick="console.log('Possibility selected: ' + this.value);">
+            <label for='Definitely'>Definitely</label>
+
+            <input type='radio' id='Maybe' name='possibility' value='Maybe'
+                onclick="console.log('Possibility selected: ' + this.value);">
+            <label for='Maybe'>Maybe</label>
+
+            <input type='radio' id='Not sure' name='possibility' value='Not sure'
+                onclick="console.log('Possibility selected: ' + this.value);">
+            <label for='Not sure'>Not sure</label>
+        </div>
+
+        <div class='form-group'>
+            <div>What is your favorite feature of freeCodeCamp?</div>
+            <select id='features' name='favorite-feature'
+                onchange="console.log('Favorite feature selected: ' + this.value);">
+                <option value=''>Select an option</option>
+                <option value='Challenges'>Challenges</option>
+                <option value='Projects'>Projects</option>
+                <option value='Community'>Community</option>
+                <option value='Open Source'>Open Source</option>
+            </select>
+        </div>
+
+        <div class='form-group checkbox-group'>
+            <div>What would you like to see improved? <p>(Check all that apply)</p>
+            </div>
+            <input type='checkbox' id='Front-end Projects' value='Front-end Projects'
+                onclick="console.log('Checkbox Front-end Projects: ' + this.checked);">
+            <label for='Front-end Projects'>Front-end Projects</label>
+            <br>
+            <input type='checkbox' id='Back-end Projects' value='Back-end Projects'
+                onclick="console.log('Checkbox Back-end Projects: ' + this.checked);">
+            <label for='Back-end Projects'>Back-end Projects</label>
+            <br>
+            <input type='checkbox' id='Data Visualization' value='Data Visualization'
+                onclick="console.log('Checkbox Data Visualization: ' + this.checked);">
+            <label for='Data Visualization'>Data Visualization</label>
+            <br>
+            <input type='checkbox' id='Challenges' value='Challenges'
+                onclick="console.log('Checkbox Challenges: ' + this.checked);">
+            <label for='Challenges'>Challenges</label>
+            <br>
+            <input type='checkbox' id='Open Source Community' value='Open Source Community'
+                onclick="console.log('Checkbox Open Source Community: ' + this.checked);">
+            <label for='Open Source Community'>Open Source Community</label>
+            <br>
+            <input type='checkbox' id='Gitter help rooms' value='Gitter help rooms'
+                onclick="console.log('Checkbox Gitter help rooms: ' + this.checked);">
+            <label for='Gitter help rooms'>Gitter help rooms</label>
+            <br>
+            <input type='checkbox' id='Videos' value='Videos'
+                onclick="console.log('Checkbox Videos: ' + this.checked);">
+            <label for='Videos'>Videos</label>
+            <br>
+            <input type='checkbox' id='City Meetups' value='City Meetups'
+                onclick="console.log('Checkbox City Meetups: ' + this.checked);">
+            <label for='City Meetups'>City Meetups</label>
+            <br>
+            <input type='checkbox' id='Wiki' value='Wiki' onclick="console.log('Checkbox Wiki: ' + this.checked);">
+            <label for='Wiki'>Wiki</label>
+            <br>
+            <input type='checkbox' id='Forum' value='Forum' onclick="console.log('Checkbox Forum: ' + this.checked);">
+            <label for='Forum'>Forum</label>
+            <br>
+            <input type='checkbox' id='Additional Courses' value='Additional Courses'
+                onclick="console.log('Checkbox Additional Courses: ' + this.checked);">
+            <label for='Additional Courses'>Additional Courses</label>
+        </div>
+
+        <div class='form-group'>
+            <div>Any comments or suggestions?</div>
+            <textarea id='comments' name='comments' placeholder='Enter your comment here...'
+                oninput="console.log('Comments input: ' + this.value);"></textarea>
+        </div>
+
+        <button id='submit' type='submit'>Submit</button>
+    </form>
+</body>
+
+</html>

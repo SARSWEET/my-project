@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Constructor and Object Relationship</title>
+    <script>
+        // 构造函数和对象的关系
+
+        // 1. 构造函数（Constructor Function）
+        // - 用于创建某一类对象的模板
+        // - 类似于其他面向对象语言中的类（class）概念
+        // - 命名惯例：首字母大写
+        function Star(uname, age, sex) {
+            this.name = uname;
+            this.age = age;
+            this.sex = sex;
+            this.sing = function (song) {
+                console.log(song);
+            }
+        }
+
+        // 2. 对象（Object）
+        // - 构造函数的实例，代表具体的个体
+        // - 使用 new 关键字和构造函数来创建
+        var ldh = new Star('刘德华', 18, '男');
+        console.log(ldh);
+
+        // 3. 对象实例化（Instantiation）
+        // - 使用构造函数创建对象的过程
+        // - new 关键字的作用：
+        //   a) 创建一个新的空对象
+        //   b) 将构造函数的 this 指向这个新对象
+        //   c) 执行构造函数内的代码，为新对象添加属性和方法
+        //   d) 返回这个新对象
+
+        // 补充说明：
+        // - 构造函数定义了对象的结构和行为
+        // - 每个通过构造函数创建的对象都是独立的实例
+        // - 可以使用 instanceof 运算符检查对象是否为某个构造函数的实例
+        // 例如：console.log(ldh instanceof Star); // 输出：true
+
+        // 最佳实践：
+        // - 构造函数应只包含初始化代码，复杂的方法应放在原型上
+        // - 使用 ES6 引入的 class 语法可以更清晰地定义和使用"类"
+    </script>
+</head>
+
+<body>
+    <!-- 页面内容可以在这里添加 -->
+</body>
+
+</html>

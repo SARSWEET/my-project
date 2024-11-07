@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // 使用 window.onload 事件可以确保页面所有元素加载完成后再执行 JavaScript 代码
+        /* 
+        window.onload = function () {
+            var btn = document.querySelector('button'); // 获取按钮元素
+            btn.addEventListener('click', function () {
+                alert('点击我'); // 点击按钮时弹出提示
+            });
+        }
+        // 注意：window.onload 只能被设置一次，后续的赋值会覆盖之前的函数
+        window.onload = function () {
+            alert(22); // 仅在页面加载完成后显示22
+        } 
+        */
+
+        // 使用 window.addEventListener('load', ...) 可以注册多个加载事件，不会冲突
+        window.addEventListener('load', function () {
+            var btn = document.querySelector('button'); // 获取按钮元素
+            btn.addEventListener('click', function () {
+                alert('点击我'); // 点击按钮时弹出提示
+            });
+        });
+
+        // 另一个 load 事件处理程序
+        window.addEventListener('load', function () {
+            alert(22); // 也会在页面加载完成后显示22
+        });
+
+        // 使用 DOMContentLoaded 事件更快，因为它在 DOM 完全加载后立即执行，不等待其他资源（如图片和CSS）
+        document.addEventListener('DOMContentLoaded', function () {
+            alert(33); // DOM 加载完成后立即显示33
+        });
+    </script>
+
+    <button>点击</button> <!-- 按钮元素，点击时触发事件 -->
+</body>
+
+</html>

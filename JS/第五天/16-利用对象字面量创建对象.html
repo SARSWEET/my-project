@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Object Creation and Usage</title>
+    <script>
+        // 1. 使用对象字面量创建对象
+        // 语法: var objectName = {};
+        // 注: 这种方法创建一个空对象
+        var obj = {
+            uName: '张三丰',  // 属性: 字符串值
+            age: 18,          // 属性: 数值
+            sex: '男',        // 属性: 字符串值
+            sayHi: function () {  // 方法: 函数
+                console.log('hi~');
+            }
+        };
+
+        // 对象字面量语法说明:
+        // 1. 使用花括号 {} 包裹对象的内容
+        // 2. 属性和方法采用键值对（key-value pair）形式定义
+        // 3. 键（属性名或方法名）和值之间使用冒号 : 分隔
+        // 4. 多个属性或方法之间使用逗号 , 分隔
+        // 5. 方法被定义为匿名函数
+
+        // 2. 对象的使用
+        // 2.1 访问对象属性
+        // 方法一: 点符号法（dot notation）
+        console.log(obj.uName);  // 输出: '张三丰'
+
+        // 方法二: 方括号法（bracket notation）
+        console.log(obj['age']); // 输出: 18
+        // 注: 方括号内的属性名必须是字符串或可以被计算为字符串的表达式
+
+        // 2.2 调用对象方法
+        // 语法: objectName.methodName()
+        obj.sayHi();  // 输出: 'hi~'
+        // 注: 调用方法时必须加括号()，因为方法本质上是函数
+
+        // 补充说明:
+        // 1. 点符号法更常用，但方括号法允许使用变量作为属性名
+        // 2. 如果属性名包含特殊字符或是保留字，必须使用方括号法
+        // 3. 方法调用时若忘记加()，将返回函数定义而不是执行结果
+    </script>
+</head>
+
+<body>
+    <!-- 页面内容可以在这里添加 -->
+</body>
+
+</html>

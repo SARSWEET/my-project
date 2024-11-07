@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /**
+         * JavaScript数组创建方法示例
+         * 
+         * 在JavaScript中，有两种主要的创建数组的方式：
+         * 1. 使用数组字面量
+         * 2. 使用Array构造函数
+         */
+
+        // 1. 使用数组字面量创建数组
+        // 这是最简洁、最常用的方法
+        var arr = [1, 2, 3];
+        console.log(arr); // 输出: [1, 2, 3]
+
+        // 2. 使用Array构造函数创建数组
+        // 注意：Array构造函数的行为会根据参数的数量和类型而变化
+
+        // 创建一个空数组
+        // var arr1 = new Array();
+
+        // 创建一个指定长度的空数组
+        // var arr1 = new Array(2); // 创建一个长度为2的空数组
+
+        // 创建一个包含指定元素的数组
+        var arr1 = new Array(2, 3); // 等价于 [2, 3]
+        console.log(arr1); // 输出: [2, 3]
+
+        /**
+         * 注意事项：
+         * - 使用Array构造函数时，如果只传入一个数字参数，它会被解释为数组的长度
+         * - 如果传入多个参数或一个非数字参数，这些参数会成为数组的元素
+         * - 在大多数情况下，推荐使用数组字面量语法，因为它更简洁且不易出错
+         */
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

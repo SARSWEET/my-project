@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 设置div元素的样式 */
+        div {
+            position: absolute;
+            /* 绝对定位，确保元素的定位属性可被调整 */
+            left: 0;
+            /* 初始位置为距离左边0px */
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            /* 设置背景颜色 */
+        }
+    </style>
+</head>
+
+<body>
+    <div></div> <!-- 创建一个用于动画的div元素 -->
+
+    <script>
+        // 动画实现原理：
+        // 1. 获取div元素的当前位置。
+        // 2. 将当前位置加1px，以此来模拟移动的效果。
+        // 3. 使用定时器(setInterval)不断重复这个操作，形成动画。
+        // 4. 添加一个条件来结束定时器，防止动画无限进行。
+        // 5. 注意：元素必须有定位属性(position)，才能通过element.style.left进行位置调整。
+
+        var div = document.querySelector('div'); // 获取页面中的div元素
+        var timer = setInterval(function () {
+            // 检查div的当前位置是否达到400px
+            if (div.offsetLeft >= 400) {
+                clearInterval(timer); // 达到目标位置，清除定时器，停止动画
+            }
+            div.style.left = div.offsetLeft + 1 + 'px'; // 将div的位置向右移动1px
+
+            /* else {
+                div.style.left = div.offsetLeft + 1 + 'px';
+            } */
+            // 这里不放到else里也没有影响，因为clearInterval后，定时器已经停止，不再执行这部分代码
+        }, 1); // 定时器设置为每1毫秒执行一次，提高动画的流畅度
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 利用函数计算1到100之间的累加和
+
+        // 1. 声明函数
+        // 定义一个名为 getSum 的函数，用于计算1到100之间的累加和
+        function getSum() {
+            // 初始化累加和变量
+            var sum = 0;
+            // 使用 for 循环遍历1到100的所有整数
+            for (let i = 0; i <= 100; i++) {
+                // 将当前整数累加到 sum 变量中
+                sum += i;
+            }
+            // 输出累加和结果到控制台
+            console.log(sum);
+        }
+
+        // 2. 调用函数
+        // 调用 getSum 函数，计算并输出1到100的累加和
+        getSum();
+        // 再次调用 getSum 函数，计算并输出1到100的累加和
+        getSum();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

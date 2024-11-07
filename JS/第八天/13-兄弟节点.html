@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 定义了一个 div 元素和一个 span 元素 -->
+    <div>我是div</div>
+    <span>我是span</span>
+
+    <script>
+        // 使用 querySelector 获取第一个 div 元素
+        var div = document.querySelector('div');
+
+        // 1. nextSibling 获取下一个兄弟节点（包括文本、注释等非元素节点）
+        //   因为 <div> 和 <span> 之间可能有换行或空白字符（这些会被视为文本节点），
+        //   所以 nextSibling 可能会返回一个文本节点。
+        console.log(div.nextSibling); // 输出：<span> 或者 #text（取决于是否有空白字符）
+
+        // 2. previousSibling 获取上一个兄弟节点（包括文本、注释等非元素节点）
+        //   在这个示例中，由于 <div> 是第一个子元素，所以它的 previousSibling 是 null。
+        console.log(div.previousSibling); // 输出：null
+
+        // 3. nextElementSibling 获取下一个兄弟元素节点（跳过文本、注释等非元素节点）
+        //   这里 nextElementSibling 会跳过空白或文本节点，直接获取下一个元素节点 <span>。
+        console.log(div.nextElementSibling); // 输出：<span>我是span</span>
+
+        // 4. previousElementSibling 获取上一个兄弟元素节点（仅获取元素节点）
+        //   因为 <div> 是第一个元素，没有上一个兄弟元素，所以返回 null。
+        console.log(div.previousElementSibling); // 输出：null
+
+    </script>
+</body>
+
+</html>

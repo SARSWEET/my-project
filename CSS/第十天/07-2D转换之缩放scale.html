@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 设置 div 元素的初始样式 */
+        div {
+            width: 200px;
+            /* 设置 div 的宽度为 200 像素 */
+            height: 200px;
+            /* 设置 div 的高度为 200 像素 */
+            background-color: pink;
+            /* 设置背景颜色为粉红色 */
+            margin: 100px auto;
+            /* 将 div 居中显示，并设置上下外边距为 100 像素 */
+
+            /* 设置缩放的中心点为左下角，transform-origin 属性控制缩放的基点 */
+            transform-origin: left bottom;
+            /* 缩放将从左下角开始 */
+        }
+
+        /* 当鼠标悬停在 div 上时，应用缩放效果 */
+        div:hover {
+            /* 1. 使用 transform: scale(x, y); 可以缩放元素的宽度和高度 */
+            /*    数字表示缩放倍数，不需要单位，例如 scale(2, 2) 将宽高都放大为原来的两倍 */
+
+            /* 2. 仅修改宽度为原来的两倍，高度保持不变 */
+            /* transform: scale(2, 1); */
+
+            /* 3. 等比例缩放，只需提供一个值，将宽高同时缩放为原来的多少倍 */
+            /* transform: scale(2); */
+
+            /* 4. 数字小于 1 表示缩小，例如 scale(0.5) 将宽高缩小为原来的一半 */
+            /* transform: scale(0.5); */
+
+            /* 5. transform 的缩放不会影响文档流中的其他盒子，
+                  可以自由设置缩放的中心点，相较于直接设置宽度和高度的变化更加灵活 */
+            /* 例如，直接设置 width: 400px; height: 400px; 会影响其他盒子的位置 */
+            /* 变形后的盒子从原点（如中心点）进行缩放，而不是固定某一方向 */
+            transform: scale(2);
+            /* 将元素缩放为原来的两倍，并从中心点进行缩放，不影响其他盒子 */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 一个空的 div 元素，通过悬停触发缩放效果 -->
+    <div></div>
+    123123
+</body>
+
+</html>

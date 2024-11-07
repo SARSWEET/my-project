@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1. 打印人的一生，从1岁到100岁
+        // 初始化计数器变量 'i'，值为 1
+        var i = 1;
+        // do while 循环，先执行一次循环体，然后判断条件
+        do {
+            // 向控制台打印 '这个人' + i + '岁了'
+            console.log('这个人' + i + '岁了');
+            // 将计数器变量 'i' 增加 1，以避免无限循环
+            i++;
+        } while (i <= 100); // 只要 'i' 小于或等于 100，循环将继续执行
+
+        // 2. 计算1到100之间的和
+        // 初始化求和变量 'sum'，值为 0
+        var sum = 0;
+        // 初始化计数器变量 'j'，值为 1
+        var j = 1;
+        // do while 循环，先执行一次循环体，然后判断条件
+        do {
+            // 将 'j' 的值加到 'sum' 中
+            sum += j;
+            // 将计数器变量 'j' 增加 1，以避免无限循环
+            j++;
+        } while (j <= 100); // 只要 'j' 小于或等于 100，循环将继续执行
+        // 向控制台打印 'sum' 的值
+        console.log(sum);
+
+        // 3. 弹出一个提示框，询问 "你爱我吗？"
+        // 如果输入 "我爱你" 则提示结束，否则一直询问
+        // do while 循环，先执行一次循环体，然后判断条件
+        do {
+            // 弹出提示框并将用户输入存储在变量 'message' 中
+            var message = prompt('你爱我吗?');
+        } while (message !== '我爱你'); // 只要 'message' 不等于 "我爱你"，循环将继续执行
+        // 当用户输入 "我爱你" 时，弹出提示框 "我也爱你"
+        alert('我也爱你');
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

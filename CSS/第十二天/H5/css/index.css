@@ -1,0 +1,364 @@
+/* 全局样式重置，移除所有元素的默认外边距和内边距 */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* 设置body的最大宽度和最小宽度，并居中显示内容 */
+body {
+    max-width: 540px;
+    /* 设置页面的最大宽度为540px */
+    min-width: 320px;
+    /* 设置页面的最小宽度为320px */
+    margin: 0 auto;
+    /* 自动水平居中 */
+    font: normal 14px/1.5 Tahoma, "Lucida Grande", Verdana, "Microsoft Yahei", STXihei, hei;
+    color: #000;
+    background: #f2f2f2;
+    overflow-x: hidden;
+    /* 禁止页面的横向滚动 */
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* 无序列表样式重置，去除默认的列表项符号 */
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* 超链接样式重置，去除下划线并设置默认颜色 */
+a {
+    text-decoration: none;
+    color: #222;
+}
+
+/* 列表项样式重置，去除默认的列表项符号 */
+li {
+    list-style: none;
+}
+
+/* 设置div的边框盒模型，包含内边距和边框 */
+div {
+    box-sizing: border-box;
+}
+
+/* 顶部搜索栏样式 */
+.search-index {
+    display: flex;
+    /* 使用fixed定位使元素相对于屏幕固定，不受父级元素的影响 */
+    position: fixed;
+    /* 问题解释：position: fixed 和 position: absolute 或 position: relative 的区别在于，fixed 是相对于浏览器窗口定位，而 absolute 和 relative 是相对于最近的已定位祖先元素定位（relative 为相对自身定位）*/
+    /* 设置宽度和高度，以确保固定定位的盒子有明确的尺寸 */
+    width: 100%;
+    height: 44px;
+    min-width: 320px;
+    /* 设置最小宽度，确保内容不会过小 */
+    max-width: 540px;
+    /* 设置最大宽度，限制内容过宽 */
+    background-color: #F6F6F6;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    /* 问题解释：这两个边框可以使用复合写法，如：border: 1px solid #ccc #ccc #fff #fff; */
+}
+
+/* 搜索框样式 */
+.search {
+    position: relative;
+    height: 26px;
+    border: 1px solid #ccc;
+    margin: 7px 10px;
+    flex: 1;
+    /* 使搜索框占据可用的空间 */
+    border-radius: 5px;
+    /* 圆角边框 */
+    font-size: 12px;
+    color: #666;
+    line-height: 24px;
+    /* 行高设置，使文本垂直居中 */
+    padding-left: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    /* 设置阴影效果，参数分别为：水平偏移，垂直偏移，模糊半径，阴影颜色 */
+}
+
+/* 搜索框中的图标样式 */
+.search::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 15px;
+    height: 15px;
+    background: url(../images/sprite.png) no-repeat -59px -279px;
+    background-size: 104px auto;
+}
+
+/* 用户图标和文字样式 */
+.user {
+    width: 44px;
+    height: 44px;
+    font-size: 12px;
+    text-align: center;
+    color: #2eaae0;
+}
+
+/* 用户图标背景设置 */
+.user::before {
+    content: '';
+    display: block;
+    width: 23px;
+    height: 23px;
+    background-color: skyblue;
+    background: url(../images/sprite.png) no-repeat -59px -194px;
+    background-size: 104px auto;
+    margin: 4px auto -2px;
+}
+
+/* 焦点图模块的顶部间距设置 */
+.focus {
+    padding-top: 44px;
+    /* 确保焦点图与顶部固定的搜索栏不重叠 */
+}
+
+/* 焦点图的宽度设置 */
+.focus img {
+    width: 100%;
+    /* 图片宽度设置为100%，以适应容器宽度 */
+}
+
+/* 局部导航栏样式 */
+.local-nav {
+    display: flex;
+    height: 64px;
+    background-color: #fff;
+    margin: 3px 4px;
+    border-radius: 8px;
+}
+
+/* 局部导航栏中的列表项样式 */
+.local-nav li {
+    flex: 1;
+    /* 使所有列表项均分可用空间 */
+}
+
+/* 局部导航栏中的链接样式 */
+.local-nav a {
+    display: flex;
+    flex-direction: column;
+    /* 设置为垂直排列 */
+    align-items: center;
+    /* 垂直居中 */
+    font-size: 12px;
+}
+
+/* 局部导航栏图标的基础样式 */
+.local-nav li [class^='local-nav-icon'] {
+    width: 32px;
+    height: 32px;
+    margin-top: 8px;
+    background-color: pink;
+    /* 注意：flex布局不会出现外边距合并的问题，margin可以正常应用 */
+    background: url(../images/localnav_bg.png) no-repeat 0 0;
+    background-size: 32px auto;
+}
+
+/* 局部导航栏中不同图标的定位调整 */
+.local-nav li .local-nav-icon-icon2 {
+    background-position: 0 -32px;
+}
+
+.local-nav li .local-nav-icon-icon3 {
+    background-position: 0 -64px;
+}
+
+.local-nav li .local-nav-icon-icon4 {
+    background-position: 0 -96px;
+}
+
+.local-nav li .local-nav-icon-icon5 {
+    background-position: 0 -128px;
+}
+
+/* 主导航栏样式 */
+nav {
+    border-radius: 8px;
+    margin: 0 4px 3px;
+    overflow: hidden;
+}
+
+/* 主导航栏的通用样式 */
+.nav-common {
+    display: flex;
+    height: 88px;
+    background-color: pink;
+}
+
+/* 第二行导航栏的上边距设置 */
+.nav-common:nth-child(2) {
+    margin: 3px 0;
+}
+
+/* 主导航栏中的导航项样式 */
+.nav-items {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 导航链接的基础样式 */
+.nav-items a {
+    flex: 1;
+    text-align: center;
+    line-height: 44px;
+    color: #fff;
+    font-size: 14px;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* 导航链接中的第一个子项的底部边框设置 */
+.nav-items a:nth-child(1) {
+    border-bottom: 1px solid #fff;
+}
+
+/* 特定导航项的背景图设置 */
+.nav-items:nth-child(1) a {
+    border: 0;
+    background: url(../images/hotel.png) no-repeat bottom center;
+    background-size: 121px;
+}
+
+/* 设置前两列的右边框 */
+.nav-items:nth-child(-n+2) {
+    border-right: 1px solid #fff;
+}
+
+/* 设置不同导航栏的背景渐变色 */
+.nav-common:nth-child(1) {
+    background: -webkit-linear-gradient(left, #FA5A55, #FA994D);
+}
+
+.nav-common:nth-child(2) {
+    background: -webkit-linear-gradient(left, #4B90ED, #53BCED);
+}
+
+.nav-common:nth-child(3) {
+    background: -webkit-linear-gradient(left, #34C2A9, #6CD559);
+}
+
+/* 侧导航栏样式 */
+.subnav-entry {
+    display: flex;
+    border-radius: 8px;
+    background-color: #fff;
+    margin: 0 4px 3px;
+    flex-wrap: wrap;
+    /* 设置换行 */
+    padding: 5px 0;
+}
+
+/* 侧导航栏的列表项宽度设置 */
+.subnav-entry li {
+    flex: 20%;
+    /* 列表项宽度设置为父级的20% */
+}
+
+/* 侧导航栏中的链接样式 */
+.subnav-entry a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 侧导航栏图标样式 */
+.subnav-entry-icon {
+    width: 28px;
+    height: 28px;
+    margin-top: 4px;
+    background-color: pink;
+    background: url(../images/subnav-bg.png) no-repeat;
+    background-size: 28px auto;
+}
+
+/* 销售模块样式 */
+.sales-box {
+    border-top: 1px solid #bbb;
+    background-color: #fff;
+    margin: 4px;
+}
+
+/* 销售模块头部样式 */
+.sales-hd {
+    position: relative;
+    height: 44px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* 标题文字隐藏，用背景图代替 */
+.sales-hd h2 {
+    position: relative;
+    height: 44px;
+    text-indent: -999px;
+    /* 隐藏文本 */
+    overflow: hidden;
+}
+
+/* 销售模块标题的背景图设置 */
+.sales-hd h2::after {
+    position: absolute;
+    top: 14px;
+    left: 20px;
+    content: '';
+    width: 79px;
+    height: 15px;
+    background: url(../images/hot.png) no-repeat 0 -20px;
+    background-size: 79px auto;
+}
+
+/* "更多"按钮样式 */
+.more {
+    position: absolute;
+    right: 5px;
+    top: 8px;
+    background: -webkit-linear-gradient(left, #FF506C, #FF6BC6);
+    border-radius: 15PX;
+    padding: 3PX 20PX 3PX 10PX;
+    color: #fff;
+}
+
+/* "更多"按钮右侧的箭头设置 */
+.more::after {
+    content: '';
+    position: absolute;
+    top: 9.5px;
+    right: 9px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    width: 7px;
+    height: 7px;
+    transform: rotate(45deg);
+    /* 设置箭头旋转45度 */
+}
+
+/* 销售模块中的图片行布局 */
+.row {
+    display: flex;
+}
+
+/* 行中的图片链接样式 */
+.row a {
+    flex: 1;
+    border-bottom: 1px solid #ccc;
+}
+
+/* 每行第一个图片链接的右边框设置 */
+.row a:nth-child(1) {
+    border-right: 1px solid #ccc;
+}
+
+/* 图片样式 */
+.row a img {
+    vertical-align: bottom;
+    /* 图片底部对齐，消除与行内元素的空白 */
+    width: 100%;
+    /* 设置图片宽度为100%，适应容器宽度 */
+}

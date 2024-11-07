@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 使用 continue 关键字
+        // continue 关键字用于退出本次循环，继续执行剩余次数的循环
+        for (let i = 1; i <= 5; i++) {
+            // 如果 i 等于 3，跳过本次循环
+            if (i == 3) {
+                continue;
+            }
+            // 向控制台打印 '我在吃第' + i + '个包子'
+            console.log('我在吃第' + i + '个包子');
+        }
+
+        // 1. 求 1 到 100 之间，除了能被 7 整除之外的整数和
+        // 初始化求和变量 'sum'，值为 0
+        var sum = 0;
+        // for 循环，遍历 1 到 100 之间的整数
+        for (let i = 1; i <= 100; i++) {
+            // 如果 i 能被 7 整除，跳过本次循环
+            if (i % 7 == 0) {
+                continue;
+            }
+            // 将 'i' 的值加到 'sum' 中
+            sum += i;
+        }
+        // 向控制台打印 'sum' 的值
+        console.log(sum);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .slider-bar {
+            position: absolute;
+            /* 绝对定位 */
+            left: 50%;
+            /* 水平居中 */
+            top: 300px;
+            /* 距离顶部300px */
+            margin-left: 600px;
+            /* 向右移动600px，以调整位置 */
+            width: 45px;
+            /* 滑块宽度 */
+            height: 130px;
+            /* 滑块高度 */
+            background-color: pink;
+            /* 背景颜色 */
+        }
+
+        .w {
+            width: 1200px;
+            /* 固定宽度 */
+            margin: 10px auto;
+            /* 上下边距10px，左右居中 */
+        }
+
+        .header {
+            height: 150px;
+            /* 头部高度 */
+            background-color: purple;
+            /* 背景颜色 */
+        }
+
+        .banner {
+            height: 250px;
+            /* banner区域高度 */
+            background-color: skyblue;
+            /* 背景颜色 */
+        }
+
+        .main {
+            height: 1000px;
+            /* 主体部分高度 */
+            background-color: yellowgreen;
+            /* 背景颜色 */
+        }
+
+        span {
+            display: none;
+            /* 初始状态隐藏 */
+            position: absolute;
+            /* 绝对定位 */
+            bottom: 0;
+            /* 距离底部0 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider-bar">
+        <span class="goBack">返回顶部</span>
+    </div>
+    <div class="header w">头部区域</div>
+    <div class="banner w">banner区域</div>
+    <div class="main w">主体部分</div>
+    <script>
+        // 获取需要操作的元素
+        var sliderbar = document.querySelector('.slider-bar');
+        var banner = document.querySelector('.banner');
+        var bannerTop = banner.offsetTop; // 获取banner元素距离文档顶部的距离，用于判断滚动位置
+        var sliderbarTop = sliderbar.offsetTop - bannerTop; // 计算slider-bar需要固定的位置
+        var main = document.querySelector('.main');
+        var goBack = document.querySelector('.goBack');
+        var mainTop = main.offsetTop; // 获取main元素距离文档顶部的距离
+        console.log(bannerTop);
+
+        // 将滚动事件的监听添加到document上
+        // 注意：这个事件处理程序需要写在事件外面，避免多次滚动重复计算，浪费资源
+        document.addEventListener('scroll', function () {
+            // window.pageYOffset是获取页面滚动的距离
+            // 判断页面滚动距离是否超过banner的位置
+            if (window.pageYOffset >= banner.offsetTop) {
+                // 当滚动距离超过banner的位置，固定slider-bar的位置
+                sliderbar.style.position = 'fixed';
+                sliderbar.style.top = sliderbarTop + 'px'; // 设置距离顶部的位置，记得加上单位
+            } else {
+                // 如果没有超过banner的位置，恢复slider-bar的初始定位
+                sliderbar.style.position = 'absolute';
+                sliderbar.style.top = '300px'; // 恢复初始位置300px
+            }
+
+            // 判断页面滚动距离是否超过main部分的位置，显示或隐藏“返回顶部”按钮
+            if (window.pageYOffset >= mainTop) {
+                goBack.style.display = 'block'; // 显示返回顶部按钮
+            } else {
+                goBack.style.display = 'none'; // 隐藏返回顶部按钮
+            }
+        });
+    </script>
+</body>
+
+</html>

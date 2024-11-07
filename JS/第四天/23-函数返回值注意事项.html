@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 函数返回值注意事项
+
+        // 1. return 终止函数
+        function getSum(num1, num2) {
+            // 返回 num1 和 num2 的和，并终止函数执行
+            return num1 + num2;
+            // 下面的代码不会被执行
+            alert('我不会被执行');
+        }
+        // 调用 getSum 函数，并输出 1 和 2 的和
+        console.log(getSum(1, 2)); // 输出：3
+
+        // 2. return 只能返回一个值
+        function fn(num1, num2) {
+            // 返回最后一个值 num2
+            return num1, num2;
+        }
+        // 调用 fn 函数，并输出返回值
+        console.log(fn(1, 2)); // 输出：2
+
+        // 3. 求任意两个数的加减乘除结果
+        function getResult(num1, num2) {
+            // 返回一个数组，包含 num1 和 num2 的加减乘除结果
+            return [num1 + num2, num1 - num2, num1 * num2, num1 / num2];
+        }
+        // 调用 getResult 函数，并用变量 re 接收返回的数组
+        var re = getResult(1, 2);
+        // 输出数组 re 的内容
+        console.log(re); // 输出：[3, -1, 2, 0.5]
+
+        // 4. 函数如果有 return，则返回 return 后面的值；如果没有，则返回 undefined
+        function fun1() {
+            // 返回 666
+            return 666;
+        }
+        // 调用 fun1 函数，并输出返回值
+        console.log(fun1()); // 输出：666
+
+        function fun2() {
+            // 没有 return 语句
+        }
+        // 调用 fun2 函数，并输出返回值
+        console.log(fun2()); // 输出：undefined
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
+

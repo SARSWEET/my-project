@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>背景平铺控制示例</title>
+    <style>
+        div {
+            /* 设置元素尺寸 */
+            width: 300px;
+            height: 300px;
+
+            /* 设置背景颜色 */
+            background-color: pink;
+
+            /* 设置背景图片 */
+            background-image: url(images/logo.png);
+
+            /* 背景平铺控制选项 */
+
+            /* 1. 背景不平铺 */
+            /* background-repeat: no-repeat; */
+            /* 效果：图片只显示一次，不会重复 */
+
+            /* 2. 默认平铺行为 */
+            /* background-repeat: repeat; */
+            /* 效果：图片在水平和垂直方向都重复，填满整个元素 */
+
+            /* 3. 仅在水平方向（X轴）平铺 */
+            /* background-repeat: repeat-x; */
+            /* 效果：图片只在水平方向重复 */
+
+            /* 4. 仅在垂直方向（Y轴）平铺 */
+            /* background-repeat: repeat-y; */
+            /* 效果：图片只在垂直方向重复 */
+
+            /* 注意：背景图片会显示在背景颜色之上 */
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

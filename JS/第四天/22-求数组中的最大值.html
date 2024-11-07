@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 利用函数求数组 [5, 2, 99, 101, 67, 77] 中的最大值
+
+        // 定义一个函数 getArrMax，用于返回数组中的最大值
+        function getArrMax(arr) {
+            // arr 接收一个数组，例如 arr = [5, 2, 99, 101, 67, 77]
+            // 初始化 max 变量为数组的第一个元素
+            var max = arr[0];
+            // 使用 for 循环遍历数组的所有元素
+            for (let i = 1; i < arr.length; i++) {
+                // 如果当前元素大于 max，则更新 max 为当前元素
+                if (arr[i] > max) {
+                    max = arr[i];
+                }
+            }
+            // 返回数组中的最大值
+            return max;
+        }
+
+        // 调用 getArrMax 函数，并输出数组 [5, 2, 99, 101, 67, 77] 中的最大值
+        // var re = getArrMax([5, 2, 99, 101, 67, 77]);
+
+        // 在实际开发中，通常用一个变量来接收函数的返回结果，使用更简单
+        // 调用 getArrMax 函数，并输出数组 [3, 77, 44, 99, 143] 中的最大值
+        var re = getArrMax([3, 77, 44, 99, 143]);
+        console.log(re); // 输出：143
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

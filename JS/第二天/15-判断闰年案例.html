@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 闰年判断算法：
+        // 一个年份是闰年，如果它能被4整除且不能被100整除（例如2004年）
+        // 或者它能被400整除（例如2000年）
+
+        // 弹出 prompt 输入框，让用户输入年份，并将输入值保存到变量中
+        var year = prompt('请您输入年份:');
+        // 将字符串转换为数字类型，以进行数值比较
+        year = Number(year);
+
+        // 使用 if 语句判断输入的年份是否是闰年
+        // 注意使用逻辑运算符 '&&'（且）和 '||'（或），以及取余操作符 '%' 来判断整除
+        if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+            // 如果条件为真，弹出提示框告知用户输入的年份是闰年
+            alert('您输入的年份是闰年');
+        } else {
+            // 否则，弹出提示框告知用户输入的年份是平年
+            alert('您输入的年份是平年');
+        }
+        // 注意：如果用户输入的不是数字，Number(year) 将返回 NaN，if 条件将评估为 false
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

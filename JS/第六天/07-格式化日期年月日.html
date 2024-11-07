@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 创建一个表示当前日期和时间的Date对象
+        var date = new Date();
+
+        // 获取并输出日期的各个组成部分
+        console.log(date.getFullYear());  // 获取四位数的年份
+        console.log(date.getMonth() + 1); // 获取月份（0-11），需要+1以匹配常规表示（1-12）
+        console.log(date.getDate());      // 获取月份中的日期（1-31）
+        console.log(date.getDay());       // 获取星期几（0-6，0表示周日）
+
+        // 格式化当前日期，输出"今年今月今日 星期几"的格式
+
+        // 获取年、月、日
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;  // 记得将月份+1
+        var dates = date.getDate();
+
+        // 创建星期数组，用于将数字(0-6)转换为对应的中文表示
+        var weekdays = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+        var day = date.getDay();
+
+        // 拼接并输出格式化的日期字符串
+        console.log('今天是:' + year + '年' + month + '月' + dates + '日 ' + weekdays[day]);
+
+        // 注意：
+        // 1. 在实际应用中，可能需要考虑将月份和日期补零，例如'01'而不是'1'
+        // 2. 对于国际化应用，应考虑使用Intl.DateTimeFormat进行本地化日期格式化
+        // 3. 在处理日期时，始终要注意时区问题，特别是在跨时区的应用中
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

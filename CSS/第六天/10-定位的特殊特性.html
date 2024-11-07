@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定位的特殊性</title>
+    <style>
+        span {
+            /* 
+             * 绝对定位 (position: absolute):
+             * - 使元素脱离文档流，位置相对于最近的定位祖先进行定位。
+             * - 类似于行内块元素：元素的行为类似于设置了浮动或行内块元素，不会发生外边距塌陷。
+             */
+            position: absolute;
+
+            /* 设置元素距离包含块顶部的距离为 300 像素 */
+            top: 300px;
+
+            /* 设置元素的宽度为 200 像素 */
+            width: 200px;
+
+            /* 设置元素的高度为 150 像素 */
+            height: 150px;
+
+            /* 设置元素的背景颜色为粉红色 */
+            background-color: pink;
+        }
+
+        div {
+            /* 
+             * 行内块元素 (display: inline-block):
+             * - 将块级元素转换为行内块元素，这意味着它具有块级元素的特性，但不会换行。
+             * - 元素的宽度和高度取决于内容，而不是父容器。
+             */
+            display: inline-block;
+
+            /* 
+             * 绝对定位 (position: absolute):
+             * - 使块级元素脱离文档流，位置相对于最近的定位祖先进行定位。
+             * - 元素的宽度和高度也取决于其内容，与浮动元素或行内块元素的行为一致。
+             */
+            position: absolute;
+
+            /* 设置元素的背景颜色为天蓝色 */
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 绝对定位的 span 元素，背景颜色为粉红色，宽度为 200 像素，高度为 150 像素 -->
+    <span>123</span>
+
+    <!-- 绝对定位的 div 元素，背景颜色为天蓝色，宽度和高度取决于内容 -->
+    <div>abcd</div>
+</body>
+
+</html>

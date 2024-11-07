@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /**
+         * 数组筛选示例
+         * 
+         * 需求：从给定的工资数组中筛选出低于2000的工资，并放入新数组
+         */
+
+        // 原始工资数组
+        var arr = [1500, 1200, 2000, 2100, 1800];
+
+        // 用于存储筛选结果的新数组
+        var newArr = [];
+
+        // 遍历原数组，筛选工资
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] < 2000) {
+                // 将符合条件的工资添加到新数组
+                // newArr[newArr.length] = arr[i]; // 这是之前使用的方法
+                newArr.push(arr[i]); // 使用push方法添加元素，更加简洁和高效
+            }
+        }
+
+        // 输出筛选后的结果
+        console.log(newArr);
+
+        /**
+         * 注意事项：
+         * 1. 这种方法会创建一个新数组，原数组保持不变
+         * 2. 使用 push() 方法比直接赋值更推荐，因为它更清晰且性能略好
+         * 3. 在实际应用中，可能需要考虑使用 Array.prototype.filter() 方法来简化这个过程
+         */
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

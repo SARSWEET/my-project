@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 定义.box类，用于容器的样式 */
+        .box {
+            position: relative;
+            /* 使子元素的绝对定位基于该容器 */
+            width: 74px;
+            /* 设置容器的宽度 */
+            height: 88px;
+            /* 设置容器的高度 */
+            border: 1px solid #ccc;
+            /* 给容器添加边框 */
+            margin: 100px auto;
+            /* 使容器水平居中，距离顶部 100px */
+            font-size: 12px;
+            /* 设置文本字体大小 */
+            text-align: center;
+            /* 让容器中的文本水平居中 */
+            color: #f40;
+            /* 设置文本的颜色为红色 (#f40 是简写) */
+        }
+
+        /* 设置 .box 内的 img 图片样式 */
+        .box img {
+            width: 60px;
+            /* 设置图片宽度 */
+            margin-top: 5px;
+            /* 图片顶部外边距为 5px，确保与上方内容有间距 */
+        }
+
+        /* 设置关闭按钮 .close-btn 样式 */
+        .close-btn {
+            position: absolute;
+            /* 使用绝对定位，使按钮位于 .box 之上 */
+            top: -1px;
+            /* 设置按钮顶部位置，相对于 .box 的位置 */
+            left: -16px;
+            /* 设置按钮左侧位置，使其部分位于 .box 外 */
+            width: 14px;
+            /* 设置关闭按钮的宽度 */
+            height: 14px;
+            /* 设置关闭按钮的高度 */
+            border: 1px solid #ccc;
+            /* 给按钮添加边框 */
+            line-height: 14px;
+            /* 让按钮内的文本垂直居中 */
+            font-family: Arial, Helvetica, sans-serif;
+            /* 使用无衬线字体 */
+            cursor: pointer;
+            /* 鼠标悬停时显示手型，表明这是一个可点击按钮 */
+            font-style: normal;
+            /* 设置字体风格为正常（不是斜体） */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        淘宝二维码 <!-- 显示的文字 -->
+        <img src="images/tao.png" alt=""> <!-- 显示的淘宝二维码图片 -->
+        <i class="close-btn">x</i> <!-- 关闭按钮，点击后隐藏整个 .box -->
+    </div>
+
+    <script>
+        // 1.获取事件源，注意选择器
+        var box = document.querySelector('.box'); // 获取包含二维码的容器
+        var btn = document.querySelector('.close-btn'); // 获取关闭按钮
+
+        // 2.绑定事件处理程序
+        btn.onclick = function () {
+            // 点击关闭按钮后，隐藏 .box 容器
+            box.style.display = 'none'; // 将 .box 的 display 样式设置为 none，隐藏该元素
+        }
+    </script>
+</body>
+
+</html>

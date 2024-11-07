@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>固定定位小技巧</title>
+    <style>
+        .w {
+            /* 设置一个宽度为 800 像素，高度为 1400 像素的容器 */
+            width: 800px;
+            height: 1400px;
+            /* 设置容器的背景颜色为粉红色 */
+            background-color: pink;
+            /* 
+             * 通过设置左右外边距为 auto，使容器水平居中对齐
+             * 容器的左右外边距会根据父元素的宽度自动调整 
+             */
+            margin: 0 auto;
+        }
+
+        .fixed {
+            /* 使用 fixed 定位，元素相对于浏览器窗口固定，滚动页面时保持位置不变 */
+            position: fixed;
+
+            /* 
+             * 将元素的左边界设置为浏览器窗口宽度的 50% 
+             * 这意味着元素会被放置在窗口的水平中心线上 
+             */
+            left: 50%;
+
+            /* 
+             * 使用负的 margin-left 值将元素水平向右移动，具体移动距离为版心盒子宽度的一半 
+             * 这样可以让元素相对于 .w 容器的右边缘对齐
+             * 这个距离的计算基于元素自身宽度和 .w 容器的宽度 
+             */
+            margin-left: 405px;
+
+            /* 设置元素的宽度为 50 像素 */
+            width: 50px;
+            /* 设置元素的高度为 150 像素 */
+            height: 150px;
+            /* 设置元素的背景颜色为天蓝色 */
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 固定定位的元素，背景颜色为天蓝色 -->
+    <div class="fixed"></div>
+
+    <!-- 一个宽度为 800 像素，高度为 1400 像素的容器，背景颜色为粉红色 -->
+    <div class="w">版心盒子 800像素</div>
+</body>
+
+</html>

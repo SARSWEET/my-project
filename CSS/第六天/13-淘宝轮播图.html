@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>淘宝轮播图</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            /* 移除链接下划线样式 */
+        }
+
+        li {
+            list-style: none;
+            /* 移除列表项的默认样式（如小圆点或数字） */
+        }
+
+        .tb-promo {
+            position: relative;
+            /* 
+             * overflow: hidden;
+             * 当父元素设置 overflow: hidden 时，它会清除浮动，
+             * 使浮动的子元素被包含在内部，而不会溢出。 
+             * （此行被注释掉是因为在此布局中不需要清除浮动）
+             */
+            width: 520px;
+            height: 280px;
+            background-color: pink;
+            margin: 100px auto;
+            /* 
+             * 相对定位的盒子仍然保留在标准流中，所以可以通过 margin: auto 来居中对齐。
+             * 这里的 margin: auto 使盒子在水平方向上居中。
+             */
+        }
+
+        .tb-promo img {
+            width: 520px;
+            height: 280px;
+            /* 
+             * 这里给 img 设置宽高并不是担心 img 会撑大 div 盒子，因为 div 已经设置了固定的宽高，
+             * 而是为了让 img 主动适配 div 盒子。 
+             * 当然，这样做可能会使比例不同的图片变形，因此需要注意。
+             */
+        }
+
+        /* 使用并集选择器为 .prev 和 .next 按钮设置相同的样式 */
+        .prev,
+        .next {
+            position: absolute;
+            top: 50%;
+            /* 
+             * 因为绝对定位参考的是父级盒子，所以这里的 50% 是指相对于父盒子高度的 50%。
+             * 这样可以将按钮垂直居中对齐父容器。
+             */
+            margin-top: -15px;
+            /* 
+             * 通过设置负的 margin-top，将按钮的中心对齐到父容器的 50% 高度位置，
+             * 这里的 15px 是按钮高度的一半。
+             */
+            /* float: left; */
+            /* 
+             * 注意：如果添加浮动属性，浮动元素会避开其他内容并围绕它们排列。
+             * 但是在这个场景下不需要浮动，所以注释掉了。
+             */
+            width: 20px;
+            height: 30px;
+            background-color: rgba(0, 0, 0, .3);
+            /* 设置半透明的背景颜色，使按钮不完全遮挡图片 */
+            text-align: center;
+            /* 使按钮内容（如 < 或 >）在按钮中水平居中 */
+            line-height: 30px;
+            /* 使按钮内容垂直居中 */
+            color: #fff;
+            /* 设置按钮内容的颜色为白色 */
+        }
+
+        .prev {
+            left: 0;
+            /* 将左侧按钮定位在容器的左边缘 */
+            border-radius: 0 15px 15px 0;
+            /* 
+             * 这里通过将圆角半径设置为高度的一半（15px）来实现按钮的圆角效果，
+             * 使按钮的右侧边缘呈圆形。
+             */
+        }
+
+        .next {
+            right: 0;
+            /* 将右侧按钮定位在容器的右边缘 */
+            border-radius: 15px 0 0 15px;
+            /* 
+             * 这里通过将圆角半径设置为高度的一半（15px）来实现按钮的圆角效果，
+             * 使按钮的左侧边缘呈圆形。
+             */
+            /* 
+             * 如果一个元素同时设置了 left 和 right 属性，浏览器会优先执行 left 属性；
+             * 同理，如果同时设置了 top 和 bottom 属性，浏览器会优先执行 top 属性。
+             * 这与 CSS 属性的权重无关，权重主要影响相同属性之间的冲突。
+             */
+        }
+
+        .promo-nav {
+            position: absolute;
+            bottom: 15px;
+            /* 将导航圆点定位在容器底部 15px 处 */
+            left: 50%;
+            /* 使导航圆点组的左边界位于容器宽度的 50% 处 */
+            margin-left: -35px;
+            /* 
+             * 使用负的 margin-left 值，使圆点组的中心与容器的水平中心线对齐。
+             * 70px 是整个圆点组的总宽度，因此 -35px 是其宽度的一半。
+             */
+            width: 70px;
+            /* 设置导航圆点组的总宽度为 70px */
+            height: 13px;
+            /* 设置导航圆点组的高度为 13px */
+            background-color: rgba(255, 255, 255, 0.3);
+            /* 设置半透明的白色背景，突出显示导航圆点 */
+            border-radius: 6.5px;
+            /* 使圆点组的边缘为圆角，半径为 6.5px */
+        }
+
+        .promo-nav li {
+            /* 
+             * position: absolute; 
+             * 这里不适合用绝对定位，因为给每个小 li 单独设置位置会很麻烦，
+             * 而使用浮动更简单，可以自动排列圆点。
+             */
+            float: left;
+            /* 使导航圆点水平排列，依次排在前一个圆点之后 */
+            width: 8px;
+            /* 设置每个导航圆点的宽度为 8px */
+            height: 8px;
+            /* 设置每个导航圆点的高度为 8px */
+            background-color: #fff;
+            /* 设置导航圆点的默认背景颜色为白色 */
+            border-radius: 50%;
+            /* 将导航圆点设置为完全的圆形 */
+            /* 
+             * line-height: 7.5px 
+             * text-align: center; 
+             * 这里不能用 line-height 和 text-align 来控制圆点的垂直居中，
+             * 因为这些属性主要用于控制文本的对齐。
+             * 由于导航圆点是盒子，本质上通过 margin 来控制它们之间的间距。
+             */
+            margin: 3px;
+            /* 设置导航圆点之间的间距 */
+        }
+
+        /* 这里不要忘记权重的问题： */
+        /* 使用更高的权重使被选中的导航圆点背景颜色变为橙色，以表示当前显示的图片。 */
+        .promo-nav .selected {
+            background-color: #ff5000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tb-promo">
+        <img src="images/tb.jpg" alt="">
+        <!-- 左侧按钮 -->
+        <a href="#" class="prev">&lt;<!-- 这里加上 &lt; 才能使其显示为 "<"，否则会显示为字母 "lt" --></a>
+        <!-- 右侧按钮 -->
+        <a href="#" class="next">&gt;<!-- 这里加上 &gt; 才能使其显示为 ">"，否则会显示为字母 "gt" --></a>
+        <!-- 小圆点导航 -->
+        <ul class="promo-nav">
+            <li class="selected"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+
+</html>

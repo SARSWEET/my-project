@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浮动的元素会有行内块元素的特点</title>
+    <style>
+        /* 任何元素都可以浮动 不管原先是什么模式的元素 添加浮动后具有行内块元素相似的特性 */
+        span,
+        div {
+            width: 200px;
+            height: 100px;
+            background-color: pink;
+            float: left;
+        }
+        /* 如果行内元素添加了浮动 则不需要转换为行内块元素/块元素 就可以直接添加宽和高 */
+        p {float: right;
+            height: 200px;
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+    <span>1</span>
+    <span>2</span>
+    <div>div</div>
+    <p>ppppppppp</p>
+</body>
+</html>

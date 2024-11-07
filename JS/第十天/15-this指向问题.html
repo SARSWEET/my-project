@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>点击</button>
+    <script>
+        // this 的指向问题：通常指向调用它的对象。
+        // 1. 在全局作用域或普通函数中，this指向全局对象window（注意：定时器中的this也指向window）。
+        console.log(this); // 输出：window.console.log(this);
+
+        function fn() {
+            console.log(this); // 输出：window
+        }
+        fn(); // 调用fn，相当于window.fn()
+
+        setTimeout(function () {
+            console.log(this); // 输出：window
+        }, 1000); // 定时器，this指向window
+
+        // 2. 在方法调用中，this指向调用该方法的对象
+        var o = {
+            sayHi: function () {
+                console.log(this); // 输出：o
+            }
+        }
+        o.sayHi(); // 调用sayHi，this指向o
+
+        var btn = document.querySelector('button');
+        // 使用 addEventListener 处理点击事件，this指向触发事件的元素
+        btn.addEventListener('click', function () {
+            console.log(this); // 输出：button元素
+        });
+
+        // 3. 在构造函数中，this指向新创建的实例
+        function xun() {
+            console.log(this); // 输出：新实例
+        }
+        var fun = new xun(); // 使用new关键字调用构造函数，this指向新实例
+    </script>
+</body>
+
+</html>

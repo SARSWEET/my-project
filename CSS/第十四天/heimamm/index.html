@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>黑马面面</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/flexible.js"></script>
+    <script src="js/swiper.min.js"></script>
+</head>
+
+<body>
+
+    <!-- 头部区域 -->
+    <header class="header">黑马面面</header>
+    <section class="warp">
+        <!-- 导航栏区域 -->
+        <nav class="nav">
+            <a href="#" class="item">
+                <img src="/icons/icon1.png" alt="">
+                <span>HR面试</span>
+            </a>
+            <a href="#" class="item">
+                <img src="/icons/icon2.png" alt="">
+                <span>笔试</span>
+            </a>
+            <a href="#" class="item">
+                <img src="/icons/icon3.png" alt="">
+                <span>技术面试</span>
+            </a>
+            <a href="#" class="item">
+                <img src="/icons/icon4.png" alt="">
+                <span>模拟面试</span>
+            </a>
+            <a href="#" class="item">
+                <img src="/icons/icon5.png" alt="">
+                <span>面试技巧</span>
+            </a>
+            <a href="#" class="item">
+                <img src="/icons/icon6.png" alt="">
+                <span>薪资查询</span>
+            </a>
+        </nav>
+        <!-- go模块 -->
+        <section class="go">
+            <img src="images/go.png" alt="">
+        </section>
+    </section>
+    <!-- 就业指导模块 -->
+    <section class="content">
+        <!-- 就业指导头部 -->
+        <div class="con-hd">
+            <h4>就业指导</h4>
+            <a href="#" class="more">更多>> </a>
+        </div>
+        <!-- 旋转木马轮播图模块 -->
+        <div class="get_job_focus">
+            <!-- Swiper -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">Slide 1</div>
+                    <div class="swiper-slide">Slide 2</div>
+                    <div class="swiper-slide">Slide 3</div>
+                    <div class="swiper-slide">Slide 4</div>
+                    <div class="swiper-slide">Slide 5</div>
+                    <div class="swiper-slide">Slide 6</div>
+                    <div class="swiper-slide">Slide 7</div>
+                    <div class="swiper-slide">Slide 8</div>
+                    <div class="swiper-slide">Slide 9</div>
+                    <div class="swiper-slide">Slide 10</div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            centeredSlides: true,
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+    </script>
+</body>
+
+</html>

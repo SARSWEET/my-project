@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            overflow: hidden;
+            /* 隐藏超出元素宽度的内容，创建裁剪效果 */
+            font-size: 20px;
+            /* 设置字体大小为20像素 */
+            width: 0;
+            /* 初始宽度为0，用于动画效果 */
+            height: 30px;
+            /* 设置元素高度为30像素 */
+            white-space: nowrap;
+            /* 防止文本换行，保证文本在一行内显示 */
+            background-color: pink;
+            /* 设置背景颜色为粉红色 */
+
+            /* steps函数用于将动画分成多个离散的步骤 */
+            animation: w 4s steps(10) forwards;
+            /* 动画分成10步完成，每步占用总时间的十分之一 */
+        }
+
+        /* 定义名为 'w' 的关键帧动画 */
+        @keyframes w {
+            0% {
+                width: 0;
+                /* 动画开始时，元素宽度为0 */
+            }
+
+            100% {
+                width: 200px;
+                /* 动画结束时，元素宽度扩展到200像素 */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div>世纪佳缘我在这里等你</div> <!-- 动画应用在这个文本上 -->
+</body>
+
+</html>

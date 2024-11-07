@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>绝对定位-父级有定位</title>
+    <style>
+        .yeye {
+            /* 设置爷爷元素的定位方式为相对定位（relative），
+               这样子元素（具有绝对定位的）将会以此为参考进行定位 */
+            position: relative;
+
+            /* 定义爷爷元素的宽度为 800 像素 */
+            width: 800px;
+
+            /* 定义爷爷元素的高度为 800 像素 */
+            height: 800px;
+
+            /* 设置爷爷元素的背景颜色为亮粉色（hotpink） */
+            background-color: hotpink;
+
+            /* 给爷爷元素设置 100 像素的内边距（padding） */
+            padding: 100px;
+            /* 由于子元素 .son 具有绝对定位（absolute），
+               爷爷元素的内边距不会影响 .son 元素的定位，
+               它仍然会基于爷爷元素的内边距边界进行定位 */
+        }
+
+        .father {
+            /* 定义父元素的宽度为 500 像素 */
+            width: 500px;
+
+            /* 定义父元素的高度为 500 像素 */
+            height: 500px;
+
+            /* 设置父元素的背景颜色为天蓝色（skyblue） */
+            background-color: skyblue;
+        }
+
+        .son {
+            /* 设置子元素的定位方式为绝对定位（absolute），
+               因为爷爷元素（.yeye）有相对定位，子元素会基于爷爷元素定位 */
+            position: absolute;
+
+            /* 将子元素固定在爷爷元素的底部偏移 10 像素 */
+            bottom: 10px;
+
+            /* 将子元素固定在爷爷元素的左侧偏移 30 像素 */
+            left: 30px;
+
+            /* 设置子元素的宽度为 200 像素 */
+            width: 200px;
+
+            /* 设置子元素的高度为 200 像素 */
+            height: 200px;
+
+            /* 设置子元素的背景颜色为粉色（pink） */
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 定义一个爷爷级 div 元素，并应用类 .yeye 的样式 -->
+    <div class="yeye">
+        <!-- 定义一个父级 div 元素，并应用类 .father 的样式 -->
+        <div class="father">
+            <!-- 定义一个子级 div 元素，并应用类 .son 的样式 -->
+            <!-- 子元素 .son 将会以爷爷元素 .yeye 为基准进行定位 -->
+            <div class="son"></div>
+        </div>
+    </div>
+</body>
+
+</html>

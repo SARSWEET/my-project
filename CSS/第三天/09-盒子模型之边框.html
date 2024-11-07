@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒子模型之边框</title>
+    <style>
+        div {
+            /* 设置盒子的基本尺寸 */
+            width: 300px;
+            height: 200px;
+
+            /* 边框属性 */
+
+            /* border-width: 设置边框的粗细 
+               - 可以使用具体的像素值
+               - 也可以使用关键字：thin, medium, thick */
+            border-width: 5px;
+
+            /* border-style: 设置边框的样式 
+               - solid: 实线
+               - dashed: 虚线
+               - dotted: 点线
+               - double: 双线
+               - groove: 3D凹槽效果
+               - ridge: 3D凸起效果
+               - inset: 3D内嵌效果
+               - outset: 3D外凸效果 */
+            /* border-style: dashed; */
+            /* border-style: dotted; */
+            border-style: solid;
+
+            /* border-color: 设置边框的颜色 
+               - 可以使用颜色名称、十六进制值、RGB或RGBA值 */
+            border-color: pink;
+
+            /* 注意：
+               1. 这三个属性可以合并为一个 border 简写属性
+               2. 可以单独设置某一边的边框，如 border-top, border-right 等
+               3. 边框会增加元素的实际尺寸 */
+
+            /* 简写形式示例：
+               border: 5px solid pink; */
+
+            /* 单边设置示例：
+               border-top: 2px dashed blue;
+               border-right: 3px dotted green;
+               border-bottom: 4px double red;
+               border-left: 5px groove yellow; */
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!-- 指定文档类型为HTML5，确保浏览器按照HTML5标准解析文档 -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 设置文档的字符编码为UTF-8，支持国际化字符集 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 视口设置，确保网页在移动设备上的可视性和可用性 -->
+    <title>For循环示例</title>
+    <!-- 网页标题，反映了页面内容或功能 -->
+    <script>
+        // JavaScript代码区域开始
+        // 本脚本演示了如何使用for循环来解决不同的数学问题
+
+        // 1. 求1到100之间所有数的平均值
+        // 定义一个变量sum用于存储累加和，初始值为0
+        var sum = 0;
+        // 定义一个变量average用于存储平均值
+        var average = 0;
+        // 使用for循环从1循环到100
+        for (let i = 1; i <= 100; i++) {
+            // 将当前的i值累加到sum中
+            sum += i;
+        }
+        // 计算平均值
+        average = sum / 100;
+        // 输出平均值到控制台
+        console.log(average); // 预期输出50.5
+
+        // 2. 求1到100之间偶数的和和奇数的和
+        // 定义一个变量even用于存储偶数的累加和，初始值为0
+        var even = 0;
+        // 定义一个变量odd用于存储奇数的累加和，初始值为0
+        var odd = 0;
+        // 使用for循环从1循环到100
+        for (let i = 1; i <= 100; i++) {
+            // 判断当前的i值是否为偶数
+            if (i % 2 == 0) {
+                // 如果是偶数，将i值累加到even中
+                even += i;
+            } else {
+                // 如果是奇数，将i值累加到odd中
+                odd += i;
+            }
+        }
+        // 输出偶数和到控制台
+        console.log('1-100之间偶数的和是' + even); // 预期输出2550
+        // 输出奇数和到控制台
+        console.log('1-100之间奇数的和是' + odd); // 预期输出2500
+
+        // 3. 求1到100之间可以被3整除的数的和
+        // 定义一个变量result用于存储累加和，初始值为0
+        var result = 0;
+        // 使用for循环从1循环到100
+        for (let i = 1; i <= 100; i++) {
+            // 判断当前的i值是否可以被3整除
+            if (i % 3 == 0) {
+                // 如果可以，将i值累加到result中
+                result += i;
+            }
+        }
+        // 输出可以被3整除的数的和到控制台
+        console.log('1-100之间能被3整除的数的和是' + result); // 预期输出1683
+    </script>
+</head>
+
+<body>
+    <!-- 网页主体内容 -->
+</body>
+
+</html>

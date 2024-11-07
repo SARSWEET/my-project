@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>123</div> <!-- 创建一个包含文本“123”的 div 元素 -->
+
+    <script>
+        // 执行事件步骤：点击 div 时，控制台输出“我被选中了”
+
+        // 1. 获取事件源：获取将要绑定事件的元素
+        // 使用 document.querySelector('div') 选择页面上的第一个 div 元素
+        var div = document.querySelector('div');
+
+        // 2. 绑定事件（事件注册）：为选中的 div 元素添加一个事件处理程序
+        // div.onclick 表示当用户点击 div 元素时，会触发该事件
+        // 这里不需要单独写出事件绑定部分，因为直接在第3步中处理
+
+        // 3. 添加事件处理程序：当用户点击 div 时，执行下面的函数
+        // 该函数会在控制台输出 '我被选中了' 字符串
+        div.onclick = function () {
+            console.log('我被选中了');  // 在控制台中显示提示信息
+        }
+    </script>
+</body>
+
+</html>

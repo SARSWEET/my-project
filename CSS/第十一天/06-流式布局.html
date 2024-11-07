@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            /* 重置所有元素的默认外边距，确保布局一致 */
+        }
+
+        section {
+            width: 100%;
+            /* 使 section 宽度占满父元素的可用宽度 */
+            max-width: 980px;
+            /* 设置 section 的最大宽度为 980 像素 */
+            min-width: 320px;
+            /* 设置 section 的最小宽度为 320 像素，确保在较小屏幕上内容不压缩到过小 */
+            margin: 0 auto;
+            /* 将 section 居中显示 */
+            /* 通过设置 margin 为 0 auto，当页面宽度大于 980px 时，section 会居中 */
+        }
+
+        section div {
+            float: left;
+            /* 将子 div 元素设置为左浮动，使其并排显示 */
+            width: 50%;
+            /* 设置每个子 div 元素的宽度为父容器的 50% */
+            height: 400px;
+            /* 设置每个子 div 元素的高度为 400 像素 */
+        }
+
+        section div:nth-child(1) {
+            background-color: pink;
+            /* 设置第一个 div 的背景颜色为粉红色 */
+        }
+
+        section div:nth-child(2) {
+            background-color: purple;
+            /* 设置第二个 div 的背景颜色为紫色 */
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div></div> <!-- 第一个子 div，粉红色背景 -->
+        <div></div> <!-- 第二个子 div，紫色背景 -->
+    </section>
+</body>
+
+</html>

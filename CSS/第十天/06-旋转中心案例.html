@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 设置 div 元素的样式 */
+        div {
+            overflow: hidden;
+            /* 隐藏超出元素边界的内容，确保内部元素不会超出容器 */
+            width: 200px;
+            /* 设置 div 的宽度为 200 像素 */
+            height: 200px;
+            /* 设置 div 的高度为 200 像素 */
+            border: 1px solid pink;
+            /* 为 div 添加 1 像素的粉色实线边框 */
+            margin: 100px auto;
+            /* 将 div 居中显示，并设置上下外边距为 100 像素 */
+        }
+
+        /* 为 div 添加一个 ::before 伪元素，用于在 div 内部显示内容 */
+        div::before {
+            content: '黑马';
+            /* 添加伪元素内容，可以是文本或其他内容 */
+            display: block;
+            /* 将伪元素转换为块级元素，允许设置宽度和高度 */
+            width: 100%;
+            /* 设置伪元素的宽度为 div 的 100% */
+            height: 100%;
+            /* 设置伪元素的高度为 div 的 100% */
+            background-color: hotpink;
+            /* 设置伪元素的背景颜色为亮粉色 */
+
+            /* 使伪元素旋转 180 度，并设置旋转的基点为左下角 */
+            transform: rotate(180deg);
+            transform-origin: left bottom;
+
+            /* 设置过渡效果，使伪元素的变换更加平滑，持续时间为 0.4 秒 */
+            transition: all 0.4s;
+        }
+
+        /* 当鼠标悬停在 div 上时，将伪元素旋转回原位 */
+        div:hover::before {
+            transform: rotate(0deg);
+            /* 将伪元素旋转至 0 度，恢复初始状态 */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 一个空的 div 元素，通过 ::before 伪元素添加内容和动画效果 -->
+    <div></div>
+</body>
+
+</html>

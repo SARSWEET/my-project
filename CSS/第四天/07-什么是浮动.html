@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浮动示例</title>
+    <style>
+        /* 共享样式：应用于 .left 和 .right 类 */
+        .left,
+        .right {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        /* 左浮动元素 */
+        .left {
+            float: left;
+            /* float: left 使元素向左浮动
+               1. 元素会尽可能靠左
+               2. 元素会脱离正常文档流
+               3. 后续元素会围绕它排列 */
+        }
+
+        /* 右浮动元素 */
+        .right {
+            float: right;
+            /* float: right 使元素向右浮动
+               1. 元素会尽可能靠右
+               2. 同样脱离正常文档流
+               3. 在文档中的顺序会影响它们的最终位置 */
+        }
+
+        /* 浮动的特点：
+           1. 浮动元素会脱离正常的文档流
+           2. 浮动元素会尽可能靠左或靠右
+           3. 浮动元素不会影响未浮动元素的文本内容，文字会环绕浮动元素
+           4. 浮动元素会造成父元素高度塌陷，需要清除浮动来解决
+           5. 浮动元素会紧挨着其他浮动元素（如果有足够空间） */
+    </style>
+</head>
+
+<body>
+    <!-- 左浮动的div，会靠左显示 -->
+    <div class="left">左青龙</div>
+    <!-- 右浮动的div，会靠右显示 -->
+    <div class="right">右白虎</div>
+
+    <!-- 注意：由于使用了浮动，这两个div会脱离正常文档流
+         可能会导致后续元素的布局问题，需要注意清除浮动 -->
+</body>
+
+</html>

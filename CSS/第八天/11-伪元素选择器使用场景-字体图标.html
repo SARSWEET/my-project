@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>伪元素选择器使用场景-字体图标</title>
+    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_4662323_4lo7su41jyh.css">
+
+    <style>
+        div {
+            position: relative;
+            width: 200px;
+            height: 35px;
+            border: 1px solid red;
+        }
+
+        div::after {
+            content: "\e602";
+            /* 将Unicode编码插入到content属性中 */
+            font-family: 'iconfont';
+            /* 确保使用图标库的字体 */
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 16px;
+            color: black;
+            /* 根据需要设置颜色 */
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

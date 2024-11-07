@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>伪元素选择器 before 和 after</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        div::before {/* 伪元素选择器的权重是1 */
+            /* 
+             * content 是伪元素选择器必须有的属性，用于定义生成内容。
+             * 伪元素选择器在没有 content 属性时将无法显示。
+             */
+            display: inline-block;
+            content: '我';
+            /* 
+             * 伪元素默认是行内元素，但可以通过设置 display 为 inline-block 
+             * 来赋予其块级元素的属性，如宽度和高度。
+             */
+            width: 30px;
+            height: 40px;
+            background-color: purple;
+        }
+
+        div::after {
+            /* 
+             * content 属性定义了伪元素在元素内容后面插入的内容。
+             * 这里插入了 "小猪佩奇" 作为伪元素的内容。
+             */
+            content: '小猪佩奇';
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        是
+    </div>
+</body>
+
+</html>

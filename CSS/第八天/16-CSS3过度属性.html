@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 过渡属性</title>
+    <style>
+        div {
+            width: 200px;
+            height: 100px;
+            background-color: pink;
+            /* 
+             * transition 属性用于定义元素从一种状态到另一种状态的过渡效果。
+             * 语法为：transition: 变化属性 花费时间 运动曲线 何时开始;
+             * 例如：transition: width 1s ease 1s; 表示宽度变化在 1 秒内完成，使用 ease 过渡曲线，并且在 1 秒后开始。
+             */
+
+            /* 
+             * 如果需要多个属性同时变化，可以使用逗号进行分割：
+             * transition: width 1s ease 1s, height 1s ease 1s;
+             */
+
+            /* 
+             * 如果希望对多个属性应用相同的过渡效果，可以使用 all 关键字，
+             * 它表示对所有发生变化的属性应用过渡效果。
+             * 在这个例子中，所有在 :hover 伪类中定义的属性变化都会有过渡效果。
+             */
+            transition: all 0.5s;
+        }
+
+        div:hover {
+            /* 
+             * 当鼠标悬停在 div 上时，触发宽度、高度和背景颜色的变化。
+             * 由于设置了 transition: all 0.5s; 这些属性的变化会在 0.5 秒内平滑地完成。
+             */
+            width: 400px;
+            height: 200px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

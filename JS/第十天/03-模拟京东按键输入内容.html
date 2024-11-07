@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text"> <!-- 创建一个文本输入框，用于搜索 -->
+
+    <script>
+        // 核心思路：检测用户是否按下了 's' 键
+        // 如果按下 's' 键，则将光标定位到搜索框
+        // 使用 KeyboardEvent 对象的 key 和 code 属性判断用户按下的键
+
+        var search = document.querySelector('input'); // 获取页面中的文本输入框元素
+
+        // 监听键盘抬起事件
+        document.addEventListener('keyup', function (e) {
+            console.log(e.code); // 输出按键的代码，例如 'KeyS'
+            console.log(e.key);  // 输出按键的字符，例如 's'
+
+            /* 
+            // 如果使用 e.key，需注意大小写敏感性
+            // 例如，'s' 与 'S' 被视为不同的字符
+            if (e.key == 's') {
+                search.focus(); // 如果按下小写的 's'，将光标定位到搜索框
+            }  
+            */
+
+            // 使用 e.code 进行检测，e.code 不受大小写影响
+            if (e.code === 'KeyS') {
+                search.focus(); // 将光标定位到搜索框
+            }
+
+            // 注意：e.key 对大小写敏感，e.code 对大小写不敏感
+        });
+    </script>
+</body>
+
+</html>
+

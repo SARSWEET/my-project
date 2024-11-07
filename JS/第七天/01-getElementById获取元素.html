@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="time">2019-9-9</div><!-- 这里是id不是class，说明：'time' 是元素的唯一标识符，需要使用 `id` 属性，而不是 `class`，因为 `id` 应在页面中唯一。 -->
+
+    <script>
+        // 1. 因为页面从上到下顺序加载，JavaScript通常应写在body底部，确保在脚本执行前所有HTML元素都已加载。
+        //    这可以避免在脚本访问DOM元素时发生“未定义”或“找不到”的错误。
+
+        // 2. document.getElementById() 是用于根据元素的 `id` 属性来获取元素的标准方法。
+        //    这里使用的是驼峰命名法，因为JavaScript中常用这种命名方式。
+
+        // 3. 参数 'id' 是大小写敏感的字符串。
+        //    在这里，'time' 是页面中某个元素的唯一标识符 (id)，因此必须和 HTML 中的 `id="time"` 完全匹配，且区分大小写。
+
+        // 4. getElementById() 返回的是一个 DOM 元素对象，表示该 HTML 元素，可以通过它对该元素进行操作。
+        var timer = document.getElementById('time');
+
+        // 打印获取的元素对象
+        console.log(timer);  // 输出 <div id="time">2019-9-9</div>
+
+        // 打印返回对象的类型
+        console.log(typeof timer);  // 输出 'object'，因为返回的 DOM 元素是一个对象。
+
+        // 5. 使用 console.dir() 详细打印元素对象的属性和方法。
+        //    这与 console.log() 类似，但 dir() 以更结构化的方式显示对象，便于查看其内部属性。
+        console.dir(timer);
+
+    </script>
+</body>
+
+</html>

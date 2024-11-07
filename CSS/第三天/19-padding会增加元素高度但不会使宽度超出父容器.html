@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>padding会增加元素高度但不会使宽度超出父容器</title>
+    <style>
+        h1 {
+            /* width: 100%; */
+            /* 块级元素默认宽度就是100% */
+            height: 200px;
+            background-color: pink;
+            padding: 30px;
+            /* 注意：
+               1. h1是块级元素，默认宽度为100%
+               2. 添加padding不会增加宽度，因为它已经是100%
+               3. 但会增加高度，实际高度变为260px (200px + 30px顶部 + 30px底部) */
+        }
+
+        div {
+            width: 300px;
+            height: 100px;
+            background-color: purple;
+            /* 这个div为其中的p元素提供了一个具体宽度的容器 */
+        }
+
+        div p {
+            /* width: 100%; */
+            /* p标签作为块级元素，默认宽度就是100% */
+            padding: 30px;
+            background-color: skyblue;
+            /* 注意：
+               1. p是块级元素，默认宽度是父元素(div)的100%
+               2. padding会使p的内容区域缩小，但不会增加其总宽度
+               3. padding会增加高度，因为没有设置固定高度
+               4. p的高度是由其内容（这里是空的）加上padding决定的
+               5. 实际高度为60px (30px顶部padding + 30px底部padding)
+               6.子元素继承父元素的行高（line-height），它影响文本行的间距；而高度（height）不被继承，它决定元素的整体垂直尺寸。 */
+        }
+    </style>
+</head>
+
+<body>
+    <h1></h1>
+    <div>
+        <p></p>
+    </div>
+</body>
+
+</html>

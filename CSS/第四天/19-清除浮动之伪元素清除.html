@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用:after伪元素清除浮动</title>
+    <style>
+        /* 清除浮动的通用类 */
+        .clearfix::after {
+            content: "";
+            /* 生成内容为空 */
+            display: block;
+            /* 转为块级元素 */
+            clear: both;
+            /* 清除两侧浮动 */
+            visibility: hidden;
+            /* 不可见 */
+            height: 0;
+            /* 高度为0 */
+        }
+
+        /* 为了兼容 IE6 和 IE7 */
+        
+
+        .box {
+            width: 800px;
+            border: 1px solid blue;
+            margin: 0 auto;
+            /* 应用清除浮动的类 */
+            /* 注意：这里不再需要 overflow: hidden; */
+        }
+
+        .damao {
+            float: left;
+            width: 300px;
+            height: 200px;
+            background-color: purple;
+        }
+
+        .ermao {
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        .footer {
+            height: 200px;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box clearfix">
+        <div class="damao">大毛</div>
+        <div class="ermao">二毛</div>
+        <!-- 不再需要额外的清除浮动元素 -->
+    </div>
+    <div class="footer"></div>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript new Keyword Execution Process</title>
+    <script>
+        // new 关键字执行过程
+
+        // 当使用 new 关键字调用构造函数时，JavaScript 引擎会执行以下步骤：
+
+        // 1. 创建新对象：
+        //    在内存中创建一个新的空对象。
+
+        // 2. 设置原型链接：
+        //    将新对象的内部 [[Prototype]] 属性（即 __proto__）设置为构造函数的 prototype 属性。
+
+        // 3. 绑定 this：
+        //    将构造函数内部的 this 绑定到新创建的对象。
+
+        // 4. 执行构造函数：
+        //    执行构造函数内部的代码，为新对象添加属性和方法。
+
+        // 5. 返回新对象：
+        //    如果构造函数没有显式返回其他对象，则自动返回这个新创建的对象。
+        //    注：如果构造函数显式返回一个对象，则返回该对象而不是新创建的对象。
+
+        // 示例构造函数
+        function Star(uname, age, sex) {
+            this.name = uname;
+            this.age = age;
+            this.sex = sex;
+            this.sing = function (song) {
+                console.log(song);
+            }
+        }
+
+        // 使用 new 关键字创建对象
+        var ldh = new Star('刘德华', 18, '男');
+
+        // 验证 new 过程
+        console.log(ldh instanceof Star);  // 输出：true
+        console.log(ldh.name);             // 输出：刘德华
+        ldh.sing('冰雨');                  // 输出：冰雨
+
+        // 注意事项：
+        // - 构造函数通常不使用 return 语句。如果使用，可能会影响 new 的预期行为。
+        // - 如果忘记使用 new 关键字，this 可能会指向全局对象（非严格模式）或 undefined（严格模式）。
+        // - ES6 引入的 class 语法在内部仍然使用这个机制，但提供了更清晰的语法。
+    </script>
+</head>
+
+<body>
+    <!-- 页面内容可以在这里添加 -->
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 设置 div 元素的初始样式 */
+        div {
+            width: 200px;
+            /* 设置 div 的宽度为 200 像素 */
+            height: 200px;
+            /* 设置 div 的高度为 200 像素 */
+            background-color: pink;
+            /* 设置 div 的背景颜色为粉红色 */
+            transition: all 0.5s;
+            /* 设置所有样式变化的过渡效果，持续时间为 0.5 秒 */
+        }
+
+        /* 当鼠标悬停在 div 上时，应用一系列变换 */
+        div:hover {
+            /* 变换包括：位移、旋转和缩放 */
+            /* 注意：CSS 变换的执行顺序会影响最终效果 */
+            /* 一般情况下，建议先写位移，再进行旋转和缩放，这样可以得到预期的效果 */
+            transform: translate(150px, 50px)
+                /* 位移：将元素沿 x 轴移动 150 像素，沿 y 轴移动 50 像素 */
+                rotate(180deg)
+                /* 旋转：将元素顺时针旋转 180 度 */
+                scale(1.2);
+            /* 缩放：将元素放大 1.2 倍 */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 一个空的 div 元素，通过悬停触发变换效果 -->
+    <div></div>
+</body>
+
+</html>

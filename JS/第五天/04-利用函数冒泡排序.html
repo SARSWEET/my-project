@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 利用函数实现冒泡排序算法
+
+        // 定义一个函数 sort，用于对数组进行冒泡排序
+        function sort(arr) {
+            // 外层循环控制排序的轮数
+            for (let i = 0; i < arr.length - 1; i++) {
+                // 内层循环控制每一轮的比较次数
+                for (let j = 0; j < arr.length - 1 - i; j++) {
+                    // 如果当前元素大于下一个元素，则交换它们的位置
+                    if (arr[j] > arr[j + 1]) {
+                        // 使用临时变量 temp 进行交换
+                        var temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
+            }
+            // 返回排序后的数组
+            return arr;
+        }
+
+        // 调用 sort 函数，对数组 [1, 4, 2, 9] 进行排序
+        var arr1 = sort([1, 4, 2, 9]);
+        // 输出排序后的数组
+        console.log(arr1); // 输出：[1, 2, 4, 9]
+
+        // 调用 sort 函数，对数组 [11, 7, 22, 999] 进行排序
+        var arr2 = sort([11, 7, 22, 999]);
+        // 输出排序后的数组
+        console.log(arr2); // 输出：[7, 11, 22, 999]
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

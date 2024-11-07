@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>登录页面</title>
+    <style>
+        /* 登录框头部样式 */
+        .login-header {
+            width: 100%;
+            text-align: center;
+            height: 30px;
+            font-size: 24px;
+            line-height: 30px;
+            /* 使文字垂直居中 */
+        }
+
+        /* 重置常用标签的内边距和外边距 */
+        ul,
+        li,
+        ol,
+        dl,
+        dt,
+        dd,
+        div,
+        p,
+        span,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        a {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        /* 登录框的样式 */
+        .login {
+            display: none;
+            /* 默认隐藏登录框 */
+            width: 512px;
+            height: 280px;
+            position: fixed;
+            /* 固定在页面中央 */
+            border: #ebebeb solid 1px;
+            /* 边框颜色及宽度 */
+            left: 50%;
+            /* 水平居中 */
+            top: 50%;
+            /* 垂直居中 */
+            background: #ffffff;
+            /* 背景色为白色 */
+            box-shadow: 0px 0px 20px #ddd;
+            /* 添加阴影 */
+            z-index: 9999;
+            /* 设置高优先级显示 */
+            transform: translate(-50%, -50%);
+            /* 使用 transform 实现完美居中 */
+        }
+
+        /* 登录框标题样式 */
+        .login-title {
+            width: 100%;
+            margin: 10px 0px 0px 0px;
+            text-align: center;
+            line-height: 40px;
+            /* 垂直居中 */
+            height: 40px;
+            font-size: 18px;
+            position: relative;
+            /* 为绝对定位的子元素提供参照 */
+            cursor: move;
+            /* 鼠标悬停时显示可移动的指针 */
+        }
+
+        /* 输入框容器的样式 */
+        .login-input-content {
+            margin-top: 20px;
+        }
+
+        /* 登录按钮的样式 */
+        .login-button {
+            width: 50%;
+            margin: 30px auto 0px auto;
+            /* 上下外边距设置，并水平居中 */
+            line-height: 40px;
+            font-size: 14px;
+            border: #ebebeb 1px solid;
+            text-align: center;
+            /* 文字居中 */
+        }
+
+        /* 遮盖层的样式 */
+        .login-bg {
+            display: none;
+            /* 默认隐藏 */
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            /* 固定定位，覆盖整个页面 */
+            top: 0px;
+            left: 0px;
+            background: rgba(0, 0, 0, .3);
+            /* 半透明黑色背景 */
+        }
+
+        /* 超链接样式，去掉下划线并设置颜色 */
+        a {
+            text-decoration: none;
+            color: #000000;
+        }
+
+        /* 登录按钮内的超链接设置为块级元素 */
+        .login-button a {
+            display: block;
+        }
+
+        /* 输入框样式 */
+        .login-input input.list-input {
+            float: left;
+            line-height: 35px;
+            height: 35px;
+            width: 350px;
+            border: #ebebeb 1px solid;
+            text-indent: 5px;
+            /* 内边距设置，使文本内容与边框保持一定距离 */
+        }
+
+        /* 输入框容器的样式 */
+        .login-input {
+            overflow: hidden;
+            /* 清除浮动 */
+            margin: 0px 0px 20px 0px;
+        }
+
+        /* 输入框标签的样式 */
+        .login-input label {
+            float: left;
+            width: 90px;
+            padding-right: 10px;
+            text-align: right;
+            /* 文字右对齐 */
+            line-height: 35px;
+            height: 35px;
+            font-size: 14px;
+        }
+
+        /* 关闭按钮的样式 */
+        .login-title span {
+            position: absolute;
+            /* 绝对定位，参考父元素 .login-title */
+            font-size: 12px;
+            right: -20px;
+            top: -30px;
+            background: #ffffff;
+            /* 白色背景 */
+            border: #ebebeb solid 1px;
+            /* 边框 */
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+            /* 圆形 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-header"><a id="link" href="javascript:;">点击，弹出登录框</a></div>
+    <div id="login" class="login">
+        <div id="title" class="login-title">登录会员
+            <span><a id="closeBtn" href="javascript:void(0);" class="close-login">关闭</a></span>
+        </div>
+        <div class="login-input-content">
+            <div class="login-input">
+                <label>用户名：</label>
+                <input type="text" placeholder="请输入用户名" name="info[username]" id="username" class="list-input">
+            </div>
+            <div class="login-input">
+                <label>登录密码：</label>
+                <input type="password" placeholder="请输入登录密码" name="info[password]" id="password" class="list-input">
+            </div>
+        </div>
+        <div id="loginBtn" class="login-button"><a href="javascript:void(0);" id="login-button-submit">登录会员</a></div>
+    </div>
+    <!-- 遮盖层 -->
+    <div id="bg" class="login-bg"></div>
+    <script>
+        // 1. 点击显示与隐藏
+        // (1) 获取元素
+        var login = document.querySelector('.login'); // 登录框
+        var mask = document.querySelector('.login-bg'); // 遮盖层
+        var link = document.querySelector('#link'); // 显示登录框的链接
+        var closeBtn = document.querySelector('#closeBtn'); // 关闭按钮
+        // (2) 监听事件
+        link.addEventListener('click', function () {
+            login.style.display = 'block'; // 显示登录框
+        });
+        closeBtn.addEventListener('click', function () {
+            login.style.display = 'none'; // 隐藏登录框
+        });
+
+        // 2. 点击标题拖动登录框
+        var title = document.querySelector('.login-title'); // 登录框标题
+        title.addEventListener('mousedown', function (e) {
+            // (1) 鼠标按下时，获取鼠标在盒子中的位置
+            var x = e.pageX - login.offsetLeft; // 鼠标相对于盒子左侧的位置
+            var y = e.pageY - login.offsetTop; // 鼠标相对于盒子顶部的位置
+
+            // (2) 鼠标移动时调整登录框的位置
+            document.addEventListener('mousemove', move);
+            function move(e) {
+                login.style.left = e.pageX - x + 'px'; // 更新登录框的左侧位置
+                login.style.top = e.pageY - y + 'px'; // 更新登录框的顶部位置
+            };
+
+            // (3) 鼠标弹起时移除鼠标移动事件，防止登录框继续移动
+            document.addEventListener('mouseup', function () {
+                document.removeEventListener('mousemove', move);
+            });
+        });
+
+    </script>
+</body>
+
+</html>

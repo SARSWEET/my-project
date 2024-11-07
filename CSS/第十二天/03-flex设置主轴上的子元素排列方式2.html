@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Layout Example</title>
+    <style>
+        div {
+            display: flex;
+            /* 将父元素设置为弹性布局容器 */
+            width: 800px;
+            /* 设置容器的宽度为800像素 */
+            height: 400px;
+            /* 设置容器的高度为400像素 */
+            background-color: pink;
+            /* 设置容器的背景颜色为粉红色 */
+
+            /* 设置主轴方向为列方向（垂直方向） */
+            flex-direction: column;
+
+            /* 子元素在主轴（垂直方向）上的对齐方式 */
+
+            /* 子元素从容器的起始位置（顶部）开始排列 */
+            /* justify-content: flex-start; */
+
+            /* 子元素从容器的结束位置（底部）开始排列 */
+            /* justify-content: flex-end; */
+
+            /* 子元素在容器中垂直居中排列 */
+            /* justify-content: center; */
+
+            /* 子元素平均分配垂直空间，首尾元素与容器边缘之间保留一定间距 */
+            /* justify-content: space-around; */
+
+            /* 子元素平均分配垂直空间，首尾元素贴合容器顶部和底部 */
+            /* justify-content: space-between; */
+
+            /* 子元素和容器边缘之间，以及子元素之间的间距完全相等 */
+            justify-content: space-evenly;
+            /* 注意：以上多个 justify-content 属性中，只有最后一个生效 */
+        }
+
+        span {
+            width: 150px;
+            /* 设置子元素的宽度为150像素 */
+            height: 100px;
+            /* 设置子元素的高度为100像素 */
+            background-color: purple;
+            /* 设置子元素的背景颜色为紫色 */
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span>1</span> <!-- 第一个子元素 -->
+        <span>2</span> <!-- 第二个子元素 -->
+        <span>3</span> <!-- 第三个子元素 -->
+    </div>
+</body>
+
+</html>

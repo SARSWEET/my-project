@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 页面内容区域 -->
+    <div>我是div</div> <!-- 一个div元素 -->
+    <span>我是span</span> <!-- 一个span元素 -->
+    <ul> <!-- 无序列表 -->
+        <li>我是li</li> <!-- 列表项 -->
+        <li>我是li</li> <!-- 列表项 -->
+        <li>我是li</li> <!-- 列表项 -->
+        <li>我是li</li> <!-- 列表项 -->
+    </ul>
+    <div class="demo"> <!-- 演示区域 -->
+        <div class="box"> <!-- 包含二维码的盒子 -->
+            <span class="erweima"></span> <!-- 二维码的span元素 -->
+        </div>
+    </div>
+
+    <script>
+        // 选择带有类名 'erweima' 的元素
+        var erweima = document.querySelector('.erweima');
+        // 选择带有类名 'box' 的元素，已注释掉，暂时不使用
+        // var box = document.querySelector('.box');
+        // 获取 'erweima' 的最近父节点（直接父级元素）
+        // 如果没有父节点，返回 null
+        console.log(erweima.parentNode);
+    </script>
+</body>
+
+</html>

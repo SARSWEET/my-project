@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // arguments的使用
+        // 只有函数才有arguments对象，而且每个函数都内置了这个arguments对象
+
+        function fn() {
+            // arguments 对象包含了所有传递给函数的实参
+            /* 
+            console.log(arguments); // 输出所有传递的实参
+            console.log(arguments.length); // 输出实参的个数
+            console.log(arguments[1]); // 输出第二个实参
+            */
+            // 我们可以按照数组的方式遍历 arguments 对象
+            for (let i = 0; i < arguments.length; i++) {
+                console.log(arguments[i]);
+            }
+        }
+
+        // 调用 fn 函数，并传入三个实参
+        fn(1, 2, 3);
+        // 调用 fn 函数，并传入五个实参
+        fn(1, 2, 3, 4, 5);
+
+        // arguments 是伪数组，并不是真正意义上的数组
+        // 1. 具有数组的 length 属性
+        // 2. 按照索引的方式进行存储
+        // 3. 没有真正数组的一些方法，例如 pop() 和 push()
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

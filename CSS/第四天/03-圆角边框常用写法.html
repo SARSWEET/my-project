@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>圆角边框常用写法</title>
+    <style>
+        /* 1. 创建圆形 */
+        .yuanxing {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            /* 方法1：使用像素值（等于宽高的一半） */
+            /* border-radius: 100px; */
+
+            /* 方法2：使用百分比（推荐，更灵活） */
+            border-radius: 50%;
+            /* 50% 等价于宽度和高度的一半，适用于任何尺寸的正方形 */
+        }
+
+        /* 2. 创建圆角矩形 */
+        .juxing {
+            width: 300px;
+            height: 100px;
+            background-color: pink;
+            /* 圆角矩形：设置为高度的一半，创建"胶囊"形状 */
+            border-radius: 50px;
+            /* 这里 50px 是高度 (100px) 的一半 */
+        }
+
+        /* 3. 设置不同的圆角 */
+        .radius {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+
+            /* 方法1：为四个角分别设置不同的圆角半径 */
+            /* border-radius: 10px 40px 60px 80px; */
+            /* 顺序：左上、右上、右下、左下 */
+
+            /* 方法2：设置对角线相同的圆角 */
+            /* border-radius: 10px 40px; */
+            /* 10px 应用于左上和右下，40px 应用于右上和左下 */
+
+            /* 方法3：单独设置某一个角的圆角 */
+            border-top-left-radius: 20px;
+            /* 只有左上角有 20px 的圆角，其他角保持直角 */
+        }
+    </style>
+</head>
+
+<body>
+    1.圆形的做法
+    <div class="yuanxing"></div>
+    2.圆角矩形的做法
+    <div class="juxing"></div>
+    3.可以设置不同的圆角
+    <div class="radius"></div>
+</body>
+
+</html>

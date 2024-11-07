@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        img {
+            width: 300px;
+            /* 设置图片的宽度为 300 像素 */
+        }
+    </style>
+</head>
+
+<body>
+    <button id="ldh">刘德华</button> <!-- 用于选择刘德华图片的按钮 -->
+    <button id="zxy">张学友</button> <!-- 用于选择张学友图片的按钮 -->
+    <img src="images/ldh.jpg" alt="" title="刘德华"> <!-- 显示当前的图片，初始为刘德华 -->
+
+    <script>
+        // 修改元素属性（例如图片的 `src` 和 `title`）
+
+        // 1. 获取事件源
+        var ldh = document.getElementById('ldh'); // 获取“刘德华”按钮
+        var zxy = document.getElementById('zxy'); // 获取“张学友”按钮
+        var img = document.querySelector('img'); // 获取图片元素，后续将修改其属性
+
+        // 2. 绑定事件处理程序
+
+        // 当点击“张学友”按钮时，修改图片的 `src` 和 `title` 属性
+        zxy.onclick = function () {
+            img.src = 'images/zxy.jpg'; // 修改图片路径，显示张学友的图片
+            img.title = '张学友'; // 修改图片的提示文本（鼠标悬停时显示）
+        }
+
+        // 当点击“刘德华”按钮时，修改图片的 `src` 和 `title` 属性
+        ldh.onclick = function () {
+            img.src = 'images/ldh.jpg'; // 修改图片路径，切换回刘德华的图片
+            img.title = '刘德华'; // 修改图片的提示文本
+        }
+    </script>
+</body>
+
+</html>

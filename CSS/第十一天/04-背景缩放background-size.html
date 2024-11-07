@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 500px;
+            /* 设置 div 的宽度为 500 像素 */
+            height: 500px;
+            /* 设置 div 的高度为 500 像素 */
+            border: 2px solid red;
+            /* 为 div 设置红色的 2 像素边框 */
+            background: url(images/dog.jpg) no-repeat;
+            /* 设置背景图片并避免重复显示 */
+
+            /* 1. 使用 background-size: 指定背景图片的尺寸 */
+            /* 分别调整图片的宽度和高度，宽度为 500 像素，高度为 200 像素 */
+            background-size: 500px 200px;
+            /* 注意：这不是按比例缩放，可能会导致图片失真 */
+
+            /* 2. 如果只写一个参数，则该值代表宽度，高度按比例自动调整 */
+            background-size: 500px;
+            /* 这种情况下，图片会等比例缩放，保持原始宽高比 */
+
+            /* 3. 你可以使用百分比来指定尺寸，百分比相对于父盒子的尺寸 */
+            background-size: 50% 20%;
+            /* 同样，如果只写一个参数，则默认表示宽度，等比例缩放 */
+
+            /* 4. 使用 cover 使图片完全覆盖盒子 */
+            background-size: cover;
+            /* 图片会按比例缩放，以最小边与盒子的尺寸相等为准，这可能会导致图片显示不全 */
+
+            /* 5. 使用 contain 使图片缩放到刚好容纳在盒子内 */
+            background-size: contain;
+            /* 图片按比例缩放，当图片宽度或高度达到盒子边缘时停止缩放，这可能会在盒子内留下空白 */
+        }
+    </style>
+</head>
+
+<body>
+    <div></div> <!-- 这是一个带有背景图片的 500x500 像素的盒子 -->
+</body>
+
+</html>

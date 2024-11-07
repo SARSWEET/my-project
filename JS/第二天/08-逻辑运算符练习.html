@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 逻辑运算符的复合使用
+
+        // 定义变量 num 和 str
+        var num = 7;
+        var str = '我爱你~ 中国~';
+
+        // 使用逻辑与 (&&) 运算符
+        // 当两个条件都为 true 时，结果为 true
+        console.log(num > 5 && str.length >= num); // true，因为 num 大于 5 且 str 的长度大于等于 num
+
+        // 当第一个条件为 false 时，无论第二个条件如何，结果都为 false
+        console.log(num < 5 && str.length >= num); // false，因为 num 不小于 5
+
+        // 使用逻辑非 (!) 运算符
+        // 对布尔值取反，true 变为 false，false 变为 true
+        console.log(!(num < 10)); // false，因为 num 小于 10，取反后为 false
+
+        // 使用逻辑或 (||) 和逻辑非 (!) 运算符
+        // 当两个条件中至少有一个为 true 时，逻辑或的结果为 true，然后取反为 false
+        console.log(!(num < 10 || str.length == num)); // false，因为至少有一个条件为 true
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+
+<div class=""></div>

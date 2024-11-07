@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>利用 vertical-align 实现图片文字垂直居中对齐</title>
+    <style>
+        img {
+            /* 
+             * vertical-align 只对行内或行内块元素有效。
+             * 这意味着它通常用于调整图片、文本和其他行内元素的垂直对齐方式。
+             */
+
+            vertical-align: baseline;
+            /* 
+             * 默认情况下，图片与文字的基线（baseline）对齐，
+             * 基线对齐是指图片的底部与文字行的基线对齐。
+             */
+
+            vertical-align: bottom;
+            /* 
+             * 图片与文字的底部对齐，这会导致图片的底部与文字行的底部对齐。
+             */
+
+            vertical-align: top;
+            /* 
+             * 图片与文字的顶部对齐，这会导致图片的顶部与文字行的顶部对齐。
+             */
+
+            vertical-align: middle;
+            /* 
+             * 图片与文字的中线对齐，这会导致图片的垂直中线与文字行的中线对齐。
+             * 实际上，移动的主要是文本的位置，而不是图片本身。
+             * 文字基线对齐的调整通常会使图片看起来垂直居中。
+             */
+        }
+
+        textarea {
+            vertical-align: middle;
+            /* 
+             * 对于行内元素如 textarea，vertical-align 可以控制其与周围文本的垂直对齐。
+             * 这里指定为 middle，使得 textarea 的垂直中线与相邻文本的中线对齐。
+             */
+        }
+    </style>
+</head>
+
+<body>
+    <img src="images/ldh.jpg" alt="">pink老师是刘德华
+    <textarea name="" id="" rows="10"></textarea>请输入留言
+</body>
+
+</html>

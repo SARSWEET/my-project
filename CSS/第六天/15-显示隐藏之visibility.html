@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>显示隐藏元素之visibility</title>
+    <style>
+        .baba {
+            visibility: hidden;
+            /* 
+             * visibility: hidden;
+             * 该属性将元素隐藏，但元素仍然占据原来的位置。
+             * 隐藏的元素不可见，但不会影响页面布局，其他元素的布局位置保持不变。
+             */
+
+            visibility: visible;
+            /* 
+             * visibility: visible;
+             * 该属性使隐藏的元素再次可见，元素恢复显示，但布局不受影响。
+             * 可以通过切换 visibility 属性来控制元素的可见性，而不改变页面布局。
+             */
+
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            /* 设置元素的背景颜色为粉红色 */
+        }
+
+        .mama {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            /* 设置元素的背景颜色为天蓝色 */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 元素 .baba 的初始状态为可见 (由于 visibility: visible; 是最后定义的) -->
+    <div class="baba">猪爸爸</div>
+    <!-- 元素 .mama 显示正常，不受 visibility 属性影响 -->
+    <div class="mama">猪妈妈</div>
+</body>
+
+</html>

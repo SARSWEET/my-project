@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 600px;
+            margin: 100px auto;
+        }
+        .message {
+            display: inline-block;
+            font-size: 12px;
+            color: #999;
+            background: url(images/mess.png) no-repeat left center;
+            padding-left: 20px;
+        }
+        .wrong {
+            color: red;
+            background-image: url(images/wrong.png);
+        }
+        .right {
+            color: green;
+            background-image: url(images/right.png);
+        }
+    </style>
+</head>
+<body>
+    <div class="register">
+        <input type="password" class="ipt">
+        <p class="message">请输入6~16位密码</p>
+    </div>
+
+    <script>
+        // 首先判断的事件是表单失去焦点 onblur
+        // 如果输入正确 字体颜色显示为绿色 小图标变为正确
+        // 如果输入的不正确 字体颜色显示为红色 小图标变为错误
+        // 因为里面的样式较多且是在原来的基础上加样式而不是覆盖 所以选择用className修改样式
+
+        // 1.获取元素
+        var ipt = document.querySelector('.ipt');
+        var message = document.querySelector('.message');
+
+        // 2.绑定事件 失去焦点事件处理程序
+        ipt.onblur = function() {
+            // this.value.length代表ipt表单里面值的长度
+            if (this.value.length < 6 || this.value.length > 16 ) {
+                // 注意修改的是message的样式 而不是ipt
+                message.className += ' wrong';//注意 wrong前面要加空格才能生效
+                message.innerHTML = '输入的格式不正确';
+            } else {
+                message.className += ' right';
+                message.innerHTML = '格式正确';
+            }
+        }
+    </script>
+</body>
+</html>

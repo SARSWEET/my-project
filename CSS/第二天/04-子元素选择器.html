@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>复合选择器之子元素选择器</title>
+    <style>
+        /* CSS 子元素选择器示例 */
+
+        /* 选择类名为 "nav" 的元素的直接子元素 <a> */
+        .nav>a {
+            color: red;
+        }
+
+        /* 子元素选择器的特点：
+           1. 使用 > 符号
+           2. 只选择直接子元素，不包括后代元素
+           3. 提供了比后代选择器更精确的选择方法
+           4. 可以与其他选择器组合使用 */
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <!-- 这个 <a> 元素是 .nav 的直接子元素，会被样式影响 -->
+        <a href="">我是儿子</a>
+
+        <p>
+            <!-- 这个 <a> 元素不是 .nav 的直接子元素，不会被样式影响 -->
+            <a href="">我是孙子</a>
+        </p>
+    </div>
+</body>
+
+</html>

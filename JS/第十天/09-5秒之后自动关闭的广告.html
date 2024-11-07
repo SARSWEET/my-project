@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="images/ad.jpg" alt="" class="ad"> <!-- 广告图片元素 -->
+    <script>
+        // 获取广告图片元素
+        var ad = document.querySelector('.ad');
+
+        // 设置定时器，5秒后隐藏广告图片
+        setTimeout(function () {
+            ad.style.display = 'none'; // 将广告的显示样式设置为 'none'
+        }, 5000); // 延时时间为5000毫秒（5秒）
+    </script>
+</body>
+
+</html>

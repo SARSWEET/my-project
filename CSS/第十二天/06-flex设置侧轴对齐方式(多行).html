@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Multi-line Alignment Example</title>
+    <style>
+        div {
+            display: flex;
+            /* 将父元素设置为弹性布局容器 */
+            width: 800px;
+            /* 设置容器的宽度为800像素 */
+            height: 400px;
+            /* 设置容器的高度为400像素 */
+            background-color: pink;
+            /* 设置容器的背景颜色为粉红色 */
+
+            flex-wrap: wrap;
+            /* 允许子元素换行，必要时将子元素分布在多行上 */
+
+            /* 在多行情况下，align-items 不能再使用，因为它只作用于单行 */
+            /* align-content 只作用于多行，无法对单行生效 */
+            /* 注意：align-content 一般作用于侧轴（垂直方向），而 justify-content 一般作用于主轴（水平方向） */
+
+            justify-content: center;
+            /* 子元素在主轴上（水平）居中对齐 */
+            align-content: center;
+            /* 多行内容在侧轴（垂直方向）居中对齐 */
+            align-content: flex-start;
+            /* 多行内容从侧轴的起始位置（顶部）开始对齐 */
+            align-content: flex-end;
+            /* 多行内容从侧轴的结束位置（底部）开始对齐 */
+            align-content: space-around;
+            /* 多行内容在侧轴上均匀分布，行与行之间的间距相等，边缘留有间距 */
+            align-content: space-between;
+            /* 多行内容在侧轴上分布，首行与顶部对齐，尾行与底部对齐，中间行之间的间距相等 */
+            align-content: space-evenly;
+            /* 多行内容在侧轴上均匀分布，行与行之间以及与容器边缘之间的间距相等 */
+        }
+
+        span {
+            width: 150px;
+            /* 设置子元素的宽度为150像素 */
+            height: 100px;
+            /* 设置子元素的高度为100像素 */
+            background-color: purple;
+            /* 设置子元素的背景颜色为紫色 */
+            color: #fff;
+            /* 设置子元素内文本的颜色为白色 */
+            margin: 10px;
+            /* 设置子元素的外边距为10像素，增加间距 */
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span>1</span> <!-- 第一个子元素 -->
+        <span>2</span> <!-- 第二个子元素 -->
+        <span>3</span> <!-- 第三个子元素 -->
+        <span>4</span> <!-- 第四个子元素 -->
+        <span>5</span> <!-- 第五个子元素 -->
+        <span>6</span> <!-- 第六个子元素 -->
+    </div>
+</body>
+
+</html>

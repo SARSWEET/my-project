@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 利用函数判断是否为闰年
+
+        // 定义一个函数 isRunYear，用于判断给定年份是否为闰年
+        function isRunYear(year) {
+            // 初始化标志变量 flag 为 false
+            var flag = false;
+            // 判断是否为闰年的条件：
+            // 1. 年份能被4整除且不能被100整除，或者能被400整除
+            if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+                // 如果满足条件，则将 flag 设置为 true
+                flag = true;
+            }
+            // 返回 flag 的值，表示是否为闰年
+            return flag;
+        }
+
+        // 调用 isRunYear 函数，并判断2000年是否为闰年
+        console.log(isRunYear(2000)); // 输出：true
+        // 调用 isRunYear 函数，并判断1999年是否为闰年
+        console.log(isRunYear(1999)); // 输出：false
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

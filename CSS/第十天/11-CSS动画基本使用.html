@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 页面加载时，div 盒子从左边移动到右边 */
+
+        /* 1. 定义一个名为 move 的动画 */
+        @keyframes move {
+
+            /* 开始状态：盒子在初始位置 (x 轴上的 0 像素) */
+            0% {
+                transform: translateX(0px);
+            }
+
+            /* 结束状态：盒子移动到 x 轴上的 1000 像素位置 */
+            100% {
+                transform: translateX(1000px);
+            }
+        }
+
+        /* 设置 div 元素的初始样式和动画属性 */
+        div {
+            width: 200px;
+            /* 设置 div 的宽度为 200 像素 */
+            height: 200px;
+            /* 设置 div 的高度为 200 像素 */
+            background-color: pink;
+            /* 设置 div 的背景颜色为粉红色 */
+
+            /* 2. 调用动画 */
+            animation-name: move;
+            /* 指定要使用的动画名称为 move */
+
+            /* 3. 设置动画的持续时间 */
+            animation-duration: 2s;
+            /* 动画将持续 2 秒钟 */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 一个空的 div 元素，加载页面时会自动触发移动动画 -->
+    <div></div>
+</body>
+
+</html>

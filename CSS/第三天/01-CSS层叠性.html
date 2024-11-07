@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 层叠性示例</title>
+    <style>
+        /* 第一个样式规则 */
+        div {
+            color: red;
+            font-size: 12px;
+        }
+
+        /* 第二个样式规则 */
+        div {
+            color: pink;
+        }
+
+        /* CSS 层叠性原理：
+           1. 当多个规则应用于同一个元素时，它们会"层叠"在一起
+           2. 如果有冲突的属性，后面的规则会覆盖前面的规则
+           3. 非冲突的属性会被保留和合并 */
+    </style>
+</head>
+
+<body>
+    <!-- 这个 div 元素会应用上面定义的样式 -->
+    <div>长江后浪推前浪,前浪死在沙滩上</div>
+</body>
+
+</html>

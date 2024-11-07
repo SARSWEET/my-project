@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* CSS ID选择器
+           语法: #id名 { 属性: 值; }
+           
+           特点:
+           1. 以井号(#)开头定义
+           2. 在一个HTML文档中，每个ID应该是唯一的
+           3. 一个HTML元素只能有一个ID
+           4. ID选择器具有很高的优先级，慎用 */
+
+        #pink {
+            /* 设置文本颜色为粉色 */
+            color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 正确使用ID选择器 -->
+    <div id="pink">迈克尔.杰克逊</div>
+
+    <!-- 
+    警告: 这是一个常见的错误用法
+    在HTML中重复使用相同的ID是不符合规范的
+    每个ID应该是唯一的，建议使用类选择器来代替重复的ID
+    -->
+    <div id="pink">pink老师</div>
+</body>
+
+</html>

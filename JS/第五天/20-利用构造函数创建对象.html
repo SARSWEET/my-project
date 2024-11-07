@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Constructor Function with Method Example</title>
+    <script>
+        // 构造函数：用于创建具有相似属性和方法的多个对象
+        // 示例：创建表示明星的对象，包含名字、年龄、性别等属性，以及唱歌方法
+
+        // 构造函数的基本语法
+        /*
+        function ConstructorName(parameters) {
+            this.propertyName = value;
+            this.methodName = function(parameters) {
+                // 方法体
+            }
+        }
+        var objectName = new ConstructorName(arguments);
+        */
+
+        // 定义 Star 构造函数
+        function Star(uname, age, sex) {
+            this.name = uname;  // 名字属性
+            this.age = age;     // 年龄属性
+            this.sex = sex;     // 性别属性
+            this.sing = function (song) {  // 唱歌方法
+                console.log(song);
+            }
+        }
+
+        // 使用构造函数创建对象实例
+        var ldh = new Star('刘德华', 18, '男');
+        // console.log(typeof ldh);  // 输出：object
+
+        // 访问对象属性和调用方法
+        console.log(ldh.name);    // 输出：刘德华
+        console.log(ldh['sex']);  // 输出：男
+        ldh.sing('冰雨');         // 调用 sing 方法
+
+        // 创建另一个对象实例
+        var zxy = new Star('张学友', 19, '男');
+        console.log(zxy.name);    // 输出：张学友
+        console.log(zxy.age);     // 输出：19
+        zxy.sing('李香兰');       // 调用 sing 方法
+
+        // 构造函数的特点和注意事项：
+        // 1. 构造函数名通常首字母大写，以区别于普通函数
+        // 2. 构造函数不需要显式的 return 语句，会自动返回创建的对象实例
+        // 3. 必须使用 new 关键字调用构造函数来创建新的对象实例
+        // 4. 构造函数内的 this 关键字指向新创建的对象实例
+        // 5. 属性和方法都需要使用 this 关键字来添加到对象实例上
+
+        // 补充说明：
+        // - 每次调用构造函数都会创建一个新的对象实例
+        // - 构造函数可以接受参数，用于初始化对象的属性
+        // - 在构造函数中定义方法会导致每个实例都有独立的方法副本，可能影响内存效率
+        // - 对于需要在多个对象间共享的方法，考虑使用原型（prototype）
+    </script>
+</head>
+
+<body>
+    <!-- 页面内容可以在这里添加 -->
+</body>
+
+</html>

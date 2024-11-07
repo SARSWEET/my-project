@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            margin: 100px;
+            /* 为 ul 设置外边距，使其与页面边缘保持距离 */
+        }
+
+        ul li {
+            float: left;
+            /* 将列表项设置为左浮动，使它们水平排列 */
+            margin: 0 5px;
+            /* 为每个 li 设置水平外边距，使它们之间有一定的间距 */
+            width: 120px;
+            /* 设置列表项的宽度 */
+            height: 35px;
+            /* 设置列表项的高度 */
+            list-style: none;
+            /* 去除默认的列表样式 */
+            perspective: 300px;
+             
+            /* 为每个 li 元素单独设置透视效果 */
+            /* 由于每个 li 中的 .box 也需要进行3D旋转，因此直接在 li 上添加透视效果，这样所有包含的盒子都能拥有3D效果 */
+        }
+
+        .box {
+            position: relative;
+            /* 让 .box 内部的子元素以其为参考进行定位 */
+            width: 100%;
+            /* 设置 .box 的宽度与父元素相同 */
+            height: 100%;
+            /* 设置 .box 的高度与父元素相同 */
+            transform-style: preserve-3d;
+            /* 保留子元素的3D效果 */
+            transition: all 1s;
+            /* 设置所有属性的过渡效果，持续时间为1秒 */
+        }
+
+        .box:hover {
+            /* 鼠标悬停时，.box 旋转90度，显示下一个面 */
+            transform: rotateX(90deg);
+        }
+
+        .front,
+        .bottom {
+            position: absolute;
+            /* 绝对定位，使这些面完全覆盖 .box */
+            left: 0;
+            /* 与父元素左侧对齐 */
+            top: 0;
+            /* 与父元素顶部对齐 */
+            width: 100%;
+            /* 宽度占满 .box */
+            height: 100%;
+            /* 高度占满 .box */
+        }
+
+        .front {
+            background-color: pink;
+            /* 设置正面的背景颜色为粉红色 */
+            z-index: 1;
+            /* 提高 z-index 使正面初始时显示在最前面 */
+            transform: translateZ(17.5px);
+            /* 使正面稍微向外突出，创建3D效果 */
+            /* translateZ 后面不能跟百分比，只能使用具体的像素值 */
+        }
+
+        .bottom {
+            background-color: purple;
+            /* 设置底部的背景颜色为紫色 */
+            /* 让底部面向前倾斜，因此使用负值 */
+            /* 如果需要移动或者添加其他样式，必须先移动再旋转 */
+            transform: translateY(50%) rotateX(-90deg);
+            /* 将底面旋转90度，使其在旋转后可见 */
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <div class="box">
+                <div class="front"></div> <!-- 正面 -->
+                <div class="bottom"></div> <!-- 底面 -->
+            </div>
+        </li>
+        <li>
+            <div class="box">
+                <div class="front"></div> <!-- 正面 -->
+                <div class="bottom"></div> <!-- 底面 -->
+            </div>
+        </li>
+        <li>
+            <div class="box">
+                <div class="front"></div> <!-- 正面 -->
+                <div class="bottom"></div> <!-- 底面 -->
+            </div>
+        </li>
+        <li>
+            <div class="box">
+                <div class="front"></div> <!-- 正面 -->
+                <div class="bottom"></div> <!-- 底面 -->
+            </div>
+        </li>
+        <li>
+            <div class="box">
+                <div class="front"></div> <!-- 正面 -->
+                <div class="bottom"></div> <!-- 底面 -->
+            </div>
+        </li>
+    </ul>
+</body>
+
+</html>

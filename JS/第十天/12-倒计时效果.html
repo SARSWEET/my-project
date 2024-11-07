@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"> <!-- 设置文档字符编码为UTF-8，支持多语言字符 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 使页面在移动设备上自适应 -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> <!-- 设置IE浏览器的兼容模式 -->
+    <title>Document</title>
+    <style>
+        div {
+            margin: 200px;
+            /* 设置div的外边距为200px，居中显示内容 */
+        }
+
+        span {
+            display: inline-block;
+            /* 使span元素为块级元素，支持设置宽高 */
+            width: 40px;
+            /* 设置宽度为40px */
+            height: 40px;
+            /* 设置高度为40px */
+            background-color: #333;
+            /* 设置背景颜色为深灰色 */
+            font-size: 20px;
+            /* 设置字体大小为20px */
+            color: #fff;
+            /* 设置字体颜色为白色 */
+            text-align: center;
+            /* 文本居中对齐 */
+            line-height: 40px;
+            /* 设置行高为40px，垂直居中显示文本 */
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span class="hour">1</span> <!-- 显示小时 -->
+        <span class="minute">2</span> <!-- 显示分钟 -->
+        <span class="second">3</span> <!-- 显示秒钟 -->
+    </div>
+    <script>
+        // 1. 获取页面中的元素，用于显示倒计时
+        var hour = document.querySelector('.hour'); // 获取小时元素
+        var minute = document.querySelector('.minute'); // 获取分钟元素
+        var second = document.querySelector('.second'); // 获取秒钟元素
+
+        var inputTime = +new Date('2024-9-26 18:00:00'); // 设置倒计时目标时间
+
+        countDown(); // 初始调用一次countDown函数，避免首次加载时显示空白 
+
+        // 2. 每秒钟调用一次countDown函数，开启定时器
+        setInterval(countDown, 1000);
+
+        function countDown() {
+            var nowTime = +new Date(); // 获取当前时间的时间戳
+            var times = (inputTime - nowTime) / 1000; // 计算剩余时间（秒）
+
+            // 计算小时，确保格式为两位数
+            var h = parseInt(times / 60 / 60 % 24);
+            h = h < 10 ? '0' + h : h; // 小于10的前面补零
+            hour.innerHTML = h; // 更新小时显示
+
+            // 计算分钟，确保格式为两位数
+            var m = parseInt(times / 60 % 60);
+            m = m < 10 ? '0' + m : m; // 小于10的前面补零
+            minute.innerHTML = m; // 更新分钟显示
+
+            // 计算秒钟，确保格式为两位数
+            var s = parseInt(times % 60);
+            s = s < 10 ? '0' + s : s; // 小于10的前面补零
+            second.innerHTML = s; // 更新秒钟显示
+        }
+        
+    </script>
+</body>
+
+</html>

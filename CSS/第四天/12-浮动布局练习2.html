@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浮动元素搭配标准流父盒子2</title>
+    <style>
+        /* 重置默认样式 */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 移除列表项的默认样式 */
+        li {
+            list-style: none;
+        }
+
+        /* 父盒子样式 */
+        .box {
+            width: 1226px;
+            /* 固定宽度，常见于固定布局设计 */
+            height: 285px;
+            background-color: pink;
+            margin: 0 auto;
+            /* 水平居中对齐 */
+        }
+
+        /* 列表项（子元素）样式 */
+        .box li {
+            width: 296px;
+            height: 285px;
+            background-color: purple;
+            float: left;
+            /* 使用浮动进行水平排列 */
+            margin-right: 14px;
+            /* 设置右侧间距 */
+        }
+
+        /* 最后一个列表项的特殊样式 */
+        /* 使用 .box .last 提高选择器优先级 */
+        .box .last {
+            margin-right: 0;
+            /* 移除最后一个元素的右侧间距 */
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="box">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li class="last">4</li>
+    </ul>
+</body>
+
+</html>

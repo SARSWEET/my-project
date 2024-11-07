@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /**
+         * 字符串字符访问方法示例
+         * 
+         * 本示例演示了三种在JavaScript中访问字符串中字符的方法：
+         * 1. charAt()
+         * 2. charCodeAt()
+         * 3. 方括号表示法 [] (ES5+)
+         */
+
+        var str = 'andy';
+
+        // 1. charAt(index) 方法
+        // 根据索引返回对应位置的字符
+        console.log(str.charAt(3)); // 预期输出: 'y'
+
+        // 使用 charAt() 遍历字符串中的所有字符
+        for (let i = 0; i < str.length; i++) {
+            console.log(str.charAt(i));
+        }
+        // 预期输出:
+        // 'a'
+        // 'n'
+        // 'd'
+        // 'y'
+
+        // 2. charCodeAt(index) 方法
+        // 返回对应索引位置字符的 Unicode 编码（ASCII 码是它的子集）
+        console.log(str.charCodeAt(0)); // 预期输出: 97 (小写字母 'a' 的 Unicode 编码)
+
+        /**
+         * charCodeAt() 的常见用途：
+         * - 判断用户按下的键
+         * - 字符串的加密和解密
+         * - 验证用户输入（例如，确保输入的是字母）
+         */
+
+        // 3. 方括号表示法 str[index]
+        // ES5 引入，提供了一种更简洁的语法来访问字符串中的字符
+        console.log(str[0]); // 预期输出: 'a'
+
+        /**
+         * 注意事项：
+         * 1. charAt() 对于越界索引返回空字符串，而 [] 返回 undefined
+         * 2. charCodeAt() 对于越界索引返回 NaN
+         * 3. [] 语法在旧版本的浏览器中可能不支持
+         * 4. 所有这些方法都是只读的，不能用于修改字符串（字符串是不可变的）
+         */
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

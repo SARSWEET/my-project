@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    手机号码: <input type="number"> <button>发送</button>
+
+    <script>
+        // 获取按钮元素
+        var btn = document.querySelector('button');
+        // 定义初始计时器时间（秒）
+        var timer = 3;
+
+        // 为按钮添加点击事件监听器
+        btn.addEventListener('click', function () {
+            // 点击按钮后禁用按钮，防止重复点击
+            this.disabled = true;
+
+            // 设置定时器每秒更新按钮内容
+            var timer2 = setInterval(function () {
+                if (timer === 0) {
+                    // 当计时器到达0时，停止定时器并复原按钮状态
+                    clearInterval(timer2);
+                    btn.disabled = false; // 重新启用按钮
+                    btn.innerHTML = '发送'; // 恢复按钮文本
+                    timer = 3; // 重置计时器时间
+                } else {
+                    // 更新按钮文本，显示剩余时间
+                    btn.innerHTML = '还剩' + timer + '秒';
+                    timer--; // 每秒递减计时器
+                }
+            }, 1000); // 每1000毫秒（1秒）执行一次
+        });
+    </script>
+</body>
+
+</html>

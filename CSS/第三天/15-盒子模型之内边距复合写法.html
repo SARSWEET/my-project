@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒子模型内边距复合写法</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+
+            /* 内边距的单独设置（已注释） */
+            /* padding-left: 5px;
+               padding-top: 5px;
+               padding-right: 5px;
+               padding-bottom: 5px; */
+
+            /* 内边距的复合写法 */
+
+            /* 1. 四个值相同时的简写 */
+            /* padding: 5px; */
+            /* 等价于: padding: 5px 5px 5px 5px; */
+
+            /* 2. 上下相同，左右相同时的简写 */
+            /* padding: 5px 10px; */
+            /* 等价于: padding: 5px 10px 5px 10px; */
+
+            /* 3. 上、左右、下不同时的简写 */
+            /* padding: 5px 10px 20px; */
+            /* 等价于: padding: 5px 10px 20px 10px; */
+
+            /* 4. 四个方向都不同时的写法 */
+            padding: 5px 10px 20px 30px;
+            /* 顺序：上 右 下 左（顺时针方向） */
+
+            /* 注意：
+               - 复合写法可以大大简化代码
+               - 值的顺序很重要：上、右、下、左
+               - 如果省略某个值，会采用对应的对边值
+               - 这种写法会影响元素的实际大小 */
+        }
+    </style>
+</head>
+
+<body>
+    <div>盒子内容是content盒子内容是content盒子内容是content盒子内容是content盒子内容是content</div>
+</body>
+
+</html>

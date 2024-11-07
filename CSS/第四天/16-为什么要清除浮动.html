@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>为什么需要清除浮动</title>
+    <style>
+        /* 父容器样式 */
+        .box {
+            width: 800px;
+            border: 1px solid blue;
+            margin: 0 auto;
+            /* 注意：这里没有设置高度 */
+        }
+
+        /* 第一个浮动子元素 */
+        .damao {
+            float: left;
+            width: 300px;
+            height: 200px;
+            background-color: purple;
+        }
+
+        /* 第二个浮动子元素 */
+        .ermao {
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        .footer {
+            height: 200px;
+            background-color: black;
+        }
+
+        /* 浮动问题：
+           1. 父元素高度塌陷：由于子元素都浮动，父元素 .box 失去了高度
+           2. 后续元素位置影响：如果有跟随的元素，它们的位置可能会受到影响
+           
+           解决方案：
+           1. 给父元素设置固定高度（不灵活）
+           2. 使用清除浮动技术（推荐）
+              - 添加空div并清除浮动
+              - 使用 :after 伪元素清除浮动
+              - 给父元素设置 overflow: hidden 或 auto
+        */
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="damao">大毛</div>
+        <div class="ermao">二毛</div>
+    </div>
+    <div class="footer"></div>
+    <!-- 注意：父元素 .box 的高度会塌陷，因为其子元素都是浮动的 -->
+</body>
+
+</html>

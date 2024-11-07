@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS权重和继承注意点</title>
+    <style>
+        /* ID 选择器 + !important，权重最高 */
+        #father {
+            color: red !important;
+            /* !important 声明会覆盖所有其他样式，应谨慎使用 */
+        }
+
+        /* 元素选择器，权重低但直接作用于元素 */
+        p {
+            color: pink;
+            /* 这个样式会应用到 <p> 元素，即使它是 #father 的子元素 */
+        }
+
+        /* body 元素选择器，权重最低 */
+        body {
+            color: red;
+            /* 这个颜色会被大多数子元素继承，除非它们有自己的颜色定义 */
+        }
+
+        /* a 元素选择器，覆盖默认样式 */
+        a {
+            color: green;
+            text-decoration: none;
+            /* 链接有浏览器默认样式，需要明确设置才能改变 */
+        }
+
+        /* CSS 权重和继承要点：
+           1. 直接选中的样式优先于继承的样式
+           2. !important 具有最高优先级，但应避免过度使用
+           3. 继承的样式权重为 0，很容易被覆盖
+           4. 某些元素（如 <a>）有默认样式，不会自动继承父元素样式
+        */
+    </style>
+</head>
+
+<body>
+    <div id="father">
+        <p>你笑起来真好看</p>
+        <!-- 这个 <p> 会是粉色，因为 p {} 选择器直接作用于它 -->
+        <a href="#">我是单独的样式</a>
+        <!-- 这个 <a> 会是绿色，因为它有明确的样式定义 -->
+    </div>
+</body>
+
+</html>

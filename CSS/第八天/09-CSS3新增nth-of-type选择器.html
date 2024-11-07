@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3新增nth-of-type选择器</title>
+    <style>
+        /* 
+         * 1. 选择 ul 里面的第一个 li 元素类型的子元素
+         * :first-of-type 选择器选择父元素中第一个指定类型的子元素（此处是 li）
+         */
+        ul li:first-of-type {
+            background-color: pink;
+        }
+
+        /* 
+         * 2. 选择 ul 里面的最后一个 li 元素类型的子元素
+         * :last-of-type 选择器选择父元素中最后一个指定类型的子元素（此处是 li）
+         */
+        ul li:last-of-type {
+            background-color: pink;
+        }
+
+        /* 
+         * 3. 选择 ul 里面所有偶数位置的 li 元素类型的子元素
+         * :nth-of-type(even) 选择父元素中偶数位置的指定类型的子元素
+         */
+        ul li:nth-of-type(even) {
+            background-color: skyblue;
+        }
+
+        /* 
+         * 4. nth-child 会对所有子元素进行排序，然后选择匹配 nth-child(n) 的元素
+         * 在执行时，先看 nth-child(n) 的值，然后检查该位置的元素是否匹配要求的元素类型
+         * 如果不匹配，则无法选择
+         * 在这个例子中，section 中的第 1 个子元素是 p 元素，所以 div:nth-child(1) 不会匹配
+         */
+        section div:nth-child(1) {
+            background-color: red;
+        }
+
+        /* 
+         * 5. nth-of-type 会对指定类型的子元素进行排序
+         * 在执行时，先选择指定类型的元素（此处是 div），然后根据 nth-of-type(n) 的值选择
+         * 在这个例子中，section 中的第 1 个 div 元素会被选中
+         */
+        section div:nth-of-type(1) {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>第1个孩子</li>
+        <li>第2个孩子</li>
+        <li>第3个孩子</li>
+        <li>第4个孩子</li>
+        <li>第5个孩子</li>
+        <li>第6个孩子</li>
+        <li>第7个孩子</li>
+        <li>第8个孩子</li>
+    </ul>
+
+    <!-- 区别展示 -->
+    <section>
+        <p>光头强</p>
+        <div>熊大</div>
+        <div>熊二</div>
+    </section>
+</body>
+
+</html>

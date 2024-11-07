@@ -1,0 +1,314 @@
+body {
+    width: 100%;
+    /* 页面宽度设置为100%，适应不同屏幕 */
+    max-width: 640px;
+    /* 最大宽度限制为640像素 */
+    min-width: 320px;
+    /* 最小宽度限制为320像素 */
+    margin: 0 auto;
+    /* 水平居中显示页面 */
+    font-size: 14px;
+    /* 基本字体大小设置为14像素 */
+    font-family: -apple-system, Helvetica, sans-serif;
+    /* 字体优先使用苹果系统字体 */
+    line-height: 1.5;
+    /* 行高为字体大小的1.5倍，增强可读性 */
+    color: #666;
+    /* 字体颜色设置为深灰色 */
+}
+
+a {
+    color: #666;
+    /* 链接文字颜色设置为深灰色，保持与正文一致 */
+    text-decoration: none;
+    /* 去除链接默认的下划线 */
+}
+
+ul {
+    list-style: none;
+    /* 去除默认的列表样式（圆点或数字） */
+    margin: 0;
+    /* 清除外边距，确保与父元素对齐 */
+    padding: 0;
+    /* 清除内边距，防止影响布局 */
+    /* 为什么body里面已经清除了外边距这里还要清除内外边距? */
+    /* ul 元素有自己的默认 margin 和 padding，需要单独清除 */
+}
+
+img {
+    vertical-align: middle;
+    /* 确保图片与周围文本中线对齐，避免错位 */
+}
+
+.app {
+    height: 45px;
+    /* 顶部栏的高度设置为45像素 */
+}
+
+.app ul li {
+    float: left;
+    /* 使列表项水平排列 */
+    height: 45px;
+    /* 每个列表项的高度设置为45像素 */
+    line-height: 45px;
+    /* 通过行高设置文本垂直居中 */
+    background-color: #333;
+    /* 设置背景颜色为深灰色 */
+    text-align: center;
+    /* 文本居中对齐 */
+    color: #fff;
+    /* 文本颜色设置为白色 */
+}
+
+.app ul li:nth-child(1) {
+    width: 8%;
+    /* 第一个列表项的宽度为8% */
+}
+
+.app ul li:nth-child(1) img {
+    width: 10px;
+    /* 图片宽度设置为10像素 */
+    /* 这里为什么不需要加vertical-align: middle; 他的位置仍然不受影响*/
+    /* 因为图片已经小于或等于容器的高度，因此在默认情况下已经垂直居中 */
+}
+
+.app ul li:nth-child(2) {
+    width: 10%;
+    /* 第二个列表项的宽度为10% */
+}
+
+.app ul li:nth-child(2) img {
+    width: 30px;
+    /* 图片宽度设置为30像素 */
+    vertical-align: middle;
+    /* 图片垂直居中对齐，确保在更大的容器内居中显示 */
+}
+
+.app ul li:nth-child(3) {
+    width: 57%;
+    /* 第三个列表项的宽度为57% */
+}
+
+.app ul li:nth-child(4) {
+    width: 25%;
+    /* 第四个列表项的宽度为25% */
+    background-color: #F63515;
+    /* 设置背景颜色为红色 */
+}
+
+/* 搜索 */
+.search-wrap {
+    overflow: hidden;
+    /* 隐藏溢出内容，确保浮动元素清除 */
+    position: fixed;
+    /* 使元素相对于浏览器窗口固定位置 */
+    height: 44px;
+    /* 设置搜索栏的高度为44像素 */
+    width: 100%;
+    /* 设置搜索栏的宽度为100% */
+    /* 如果不加100%为什么中间的搜索栏会消失?并且登录会跑到左边? */
+    /* 因为固定定位的元素不占据文档流的位置，如果不设置宽度，元素可能会塌陷或消失 */
+    /* 这是固定定位的一个常见问题，设置宽度为100%可以解决此问题 */
+    /* max-width 和 min-width 在这里没有必要，因为父元素的宽度已经被限制 */
+}
+
+.search-btn,
+.search-login {
+    position: absolute;
+    /* 绝对定位，使按钮可以精确定位 */
+    width: 40px;
+    /* 设置按钮宽度为40像素 */
+    height: 44px;
+    /* 设置按钮高度为44像素 */
+}
+
+.search-btn {
+    top: 0;
+    /* 顶部对齐 */
+    left: 0;
+    /* 左对齐 */
+}
+
+.search-btn::before {
+    content: '';
+    /* 创建一个空的伪元素 */
+    display: block;
+    /* 转换为块级元素，方便设置大小和位置 */
+    margin: 14px 0 0 15px;
+    /* 设置外边距，调整伪元素位置 */
+    width: 20px;
+    height: 18px;
+    background: url(../images/s-btn.png) no-repeat;
+    /* 设置背景图片 */
+    background-size: 20px 18px;
+    /* 调整背景图片的大小 */
+}
+
+.search {
+    position: relative;
+    /* 相对定位，用于内部元素的绝对定位 */
+    height: 30px;
+    /* 设置搜索框高度为30像素 */
+    background-color: #fff;
+    /* 设置背景颜色为白色 */
+    margin: 7px 50px;
+    /* 设置上下左右外边距 */
+    border-radius: 15px;
+    /* 设置圆角，使搜索框边缘圆滑 */
+}
+
+.jd-icon {
+    position: absolute;
+    /* 绝对定位，使图标精确定位 */
+    width: 20px;
+    /* 设置图标宽度为20像素 */
+    height: 15px;
+    /* 设置图标高度为15像素 */
+    top: 8px;
+    /* 与顶部对齐 */
+    left: 13px;
+    /* 与左侧对齐 */
+    background: url(../images/jd.png) no-repeat;
+    /* 设置背景图片 */
+    background-size: 20px 15px;
+    /* 调整背景图片的大小 */
+}
+
+.jd-icon::after {
+    content: '';
+    /* 创建一个空的伪元素 */
+    position: absolute;
+    /* 绝对定位 */
+    top: 0;
+    /* 顶部对齐 */
+    right: -8px;
+    /* 右侧偏移8像素 */
+    display: block;
+    /* 转换为块级元素，设置大小和背景 */
+    width: 1px;
+    height: 15px;
+    background-color: #ccc;
+    /* 设置背景颜色为灰色，作为分隔线 */
+}
+
+.sou {
+    position: absolute;
+    /* 绝对定位 */
+    top: 8px;
+    /* 与顶部对齐 */
+    left: 50px;
+    /* 与左侧对齐 */
+    width: 18px;
+    /* 设置宽度为18像素 */
+    height: 15px;
+    /* 设置高度为15像素 */
+    background-color: pink;
+    /* 设置背景颜色为粉红色（调试用） */
+    background: url(../images/jd-sprites.png) no-repeat -80px 0;
+    /* 设置精灵图并定位 */
+    background-size: 200px;
+    /* 将精灵图缩小一半再定位，适配移动端 */
+}
+
+.search-login {
+    top: 0;
+    /* 顶部对齐 */
+    right: 0;
+    /* 右对齐 */
+    color: #fff;
+    /* 设置字体颜色为白色 */
+    line-height: 44px;
+    /* 设置文本垂直居中 */
+}
+
+.slider img {
+    width: 100%;
+    /* 将轮播图片宽度设置为100% */
+}
+
+.brand {
+    border-radius: 10px 10px 0 0;
+    /* 为品牌部分的顶部添加圆角 */
+    overflow: hidden;
+    /* 确保圆角效果生效，隐藏溢出内容 */
+}
+
+.brand div {
+    float: left;
+    /* 使品牌图片并排显示 */
+    width: 33.33%;
+    /* 每个品牌图片占据父容器的三分之一 */
+}
+
+.brand div img {
+    width: 100%;
+    /* 将图片宽度设置为父容器的100% */
+    border-radius: 10px 10px 0 0;
+    /* 为图片添加圆角，与父容器匹配 */
+}
+
+nav {
+    padding-top: 5px;
+    /* 添加顶部内边距 */
+    overflow: hidden;
+    /* 清除浮动，使父容器包含所有子元素 */
+    /* 为什么给nav设置padding没有效果? */
+    /* 因为 .brand 使用了 overflow: hidden; 清除了浮动，导致 nav 的 padding 被折叠 */
+}
+
+nav a {
+    float: left;
+    /* 使导航链接水平排列 */
+    width: 20%;
+    /* 每个链接占父容器宽度的20% */
+    text-align: center;
+    /* 文本水平居中 */
+}
+
+nav a img {
+    /* width: 100%; */
+    /* 如果设置100%是谁的100%？ */
+    /* 是链接的宽度，但由于 a 没有具体宽度，100% 没有意义，因此使用固定宽度 */
+    width: 40px;
+    /* 设置图片宽度为40像素 */
+    margin: 10px 0;
+    /* 设置图片上下外边距 */
+}
+
+nav a span {
+    display: block;
+    /* 将 span 设置为块级元素，使其独占一行 */
+}
+
+.news {
+    margin-top: 20px;
+    /* 设置新闻模块的顶部外边距为20像素 */
+}
+
+.news img {
+    width: 100%;
+    /* 将新闻图片宽度设置为100% */
+}
+
+.news a {
+    float: left;
+    /* 使新闻项水平排列 */
+    box-sizing: border-box;
+    /* 包括内边距和边框在内的盒子模型 */
+}
+
+.news a:nth-child(1) {
+    width: 50%;
+    /* 第一个新闻项占父容器的50%宽度 */
+}
+
+/* .news a:nth-child(2), .news a:nth-child(3) {
+    width: 25%; 设置第二和第三个新闻项占父容器的25% 
+}*/
+
+.news a:nth-child(n+2) {
+    width: 25%;
+    /* 第二个及以后的新闻项占父容器的25% */
+    border-left: 1px solid #ccc;
+    /* 设置左侧边框，作为分隔线 */
+}

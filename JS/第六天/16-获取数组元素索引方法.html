@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /**
+         * 数组元素索引查找方法示例
+         * 
+         * 本示例演示了两种查找数组元素索引的方法：
+         * 1. indexOf()     - 从前向后查找元素索引
+         * 2. lastIndexOf() - 从后向前查找元素索引
+         */
+
+        // 1. indexOf() 方法
+        // 从数组开头开始查找元素，返回第一个匹配元素的索引
+        var arr1 = ['red', 'green', 'pink'];
+        console.log(arr1.indexOf('blue')); // 预期输出: -1 (未找到)
+
+        /**
+         * indexOf() 方法特点：
+         * - 返回第一个匹配元素的索引
+         * - 如果未找到元素，返回 -1
+         * - 区分大小写
+         * - 可以指定开始查找的位置（可选的第二个参数）
+         */
+
+        // 2. lastIndexOf() 方法
+        // 从数组末尾开始查找元素，返回最后一个匹配元素的索引
+        var arr2 = ['red', 'green', 'blue', 'pink', 'blue'];
+        console.log(arr2.lastIndexOf('blue')); // 预期输出: 4
+
+        /**
+         * lastIndexOf() 方法特点：
+         * - 返回最后一个匹配元素的索引
+         * - 如果未找到元素，返回 -1
+         * - 区分大小写
+         * - 可以指定开始查找的位置（可选的第二个参数）
+         */
+
+        // 注意：
+        // 1. 这两个方法都不会改变原数组
+        // 2. 对于复杂数据类型（如对象），这些方法使用严格相等（===）进行比较
+        // 3. 在处理大型数组时，这些方法可能会影响性能，因为它们需要遍历整个数组
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

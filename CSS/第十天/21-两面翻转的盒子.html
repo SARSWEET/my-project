@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            perspective: 350px;
+        }
+        .box {
+            position: relative;
+            /* 设置父容器为相对定位，确保子元素的绝对定位以其为参考 */
+            width: 300px;
+            /* 设置盒子的宽度为300像素 */
+            height: 300px;
+            /* 设置盒子的高度为300像素 */
+            margin: 100px auto;
+            /* 设置盒子的外边距为100像素，并水平居中 */
+            transition: all 2s;
+            /* 设置所有属性的过渡效果，持续时间为1秒 */
+            /* 让背面紫色盒子保留立体空间，保持3D效果 */
+            transform-style: preserve-3d;
+        }
+
+        .box:hover {
+            /* 鼠标悬停时，盒子绕Y轴旋转180度，显示背面的内容 */
+            transform: rotateY(180deg);
+        }
+
+        .front,
+        .back {
+            position: absolute;
+            /* 绝对定位，使正面和背面都完全覆盖父容器 */
+            top: 0;
+            /* 与父容器顶部对齐 */
+            left: 0;
+            /* 与父容器左侧对齐 */
+            width: 100%;
+            /* 宽度占满父容器 */
+            height: 100%;
+            /* 高度占满父容器 */
+            border-radius: 50%;
+            /* 将盒子设为圆形 */
+            font-size: 30px;
+            /* 设置文字大小 */
+            color: #fff;
+            /* 设置文字颜色为白色 */
+            text-align: center;
+            /* 文字居中对齐 */
+            line-height: 300px;
+            /* 使文字在盒子中垂直居中显示 */
+            backface-visibility: hidden;
+            /* 隐藏元素的背面，使翻转时只看到正面 */
+            /* 你必须加这个属性，因为当不加时，旋转后的元素仍然会显示它的正面内容，即使旋转了180度 */
+        }
+
+        .front {
+            background-color: pink;
+            /* 设置正面的背景颜色为粉红色 */
+            z-index: 1;
+            /* 设置层级，让正面在初始状态下显示在最前面 */
+        }
+
+        .back {
+            background-color: purple;
+            /* 设置背面的背景颜色为紫色 */
+            /* 先让后面的盒子旋转180度，使其与正面背靠背 */
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="front">黑马程序员</div> <!-- 正面内容 -->
+        <div class="back">pink老师这里等你</div> <!-- 背面内容 -->
+    </div>
+</body>
+
+</html>

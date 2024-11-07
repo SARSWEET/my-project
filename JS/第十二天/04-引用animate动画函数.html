@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 引入外部 JavaScript 文件 animate.js，用于执行动画效果 -->
+    <script src="animate.js"></script>
+    <style>
+        /* 为侧边栏按钮设置样式 */
+        .sidebar {
+            position: fixed;
+            /* 固定定位，始终在视口的固定位置 */
+            right: 0;
+            /* 定位到屏幕右侧 */
+            bottom: 100px;
+            /* 距离底部 100px */
+            width: 40px;
+            /* 设置宽度为 40px */
+            height: 40px;
+            /* 设置高度为 40px */
+            text-align: center;
+            /* 文字水平居中 */
+            line-height: 40px;
+            /* 行高与高度一致，使文字垂直居中 */
+            cursor: pointer;
+            /* 鼠标悬停时显示为手型，提示可点击 */
+            color: #fff;
+            /* 设置文字颜色为白色 */
+        }
+
+        /* 为隐藏的内容框设置样式 */
+        .con {
+            position: absolute;
+            /* 绝对定位，相对于父元素定位 */
+            left: 0;
+            /* 初始位置在左侧 */
+            top: 0;
+            /* 初始位置在顶部 */
+            width: 200px;
+            /* 宽度设为 200px */
+            height: 40px;
+            /* 高度设为 40px */
+            background-color: purple;
+            /* 背景颜色设置为紫色 */
+            z-index: -1;
+            /* 设置堆叠顺序，确保元素在其他元素下方 */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 侧边栏元素，包含一个图标和一个隐藏的内容框 -->
+    <div class="sidebar">
+        <span>←</span> <!-- 显示箭头指向 -->
+        <div class="con">问题反馈</div> <!-- 隐藏的内容框，显示“问题反馈” -->
+    </div>
+
+    <script>
+        // 获取侧边栏元素和内容框元素
+        var sidebar = document.querySelector('.sidebar');
+        var con = document.querySelector('.con');
+        var span = document.querySelector('span');
+
+        // 当鼠标进入 sidebar 时，触发事件让 con 盒子滑动到左侧
+        sidebar.addEventListener('mouseenter', function () {
+            animate(con, -160, function () { // 调用 animate 函数执行滑动动画
+                span.innerHTML = '→'; // 动画完成后，将箭头方向改为右指
+            });
+        });
+
+        // 当鼠标离开 sidebar 时，触发事件让 con 盒子滑动回右侧
+        sidebar.addEventListener('mouseleave', function () {
+            animate(con, 0, function () { // 调用 animate 函数执行滑动动画
+                span.innerHTML = '←'; // 动画完成后，将箭头方向改为左指
+            });
+        });
+    </script>
+</body>
+
+</html>
+

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 重置所有元素的默认边距和内边距，确保布局的一致性 */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 为 div 元素设置相对定位，使其子元素能够使用绝对定位，
+           设置宽度和高度，并应用背景色 */
+        div {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+
+            /* transform: translateX(50%); 将盒子沿 X 轴移动自身宽度的 50% */
+            /* 由于使用的是百分比，移动的距离是相对于盒子自身尺寸的 */
+            transform: translateX(50%);
+        }
+
+        /* 为 p 元素设置绝对定位，确保其相对于最近的具有定位的父元素 (div) 定位 */
+        p {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+
+            /* 使用 transform 将 p 元素精确居中 */
+            /* transform: translate(-50%, -50%); 先将 p 元素的左上角移动到 div 中心，
+               然后通过负 50% 的平移将其进一步移动，使得 p 元素完全居中 */
+            transform: translate(-50%, -50%);
+
+            /* 设置 p 元素的宽度和高度，并应用背景色 */
+            width: 200px;
+            height: 200px;
+            background-color: purple;
+        }
+
+        /* span 元素的 transform 属性不会生效，因为它是一个行内元素 */
+        /* transform 只对块级元素有效，行内元素需转换为块级或行内块级（如使用 display: inline-block;）才能使 transform 生效 */
+        span {
+            transform: translate(300px, 300px);
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p></p>
+    </div>
+    <span></span>
+</body>
+
+</html>

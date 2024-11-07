@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>内边距对盒子实际大小的影响</title>
+    <style>
+        div {
+            /* 设置内容区域的宽度和高度 */
+            width: 160px;
+            height: 160px;
+
+            /* 设置背景颜色以可视化盒子区域 */
+            background-color: pink;
+
+            /* 设置所有四个方向的内边距为 20px */
+            padding: 20px;
+
+            /* 盒子模型分析：
+               1. 内容区域：160px × 160px
+               2. 内边距：每个方向 20px
+               3. 实际盒子大小：
+                  宽度 = 160px + 20px(左内边距) + 20px(右内边距) = 200px
+                  高度 = 160px + 20px(上内边距) + 20px(下内边距) = 200px
+               
+               注意：默认情况下（即 box-sizing: content-box），
+               width 和 height 只设置内容区域的大小，不包括内边距和边框 */
+
+            /* 如果想要保持指定的宽高，可以使用：
+               box-sizing: border-box;
+               这样 width 和 height 将包括内容区域、内边距和边框 */
+        }
+    </style>
+</head>
+
+<body>
+    <div>padding会影响盒子实际大小padding会影响盒子实际大小padding会影响盒子实际大小padding会影响盒子实际大小padding会影响盒子实际大小
+    </div>
+</body>
+
+</html>

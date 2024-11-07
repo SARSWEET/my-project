@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>多行文本溢出显示省略号</title>
+    <style>
+        div {
+            width: 150px;
+            /* 
+             * 设置容器的宽度为150px，确保多行文本有可能会超出宽度，
+             * 从而触发溢出处理。
+             */
+
+            /* height: 65px; */
+            /* 
+             * 高度被注释掉，因为我们通过控制显示的行数来实现省略效果，
+             * 不再依赖固定高度。
+             */
+
+            background-color: pink;
+            margin: 100px auto;
+
+            overflow: hidden;
+            /* 
+             * 当文本内容超出容器高度时，隐藏超出的部分。
+             * 这是实现文本截断的关键属性之一。
+             */
+
+            text-overflow: ellipsis;
+            /* 
+             * 当文本溢出时，用省略号 ("...") 表示被截断的部分。
+             * 这一属性在多行文本截断时通常与其他 WebKit 特性一起使用。
+             */
+
+            /* 设置为弹性伸缩盒子模型（Flexbox）显示 */
+            display: -webkit-box;
+            /* 
+             * 使用 WebKit 专有的弹性盒子模型 (Flexbox)，
+             * 使得文本可以在容器内按行排列，并支持行数限制。
+             */
+
+            /* 限制文本显示的行数 */
+
+            /* -webkit-line-clamp: 3; */
+            
+            /* 
+             * -webkit-line-clamp 是一个 WebKit 专有的 CSS 属性，
+             * 用于限制文本在容器中显示的最大行数。
+             * 超过指定行数的文本将被截断并显示省略号。
+             */
+
+            /* 设置伸缩盒子模型的子元素排列方式为垂直方向 */
+            -webkit-box-orient: vertical;
+            /* 
+             * 指定文本内容在弹性盒子模型中的排列方向为垂直排列，
+             * 这样文本内容就会从上到下排列，并且受行数限制。
+             */
+        }
+    </style>
+</head>
+
+<body>
+    <div>啥也不说,此处省略一万字 啥也不说,此处省略一万字此处省略此处省略一万字</div>
+</body>
+
+</html>

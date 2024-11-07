@@ -1,0 +1,85 @@
+@media screen and(min-width:400px) {
+
+    /* body {
+        display: flex;
+    } */
+    #navbar {
+        float: left;
+    }
+}
+
+/* * {
+    margin: 0;
+    padding: 0;
+} */
+html,
+body {
+    min-width: 290px;
+    color: #4d4e53;
+    background-color: #ffffff;
+    font-family: 'Open Sans', Arial, sans-serif;
+    line-height: 1.5;
+}
+
+header {
+    font-size: 26px;
+    color: #000;
+}
+
+article {
+    font-size: 15px;
+    padding: 10px;
+    font-weight: light;
+}
+
+code {
+    display: block;
+    background-color: #f7f7f7;
+    white-space: pre-line;
+    /* 这里是保留换行的意思 */
+    font-size: 12px;
+    line-height: 2;
+    padding: 15px;
+}
+
+#navbar {
+    position: fixed;
+    min-width: 290px;
+    top: 0px;
+    left: 0px;
+    width: 300px;
+    height: 100%;
+    border-right: solid;
+    border-color: rgba(0, 22, 22, 0.4);
+}
+#navbar header {
+    text-align: center;
+    padding: 10px;
+    
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+a {
+    color: #4d4e53;
+    text-decoration: none;
+    font-weight:lighter;
+    font-size: 15px;
+}
+#navbar ul li {
+    border-top: 1px solid;
+    list-style: none;
+    padding:10px 0 10px 20px;
+}
+nav {
+    display: block;
+}
+#main-doc {
+    position: absolute;
+    left: 310px;
+    padding: 20px;
+    /* margin-left: 310px;
+    margin-bottom: 110px;
+    padding: 20px; */
+}

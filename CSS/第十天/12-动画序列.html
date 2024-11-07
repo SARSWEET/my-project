@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 定义一个名为 move 的关键帧动画 */
+
+        /* 使用 from 和 to 关键字可以等同于使用 0% 和 100% */
+        /* @keyframes move {
+            from {
+                transform: translate(0,0);
+            }
+            to {
+                transform: translate(1000px,0);
+            }
+        } */
+
+        /* 1. keyframes 是关键帧动画，可以定义多个状态的变化 */
+        /* 2. 关键帧中的百分比值必须是整数 */
+        /* 3. 这些百分比表示动画持续时间的比例 */
+        @keyframes move {
+
+            /* 动画开始：元素在初始位置 (0,0) */
+            0% {
+                transform: translate(0, 0);
+                /* 0% 可以省略，但为了清晰，保留此处 */
+            }
+
+            /* 动画进行 25% 时：元素移动到 x 轴 1000 像素处 */
+            25% {
+                transform: translate(1000px, 0);
+            }
+
+            /* 动画进行 50% 时：元素移动到 x 轴 1000 像素处，y 轴 500 像素处 */
+            50% {
+                transform: translate(1000px, 500px);
+            }
+
+            /* 动画进行 75% 时：元素移动到 x 轴 0 像素处，y 轴 500 像素处 */
+            75% {
+                transform: translate(0, 500px);
+            }
+
+            /* 动画结束：元素返回初始位置 (0,0) */
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+
+        /* 设置 div 元素的初始样式和动画属性 */
+        div {
+            width: 200px;
+            /* 设置 div 的宽度为 200 像素 */
+            height: 200px;
+            /* 设置 div 的高度为 200 像素 */
+            background-color: pink;
+            /* 设置 div 的背景颜色为粉红色 */
+
+            animation-name: move;
+            /* 调用 move 动画 */
+            animation-duration: 10s;
+            /* 动画持续时间为 10 秒 */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 一个空的 div 元素，通过关键帧动画实现移动 -->
+    <div></div>
+</body>
+
+</html>

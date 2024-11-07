@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!-- 指定文档类型为HTML5，确保浏览器按照HTML5标准解析文档 -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 设置文档的字符编码为UTF-8，支持国际化字符集 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 视口设置，确保网页在移动设备上的可视性和可用性 -->
+    <title>打印倒三角形星星示例</title>
+    <!-- 网页标题，反映了页面内容或功能 -->
+    <script>
+        // JavaScript代码区域开始
+        // 本脚本演示了如何使用双重for循环来打印倒三角形的星星
+
+        // 定义一个变量str用于存储拼接后的星星字符串
+        var str = '';
+        // 外层for循环，控制行数，这里固定为10行
+        for (let i = 1; i <= 10; i++) {
+            // 里层for循环，控制每行打印的星星个数
+            // 这里使用j = i，j <= 10，因为i递增，所以j递增，j <= 10的个数就会递减
+            for (let j = i; j <= 10; j++) {
+                str += '⭐'; // 将星星拼接到str中
+            }
+            // 每行打印完毕后，添加换行符
+            str += '\n';
+        }
+        // 输出拼接后的星星字符串到控制台
+        console.log(str);
+    </script>
+</head>
+
+<body>
+    <!-- 网页主体内容 -->
+</body>
+
+</html>

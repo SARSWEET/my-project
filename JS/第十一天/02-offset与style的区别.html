@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            /* 设置盒子宽度 */
+            height: 200px;
+            /* 设置盒子高度 */
+            background-color: pink;
+            /* 背景颜色 */
+            padding: 10px;
+            /* 内边距，使内容与边框有一定距离 */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 行内样式覆盖了类选择器中的样式 -->
+    <div class="box" style="width: 220px; padding: 20px;"></div>
+
+    <script>
+        // offset 与 style 的区别
+        var box = document.querySelector('.box');
+
+        // 1. offsetWidth 可以获取元素的宽度，不带单位，无论是行内样式还是内嵌样式，都会计算 padding 和 border
+        console.log(box.offsetWidth); // 输出盒子的完整宽度（包含 padding 和 border）
+
+        // 2. style.width 只能获取行内样式中的宽度值，返回带单位的字符串，不包括 padding
+        console.log(box.style.width); // 输出行内样式中的宽度（若没有行内样式则为空）
+
+        // 3. offsetWidth 只能读取元素的大小，无法通过它直接修改元素的宽度
+        box.offsetWidth = '250px'; // 此操作无效，因为 offset 系列属性是只读的
+        console.log(box.offsetWidth); // 依旧输出盒子的宽度，未发生变化
+
+        // 4. style 可以通过修改行内样式来更改元素的大小
+        box.style.width = '300px'; // 使用 style 修改元素的宽度
+        console.log(box.style.width); // 输出更新后的宽度，带单位
+
+        // 总结：
+        // - 想要获取元素的大小（包括 padding 和 border），用 offset 系列属性更合适
+        // - 想要给元素更改样式属性，则需要使用 style 进行修改
+    </script>
+</body>
+
+</html>

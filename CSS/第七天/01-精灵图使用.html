@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>精灵图使用</title>
+    <style>
+        .box1 {
+            width: 60px;
+            height: 60px;
+            margin: 100px auto;
+            background: url(images/sprites.png) no-repeat -182px 0;
+            /* 
+             * 使用精灵图作为背景图像，设置背景图像的显示位置。
+             * 精灵图是一种将多个小图片合并为一张大图片的技术，通过调整背景图像的位置（background-position）来显示不同的部分。
+             * 这里使用了 `background-position: -182px 0;`，即显示精灵图中位于 (182px, 0px) 的部分。
+             */
+            /* background-position: -182px 0; */
+            /* 
+             * background-position 属性也可以单独使用来指定背景图的位置。
+             * 在此代码中，这行被注释掉是因为已经在 `background` 简写属性中指定了相同的值。
+             */
+        }
+
+        .box2 {
+            width: 27px;
+            height: 25px;
+            /* background-color: pink; */
+            /* 
+             * 可以通过设置 `background-color` 来设置背景颜色，不过这里使用了背景图片，因此颜色被注释掉。
+             */
+            margin: 200px;
+            background: url(images/sprites.png) no-repeat -155px -106px;
+            /* 
+             * 同样使用精灵图作为背景，显示精灵图中位于 (-155px, -106px) 的部分。
+             * 通过调整 `background-position`，精确定位要显示的图像部分。
+             */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+
+</html>

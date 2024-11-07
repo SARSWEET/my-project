@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            /* 透视效果应该写在被观察元素的父元素上 */
+            perspective: 1000px;
+            /* 设置透视距离，值越小，观察到的3D效果越明显，图案越大 */
+        }
+
+        div {
+            width: 200px;
+            /* 设置元素的宽度为200像素 */
+            height: 200px;
+            /* 设置元素的高度为200像素 */
+            background-color: pink;
+            /* 设置元素的背景颜色为粉红色 */
+
+            /* 使用 transform 属性进行平移操作 */
+            /* 单独使用 translateX 和 translateY 实现元素在X轴和Y轴的移动 */
+            /* transform: translateX(100px); */
+            /* transform: translateY(100px); */
+            /* 可以使用多个 transform 函数组合实现多维度的移动 */
+            /* transform: translateX(100px) translateY(100px) translateZ(100px); */
+
+            /* 使用3D变换，进行多维度的移动 */
+            /* 1. translateZ 沿着 Z 轴移动，创建3D效果 */
+            /* 2. translateZ 后面的单位通常是 px 像素 */
+            /* 3. 当值为正时，元素向屏幕外移动；当值为负时，元素向屏幕内移动 */
+            /* 4. 3D 移动的简写方式是使用 translate3d(x, y, z) */
+            transform: translate3d(100px, 100px, 100px);
+            /* 元素在X、Y和Z轴上同时移动 */
+            /* 5. translate3d 后面的每个参数都必须指定，如果某一轴不移动，则填 0 */
+        }
+    </style>
+</head>
+
+<body>
+    <div></div> <!-- 一个被透视观察的3D元素 -->
+</body>
+
+</html>

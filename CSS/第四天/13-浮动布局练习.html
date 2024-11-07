@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浮动布局练习</title>
+    <style>
+        /* 主容器样式 */
+        .box {
+            width: 1226px;
+            /* 固定宽度，常见于大屏幕设计 */
+            height: 614px;
+            background-color: pink;
+            margin: 0 auto;
+            /* 水平居中 */
+        }
+
+        /* 左侧栏样式 */
+        .left {
+            float: left;
+            /* 左浮动 */
+            width: 234px;
+            height: 614px;
+            background-color: purple;
+        }
+
+        /* 右侧内容区样式 */
+        .right {
+            float: left;
+            /* 左浮动，紧跟左侧栏 */
+            width: 992px;
+            /* 1226px - 234px = 992px */
+            height: 614px;
+            background-color: skyblue;
+        }
+
+        /* 右侧内容区中的子元素样式 */
+        .right div {
+            float: left;
+            /* 使子元素左浮动，形成网格布局 */
+            width: 234px;
+            /* 与左侧栏宽度相同 */
+            height: 300px;
+            background-color: pink;
+            margin-left: 14px;
+            /* 左侧间距 */
+            margin-bottom: 14px;
+            /* 底部间距 */
+            /* 注意：右侧没有margin，允许最右边的元素紧贴容器边缘 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="left">左青龙</div>
+        <div class="right">
+            <!-- 8个子div，形成4x2的网格布局 -->
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+        </div>
+    </div>
+</body>
+
+</html>

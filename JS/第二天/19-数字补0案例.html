@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!-- 指定文档类型为HTML5，确保浏览器按照HTML5标准解析文档 -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 设置文档的字符编码为UTF-8，支持国际化字符集 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 视口设置，确保网页在移动设备上的可视性和可用性 -->
+    <title>时间格式化工具</title>
+    <!-- 网页标题，反映了页面内容或功能 -->
+    <script>
+        // JavaScript代码区域开始
+        // 本脚本提供一个简单的时间格式化工具，用于将用户输入的数字格式化为两位数的时间格式
+
+        // 提示用户输入一个0到59之间的数字，用于时间格式化
+        var time = prompt('请输入一个0~59之间的数字:');
+        // 使用三元运算符检查输入的数字是否小于10
+        // 如果是，则在数字前面补充一个'0'以达到两位数的格式
+        // 否则，直接使用输入的数字
+        var result = time < 10 ? '0' + time : time;
+        // 将格式化后的结果显示给用户
+        alert(result);
+    </script>
+</head>
+
+<body>
+    <!-- 网页主体内容 -->
+</body>
+
+</html>

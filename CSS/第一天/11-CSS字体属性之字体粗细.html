@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* CSS 字体粗细设置 */
+
+        /* 定义一个加粗文本的类 */
+        .bold {
+            /* 使用数值设置字体粗细 */
+            /* 700 等同于 bold，表示粗体 */
+            /* 数值范围通常为100到900，100为最细，900为最粗 */
+            font-weight: 700;
+
+            /* 下面是使用关键字设置粗体的方式，效果与700相同 */
+            /* font-weight: bold; */
+        }
+
+        /* 为 <h2> 标签设置字体粗细 */
+        h2 {
+            /* 400 等同于 normal，表示标准字体粗细 */
+            font-weight: 400;
+
+            /* 下面是使用关键字设置标准粗细的方式，效果与400相同 */
+            /* font-weight: normal; */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 此 <h2> 将使用标准粗细（400），覆盖了浏览器默认的加粗样式 -->
+    <h2>pink的秘密</h2>
+
+    <!-- 以下段落使用默认的字体粗细 -->
+    <p>那一抹众人中最漂亮的颜色</p>
+    <p>优雅,淡然,又那么心中清澈</p>
+    <p>前端总是伴随着困难和犯错</p>
+    <p>静心,坦然,攻克一个又一个</p>
+
+    <!-- 这个段落应用了 .bold 类，文本将显示为粗体 -->
+    <p class="bold">拼死也要克服它</p>
+
+    <!-- 这个段落使用默认的字体粗细 -->
+    <p>这就是pink的秘密也是老师最终的嘱托</p>
+</body>
+
+</html>

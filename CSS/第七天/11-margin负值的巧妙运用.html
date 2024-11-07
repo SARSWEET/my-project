@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>margin 负值的巧妙运用</title>
+    <style>
+        ul li {
+            position: relative;
+            /* 
+             * 给每个 li 元素添加相对定位 (relative)，
+             * 这样可以在后续操作中使用 z-index 提升层级。
+             */
+            float: left;
+            /* 使 li 元素在水平方向上排列，即水平浮动。 */
+            list-style: none;
+            /* 移除 li 元素的默认列表样式（通常是圆点或数字）。 */
+            width: 150px;
+            height: 200px;
+            border: 1px solid red;
+            /* 给每个 li 元素添加红色边框。 */
+            margin-left: -1px;
+            /* 
+             * 通过设置 margin-left 为负值，使得 li 元素之间的边框重叠，
+             * 避免相邻边框产生 2px 的视觉间隙。
+             */
+        }
+
+        /* ul li:hover {
+            border: 1px solid blue;
+            1.如果盒子没有定位 则鼠标经过添加相对定位
+            position: relative; 这里是为什么添加了相对定位就不会被旁边的盒子压住?
+        } */
+        /* 
+         * 解释：当 `li` 没有定位时，相邻的浮动元素可能会因为 HTML 元素的绘制顺序而覆盖当前元素的边框。
+         * 通过添加 `position: relative;`，浏览器会为元素创建一个新的层叠上下文，
+         * 这使得元素的层级得到提升，从而确保其边框不会被相邻的元素覆盖。
+         */
+
+        ul li:hover {
+            /* 如果 li 元素有定位属性，则使用 z-index 提高其层级，确保其在相邻元素之上 */
+            z-index: 1;
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</body>
+
+</html>

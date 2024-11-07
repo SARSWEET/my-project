@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1. 利用函数求任意两个数的和
+        // 定义一个函数 getSum，用于计算并输出两个数的和
+        function getSum(num1, num2) {
+            // 输出 num1 和 num2 的和到控制台
+            console.log(num1 + num2);
+        }
+        // 调用 getSum 函数，计算并输出 1 和 3 的和
+        getSum(1, 3);
+        // 调用 getSum 函数，计算并输出 3 和 8 的和
+        getSum(3, 8);
+
+        // 2. 利用函数求任意两个数之间的和
+        // 定义一个函数 getSums，用于计算并输出 start 到 end 之间所有整数的累加和
+        function getSums(start, end) {
+            // 初始化累加和变量
+            var sum = 0;
+            // 使用 for 循环遍历 start 到 end 的所有整数
+            for (let i = start; i <= end; i++) {
+                // 将当前整数累加到 sum 变量中
+                sum += i;
+            }
+            // 输出累加和结果到控制台
+            console.log(sum);
+        }
+        // 调用 getSums 函数，计算并输出 1 到 100 的累加和
+        getSums(1, 100);
+        // 调用 getSums 函数，计算并输出 1 到 10 的累加和
+        getSums(1, 10);
+
+        // 3. 注意点
+        // (1) 多个参数之间用逗号隔开
+        // (2) 形参可以看作是不用声明的变量
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>单行文本溢出显示省略号</title>
+    <style>
+        div {
+            width: 150px;
+            height: 80px;
+            background-color: pink;
+            margin: 100px auto;
+
+            white-space: normal;
+            /* 
+             * 默认情况下，white-space 为 normal，这意味着当文本在一行内显示不下时，
+             * 会自动换行显示。
+             */
+
+            white-space: nowrap;
+            /* 
+             * 设置 white-space 为 nowrap，表示强制文本在一行内显示，
+             * 即使内容超出了容器的宽度，也不会换行。
+             */
+
+            overflow: hidden;
+            /* 
+             * 当内容超出容器宽度时，使用 overflow: hidden; 
+             * 将超出的部分隐藏，不显示在页面上。
+             */
+
+            text-overflow: ellipsis;
+            /* 
+             * 当文本溢出时，使用 text-overflow: ellipsis; 
+             * 用省略号 ("...") 来替代被隐藏的文本，表示内容的截断。
+             * 这通常与 white-space: nowrap 和 overflow: hidden 一起使用，
+             * 以确保文本在一行内显示并处理溢出的情况。
+             */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div">啥也不说,此处省略一万字 啥也不说,此处省略一万字</div>
+</body>
+
+</html>

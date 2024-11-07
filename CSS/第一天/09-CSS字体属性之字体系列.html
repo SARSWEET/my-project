@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* CSS 字体族（font-family）设置 */
+
+        /* 为所有 <h2> 标签设置字体 */
+        h2 {
+            /* 使用单引号包裹含空格的字体名称 */
+            /* 设置字体为"微软雅黑" */
+            font-family: '微软雅黑';
+        }
+
+        /* 为所有 <p> 标签设置字体 */
+        p {
+            /* 字体回退机制：
+               1. 首选 "Times New Roman"
+               2. 如果不可用，则使用 "Times"
+               3. 如果前两者都不可用，则使用任何可用的 serif 字体 */
+            font-family: 'Times New Roman', Times, serif;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 标题使用 "微软雅黑" 字体 -->
+    <h2>pink的秘密</h2>
+
+    <!-- 以下段落使用 "Times New Roman"（或其回退选项）字体 -->
+    <p>那一抹众人中最漂亮的颜色</p>
+    <p>优雅,淡然,又那么心中清澈</p>
+    <p>前端总是伴随着困难和犯错</p>
+    <p>静心,坦然,攻克一个又一个</p>
+    <p>拼死也要克服它</p>
+    <p>这就是pink的秘密也是老师最终的嘱托</p>
+</body>
+
+</html>

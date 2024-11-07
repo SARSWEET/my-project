@@ -1,0 +1,124 @@
+// 首页的less文件
+@import 'common';
+
+// @import 导入的意思 可以把一个样式文件 导入到另一个样式文件里
+// link 是把一个样式文件引入到html里
+body {
+    min-width: 320px;
+    width: 15rem;
+    /* body的宽度可以随着屏幕的变化而变化 */
+    margin: 0 auto;
+    line-height: 1.5;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f2f2f2;
+}
+
+// 顶部搜索框
+// 页面元素rem计算公式 页面元素的px/html字体大小
+@baseFont : 50;
+
+.search-content {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15rem;
+    height: (88rem / @baseFont);
+    /* 相当于是 (88px的页面元素/50px的html字体大小)rem 只是rem加在了88后面 */
+    /* 为什么是88rem */
+    background-color: #ffc001;
+
+    .classify {
+        width: (44rem / @baseFont);
+        height: (70rem / @baseFont);
+        background: url(../images/classify.png) no-repeat;
+        background-size: (44rem / @baseFont) (70rem / @baseFont);
+        margin: (9rem / @baseFont) (25rem / @baseFont) (9rem / @baseFont) (25rem / @baseFont);
+    }
+
+    .search {
+        flex: 1;
+
+        // background-color: purple;
+        input {
+            width: 100%;
+            outline: none;
+            padding-left: (55rem / @baseFont);
+            border: 0;
+            height: (66rem / @baseFont);
+            font-size: (25rem / @baseFont);
+            border-radius: (33rem / @baseFont);
+            margin-top: (11rem / @baseFont);
+        }
+    }
+
+    .login {
+        width: (75rem / @baseFont);
+        height: (70rem / @baseFont);
+        // background-color: blue;
+        margin: (10rem / @baseFont);
+        font-size: (25rem / @baseFont);
+        text-align: center;
+        line-height: (70rem / @baseFont);
+        color: #fff;
+    }
+}
+
+// banner部分
+.banner {
+    // width: 100%;直接写100%不行吗
+    width: (750rem / @baseFont);
+    height: (368rem / @baseFont);
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+// 广告部分
+.ad {
+    display: flex;
+
+    a {
+        flex: 1;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+// nav模块
+nav {
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: space-evenly;
+    width: (750rem / @baseFont);
+    // background-color: pink;
+
+    a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;/* 由于上面把主轴调整为了column这里的对齐是参考column居中对齐 注意这里要用align-items主轴上并没有换行*/
+        width: (150rem / @baseFont);
+        height: (140rem / @baseFont);
+        // background-color: skyblue;
+        flex: 20%;
+        text-align: center;
+
+        img {
+            width: (82rem / @baseFont);
+            height: (82rem / @baseFont);
+            margin: (10rem / @baseFont) 0 (10rem / @baseFont);
+        }
+
+        span {
+            font-size: (25rem / @baseFont);
+            // background-color: purple;
+            color: #333;
+        }
+    }
+}

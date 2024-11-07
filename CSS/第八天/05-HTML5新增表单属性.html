@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5新增表单属性</title>
+    <style>
+        input::placeholder {
+            color: pink;
+            /* 
+             * 自定义输入框占位符文本的颜色。
+             * 使用伪元素 ::placeholder 可以针对占位符文本进行样式设置。
+             */
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <input type="search" name="search" placeholder='pink老师' autofocus autocomplete="on">
+        <!-- 
+             * type="search"：
+             * HTML5 新增的 input 类型，专门用于搜索输入框。
+             * 在部分浏览器中会显示清除按钮，让用户更方便地清除输入内容。
+             * 
+             * placeholder='pink老师'：
+             * 设置输入框的占位符文本，在输入框为空时显示。
+             * 指导用户输入内容。
+             * 
+             * autofocus：
+             * 页面加载后自动将焦点放在该输入框上，方便用户立即开始输入。
+             * 
+             * autocomplete="on"：
+             * 启用表单的自动完成功能。浏览器会根据用户以前的输入记录，自动为该输入框提供建议。
+             * 需要注意的是，autocomplete 功能的正常工作依赖于 input 元素的 name 属性，
+             * 因为浏览器通过 name 属性识别不同的输入框。
+             */
+        
+        <input type="file" multiple>
+        <!-- 
+             * type="file"：
+             * 允许用户选择文件上传。
+             * 
+             * multiple：
+             * 允许用户一次选择多个文件进行上传。用户可以在文件选择窗口中通过按住 Ctrl 或 Shift 键选择多个文件。
+             */
+        
+        <input type="submit">
+        <!-- 
+             * type="submit"：
+             * 提交表单内容到服务器。按钮的默认标签为 "Submit"。
+             * 用户点击按钮后，表单中的数据会按照 action 属性中指定的 URL 提交。
+             */
+    </form>
+</body>
+
+</html>

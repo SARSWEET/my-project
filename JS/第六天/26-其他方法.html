@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /**
+         * 字符串操作方法示例
+         * 本示例展示了两种常用的字符串操作方法：
+         * 1. replace() - 用于替换字符串中的内容
+         * 2. split() - 用于将字符串分割成数组
+         */
+
+        // 1. replace() 方法
+        // 作用：替换字符串中的内容
+        var str = 'andy';
+        console.log(str.replace('a', 'b')); // 输出: 'bndy'
+        // 注意：replace() 默认只替换第一个匹配到的内容
+
+        // 示例：替换字符串中所有的 'o' 为 '*'
+        var str1 = 'abcoefoxyozzopp';
+        while (str1.indexOf('o') !== -1) {
+            str1 = str1.replace('o', '*');
+        }
+        console.log(str1); // 输出: 'abc*ef*xy*zz*pp'
+        // 说明：使用 while 循环持续替换，直到字符串中不再包含 'o'
+
+        // 2. split() 方法
+        // 作用：将字符串分割成数组
+        var str2 = 'red,pink,blue';
+        console.log(str2.split(',')); // 输出: ['red', 'pink', 'blue']
+
+        var str3 = 'red&pink&blue';
+        console.log(str3.split('&')); // 输出: ['red', 'pink', 'blue']
+        // 说明：split() 方法根据指定的分隔符将字符串分割成数组
+
+        /**
+         * 补充说明：
+         * 1. replace() 方法不会修改原字符串，而是返回新的字符串。
+         * 2. 如果要替换所有匹配项，可以使用正则表达式和全局标志，例如：
+         *    str.replace(/o/g, '*')
+         * 3. split() 方法是 join() 方法的逆操作。join() 用于将数组转换为字符串。
+         * 4. split() 方法在不传参数时，会将整个字符串作为一个元素返回在数组中。
+         * 
+         */
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

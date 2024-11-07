@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Align-self and Order Example</title>
+    <style>
+        div {
+            display: flex;
+            /* 将父元素设置为弹性布局容器 */
+            width: 80%;
+            /* 设置容器的宽度为父元素宽度的80% */
+            height: 300px;
+            /* 设置容器的高度为300像素 */
+            background-color: pink;
+            /* 设置容器的背景颜色为粉红色 */
+
+            /* 控制所有子元素在侧轴（垂直方向）上末端对齐 */
+            /* align-items: flex-end; */
+
+            /* 如果我们只想让特定的子元素在侧轴末端对齐，而不影响其他子元素 */
+            /* 可以使用 align-self 属性，单独控制某个子元素的对齐方式 */
+        }
+
+        span {
+            width: 150px;
+            /* 设置子元素的宽度为150像素 */
+            height: 100px;
+            /* 设置子元素的高度为100像素 */
+            background-color: purple;
+            /* 设置子元素的背景颜色为紫色 */
+            margin-right: 5px;
+            /* 设置子元素的右外边距为5像素 */
+        }
+
+        span:nth-child(2) {
+            order: -1;
+            /* 控制子元素的排列顺序，数值越小越靠前，默认值为0 */
+            /* 在这里，第二个子元素将被放置到第一个子元素之前 */
+        }
+
+        span:nth-child(3) {
+            align-self: flex-end;
+            /* 只让第三个子元素在侧轴末端对齐 */
+            /* align-self 用于单独控制某个子元素的对齐方式，覆盖 align-items 设置 */
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span>1</span> <!-- 第一个子元素 -->
+        <span>2</span> <!-- 第二个子元素，使用 order 属性调整顺序 -->
+        <span>3</span> <!-- 第三个子元素，使用 align-self 单独控制对齐方式 -->
+    </div>
+</body>
+
+</html>

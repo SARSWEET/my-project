@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Hoisting Examples</title>
+    <script>
+        // JavaScript 变量提升(Hoisting)和函数提升示例
+
+        // 示例1: 未声明变量
+        // console.log(num);
+        // 注释掉以避免报错。如果取消注释，将抛出ReferenceError，因为num未声明
+
+        // 示例2: 变量提升
+        console.log(num);  // 输出: undefined
+        var num = 10;
+        // 解释: 变量声明被提升，但赋值操作不会提升
+        // 等效代码:
+        /*
+        var num;
+        console.log(num);  // undefined
+        num = 10;
+        */
+
+        // 示例3: 函数声明提升
+        fn();  // 输出: 11
+        function fn() {
+            console.log(11);
+        }
+        // 解释: 完整的函数声明会被提升到当前作用域的顶部
+        // 等效代码:
+        /*
+        function fn() {
+            console.log(11);
+        }
+        fn();
+        */
+
+        // 示例4: 函数表达式不会被提升
+        fun();  // 抛出 TypeError: fun is not a function
+        var fun = function () {
+            console.log(22);
+        }
+        // 解释: 只有变量声明被提升，函数表达式的赋值不会被提升
+        // 等效代码:
+        /*
+        var fun;
+        fun();  // 此时fun还是undefined，不是函数
+        fun = function () {
+            console.log(22);
+        }
+        */
+
+        // JavaScript 执行过程总结:
+        // 1. JavaScript引擎执行代码分两个阶段:
+        //    a) 预解析阶段: 提升变量声明和函数声明
+        //    b) 执行阶段: 按照代码书写顺序从上到下执行
+        
+        // 2. 预解析细节:
+        //    a) 变量提升: 将var声明的变量提升到当前作用域顶部，只提升声明，不提升赋值
+        //    b) 函数提升: 将函数声明提升到当前作用域顶部，包括函数体
+        
+        // 3. 提升的优先级:
+        //    - 函数声明 > 变量声明
+        //    - 如果变量名和函数名相同，函数声明会覆盖变量声明，但不会覆盖变量赋值
+
+        // 注意: let和const声明的变量不会被提升，会产生"暂时性死区"(Temporal Dead Zone)
+    </script>
+</head>
+<body>
+    <!-- 页面内容可以在这里添加 -->
+</body>
+</html>

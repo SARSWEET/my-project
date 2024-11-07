@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* CSS 通用选择器（Universal Selector）
+           语法: * { 属性: 值; }
+           
+           特点:
+           1. 星号(*)表示选择所有元素
+           2. 会应用到页面的每个HTML元素
+           3. 通常用于重置默认样式或设置全局样式
+           4. 使用时需谨慎，可能影响性能 */
+
+        * {
+            /* 将所有元素的文本颜色设置为红色 */
+            color: red;
+        }
+
+        /* 这个规则会影响页面上的所有元素，包括但不限于:
+           html, body, div, span, ul, li, p, a 等 */
+    </style>
+</head>
+
+<body>
+    <!-- 以下所有元素的文本都会显示为红色 -->
+    <div>我的</div>
+    <span>我的</span>
+    <ul>
+        <li>还是我的</li>
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            /* 设置透视效果，影响3D旋转的深度感 */
+            perspective: 500px;
+            /* 透视距离越小，3D旋转效果越明显 */
+        }
+
+        img {
+            display: block;
+            /* 将图片设置为块级元素，避免周围有多余的间距 */
+            margin: 100px auto;
+            /* 设置图片上下外边距为100像素，并水平居中 */
+            transition: all 1s;
+            /* 设置过渡效果，使旋转动画更加平滑 */
+        }
+
+        img:hover {
+            /* 鼠标悬停时应用3D旋转效果 */
+            /* transform: rotateX(45deg);  沿X轴旋转45度 */
+            /* transform: rotateY(45deg);  沿Y轴旋转45度 */
+            /* transform: rotateZ(45deg);  沿Z轴旋转45度 */
+            /* transform: rotate3d(x, y, z, deg); 是一种更复杂的3D旋转方式 */
+            transform: rotate3d(1, 1, 1, 45deg);
+            /* 沿着 (1, 1, 1) 的矢量旋转45度，表示在X、Y、Z三个轴上同时旋转 */
+        }
+    </style>
+</head>
+
+<body>
+    <img src="media/pig.jpg" alt=""> <!-- 应用旋转效果的图片 -->
+</body>
+
+</html>

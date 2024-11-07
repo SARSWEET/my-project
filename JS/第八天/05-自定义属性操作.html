@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo" index='1' class="name"></div> <!-- 定义一个div元素，包含内置属性id、class和自定义属性index -->
+
+    <script>
+        var div = document.querySelector('div'); // 使用querySelector选择页面中的第一个div元素，并赋值给变量div
+
+        // 1.获取元素的属性值
+
+        // (1)element.属性名 获取**内置属性**的值
+        // 内置属性指元素自带的属性，例如id、class、style等
+        console.log(div.id); // 输出元素的id属性值，结果是'demo'
+        console.log(div.index); // 尝试直接获取元素的index属性，结果是undefined
+        // 因为index是自定义属性，不能通过element.index直接访问
+
+        // (2)element.getAttribute('属性名') 获取**自定义属性**或内置属性的值
+        // getAttribute()可以获取自定义属性和内置属性的值
+        console.log(div.getAttribute('id')); // 使用getAttribute获取id属性，结果是'demo'，与直接获取id相同
+        console.log(div.getAttribute('index')); // 使用getAttribute获取自定义属性index，结果是'1'
+
+        // 2.设置元素的属性值
+
+        // (1)element.属性名 = '值' 设置内置属性的值
+        // 这种方式仅适用于内置属性，如id、class等
+        div.id = 'test'; // 将div的id属性值设置为'test'
+        div.className = 'navs'; // 将div的class属性值设置为'navs'
+        // div.index = '2'; // 无效，不能直接设置自定义属性index
+
+        // (2)element.setAttribute('属性名', '属性值') 设置自定义属性或内置属性的值
+        // setAttribute()方法可以用于设置任意属性的值，包括内置属性和自定义属性
+        div.setAttribute('id', 'emo'); // 使用setAttribute修改id属性的值为'emo'
+        div.setAttribute('index', '2'); // 修改自定义属性index的值为'2'
+        div.setAttribute('class', 'footer'); // 使用setAttribute修改class属性，直接写为'class'而不是'className'
+
+        // (3)移除属性 removeAttribute('属性名')
+        // 通过removeAttribute()可以移除元素上的指定属性
+        div.removeAttribute('index'); // 移除自定义属性index
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!-- 指定文档类型为HTML5，确保浏览器按照HTML5标准解析文档 -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 设置文档的字符编码为UTF-8，支持国际化字符集 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 视口设置，确保网页在移动设备上的可视性和可用性 -->
+    <title>双重For循环示例</title>
+    <!-- 网页标题，反映了页面内容或功能 -->
+    <script>
+        // JavaScript代码区域开始
+        // 本脚本演示了双重for循环的语法结构和执行过程
+
+        // 1. 双重for循环语法结构
+        /*
+        for (外层初始化变量; 外层条件表达式; 外层操作表达式) {
+            for (里层初始化变量; 里层条件表达式; 里层操作表达式) {
+                // 执行语句
+            }
+        }
+        */
+
+        // 2. 我们可以把里层for循环看成外层循环的语句
+        // 3. 外层循环循环一次，里面的循环执行全部
+        // 4. 代码验证：下面的代码演示了双重for循环的执行过程
+
+        // 外层for循环，从1循环到3
+        for (let i = 1; i <= 3; i++) {
+            console.log('外层执行第' + i + '次');
+            // 里层for循环，从1循环到3
+            for (let j = 1; j <= 3; j++) {
+                console.log('里层执行第' + j + '次');
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <!-- 网页主体内容 -->
+</body>
+
+</html>

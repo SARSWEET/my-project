@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 重置所有元素的外边距和内边距，确保所有浏览器的样式一致 */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 给 body 元素添加100px的内边距，创建周围的空间 */
+        body {
+            padding: 100px;
+        }
+
+        /* 设置 textarea 文本框的样式：
+         - 宽度 200px，便于用户输入内容
+         - 高度 100px，给足够的可见输入空间
+         - 粉红色边框，让文本框视觉上更醒目
+         - 取消聚焦时的默认高亮边框，优化视觉体验
+         - 禁止用户调整 textarea 的大小，保持布局的一致性
+        */
+        textarea {
+            width: 200px;
+            height: 100px;
+            border: 1px solid pink;
+            outline: none;
+            resize: none;
+        }
+
+        /* 给 ul 列表添加50px的上边距，确保它与上面的内容有足够的距离 */
+        ul {
+            margin-top: 50px;
+        }
+
+        /* 设置每个 li 列表项的样式：
+         - 宽度 300px，确保文本和删除链接在合理范围内
+         - 内边距 5px，确保文本和边框有适当的间距
+         - 背景颜色设置为淡紫色，视觉上柔和
+         - 字体颜色为红色，突出文本内容
+         - 字体大小设置为 14px，确保阅读舒适
+         - 上下外边距为 15px，增加列表项之间的间距，增强视觉清晰度
+        */
+        li {
+            width: 300px;
+            padding: 5px;
+            background-color: rgb(245, 209, 243);
+            color: red;
+            font-size: 14px;
+            margin: 15px 0;
+        }
+
+        /* 设置 li 内部 a 标签的样式：
+         - 使链接浮动到右侧，便于“删除”按钮排列在文本的右边
+        */
+        li a {
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 定义一个文本输入框和一个发布按钮，下面是一个空的 ul 列表
+         - 文本框用于用户输入内容
+         - 发布按钮用于提交输入的内容，点击后在下方列表中展示 -->
+    <textarea name="" id=""></textarea>
+    <button>发布</button>
+    <ul>
+    </ul>
+
+    <script>
+        // 获取页面上的 textarea 输入框、发布按钮 和 ul 列表的 DOM 元素
+        var text = document.querySelector('textarea'); // 获取文本框
+        var btn = document.querySelector('button'); // 获取发布按钮
+        var ul = document.querySelector('ul'); // 获取 ul 列表
+
+        // 为发布按钮绑定点击事件
+        btn.onclick = function () {
+
+            // 当用户没有输入内容时，弹出提示信息并阻止进一步操作
+            if (text.value == '') {
+                alert('请输入内容'); // 提示用户输入内容
+                return false; // 阻止代码继续执行
+            } else {
+                // 创建新的 li 元素，用于存放用户输入的文本
+                var li = document.createElement('li');
+
+                // 将新的 li 元素插入到 ul 列表的第一个子节点之前
+                ul.insertBefore(li, ul.children[0]);
+
+                /* 设置 li 的内容，包含用户输入的文本以及删除链接
+                 - 这里的 a 标签是 li 的子元素，用于删除当前 li 项
+                 - 'javascript:;' 是防止链接跳转页面，仅用于触发点击事件 */
+                li.innerHTML = text.value + "<a href='javascript:;'>删除</a>";
+
+                // 删除功能的实现：
+                // 通过遍历所有 a 标签，给每个 a 标签绑定点击删除事件
+                var as = document.querySelectorAll('a'); // 获取所有的 a 标签
+                for (let i = 0; i < as.length; i++) {
+                    // 为每个 a 标签添加点击事件，点击后删除其对应的 li 项
+                    as[i].onclick = function () {
+                        // 删除当前 a 标签所在的 li 元素
+                        // this.parentNode 表示 a 的父元素，即对应的 li 项
+                        ul.removeChild(this.parentNode);
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
+

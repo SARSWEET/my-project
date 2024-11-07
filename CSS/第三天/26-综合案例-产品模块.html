@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>综合案例-产品模块</title>
+    <style>
+        /* CSS 重置：移除所有元素的默认内外边距 */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 设置页面背景色，创建视觉对比 */
+        body {
+            background-color: #f5f5f5;
+        }
+
+        /* 链接样式重置：移除下划线并设置颜色 */
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        /* 主要产品盒子样式 */
+        .box {
+            width: 298px;
+            height: 415px;
+            background-color: #fff;
+
+            /* 使用外边距使块级盒子在页面中水平居中 */
+            margin: 100px auto;
+        }
+
+        /* 产品图片样式 */
+        .box img {
+            width: 100%;
+            /* display: block; 注释掉的解决方案，用于消除图片下方的空隙 */
+        }
+
+        /* 注意：图片和 review 盒子之间的空隙是由于浏览器默认的行内元素基线对齐造成的 */
+
+        /* 产品评价样式 */
+        .review {
+            font-size: 14px;
+            height: 70px;
+            /* 使用内边距而不是宽度，避免盒子宽度超出父元素 */
+            padding: 0 28px;
+            margin-top: 30px;
+        }
+
+        /* 评价者信息样式 */
+        .appraise {
+            font-size: 12px;
+            color: #b0b0b0;
+            margin-top: 20px;
+            padding: 0 28px;
+        }
+
+        /* 产品信息区域样式 */
+        .info {
+            font-size: 14px;
+            margin-top: 15px;
+            padding: 0 28px;
+        }
+
+        /* 产品标题样式：内联块以允许同行其他元素 */
+        .info h4 {
+            display: inline-block;
+            font-weight: normal;
+        }
+
+        /* 产品价格样式 */
+        .info span {
+            color: #ff6700;
+        }
+
+        /* 分隔符样式 */
+        .info em {
+            font-style: normal;
+            /* 移除默认的斜体样式 */
+            color: #ebe4e0;
+            margin: 0 6px 0 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 产品展示主容器 -->
+    <div class="box">
+        <!-- 产品图片 -->
+        <img src="images/img.jpg" alt="">
+        <!-- 用户评价 -->
+        <p class="review">快递牛,整体不错蓝牙可以说秒连.红米给力</p>
+        <!-- 评价者信息 -->
+        <div class="appraise">来自于 117384232 的评价</div>
+        <!-- 产品信息区 -->
+        <div class="info">
+            <h4>
+                <a href="#">Redmi AirDots真无线蓝...</a>
+            </h4>
+            <em>|</em>
+            <span>99.9元</span>
+        </div>
+    </div>
+</body>
+
+</html>
+

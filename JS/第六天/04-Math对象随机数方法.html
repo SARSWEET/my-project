@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Math.random() and Its Applications</title>
+    <script>
+        // Math.random() 方法及其应用
+
+        // 1. Math.random() 基本用法
+        // - 返回一个 [0, 1) 范围内的伪随机浮点数
+        // - 不接受任何参数
+        console.log(Math.random()); // 输出: 0 到 1 之间的随机数（不包括1）
+
+        // 2. 生成指定范围内的随机整数
+        // 公式: Math.floor(Math.random() * (max - min + 1)) + min
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        console.log(getRandom(1, 10)); // 输出: 1 到 10 之间的随机整数（包括1和10）
+
+        // 解析:
+        // - Math.random() * (max - min + 1) 生成 [0, max-min+1) 范围的随机数
+        // - Math.floor() 向下取整，确保结果是整数
+        // - 加上 min 将范围偏移到 [min, max]
+
+        // 3. 应用示例：随机选择数组元素
+        var arr = ['张三', '张三丰', '张三疯子', '李四', '李思思', 'pink老师'];
+        console.log(arr[getRandom(0, arr.length - 1)]); // 输出: 数组中的随机元素
+
+        // 注意事项:
+        // - Math.random() 生成的是伪随机数，不适用于加密目的
+        // - 数组索引从 0 开始，所以使用 arr.length - 1 作为上限
+
+        // 最佳实践:
+        // - 对于更复杂的随机需求，考虑使用专门的随机数生成库
+        // - 在需要可重现结果的场景中，使用种子随机数生成器
+
+        // 扩展思考:
+        // - 如何确保在多次调用时不重复选择同一个元素？
+        // - 对于大范围的整数，如何避免潜在的精度问题？
+    </script>
+</head>
+
+<body>
+    <!-- 页面内容可以在这里添加 -->
+</body>
+
+</html>

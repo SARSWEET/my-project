@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 1. 媒体查询（Media Queries）一般按照从小到大的顺序来编写，这样可以利用CSS的层叠性（Cascade）实现样式的覆盖。
+           这种顺序方便后续的媒体查询根据更大屏幕的需求覆盖前面的样式。 */
+
+        /* 2. 当屏幕宽度小于540像素时，body的背景颜色设置为蓝色。
+           这里的 max-width: 539px 表示当视口宽度最大为539像素时应用这个样式。 */
+        @media screen and (max-width: 539px) {
+            body {
+                background-color: blue;
+                /* 视口宽度小于540px时，背景颜色变为蓝色 */
+            }
+        }
+
+        /* 3. 以下这段代码与下方代码对比，用于理解 min-width 和 max-width 同时使用时的效果。
+           这段代码表示当屏幕宽度介于540px到969px之间时，背景颜色设置为绿色。 */
+        /* @media screen and (min-width:540px) and (max-width:969px) {
+            body {
+                background-color: green;
+            }
+        } */
+
+        /* 4. 当屏幕宽度大于等于540像素时，body的背景颜色设置为绿色。
+           由于没有上限条件，这个样式会一直应用到更大的屏幕尺寸，直到被后面的媒体查询覆盖。 */
+        @media screen and (min-width: 540px) {
+            body {
+                background-color: green;
+                /* 视口宽度大于等于540px时，背景颜色变为绿色 */
+            }
+        }
+
+        /* 按照从小到大的顺序编写媒体查询，并利用CSS的层叠性，
+           当屏幕宽度大于等于970像素时，下面的样式会覆盖上面的样式，使背景颜色变为红色。 */
+        /* 5. 当屏幕宽度大于等于970像素时，body的背景颜色设置为红色。 */
+        @media screen and (min-width: 970px) {
+            body {
+                background-color: red;
+                /* 视口宽度大于等于970px时，背景颜色变为红色 */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 这段代码的意思是：当设备屏幕的宽度小于或等于800像素时，body元素的背景颜色会变为粉色。
+           这里的 max-width: 800px 指的是视口（viewport）宽度最大为800像素。
+           screen 表示这是针对屏幕设备的样式，and 连接条件，确保这个样式只在特定屏幕宽度下生效。 */
+        @media screen and (max-width: 800px) {
+            body {
+                background-color: pink;
+                /* 屏幕宽度小于或等于800px时，背景颜色变为粉色 */
+            }
+        }
+
+        /* 这个媒体查询表示：当设备屏幕的宽度小于或等于500像素时，body元素的背景颜色会变为紫色。
+           注意：由于这个条件是更窄的屏幕范围（500px），当屏幕宽度介于500px到800px之间时，
+           上一个媒体查询的样式会被应用，当宽度小于500px时，这个媒体查询的样式会覆盖前面的样式。 */
+        @media screen and (max-width: 500px) {
+            body {
+                background-color: purple;
+                /* 屏幕宽度小于或等于500px时，背景颜色变为紫色 */
+            }
+        }
+        
+    </style>
+</head>
+
+<body>
+
+</body>
+
+</html>

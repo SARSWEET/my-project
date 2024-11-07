@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            /* 设置 div 的位置为绝对定位 */
+            position: absolute;
+            /* 距离左边界为 0，初始位置 */
+            left: 0;
+            /* 宽度和高度分别为 100px，背景颜色为粉色 */
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+
+        span {
+            /* 设置 span 为块级元素，并使用绝对定位 */
+            display: block;
+            position: absolute;
+            /* 距离顶部 150px，距离左边界为 0 */
+            top: 150px;
+            left: 0;
+            /* 宽度和高度分别为 150px，背景颜色为紫色 */
+            width: 150px;
+            height: 150px;
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 创建一个空的 div 元素 -->
+    <div></div>
+    <!-- 创建一个空的 span 元素 -->
+    <span></span>
+    <!-- 创建一个按钮，用于触发动画效果 -->
+    <button>点击我才走</button>
+    <script>
+        // 选择页面中的 div、span 和 button 元素，分别赋值给变量
+        var div = document.querySelector('div');
+        var span = document.querySelector('span');
+        var btn = document.querySelector('button');
+
+        // 定义一个动画函数，用于移动指定的元素到目标位置
+        function animate(obj, target) {
+            // 清除之前的计时器，以防止多次点击按钮时重复创建新的计时器
+            // 如果不清除，会导致对象移动速度越来越快
+            clearInterval(obj.timer);
+
+            // 给每个对象设置独立的定时器，以保证不同对象的动画互不干扰
+            obj.timer = setInterval(function () {
+                // 检查元素当前位置是否已经达到目标位置
+                if (obj.offsetLeft >= target) {
+                    // 到达目标后，清除计时器，停止动画
+                    clearInterval(obj.timer);
+                } else {
+                    // 未到达目标位置时，继续向右移动
+                    obj.style.left = obj.offsetLeft + 1 + 'px';
+                }
+                // 注意：把 obj.style.left 放到 else 里面是为了避免每次点击按钮时只移动 1 像素
+            }, 1); // 每隔 1 毫秒执行一次，移动速度为每次 1 像素
+        }
+
+        // 初始化动画，将 div 元素移动到 400px 位置
+        animate(div, 400);
+
+        // 为按钮添加点击事件，点击时触发 span 元素的移动动画
+        btn.addEventListener('click', function () {
+            animate(span, 500);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 为 div 元素设置样式 */
+        div {
+            position: absolute;
+            /* 绝对定位，允许通过 left 和 top 属性设置位置 */
+            left: 0;
+            /* 将元素初始位置设置在左侧 */
+            width: 100px;
+            /* 设置宽度为 100px */
+            height: 100px;
+            /* 设置高度为 100px */
+            background-color: pink;
+            /* 背景颜色设置为粉色 */
+        }
+
+        /* 为 span 元素设置样式 */
+        span {
+            position: absolute;
+            /* 绝对定位，用于精确控制元素位置 */
+            left: 0;
+            /* 初始水平位置设为 0 */
+            top: 200px;
+            /* 初始垂直位置距离顶部 200px */
+            display: block;
+            /* 设置为块级元素，可以指定宽高 */
+            width: 150px;
+            /* 宽度设为 150px */
+            height: 150px;
+            /* 高度设为 150px */
+            background-color: purple;
+            /* 背景颜色设为紫色 */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 两个按钮，分别用于触发动画 -->
+    <button class="btn500">点击夏雨荷到500</button>
+    <button class="btn800">点击夏雨荷到800</button>
+    <!-- 用于移动的目标元素，显示文字“夏雨荷” -->
+    <span>夏雨荷</span>
+
+    <script>
+        /**
+         * animate - 一个用于移动 HTML 元素的动画函数
+         * @param {Object} obj - 要移动的对象（DOM 元素）
+         * @param {number} target - 目标位置，单位为像素
+         * @param {Function} callback - （可选）动画完成后的回调函数
+         */
+        function animate(obj, target, callback) {
+            // 清除任何正在运行的定时器，防止多次点击造成速度叠加
+            clearInterval(obj.timer);
+            // 开启新的定时器，并将其引用存储在对象的 timer 属性中
+            obj.timer = setInterval(function () {
+                // 计算移动的步长：目标位置与当前偏移的距离除以 10，产生一种缓动效果
+                var step = (target - obj.offsetLeft) / 10;
+                // 处理步长为小数时的问题，使用向上或向下取整
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+
+                // 如果元素已经移动到目标位置
+                if (obj.offsetLeft == target) {
+                    // 清除定时器，停止动画
+                    clearInterval(obj.timer);
+                    // 如果有回调函数，则在动画完成后调用它
+                    if (callback) { // 判断回调函数是否存在，如果存在则执行
+                        callback();
+                    }
+                }
+
+                // 将元素的当前位置更新，向目标位置移动一步
+                obj.style.left = obj.offsetLeft + step + 'px';
+
+            }, 15); // 定时器间隔为 15 毫秒，控制动画速度
+        }
+
+        // 获取页面中的 span 元素，用于后续动画
+        var span = document.querySelector('span');
+        // 获取第一个按钮，用于移动 span 到 500 像素的位置
+        var btn500 = document.querySelector('.btn500');
+        // 获取第二个按钮，用于移动 span 到 800 像素的位置
+        var btn800 = document.querySelector('.btn800');
+
+        // 为 btn500 按钮添加点击事件，触发动画将 span 移动到 500 像素位置
+        btn500.addEventListener('click', function () {
+            animate(span, 500);
+        });
+
+        // 为 btn800 按钮添加点击事件，触发动画将 span 移动到 800 像素位置
+        // 并在动画完成后执行回调函数，将 span 的背景色改为红色
+        btn800.addEventListener('click', function () {
+            animate(span, 800, function () {
+                span.style.backgroundColor = 'red'; // 回调函数内容：更改背景颜色
+            });
+        });
+
+    </script>
+</body>
+
+</html>

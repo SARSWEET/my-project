@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 定义一个名为 move 的关键帧动画 */
+        @keyframes move {
+
+            /* 动画开始时，元素位于 (0, 0) */
+            0% {
+                transform: translate(0, 0);
+            }
+
+            /* 动画结束时，元素移动到 (1000px, 0) */
+            100% {
+                transform: translate(1000px, 0);
+            }
+        }
+
+        /* 设置 div 元素的初始样式和动画属性 */
+        div {
+            width: 100px;
+            /* 设置 div 的宽度为 100 像素 */
+            height: 100px;
+            /* 设置 div 的高度为 100 像素 */
+            background-color: pink;
+            /* 设置 div 的背景颜色为粉红色 */
+
+            /* 调用名为 move 的动画 */
+            /* animation-name: move; */
+            /* 设置动画的持续时间为 2 秒 */
+            /* animation-duration: 2s; */
+            /* 设置动画的运动曲线为 ease，效果为慢-快-慢 */
+            /* animation-timing-function: ease; */
+            /* 设置动画在 1 秒后开始 */
+            /* animation-delay: 1s; */
+            /* 设置动画在结束后停留在最后一个关键帧的位置 */
+            /* animation-fill-mode: forwards; */
+
+            /* 以下为可选项，未激活，解释说明如下： */
+            /* 设置动画重复次数，默认值为 1，可以设置为 infinite 表示无限次循环 */
+            /* animation-iteration-count: infinite; */
+
+            /* 设置动画的播放方向，默认值为 normal，如果需要反向播放，可以设置为 alternate */
+            /* animation-direction: alternate; */
+
+            /* 使用 animation 简写属性配置动画 */
+            animation: move 2s linear 1s 1 alternate forwards;
+            /* animation 简写格式说明：
+               - move: 调用名为 move 的动画
+               - 2s: 动画持续时间为 2 秒
+               - linear: 线性运动曲线，匀速移动
+               - 1s: 动画延迟 1 秒后开始
+               - 1: 动画执行一次
+               - alternate: 动画交替反向播放
+               - forwards: 动画结束后停留在最后一个关键帧的位置
+            */
+        }
+
+        /* 当鼠标悬停在 div 上时，暂停动画 */
+        div:hover {
+            animation-play-state: paused;
+            /* 鼠标悬停时，暂停动画 */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 一个空的 div 元素，通过定义的关键帧动画实现移动效果 -->
+    <div></div>
+</body>
+
+</html>

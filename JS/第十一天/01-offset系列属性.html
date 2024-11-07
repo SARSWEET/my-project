@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .father {
+            /* position: relative; 这行代码是为了给子元素提供一个定位参考。若取消注释，子元素的定位将基于这个父容器。 */
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin: 150px;
+            /* 设置四周的外边距，使父容器在页面中间隔开一定距离 */
+        }
+
+        .son {
+            width: 100px;
+            height: 100px;
+            background-color: purple;
+            margin-left: 45px;
+            /* 子元素左边距，定位在父容器内部的偏移量 */
+        }
+
+        .w {
+            /* width: 200px; 取消注释可以为该元素指定宽度。如果未设置宽度，元素宽度将由内容和父元素决定 */
+            height: 200px;
+            background-color: skyblue;
+            margin: 0 auto 200px;
+            /* 上边距为0，左右居中（auto），下边距200px */
+            padding: 10px;
+            /* 内边距，内容与边框之间的距离 */
+            border: 15px solid red;
+            /* 边框，指定了颜色和宽度 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <div class="w"></div>
+    <script>
+        // 获取DOM元素
+        var father = document.querySelector('.father');
+        var son = document.querySelector('.son');
+
+        // 1. 获取元素的偏移位置，返回的是不带单位的数值（像素值）
+        console.log(father.offsetTop); // 输出父元素到其最近的定位父元素或body顶部的距离
+        console.log(father.offsetLeft); // 输出父元素到其最近的定位父元素或body左侧的距离
+
+        // offsetLeft：以最近的定位父元素为参考，若没有定位父元素则以body为参考
+        console.log(son.offsetLeft); // 输出子元素到父容器左侧的偏移量
+
+        // 2. 获取元素的宽度和高度，包含 padding + border + width/height，但不包含 margin
+        var w = document.querySelector('.w');
+        console.log(w.offsetWidth); // 输出元素的完整宽度，包括padding和border
+        console.log(w.offsetHeight); // 输出元素的完整高度，包括padding和border
+
+        // 3. 获取带有定位的父元素（最近的定位父元素），如果没有则返回body
+        console.log(son.offsetParent); // 返回带有定位的父元素，如果没有则返回body
+        console.log(son.parentNode); // 返回父元素，不论父元素是否有定位
+    </script>
+</body>
+
+</html>

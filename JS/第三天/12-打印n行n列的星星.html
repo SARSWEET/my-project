@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!-- 指定文档类型为HTML5，确保浏览器按照HTML5标准解析文档 -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 设置文档的字符编码为UTF-8，支持国际化字符集 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 视口设置，确保网页在移动设备上的可视性和可用性 -->
+    <title>打印星星示例</title>
+    <!-- 网页标题，反映了页面内容或功能 -->
+    <script>
+        // JavaScript代码区域开始
+        // 本脚本演示了如何使用双重for循环来打印n行n列的星星
+
+        // 提示用户输入行数，并将输入值保存到变量rows中
+        var rows = prompt('请输入行数');
+        // 提示用户输入列数，并将输入值保存到变量cols中
+        var cols = prompt('请输入列数');
+        // 定义一个变量str用于存储拼接后的星星字符串
+        var str = '';
+        // 外层for循环，负责打印指定行数的星星
+        for (let i = 1; i <= rows; i++) {
+            // 里层for循环，负责每行打印指定列数的星星
+            for (let j = 1; j <= cols; j++) {
+                str += '⭐'; // 将星星拼接到str中
+            }
+            // 如果一行打印完毕指定数量的星星，就要另起一行，加'\n'
+            str += '\n';
+        }
+        // 输出拼接后的星星字符串到控制台
+        console.log(str);
+    </script>
+</head>
+
+<body>
+    <!-- 网页主体内容 -->
+</body>
+
+</html>

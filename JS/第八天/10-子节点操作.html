@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- 指定页面的字符编码为UTF-8，确保浏览器正确显示内容 -->
+    <meta charset="UTF-8">
+    <!-- 设置视口的宽度以匹配设备宽度，适应不同屏幕大小 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 示例部分：展示不同HTML元素 -->
+    <!-- <div> 元素通常用于创建块级内容。块级元素占据一行 -->
+    <div>我是div</div>
+    <!-- <span> 元素是行内元素，它仅占据自身的宽度，不会换行 -->
+    <span>我是span</span>
+
+    <!-- <ul> 是无序列表，通常用于表示没有特定顺序的项目 -->
+    <ul>
+        <!-- <li> 元素是列表项，通常放在 <ul> 或 <ol> 内 -->
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+    </ul>
+
+    <!-- <ol> 是有序列表，通常用于表示按顺序排列的项目 -->
+    <ol>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+    </ol>
+
+    <!-- 这里是一个带有 "erweima" 类名的关闭按钮 -->
+    <div class="demo">
+        <div class="box">
+            <span class="erweima">×</span> <!-- 用于显示关闭按钮的 "×" -->
+        </div>
+    </div>
+
+    <script>
+        // 获取第一个 <ul> 元素
+        var ul = document.querySelector('ul');
+        // 获取该 <ul> 中所有的 <li> 子元素，返回一个NodeList
+        var lis = ul.querySelectorAll('li');
+
+        // 1. 使用 childNodes 获取所有子节点，返回一个 NodeList，
+        // 包括元素节点、文本节点、注释节点等
+        console.log(ul.childNodes);
+        // 输出第一个子节点的类型，3 表示文本节点
+        console.log(ul.childNodes[0].nodeType); // 输出 3 
+        // 输出第二个子节点的类型，1 表示元素节点
+        console.log(ul.childNodes[1].nodeType); // 输出 1
+
+        // 2. 使用 children 获取所有子元素节点，不包含文本节点，
+        // 返回的是一个HTMLCollection。这是开发中更常用的选择。
+        console.log(ul.children); // 只会包含 <li> 元素，不包含文本节点
+    </script>
+</body>
+
+</html>

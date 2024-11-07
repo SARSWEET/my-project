@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 获取并格式化当前时间的时、分、秒
+        var date = new Date();
+        console.log(date.getHours());   // 获取当前小时（0-23）
+        console.log(date.getMinutes()); // 获取当前分钟（0-59）
+        console.log(date.getSeconds()); // 获取当前秒数（0-59）
+
+        /**
+         * 返回格式化的当前时间字符串
+         * @returns {string} 格式化的时间字符串，格式为 "HH:MM:SS"
+         */
+        function getTime() {
+            var time = new Date();
+
+            // 获取小时并补零
+            var h = time.getHours();
+            h = h < 10 ? '0' + h : h;
+
+            // 获取分钟并补零
+            var m = time.getMinutes();
+            m = m < 10 ? '0' + m : m;
+
+            // 获取秒数并补零
+            var s = time.getSeconds();
+            s = s < 10 ? '0' + s : s;
+
+            // 拼接时间字符串
+            return h + ':' + m + ':' + s;
+        }
+
+        // 调用getTime()函数并输出结果
+        console.log(getTime());
+
+        // 注意：
+        // 1. 这个函数返回的是调用时的时间，如果需要实时更新，需要配合setInterval()使用
+        // 2. 在跨时区应用中，可能需要考虑使用UTC时间或特定时区的时间
+        // 3. 对于更复杂的日期时间格式化，可以考虑使用第三方库如Moment.js或Day.js
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

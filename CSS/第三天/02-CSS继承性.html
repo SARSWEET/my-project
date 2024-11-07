@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 继承性示例</title>
+    <style>
+        /* 为 div 元素设置样式 */
+        div {
+            color: pink;
+            font-size: 14px;
+        }
+
+        /* CSS 继承性原理：
+           1. 某些CSS属性会从父元素继承到子元素
+           2. 常见的可继承属性包括：color, font-family, font-size, line-height 等
+           3. 继承可以减少重复的CSS代码
+           4. 不是所有属性都会被继承，如 border, margin, padding 等 */
+    </style>
+</head>
+
+<body>
+    <div>
+        <!-- p 元素会继承父元素 div 的样式 -->
+        <p>龙生龙 凤生凤 老鼠儿子会打洞</p>
+    </div>
+</body>
+
+</html>

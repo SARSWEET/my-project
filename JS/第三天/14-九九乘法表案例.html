@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- 指定文档类型为HTML5，确保浏览器按照HTML5标准解析文档 -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 设置文档的字符编码为UTF-8，支持国际化字符集 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 视口设置，确保网页在移动设备上的可视性和可用性 -->
+    <title>九九乘法表示例</title>
+    <!-- 网页标题，反映了页面内容或功能 -->
+    <script>
+        // JavaScript代码区域开始
+        // 本脚本演示了如何使用双重for循环来打印九九乘法表
+
+        // 定义一个变量str用于存储拼接后的乘法表字符串
+        var str = '';
+        // 外层for循环，控制行数，共九行
+        for (let i = 1; i <= 9; i++) {
+            // 内层for循环，控制每行公式的个数
+            // 每行公式的个数等于当前行数i
+            for (let j = 1; j <= i; j++) {
+                // 拼接乘法公式到str中
+                // 使用\t（制表符）来对齐输出
+                str += j + '×' + i + '=' + (j * i) + '\t';
+            }
+            // 每行打印完毕后，添加换行符
+            str += '\n';
+        }
+        // 输出拼接后的乘法表字符串到控制台
+        console.log(str);
+    </script>
+</head>
+
+<body>
+    <!-- 网页主体内容 -->
+</body>
+
+</html>
